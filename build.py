@@ -295,6 +295,264 @@ def main():
 
     # 6. Initialize Jinja2 Environment
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
+    env.globals.update(
+        {
+            "STATUS_MAP": {
+                "early_draft": {
+                    "ja": "草案",
+                    "ja_en": "草案 (Early Draft)",
+                    "ro": "Early Draft",
+                    "en": "Early Draft",
+                },
+                "full_draft": {
+                    "ja": "完成稿",
+                    "ja_en": "完成稿 (Full Draft)",
+                    "ro": "Full Draft",
+                    "en": "Full Draft",
+                },
+                "verified": {
+                    "ja": "確認済",
+                    "ja_en": "確認済 (Verified)",
+                    "ro": "Verified",
+                    "en": "Verified",
+                },
+                "reviewed": {
+                    "ja": "査読済",
+                    "ja_en": "査読済 (Reviewed)",
+                    "ro": "Reviewed",
+                    "en": "Reviewed",
+                },
+            },
+            "STYLE_MAP": {
+                "jka": {
+                    "ja": "JKA",
+                    "ja_en": "JKA (Shotokan)",
+                    "ro": "JKA",
+                    "en": "JKA",
+                },
+                "shitoryu": {
+                    "ja": "糸東流",
+                    "ja_en": "糸東流 (Shito-ryu)",
+                    "ro": "Shito-ryu",
+                    "en": "Shito-ryu",
+                },
+            },
+            "LEAD_MAP": {
+                "left": {
+                    "ja": "左",
+                    "ja_en": "左 (left)",
+                    "ro": "left",
+                    "en": "left",
+                },
+                "right": {
+                    "ja": "右",
+                    "ja_en": "右 (right)",
+                    "ro": "right",
+                    "en": "right",
+                },
+                "both": {
+                    "ja": "両",
+                    "ja_en": "両 (both)",
+                    "ro": "both",
+                    "en": "both",
+                },
+            },
+            "TARGET_MAP": {
+                "gedan": {
+                    "ja": "下段",
+                    "ja_en": "下段 (gedan)",
+                    "ro": "gedan",
+                    "en": "gedan",
+                },
+                "chudan": {
+                    "ja": "中段",
+                    "ja_en": "中段 (chūdan)",
+                    "ro": "chudan",
+                    "en": "chudan",
+                },
+                "jodan": {
+                    "ja": "上段",
+                    "ja_en": "上段 (jōdan)",
+                    "ro": "jodan",
+                    "en": "jodan",
+                },
+            },
+            "TURN_MAP": {
+                "0": {
+                    "ja": "直進",
+                    "ja_en": "直進 / straight",
+                    "ro": "0",
+                    "en": "0",
+                },
+                "advance": {
+                    "ja": "前進",
+                    "ja_en": "前進 / advance",
+                    "ro": "advance",
+                    "en": "advance",
+                },
+                "left_45": {
+                    "ja": "左45°",
+                    "ja_en": "左45° / left 45°",
+                    "ro": "left 45°",
+                    "en": "left 45°",
+                },
+                "right_45": {
+                    "ja": "右45°",
+                    "ja_en": "右45° / right 45°",
+                    "ro": "right 45°",
+                    "en": "right 45°",
+                },
+                "left_90": {
+                    "ja": "左90°",
+                    "ja_en": "左90° / left 90°",
+                    "ro": "left 90°",
+                    "en": "left 90°",
+                },
+                "right_90": {
+                    "ja": "右90°",
+                    "ja_en": "右90° / right 90°",
+                    "ro": "right 90°",
+                    "en": "right 90°",
+                },
+                "left_135": {
+                    "ja": "左135°",
+                    "ja_en": "左135° / left 135°",
+                    "ro": "left 135°",
+                    "en": "left 135°",
+                },
+                "right_135": {
+                    "ja": "右135°",
+                    "ja_en": "右135° / right 135°",
+                    "ro": "right 135°",
+                    "en": "right 135°",
+                },
+                "left_180": {
+                    "ja": "左180°",
+                    "ja_en": "左180° / left 180°",
+                    "ro": "left 180°",
+                    "en": "left 180°",
+                },
+                "right_180": {
+                    "ja": "右180°",
+                    "ja_en": "右180° / right 180°",
+                    "ro": "right 180°",
+                    "en": "right 180°",
+                },
+                "left_225": {
+                    "ja": "左225°",
+                    "ja_en": "左225° / left 225°",
+                    "ro": "left 225°",
+                    "en": "left 225°",
+                },
+                "right_225": {
+                    "ja": "右225°",
+                    "ja_en": "右225° / right 225°",
+                    "ro": "right 225°",
+                    "en": "right 225°",
+                },
+            },
+            "FACING_MAP": {
+                "N": {
+                    "ja": "北",
+                    "ja_en": "北 (N)",
+                    "ro": "N",
+                    "en": "N",
+                },
+                "NE": {
+                    "ja": "北東",
+                    "ja_en": "北東 (NE)",
+                    "ro": "NE",
+                    "en": "NE",
+                },
+                "E": {
+                    "ja": "東",
+                    "ja_en": "東 (E)",
+                    "ro": "E",
+                    "en": "E",
+                },
+                "SE": {
+                    "ja": "南東",
+                    "ja_en": "南東 (SE)",
+                    "ro": "SE",
+                    "en": "SE",
+                },
+                "S": {
+                    "ja": "南",
+                    "ja_en": "南 (S)",
+                    "ro": "S",
+                    "en": "S",
+                },
+                "SW": {
+                    "ja": "南西",
+                    "ja_en": "南西 (SW)",
+                    "ro": "SW",
+                    "en": "SW",
+                },
+                "W": {
+                    "ja": "西",
+                    "ja_en": "西 (W)",
+                    "ro": "W",
+                    "en": "W",
+                },
+                "NW": {
+                    "ja": "北西",
+                    "ja_en": "北西 (NW)",
+                    "ro": "NW",
+                    "en": "NW",
+                },
+            },
+            "TAG_MAP": {
+                "pinan": {"ja": "平安", "ja_en": "平安 (Pinan)"},
+                "shitoryu": {"ja": "糸東流", "ja_en": "糸東流 (Shito-ryu)"},
+                "extra_kata": {"ja": "追加型", "ja_en": "追加型 (Extra Kata)"},
+                "kyu_grade": {"ja": "級位", "ja_en": "級位 (Kyu Grade)"},
+                "black_belt": {"ja": "有段", "ja_en": "有段 (Black Belt)"},
+                "sentei": {"ja": "選定形", "ja_en": "選定形 (Sentei)"},
+                "shitei": {"ja": "指定形", "ja_en": "指定形 (Shitei)"},
+                "1st_kyu": {"ja": "一級", "ja_en": "一級 (1st Kyu)"},
+                "2nd_kyu": {"ja": "二級", "ja_en": "二級 (2nd Kyu)"},
+                "3rd_kyu": {"ja": "三級", "ja_en": "三級 (3rd Kyu)"},
+                "4th_kyu": {"ja": "四級", "ja_en": "四級 (4th Kyu)"},
+                "5th_kyu": {"ja": "五級", "ja_en": "五級 (5th Kyu)"},
+                "6th_kyu": {"ja": "六級", "ja_en": "六級 (6th Kyu)"},
+                "7th_kyu": {"ja": "七級", "ja_en": "七級 (7th Kyu)"},
+                "8th_kyu": {"ja": "八級", "ja_en": "八級 (8th Kyu)"},
+                "9th_kyu": {"ja": "九級", "ja_en": "九級 (9th Kyu)"},
+            },
+            "CATEGORY_MAP": {
+                "block": {
+                    "ja": "受け",
+                    "ja_en": "受け (Block)",
+                    "ro": "Block (受け)",
+                    "en": "Block",
+                },
+                "punch": {
+                    "ja": "突き",
+                    "ja_en": "突き (Punch)",
+                    "ro": "Punch (突き)",
+                    "en": "Punch",
+                },
+                "strike": {
+                    "ja": "打ち",
+                    "ja_en": "打ち (Strike)",
+                    "ro": "Strike (打ち)",
+                    "en": "Strike",
+                },
+                "kick": {
+                    "ja": "蹴り",
+                    "ja_en": "蹴り (Kick)",
+                    "ro": "Kick (蹴り)",
+                    "en": "Kick",
+                },
+                "other": {
+                    "ja": "その他",
+                    "ja_en": "その他 (Other)",
+                    "ro": "Other (その他)",
+                    "en": "Other",
+                },
+            },
+        }
+    )
 
     # 7. Setup Output Directories in dist/
     if DIST_DIR.exists():
@@ -340,9 +598,14 @@ def main():
         tabs = []
         # Tab 1: Current Kata
         current_style_label = "JKA" if k["style"] == "jka" else "Shito-ryu"
+        current_style_ja = "JKA" if k["style"] == "jka" else "糸東流"
         tabs.append(
             {
                 "label": f"{current_style_label}: {k['name']}",
+                "label_ja": f"{current_style_ja}: {k['kanji']}",
+                "label_ja_en": f"{current_style_ja}: {k['kanji']} ({current_style_label}: {k['name']})",
+                "label_ro": f"{current_style_label}: {k['name']}",
+                "label_en": f"{current_style_label}: {k['name']}",
                 "url": f"{k['id']}.html",
                 "is_current": True,
             }
@@ -352,10 +615,15 @@ def main():
             eq_obj = kata_by_key.get(eq_key)
             if eq_obj:
                 eq_style_label = "JKA" if eq_obj["style"] == "jka" else "Shito-ryu"
+                eq_style_ja = "JKA" if eq_obj["style"] == "jka" else "糸東流"
                 eq_url = f"../../kata/{eq_obj['style']}/{eq_obj['id']}.html"
                 tabs.append(
                     {
                         "label": f"{eq_style_label}: {eq_obj['name']}",
+                        "label_ja": f"{eq_style_ja}: {eq_obj['kanji']}",
+                        "label_ja_en": f"{eq_style_ja}: {eq_obj['kanji']} ({eq_style_label}: {eq_obj['name']})",
+                        "label_ro": f"{eq_style_label}: {eq_obj['name']}",
+                        "label_en": f"{eq_style_label}: {eq_obj['name']}",
                         "url": eq_url,
                         "is_current": False,
                     }

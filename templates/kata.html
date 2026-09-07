@@ -5,26 +5,56 @@
 {% block content %}
 <div class="page-header">
   <div class="breadcrumbs">
-    <a href="{{ rel_root }}index.html">Directory</a> &rsaquo;
-    <span>{{ kata.style | upper }}</span> &rsaquo;
-    <span>{{ kata.name }}</span>
+    <a href="{{ rel_root }}index.html">
+      <span class="text-ja">目録</span>
+      <span class="text-ja-en">目録 (Directory)</span>
+      <span class="text-ro">Directory</span>
+      <span class="text-en">Directory</span>
+    </a> &rsaquo;
+    <span>
+      <span class="text-ja">{{ STYLE_MAP[kata.style].ja }}</span>
+      <span class="text-ja-en">{{ STYLE_MAP[kata.style].ja_en }}</span>
+      <span class="text-ro">{{ STYLE_MAP[kata.style].ro | upper }}</span>
+      <span class="text-en">{{ STYLE_MAP[kata.style].en | upper }}</span>
+    </span> &rsaquo;
+    <span>
+      <span class="text-ja">{{ kata.kanji }}</span>
+      <span class="text-ja-en">{{ kata.kanji }} ({{ kata.name }})</span>
+      <span class="text-ro">{{ kata.name }}</span>
+      <span class="text-en">{{ kata.name }}</span>
+    </span>
   </div>
 
   <h1 class="page-title">
-    <span>{{ kata.name }}</span>
-    <span class="kanji-title"><ruby>{{ kata.kanji }}<rt>{{ kata.furigana }}</rt></ruby></span>
-    <span class="badge badge-{{ kata.status }}">{{ kata.status | replace('_', ' ') }}</span>
+    <span class="text-ja"><span class="kanji-title" style="margin-left: 0;"><ruby>{{ kata.kanji }}<rt>{{ kata.furigana }}</rt></ruby></span></span>
+    <span class="text-ja-en"><span class="kanji-title" style="margin-left: 0;"><ruby>{{ kata.kanji }}<rt>{{ kata.furigana }}</rt></ruby></span> <span class="sub-term" style="font-size: 1.5rem; vertical-align: middle;">({{ kata.name }})</span></span>
+    <span class="text-ro"><span>{{ kata.name }}</span> <span class="kanji-title"><ruby>{{ kata.kanji }}<rt>{{ kata.furigana }}</rt></ruby></span></span>
+    <span class="text-en"><span>{{ kata.name }}</span> <span class="kanji-title"><ruby>{{ kata.kanji }}<rt>{{ kata.furigana }}</rt></ruby></span></span>
+    <span class="badge badge-{{ kata.status }}">
+      <span class="text-ja">{{ STATUS_MAP[kata.status].ja }}</span>
+      <span class="text-ja-en">{{ STATUS_MAP[kata.status].ja_en }}</span>
+      <span class="text-ro">{{ STATUS_MAP[kata.status].ro }}</span>
+      <span class="text-en">{{ STATUS_MAP[kata.status].en }}</span>
+    </span>
   </h1>
 </div>
 
 <!-- Cross-Style Equivalent Tabs -->
 {% if equivalents_tabs %}
 <div class="style-tabs-wrapper">
-  <div class="style-tabs-label">Lineage Variants Across Disciplines</div>
+  <div class="style-tabs-label">
+    <span class="text-ja">流派間の対応形</span>
+    <span class="text-ja-en">流派間の対応形 (Lineage Variants)</span>
+    <span class="text-ro">Lineage Variants Across Disciplines</span>
+    <span class="text-en">Lineage Variants Across Disciplines</span>
+  </div>
   <div class="style-tabs">
     {% for tab in equivalents_tabs %}
       <a href="{{ tab.url }}" class="style-tab-link {% if tab.is_current %}active{% endif %}">
-        {{ tab.label }}
+        <span class="text-ja">{{ tab.label_ja }}</span>
+        <span class="text-ja-en">{{ tab.label_ja_en }}</span>
+        <span class="text-ro">{{ tab.label_ro }}</span>
+        <span class="text-en">{{ tab.label_en }}</span>
       </a>
     {% endfor %}
   </div>
@@ -35,39 +65,80 @@
 <div class="card">
   <div class="meta-grid">
     <div class="meta-item">
-      <span class="meta-label">Total Movements</span>
-      <span class="meta-value">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+      <span class="meta-label">
+        <span class="text-ja">総挙動数</span>
+        <span class="text-ja-en">総挙動数 (Total Movements)</span>
+        <span class="text-ro">Total Movements</span>
+        <span class="text-en">Total Movements</span>
+      </span>
+      <span class="meta-value">
+        <span class="text-ja">{{ kata.steps | length }} ({{ kata.base_count }}挙動)</span>
+        <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts / 挙動)</span>
+        <span class="text-ro">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+        <span class="text-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+      </span>
     </div>
     <div class="meta-item">
-      <span class="meta-label">Kiai Counts</span>
+      <span class="meta-label">
+        <span class="text-ja">気合挙動</span>
+        <span class="text-ja-en">気合 (Kiai Counts)</span>
+        <span class="text-ro">Kiai Counts</span>
+        <span class="text-en">Kiai Counts</span>
+      </span>
       <span class="meta-value">
         {% if kata.kiai_steps %}
           {% for ki in kata.kiai_steps %}
             <span class="kiai-badge">{{ ki }}</span>
           {% endfor %}
         {% else %}
-          None
+          <span class="text-ja">なし</span>
+          <span class="text-ja-en">なし (None)</span>
+          <span class="text-ro">None</span>
+          <span class="text-en">None</span>
         {% endif %}
       </span>
     </div>
     <div class="meta-item">
-      <span class="meta-label">Review Status</span>
+      <span class="meta-label">
+        <span class="text-ja">審査状況</span>
+        <span class="text-ja-en">審査状況 (Review Status)</span>
+        <span class="text-ro">Review Status</span>
+        <span class="text-en">Review Status</span>
+      </span>
       <span class="meta-value">
-        <span class="badge badge-{{ kata.status }}">{{ kata.status | replace('_', ' ') }}</span>
+        <span class="badge badge-{{ kata.status }}">
+          <span class="text-ja">{{ STATUS_MAP[kata.status].ja }}</span>
+          <span class="text-ja-en">{{ STATUS_MAP[kata.status].ja_en }}</span>
+          <span class="text-ro">{{ STATUS_MAP[kata.status].ro }}</span>
+          <span class="text-en">{{ STATUS_MAP[kata.status].en }}</span>
+        </span>
         {% if kata.reviewer %}
           <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 0.25rem;">({{ kata.reviewer }})</span>
         {% else %}
-          <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">(Unreviewed)</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">
+            <span class="text-ja">(未査読)</span>
+            <span class="text-ja-en">(未査読 / Unreviewed)</span>
+            <span class="text-ro">(Unreviewed)</span>
+            <span class="text-en">(Unreviewed)</span>
+          </span>
         {% endif %}
       </span>
     </div>
     <div class="meta-item">
-      <span class="meta-label">Sources</span>
+      <span class="meta-label">
+        <span class="text-ja">典拠</span>
+        <span class="text-ja-en">典拠 (Sources)</span>
+        <span class="text-ro">Sources</span>
+        <span class="text-en">Sources</span>
+      </span>
       <span class="meta-value" style="font-size: 0.85rem; color: var(--text-secondary);">
         {% if kata.sources %}
           {{ kata.sources | join(' • ') }}
         {% else %}
-          None
+          <span class="text-ja">なし</span>
+          <span class="text-ja-en">なし (None)</span>
+          <span class="text-ro">None</span>
+          <span class="text-en">None</span>
         {% endif %}
       </span>
     </div>
@@ -76,8 +147,18 @@
   <!-- Category Breakdown Progress Bar -->
   <div style="margin-top: 1rem;">
     <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
-      <span>Technique Distribution</span>
-      <span>{{ kata.category_counts.block }} Blocks • {{ kata.category_counts.punch }} Punches • {{ kata.category_counts.strike }} Strikes • {{ kata.category_counts.kick }} Kicks</span>
+      <span>
+        <span class="text-ja">技の構成比</span>
+        <span class="text-ja-en">技の構成比 (Technique Distribution)</span>
+        <span class="text-ro">Technique Distribution</span>
+        <span class="text-en">Technique Distribution</span>
+      </span>
+      <span>
+        <span class="text-ja">受け {{ kata.category_counts.block }} • 突き {{ kata.category_counts.punch }} • 打ち {{ kata.category_counts.strike }} • 蹴り {{ kata.category_counts.kick }}</span>
+        <span class="text-ja-en">受け (Blocks) {{ kata.category_counts.block }} • 突き (Punches) {{ kata.category_counts.punch }} • 打ち (Strikes) {{ kata.category_counts.strike }} • 蹴り (Kicks) {{ kata.category_counts.kick }}</span>
+        <span class="text-ro">{{ kata.category_counts.block }} Blocks • {{ kata.category_counts.punch }} Punches • {{ kata.category_counts.strike }} Strikes • {{ kata.category_counts.kick }} Kicks</span>
+        <span class="text-en">{{ kata.category_counts.block }} Blocks • {{ kata.category_counts.punch }} Punches • {{ kata.category_counts.strike }} Strikes • {{ kata.category_counts.kick }} Kicks</span>
+      </span>
     </div>
     <div class="stat-bar-container" style="height: 10px;">
       {% if kata.category_percents.block > 0 %}
@@ -101,19 +182,59 @@
   <!-- Tags -->
   <div style="margin-top: 1rem;">
     {% for t in kata.tags %}
-      <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">#{{ t }}</a>
+      {% set tag_info = TAG_MAP.get(t) %}
+      <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">
+        {% if tag_info %}
+          <span class="text-ja">#{{ tag_info.ja }}</span>
+          <span class="text-ja-en">#{{ tag_info.ja_en }}</span>
+          <span class="text-ro">#{{ t }}</span>
+          <span class="text-en">#{{ t }}</span>
+        {% else %}
+          #{{ t }}
+        {% endif %}
+      </a>
     {% endfor %}
   </div>
 </div>
 
 <!-- Category Legend -->
 <div class="category-legend">
-  <span style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em;">Categories:</span>
-  <div class="legend-item"><span class="legend-dot block"></span> Block (受け)</div>
-  <div class="legend-item"><span class="legend-dot punch"></span> Punch (突き)</div>
-  <div class="legend-item"><span class="legend-dot strike"></span> Strike (打ち)</div>
-  <div class="legend-item"><span class="legend-dot kick"></span> Kick (蹴り)</div>
-  <div class="legend-item"><span class="legend-dot other"></span> Other (構え・その他)</div>
+  <span style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em;">
+    <span class="text-ja">種別:</span>
+    <span class="text-ja-en">種別 (Categories):</span>
+    <span class="text-ro">Categories:</span>
+    <span class="text-en">Categories:</span>
+  </span>
+  <div class="legend-item"><span class="legend-dot block"></span>
+    <span class="text-ja">受け</span>
+    <span class="text-ja-en">受け (Block)</span>
+    <span class="text-ro">Block (受け)</span>
+    <span class="text-en">Block</span>
+  </div>
+  <div class="legend-item"><span class="legend-dot punch"></span>
+    <span class="text-ja">突き</span>
+    <span class="text-ja-en">突き (Punch)</span>
+    <span class="text-ro">Punch (突き)</span>
+    <span class="text-en">Punch</span>
+  </div>
+  <div class="legend-item"><span class="legend-dot strike"></span>
+    <span class="text-ja">打ち</span>
+    <span class="text-ja-en">打ち (Strike)</span>
+    <span class="text-ro">Strike (打ち)</span>
+    <span class="text-en">Strike</span>
+  </div>
+  <div class="legend-item"><span class="legend-dot kick"></span>
+    <span class="text-ja">蹴り</span>
+    <span class="text-ja-en">蹴り (Kick)</span>
+    <span class="text-ro">Kick (蹴り)</span>
+    <span class="text-en">Kick</span>
+  </div>
+  <div class="legend-item"><span class="legend-dot other"></span>
+    <span class="text-ja">その他</span>
+    <span class="text-ja-en">その他 (Other)</span>
+    <span class="text-ro">Other (構え・その他)</span>
+    <span class="text-en">Other</span>
+  </div>
 </div>
 
 <!-- Step Table -->
@@ -121,14 +242,54 @@
   <table class="step-table">
     <thead>
       <tr>
-        <th style="width: 75px;">Step</th>
-        <th>Stance (立ち方)</th>
-        <th>Lead</th>
-        <th>Primary Technique (技)</th>
-        <th>Secondary Action</th>
-        <th>Target</th>
-        <th>Turn / Facing</th>
-        <th>Notes</th>
+        <th style="width: 75px;">
+          <span class="text-ja">挙動</span>
+          <span class="text-ja-en">挙動 (Step)</span>
+          <span class="text-ro">Step</span>
+          <span class="text-en">Step</span>
+        </th>
+        <th>
+          <span class="text-ja">立ち方</span>
+          <span class="text-ja-en">立ち方 (Stance)</span>
+          <span class="text-ro">Stance</span>
+          <span class="text-en">Stance</span>
+        </th>
+        <th>
+          <span class="text-ja">左右</span>
+          <span class="text-ja-en">左右 (Lead)</span>
+          <span class="text-ro">Lead</span>
+          <span class="text-en">Lead</span>
+        </th>
+        <th>
+          <span class="text-ja">技</span>
+          <span class="text-ja-en">技 (Primary Technique)</span>
+          <span class="text-ro">Primary Technique</span>
+          <span class="text-en">Primary Technique</span>
+        </th>
+        <th>
+          <span class="text-ja">補助動作</span>
+          <span class="text-ja-en">補助動作 (Secondary Action)</span>
+          <span class="text-ro">Secondary Action</span>
+          <span class="text-en">Secondary Action</span>
+        </th>
+        <th>
+          <span class="text-ja">目標</span>
+          <span class="text-ja-en">目標 (Target)</span>
+          <span class="text-ro">Target</span>
+          <span class="text-en">Target</span>
+        </th>
+        <th>
+          <span class="text-ja">方向・転身</span>
+          <span class="text-ja-en">方向・転身 (Turn / Facing)</span>
+          <span class="text-ro">Turn / Facing</span>
+          <span class="text-en">Turn / Facing</span>
+        </th>
+        <th>
+          <span class="text-ja">備考</span>
+          <span class="text-ja-en">備考 (Notes)</span>
+          <span class="text-ro">Notes</span>
+          <span class="text-en">Notes</span>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -137,7 +298,12 @@
         <td style="font-weight: 700;">
           {{ s.id }}
           {% if s.kiai %}
-            <span class="kiai-badge">KIAI</span>
+            <span class="kiai-badge">
+              <span class="text-ja">気合</span>
+              <span class="text-ja-en">気合 (KIAI)</span>
+              <span class="text-ro">KIAI</span>
+              <span class="text-en">KIAI</span>
+            </span>
           {% endif %}
         </td>
         <td>
@@ -148,6 +314,7 @@
                   data-romaji="{{ s.stance_data.romaji }}"
                   data-en="{{ s.stance_data.en }}">
               <span class="text-ja"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby></span>
+              <span class="text-ja-en"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.stance_data.romaji }})</span></span>
               <span class="text-ro">{{ s.stance_data.romaji }}</span>
               <span class="text-en">{{ s.stance_data.en }}</span>
             </span>
@@ -156,7 +323,14 @@
           {% endif %}
         </td>
         <td style="text-transform: capitalize; color: var(--text-secondary);">
-          {{ s.lead or '—' }}
+          {% if s.lead and LEAD_MAP.get(s.lead) %}
+            <span class="text-ja">{{ LEAD_MAP[s.lead].ja }}</span>
+            <span class="text-ja-en">{{ LEAD_MAP[s.lead].ja_en }}</span>
+            <span class="text-ro">{{ LEAD_MAP[s.lead].ro }}</span>
+            <span class="text-en">{{ LEAD_MAP[s.lead].en }}</span>
+          {% else %}
+            —
+          {% endif %}
         </td>
         <td>
           {% if s.tech_data %}
@@ -166,6 +340,7 @@
                   data-romaji="{{ s.tech_data.romaji }}"
                   data-en="{{ s.tech_data.en }}">
               <span class="text-ja"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby></span>
+              <span class="text-ja-en"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.tech_data.romaji }})</span></span>
               <span class="text-ro">{{ s.tech_data.romaji }}</span>
               <span class="text-en">{{ s.tech_data.en }}</span>
             </span>
@@ -181,6 +356,7 @@
                   data-romaji="{{ s.sec_tech_data.romaji }}"
                   data-en="{{ s.sec_tech_data.en }}">
               <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
+              <span class="text-ja-en"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.sec_tech_data.romaji }})</span></span>
               <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
               <span class="text-en">{{ s.sec_tech_data.en }}</span>
             </span>
@@ -188,12 +364,35 @@
             —
           {% endif %}
         </td>
-        <td style="text-transform: uppercase; font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
-          {{ s.target or '—' }}
+        <td style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
+          {% if s.target and TARGET_MAP.get(s.target) %}
+            <span class="text-ja">{{ TARGET_MAP[s.target].ja }}</span>
+            <span class="text-ja-en">{{ TARGET_MAP[s.target].ja_en }}</span>
+            <span class="text-ro" style="text-transform: uppercase;">{{ TARGET_MAP[s.target].ro }}</span>
+            <span class="text-en" style="text-transform: uppercase;">{{ TARGET_MAP[s.target].en }}</span>
+          {% else %}
+            —
+          {% endif %}
         </td>
         <td>
-          <span style="font-weight: 600;">{{ s.facing }}</span>
-          {% if s.turn and s.turn != '0' %}
+          <span style="font-weight: 600;">
+            {% if s.facing and FACING_MAP.get(s.facing) %}
+              <span class="text-ja">{{ FACING_MAP[s.facing].ja }}</span>
+              <span class="text-ja-en">{{ FACING_MAP[s.facing].ja_en }}</span>
+              <span class="text-ro">{{ FACING_MAP[s.facing].ro }}</span>
+              <span class="text-en">{{ FACING_MAP[s.facing].en }}</span>
+            {% else %}
+              {{ s.facing }}
+            {% endif %}
+          </span>
+          {% if s.turn and TURN_MAP.get(s.turn) and s.turn != '0' %}
+            <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">
+              <span class="text-ja">({{ TURN_MAP[s.turn].ja }})</span>
+              <span class="text-ja-en">({{ TURN_MAP[s.turn].ja_en }})</span>
+              <span class="text-ro">({{ TURN_MAP[s.turn].ro }})</span>
+              <span class="text-en">({{ TURN_MAP[s.turn].en }})</span>
+            </span>
+          {% elif s.turn and s.turn != '0' %}
             <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">({{ s.turn }})</span>
           {% endif %}
           {% if s.rotation_warning %}

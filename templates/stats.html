@@ -4,36 +4,79 @@
 
 {% block content %}
 <div class="page-header">
-  <h1 class="page-title">Karate Kata Global Analytics</h1>
+  <h1 class="page-title">
+    <span class="text-ja">空手型 統計・分析</span>
+    <span class="text-ja-en">空手型 統計・分析 (Karate Kata Global Analytics)</span>
+    <span class="text-ro">Karate Kata Global Analytics</span>
+    <span class="text-en">Karate Kata Global Analytics</span>
+  </h1>
   <p style="color: var(--text-secondary); margin-top: 0.5rem;">
-    Structural distribution of stances, techniques, and categories across the 26 JKA Shotokan kata.
+    <span class="text-ja">JKA松濤館流26型における立ち方・技・カテゴリの構成分析。</span>
+    <span class="text-ja-en">JKA松濤館流26型における構造・技法分布分析 (Structural distribution of stances, techniques, and categories across the 26 JKA Shotokan kata)</span>
+    <span class="text-ro">Structural distribution of stances, techniques, and categories across the 26 JKA Shotokan kata.</span>
+    <span class="text-en">Structural distribution of stances, techniques, and categories across the 26 JKA Shotokan kata.</span>
   </p>
 </div>
 
 <!-- Overview Metric Cards -->
 <div class="stat-grid" style="margin-bottom: 2rem;">
   <div class="stat-card">
-    <div class="stat-card-title">JKA Kata Evaluated</div>
+    <div class="stat-card-title">
+      <span class="text-ja">分析対象型数</span>
+      <span class="text-ja-en">分析対象型数 (JKA Kata Evaluated)</span>
+      <span class="text-ro">JKA Kata Evaluated</span>
+      <span class="text-en">JKA Kata Evaluated</span>
+    </div>
     <div class="stat-big-number">{{ stats.total_kata }}</div>
-    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">25 Competition + 1 Lineage Extra</div>
+    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+      <span class="text-ja">25競技指定 + 1追加型</span>
+      <span class="text-ja-en">25競技指定 + 1追加型 (25 Competition + 1 Lineage Extra)</span>
+      <span class="text-ro">25 Competition + 1 Lineage Extra</span>
+      <span class="text-en">25 Competition + 1 Lineage Extra</span>
+    </div>
   </div>
 
   <div class="stat-card">
-    <div class="stat-card-title">Total Movements</div>
+    <div class="stat-card-title">
+      <span class="text-ja">総挙動数</span>
+      <span class="text-ja-en">総挙動数 (Total Movements)</span>
+      <span class="text-ro">Total Movements</span>
+      <span class="text-en">Total Movements</span>
+    </div>
     <div class="stat-big-number">{{ stats.total_moves }}</div>
-    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Discrete tactical actions</div>
+    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+      <span class="text-ja">個別の技動作</span>
+      <span class="text-ja-en">個別の技動作 (Discrete tactical actions)</span>
+      <span class="text-ro">Discrete tactical actions</span>
+      <span class="text-en">Discrete tactical actions</span>
+    </div>
   </div>
 
   <div class="stat-card">
-    <div class="stat-card-title">Canonical Kiai Points</div>
+    <div class="stat-card-title">
+      <span class="text-ja">公式気合点</span>
+      <span class="text-ja-en">公式気合点 (Canonical Kiai Points)</span>
+      <span class="text-ro">Canonical Kiai Points</span>
+      <span class="text-en">Canonical Kiai Points</span>
+    </div>
     <div class="stat-big-number">{{ stats.total_kiai }}</div>
-    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Prescribed focal points</div>
+    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+      <span class="text-ja">規定の極め・気合点</span>
+      <span class="text-ja-en">規定の極め・気合点 (Prescribed focal points)</span>
+      <span class="text-ro">Prescribed focal points</span>
+      <span class="text-en">Prescribed focal points</span>
+    </div>
   </div>
 </div>
 
 <!-- Technique Category Distribution -->
 <div class="card" style="margin-bottom: 2rem;">
-  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">Global Technique Category Balance</h2>
+  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+    <span class="text-ja">技種別の全体構成比</span>
+    <span class="text-ja-en">技種別の全体構成比 (Global Technique Category Balance)</span>
+    <span class="text-ro">Global Technique Category Balance</span>
+    <span class="text-en">Global Technique Category Balance</span>
+  </h2>
   
   <div class="stat-bar-container" style="height: 18px; margin-bottom: 1.25rem;">
     <div class="stat-bar-fill block" style="width: {{ stats.category_percents.block }}%;" title="Blocks: {{ stats.category_percents.block }}%"></div>
@@ -45,23 +88,48 @@
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
     <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-block);">
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Blocks (受け)</div>
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+        <span class="text-ja">受け</span>
+        <span class="text-ja-en">受け (Blocks)</span>
+        <span class="text-ro">Blocks (受け)</span>
+        <span class="text-en">Blocks</span>
+      </div>
       <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-block);">{{ stats.category_counts.block }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.block }}%)</span></div>
     </div>
     <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-punch);">
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Punches (突き)</div>
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+        <span class="text-ja">突き</span>
+        <span class="text-ja-en">突き (Punches)</span>
+        <span class="text-ro">Punches (突き)</span>
+        <span class="text-en">Punches</span>
+      </div>
       <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-punch);">{{ stats.category_counts.punch }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.punch }}%)</span></div>
     </div>
     <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-strike);">
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Strikes (打ち)</div>
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+        <span class="text-ja">打ち</span>
+        <span class="text-ja-en">打ち (Strikes)</span>
+        <span class="text-ro">Strikes (打ち)</span>
+        <span class="text-en">Strikes</span>
+      </div>
       <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-strike);">{{ stats.category_counts.strike }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.strike }}%)</span></div>
     </div>
     <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-kick);">
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Kicks (蹴り)</div>
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+        <span class="text-ja">蹴り</span>
+        <span class="text-ja-en">蹴り (Kicks)</span>
+        <span class="text-ro">Kicks (蹴り)</span>
+        <span class="text-en">Kicks</span>
+      </div>
       <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-kick);">{{ stats.category_counts.kick }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.kick }}%)</span></div>
     </div>
     <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-other);">
-      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Other (その他)</div>
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+        <span class="text-ja">その他</span>
+        <span class="text-ja-en">その他 (Other)</span>
+        <span class="text-ro">Other (その他)</span>
+        <span class="text-en">Other</span>
+      </div>
       <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-other);">{{ stats.category_counts.other }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.other }}%)</span></div>
     </div>
   </div>
@@ -69,14 +137,39 @@
 
 <!-- Global Stance Distribution -->
 <div class="card" style="margin-bottom: 2rem;">
-  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">JKA Stance Distribution</h2>
+  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+    <span class="text-ja">立ち方の分布（JKA）</span>
+    <span class="text-ja-en">立ち方の分布 (JKA Stance Distribution)</span>
+    <span class="text-ro">JKA Stance Distribution</span>
+    <span class="text-en">JKA Stance Distribution</span>
+  </h2>
   <table class="catalog-table">
     <thead>
       <tr>
-        <th>Stance</th>
-        <th>Occurrences</th>
-        <th>Distribution</th>
-        <th>Weight Distribution</th>
+        <th>
+          <span class="text-ja">立ち方</span>
+          <span class="text-ja-en">立ち方 (Stance)</span>
+          <span class="text-ro">Stance</span>
+          <span class="text-en">Stance</span>
+        </th>
+        <th>
+          <span class="text-ja">出現回数</span>
+          <span class="text-ja-en">出現回数 (Occurrences)</span>
+          <span class="text-ro">Occurrences</span>
+          <span class="text-en">Occurrences</span>
+        </th>
+        <th>
+          <span class="text-ja">割合</span>
+          <span class="text-ja-en">割合 (Distribution)</span>
+          <span class="text-ro">Distribution</span>
+          <span class="text-en">Distribution</span>
+        </th>
+        <th>
+          <span class="text-ja">体重配分</span>
+          <span class="text-ja-en">体重配分 (Weight Distribution)</span>
+          <span class="text-ro">Weight Distribution</span>
+          <span class="text-en">Weight Distribution</span>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -88,7 +181,8 @@
                 data-furigana="{{ item.data.furigana }}"
                 data-romaji="{{ item.data.romaji }}"
                 data-en="{{ item.data.en }}">
-            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> ({{ item.data.romaji }})</span>
+            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby></span>
+            <span class="text-ja-en"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> <span class="sub-term">({{ item.data.romaji }})</span></span>
             <span class="text-ro">{{ item.data.romaji }}</span>
             <span class="text-en">{{ item.data.en }}</span>
           </span>
@@ -111,14 +205,39 @@
 
 <!-- Top Techniques Table -->
 <div class="card" style="margin-bottom: 2rem;">
-  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">Most Frequent JKA Techniques</h2>
+  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+    <span class="text-ja">主要頻出技（JKA）</span>
+    <span class="text-ja-en">主要頻出技 (Most Frequent JKA Techniques)</span>
+    <span class="text-ro">Most Frequent JKA Techniques</span>
+    <span class="text-en">Most Frequent JKA Techniques</span>
+  </h2>
   <table class="catalog-table">
     <thead>
       <tr>
-        <th style="width: 50px;">Rank</th>
-        <th>Technique</th>
-        <th>Category</th>
-        <th>Occurrences</th>
+        <th style="width: 50px;">
+          <span class="text-ja">順位</span>
+          <span class="text-ja-en">順位 (Rank)</span>
+          <span class="text-ro">Rank</span>
+          <span class="text-en">Rank</span>
+        </th>
+        <th>
+          <span class="text-ja">技名</span>
+          <span class="text-ja-en">技名 (Technique)</span>
+          <span class="text-ro">Technique</span>
+          <span class="text-en">Technique</span>
+        </th>
+        <th>
+          <span class="text-ja">種別</span>
+          <span class="text-ja-en">種別 (Category)</span>
+          <span class="text-ro">Category</span>
+          <span class="text-en">Category</span>
+        </th>
+        <th>
+          <span class="text-ja">出現回数</span>
+          <span class="text-ja-en">出現回数 (Occurrences)</span>
+          <span class="text-ro">Occurrences</span>
+          <span class="text-en">Occurrences</span>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -131,13 +250,24 @@
                 data-furigana="{{ item.data.furigana }}"
                 data-romaji="{{ item.data.romaji }}"
                 data-en="{{ item.data.en }}">
-            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> ({{ item.data.romaji }})</span>
+            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby></span>
+            <span class="text-ja-en"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> <span class="sub-term">({{ item.data.romaji }})</span></span>
             <span class="text-ro">{{ item.data.romaji }}</span>
             <span class="text-en">{{ item.data.en }}</span>
           </span>
         </td>
         <td>
-          <span class="badge badge-{{ item.data.category }}">{{ item.data.category }}</span>
+          {% set cat_info = CATEGORY_MAP.get(item.data.category) %}
+          <span class="badge badge-{{ item.data.category }}">
+            {% if cat_info %}
+              <span class="text-ja">{{ cat_info.ja }}</span>
+              <span class="text-ja-en">{{ cat_info.ja_en }}</span>
+              <span class="text-ro">{{ item.data.category }}</span>
+              <span class="text-en">{{ item.data.category }}</span>
+            {% else %}
+              {{ item.data.category }}
+            {% endif %}
+          </span>
         </td>
         <td style="font-weight: 700;">{{ item.count }}</td>
       </tr>
