@@ -34,6 +34,7 @@ A static site catalog of karate kata, with primary focus on the JKA (Japan Karat
   - `notes`: tactical/footwork commentary; left as `null` if no special commentary is needed (no boilerplate filler)
 - **Orientation Validation**: Python build script consistency-checks `turn` against `facing`, issuing warnings on discrepancies.
 - **Reviewer & Sources**: `reviewer` remains `null` until signed off by a human. Reference works are cited in `sources: [string]`.
+- **Source Contradictions & Discrepancies**: Never guess or resolve source conflicts silently. Do not pollute the YAML files with debate notes. Leave the YAML clean, keep status as `early_draft`, and explicitly flag conflicting sources to the human reviewer in chat.
 - **Technique Categories**: 5 categories: `block`, `punch` (tsuki), `strike` (uchi), `kick`, and `other`.
 - **Linguistic Switcher**: 3-way toggle (Japanese / Romaji / English). Single `name` field in kata header serves as English/Romaji name. Kanji and furigana stored separately.
 - **Cross-Style Navigation**: Standalone static HTML pages per kata, visually unified with top tab bars that link between style equivalents.

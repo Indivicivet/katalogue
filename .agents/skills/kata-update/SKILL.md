@@ -89,3 +89,12 @@ steps:
 ### 6. Cross-Discipline Equivalents
 - When adding or modifying kata that have counterparts in other styles (e.g. Shotokan Heian and Shito-ryu Pinan), maintain `equivalents.yaml`.
 - Remember historical swaps: Shotokan Heian Shodan corresponds to Shito-ryu Pinan Nidan; Heian Nidan corresponds to Shito-ryu Pinan Shodan.
+
+### 7. Source Contradictions & Ambiguities (Flag to Human Reviewer Only)
+- **Never guess or resolve conflicting sources silently.** If different authoritative sources disagree (for example, Nakayama specifies `kokutsu_dachi` while an official JKA tournament manual specifies `fudo_dachi` or `kiba_dachi`, or if sources differ on target height or lead hand), you MUST flag the contradiction directly to the user.
+- **Internal Kata Inconsistencies**: If a movement transition, turn calculation, or limb positioning appears physically inconsistent or anomalous within the kata, explicitly highlight it for human review.
+- **Do NOT pollute the YAML files**:
+  - Keep the kata YAML files clean, minimal, and trustworthy.
+  - Never write dispute logs, editorial debates, or discrepancy paragraphs into the step's `notes` field. If a note contains AI slop, clear it to `null`.
+  - Keep the kata status as `early_draft`.
+  - Present the conflicting evidence and specific open questions directly to the human reviewer in your chat response so they can make the authoritative decision or consult their sensei.
