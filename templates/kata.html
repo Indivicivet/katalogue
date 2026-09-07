@@ -7,13 +7,13 @@
   <div class="breadcrumbs">
     <a href="{{ rel_root }}index.html">
       <span class="text-ja">目録</span>
-      <span class="text-ja-en">目録 (Directory)</span>
+      <span class="text-ja-en">Directory</span>
       <span class="text-ro">Directory</span>
       <span class="text-en">Directory</span>
     </a> &rsaquo;
     <span>
       <span class="text-ja">{{ STYLE_MAP[kata.style].ja }}</span>
-      <span class="text-ja-en">{{ STYLE_MAP[kata.style].ja_en }}</span>
+      <span class="text-ja-en">{{ STYLE_MAP[kata.style].ro | upper }}</span>
       <span class="text-ro">{{ STYLE_MAP[kata.style].ro | upper }}</span>
       <span class="text-en">{{ STYLE_MAP[kata.style].en | upper }}</span>
     </span> &rsaquo;
@@ -44,7 +44,7 @@
 <div class="style-tabs-wrapper">
   <div class="style-tabs-label">
     <span class="text-ja">流派間の対応形</span>
-    <span class="text-ja-en">流派間の対応形 (Lineage Variants)</span>
+    <span class="text-ja-en">Lineage Variants Across Disciplines</span>
     <span class="text-ro">Lineage Variants Across Disciplines</span>
     <span class="text-en">Lineage Variants Across Disciplines</span>
   </div>
@@ -67,13 +67,13 @@
     <div class="meta-item">
       <span class="meta-label">
         <span class="text-ja">総挙動数</span>
-        <span class="text-ja-en">総挙動数 (Total Movements)</span>
+        <span class="text-ja-en">Total Movements</span>
         <span class="text-ro">Total Movements</span>
         <span class="text-en">Total Movements</span>
       </span>
       <span class="meta-value">
         <span class="text-ja">{{ kata.steps | length }} ({{ kata.base_count }}挙動)</span>
-        <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts / 挙動)</span>
+        <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
         <span class="text-ro">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
         <span class="text-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
       </span>
@@ -81,7 +81,7 @@
     <div class="meta-item">
       <span class="meta-label">
         <span class="text-ja">気合挙動</span>
-        <span class="text-ja-en">気合 (Kiai Counts)</span>
+        <span class="text-ja-en">Kiai Counts</span>
         <span class="text-ro">Kiai Counts</span>
         <span class="text-en">Kiai Counts</span>
       </span>
@@ -92,7 +92,7 @@
           {% endfor %}
         {% else %}
           <span class="text-ja">なし</span>
-          <span class="text-ja-en">なし (None)</span>
+          <span class="text-ja-en">None</span>
           <span class="text-ro">None</span>
           <span class="text-en">None</span>
         {% endif %}
@@ -101,7 +101,7 @@
     <div class="meta-item">
       <span class="meta-label">
         <span class="text-ja">審査状況</span>
-        <span class="text-ja-en">審査状況 (Review Status)</span>
+        <span class="text-ja-en">Review Status</span>
         <span class="text-ro">Review Status</span>
         <span class="text-en">Review Status</span>
       </span>
@@ -117,7 +117,7 @@
         {% else %}
           <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">
             <span class="text-ja">(未査読)</span>
-            <span class="text-ja-en">(未査読 / Unreviewed)</span>
+            <span class="text-ja-en">(Unreviewed)</span>
             <span class="text-ro">(Unreviewed)</span>
             <span class="text-en">(Unreviewed)</span>
           </span>
@@ -127,7 +127,7 @@
     <div class="meta-item">
       <span class="meta-label">
         <span class="text-ja">典拠</span>
-        <span class="text-ja-en">典拠 (Sources)</span>
+        <span class="text-ja-en">Sources</span>
         <span class="text-ro">Sources</span>
         <span class="text-en">Sources</span>
       </span>
@@ -136,7 +136,7 @@
           {{ kata.sources | join(' • ') }}
         {% else %}
           <span class="text-ja">なし</span>
-          <span class="text-ja-en">なし (None)</span>
+          <span class="text-ja-en">None</span>
           <span class="text-ro">None</span>
           <span class="text-en">None</span>
         {% endif %}
@@ -149,13 +149,13 @@
     <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
       <span>
         <span class="text-ja">技の構成比</span>
-        <span class="text-ja-en">技の構成比 (Technique Distribution)</span>
+        <span class="text-ja-en">Technique Distribution</span>
         <span class="text-ro">Technique Distribution</span>
         <span class="text-en">Technique Distribution</span>
       </span>
       <span>
         <span class="text-ja">受け {{ kata.category_counts.block }} • 突き {{ kata.category_counts.punch }} • 打ち {{ kata.category_counts.strike }} • 蹴り {{ kata.category_counts.kick }}</span>
-        <span class="text-ja-en">受け (Blocks) {{ kata.category_counts.block }} • 突き (Punches) {{ kata.category_counts.punch }} • 打ち (Strikes) {{ kata.category_counts.strike }} • 蹴り (Kicks) {{ kata.category_counts.kick }}</span>
+        <span class="text-ja-en">{{ kata.category_counts.block }} Blocks • {{ kata.category_counts.punch }} Punches • {{ kata.category_counts.strike }} Strikes • {{ kata.category_counts.kick }} Kicks</span>
         <span class="text-ro">{{ kata.category_counts.block }} Blocks • {{ kata.category_counts.punch }} Punches • {{ kata.category_counts.strike }} Strikes • {{ kata.category_counts.kick }} Kicks</span>
         <span class="text-en">{{ kata.category_counts.block }} Blocks • {{ kata.category_counts.punch }} Punches • {{ kata.category_counts.strike }} Strikes • {{ kata.category_counts.kick }} Kicks</span>
       </span>
@@ -186,7 +186,7 @@
       <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">
         {% if tag_info %}
           <span class="text-ja">#{{ tag_info.ja }}</span>
-          <span class="text-ja-en">#{{ tag_info.ja_en }}</span>
+          <span class="text-ja-en">#{{ t }}</span>
           <span class="text-ro">#{{ t }}</span>
           <span class="text-en">#{{ t }}</span>
         {% else %}
@@ -201,7 +201,7 @@
 <div class="category-legend">
   <span style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em;">
     <span class="text-ja">種別:</span>
-    <span class="text-ja-en">種別 (Categories):</span>
+    <span class="text-ja-en">Categories:</span>
     <span class="text-ro">Categories:</span>
     <span class="text-en">Categories:</span>
   </span>

@@ -6,13 +6,13 @@
 <div class="page-header">
   <h1 class="page-title">
     <span class="text-ja">空手型目録</span>
-    <span class="text-ja-en">空手型目録 (Karate Kata Directory)</span>
+    <span class="text-ja-en">Karate Kata Directory</span>
     <span class="text-ro">Karate Kata Directory</span>
     <span class="text-en">Karate Kata Directory</span>
   </h1>
   <p style="color: var(--text-secondary); margin-top: 0.5rem;">
     <span class="text-ja">日本空手協会（JKA）公認の松濤館流型を中心とし、他流派との比較照合を含む包括的空手型リファレンス。</span>
-    <span class="text-ja-en">日本空手協会（JKA）松濤館流を中心とした包括的型カタログ (Comprehensive reference catalog for Shotokan karate kata under the JKA canon, with cross-discipline comparative lineage)</span>
+    <span class="text-ja-en">Comprehensive reference catalog for Shotokan karate kata under the JKA canon, with cross-discipline comparative lineage.</span>
     <span class="text-ro">Comprehensive reference catalog for Shotokan karate kata under the JKA canon, with cross-discipline comparative lineage.</span>
     <span class="text-en">Comprehensive reference catalog for Shotokan karate kata under the JKA canon, with cross-discipline comparative lineage.</span>
   </p>
@@ -22,7 +22,7 @@
 <div class="card" style="padding: 1rem 1.25rem; margin-bottom: 2rem;">
   <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">
     <span class="text-ja">タグで探す</span>
-    <span class="text-ja-en">タグで探す (Browse by Tag)</span>
+    <span class="text-ja-en">Browse by Tag</span>
     <span class="text-ro">Browse by Tag</span>
     <span class="text-en">Browse by Tag</span>
   </div>
@@ -32,7 +32,7 @@
       <a href="{{ rel_root }}tags/{{ tag }}.html" class="tag-link">
         {% if tag_info %}
           <span class="text-ja">#{{ tag_info.ja }}</span>
-          <span class="text-ja-en">#{{ tag_info.ja_en }}</span>
+          <span class="text-ja-en">#{{ tag }}</span>
           <span class="text-ro">#{{ tag }}</span>
           <span class="text-en">#{{ tag }}</span>
         {% else %}
@@ -48,13 +48,13 @@
   <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem;">
     <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">
       <span class="text-ja">JKA 主要型（公認競技指定形・25型）</span>
-      <span class="text-ja-en">JKA 主要型 (JKA Main Canon - 25 Official Kata)</span>
+      <span class="text-ja-en">JKA Main Canon (25 Official Competition Kata)</span>
       <span class="text-ro">JKA Main Canon (25 Official Competition Kata)</span>
       <span class="text-en">JKA Main Canon (25 Official Competition Kata)</span>
     </h2>
     <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
       <span class="text-ja">25型</span>
-      <span class="text-ja-en">25型 (25 Kata)</span>
+      <span class="text-ja-en">25 Kata</span>
       <span class="text-ro">25 Kata</span>
       <span class="text-en">25 Kata</span>
     </span>
@@ -66,31 +66,31 @@
         <th style="width: 50px;">#</th>
         <th>
           <span class="text-ja">型名</span>
-          <span class="text-ja-en">型名 (Kata)</span>
+          <span class="text-ja-en">Kata</span>
           <span class="text-ro">Kata</span>
           <span class="text-en">Kata</span>
         </th>
         <th>
           <span class="text-ja">状態</span>
-          <span class="text-ja-en">状態 (Status)</span>
+          <span class="text-ja-en">Status</span>
           <span class="text-ro">Status</span>
           <span class="text-en">Status</span>
         </th>
         <th>
           <span class="text-ja">挙動数</span>
-          <span class="text-ja-en">挙動数 (Counts)</span>
+          <span class="text-ja-en">Counts</span>
           <span class="text-ro">Counts</span>
           <span class="text-en">Counts</span>
         </th>
         <th>
           <span class="text-ja">気合</span>
-          <span class="text-ja-en">気合 (Kiai)</span>
+          <span class="text-ja-en">Kiai</span>
           <span class="text-ro">Kiai</span>
           <span class="text-en">Kiai</span>
         </th>
         <th>
           <span class="text-ja">タグ</span>
-          <span class="text-ja-en">タグ (Tags)</span>
+          <span class="text-ja-en">Tags</span>
           <span class="text-ro">Tags</span>
           <span class="text-en">Tags</span>
         </th>
@@ -134,7 +134,7 @@
             <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">
               {% if tag_info %}
                 <span class="text-ja">{{ tag_info.ja }}</span>
-                <span class="text-ja-en">{{ tag_info.ja_en }}</span>
+                <span class="text-ja-en">{{ t }}</span>
                 <span class="text-ro">{{ t }}</span>
                 <span class="text-en">{{ t }}</span>
               {% else %}
@@ -155,13 +155,13 @@
   <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem;">
     <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">
       <span class="text-ja">松濤館流 追加型</span>
-      <span class="text-ja-en">松濤館流 追加型 (Shotokan Lineage Extra Kata)</span>
+      <span class="text-ja-en">Shotokan Lineage Extra Kata</span>
       <span class="text-ro">Shotokan Lineage Extra Kata</span>
       <span class="text-en">Shotokan Lineage Extra Kata</span>
     </h2>
     <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
       <span class="text-ja">非競技指定</span>
-      <span class="text-ja-en">非競技指定 (Non-Tournament)</span>
+      <span class="text-ja-en">Non-Tournament</span>
       <span class="text-ro">Non-Tournament</span>
       <span class="text-en">Non-Tournament</span>
     </span>
@@ -173,31 +173,31 @@
         <th style="width: 50px;">#</th>
         <th>
           <span class="text-ja">型名</span>
-          <span class="text-ja-en">型名 (Kata)</span>
+          <span class="text-ja-en">Kata</span>
           <span class="text-ro">Kata</span>
           <span class="text-en">Kata</span>
         </th>
         <th>
           <span class="text-ja">状態</span>
-          <span class="text-ja-en">状態 (Status)</span>
+          <span class="text-ja-en">Status</span>
           <span class="text-ro">Status</span>
           <span class="text-en">Status</span>
         </th>
         <th>
           <span class="text-ja">挙動数</span>
-          <span class="text-ja-en">挙動数 (Counts)</span>
+          <span class="text-ja-en">Counts</span>
           <span class="text-ro">Counts</span>
           <span class="text-en">Counts</span>
         </th>
         <th>
           <span class="text-ja">気合</span>
-          <span class="text-ja-en">気合 (Kiai)</span>
+          <span class="text-ja-en">Kiai</span>
           <span class="text-ro">Kiai</span>
           <span class="text-en">Kiai</span>
         </th>
         <th>
           <span class="text-ja">タグ</span>
-          <span class="text-ja-en">タグ (Tags)</span>
+          <span class="text-ja-en">Tags</span>
           <span class="text-ro">Tags</span>
           <span class="text-en">Tags</span>
         </th>
@@ -241,7 +241,7 @@
             <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">
               {% if tag_info %}
                 <span class="text-ja">{{ tag_info.ja }}</span>
-                <span class="text-ja-en">{{ tag_info.ja_en }}</span>
+                <span class="text-ja-en">{{ t }}</span>
                 <span class="text-ro">{{ t }}</span>
                 <span class="text-en">{{ t }}</span>
               {% else %}
@@ -263,20 +263,20 @@
   <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem;">
     <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">
       <span class="text-ja">糸東流 • 平安（ピンアン）系</span>
-      <span class="text-ja-en">糸東流 (Shito-ryu) • 平安系 (Pinan Series)</span>
+      <span class="text-ja-en">Shito-ryu (糸東流) • Pinan Series</span>
       <span class="text-ro">Shito-ryu (糸東流) • Pinan Series</span>
       <span class="text-en">Shito-ryu (糸東流) • Pinan Series</span>
     </h2>
     <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
       <span class="text-ja">流派比較対照</span>
-      <span class="text-ja-en">流派比較対照 (Comparative Cross-Reference)</span>
+      <span class="text-ja-en">Comparative Cross-Reference</span>
       <span class="text-ro">Comparative Cross-Reference</span>
       <span class="text-en">Comparative Cross-Reference</span>
     </span>
   </div>
   <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
     <span class="text-ja">摩文仁賢和は糸洲安恒の原典に基づく順序を継承しています（糸東流の平安初段は松濤館流の平安二段に、平安二段は松濤館流の平安初段に対応）。</span>
-    <span class="text-ja-en">摩文仁賢和による原典順序の継承: 糸東流平安初段＝松濤館平安二段、平安二段＝松濤館平安初段 (Kenwa Mabuni preserved Anko Itosu's original sequential naming: Pinan Shodan corresponds to Shotokan Heian Nidan, and Pinan Nidan to Shotokan Heian Shodan).</span>
+    <span class="text-ja-en">Kenwa Mabuni preserved Anko Itosu's original sequential naming (where Pinan Shodan corresponds to Shotokan Heian Nidan, and Pinan Nidan corresponds to Shotokan Heian Shodan).</span>
     <span class="text-ro">Kenwa Mabuni preserved Anko Itosu's original sequential naming (where Pinan Shodan corresponds to Shotokan Heian Nidan, and Pinan Nidan corresponds to Shotokan Heian Shodan).</span>
     <span class="text-en">Kenwa Mabuni preserved Anko Itosu's original sequential naming (where Pinan Shodan corresponds to Shotokan Heian Nidan, and Pinan Nidan corresponds to Shotokan Heian Shodan).</span>
   </p>
@@ -287,31 +287,31 @@
         <th style="width: 50px;">#</th>
         <th>
           <span class="text-ja">型名</span>
-          <span class="text-ja-en">型名 (Kata)</span>
+          <span class="text-ja-en">Kata</span>
           <span class="text-ro">Kata</span>
           <span class="text-en">Kata</span>
         </th>
         <th>
           <span class="text-ja">状態</span>
-          <span class="text-ja-en">状態 (Status)</span>
+          <span class="text-ja-en">Status</span>
           <span class="text-ro">Status</span>
           <span class="text-en">Status</span>
         </th>
         <th>
           <span class="text-ja">挙動数</span>
-          <span class="text-ja-en">挙動数 (Counts)</span>
+          <span class="text-ja-en">Counts</span>
           <span class="text-ro">Counts</span>
           <span class="text-en">Counts</span>
         </th>
         <th>
           <span class="text-ja">対応型（松濤館）</span>
-          <span class="text-ja-en">対応型 (Equivalent - Shotokan)</span>
+          <span class="text-ja-en">Equivalent (Shotokan)</span>
           <span class="text-ro">Equivalent (Shotokan)</span>
           <span class="text-en">Equivalent (Shotokan)</span>
         </th>
         <th>
           <span class="text-ja">タグ</span>
-          <span class="text-ja-en">タグ (Tags)</span>
+          <span class="text-ja-en">Tags</span>
           <span class="text-ro">Tags</span>
           <span class="text-en">Tags</span>
         </th>
@@ -348,7 +348,7 @@
           {% if k.equivalent_kata %}
             <a href="{{ rel_root }}kata/jka/{{ k.equivalent_kata.id }}.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">
               <span class="text-ja">{{ k.equivalent_kata.kanji }}</span>
-              <span class="text-ja-en">{{ k.equivalent_kata.kanji }} ({{ k.equivalent_kata.name }})</span>
+              <span class="text-ja-en">{{ k.equivalent_kata.name }}</span>
               <span class="text-ro">{{ k.equivalent_kata.name }}</span>
               <span class="text-en">{{ k.equivalent_kata.name }}</span>
             </a>
@@ -362,7 +362,7 @@
             <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">
               {% if tag_info %}
                 <span class="text-ja">{{ tag_info.ja }}</span>
-                <span class="text-ja-en">{{ tag_info.ja_en }}</span>
+                <span class="text-ja-en">{{ t }}</span>
                 <span class="text-ro">{{ t }}</span>
                 <span class="text-en">{{ t }}</span>
               {% else %}

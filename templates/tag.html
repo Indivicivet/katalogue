@@ -7,13 +7,13 @@
   <div class="breadcrumbs">
     <a href="{{ rel_root }}index.html">
       <span class="text-ja">目録</span>
-      <span class="text-ja-en">目録 (Directory)</span>
+      <span class="text-ja-en">Directory</span>
       <span class="text-ro">Directory</span>
       <span class="text-en">Directory</span>
     </a> &rsaquo;
     <span>
       <span class="text-ja">タグ</span>
-      <span class="text-ja-en">タグ (Tags)</span>
+      <span class="text-ja-en">Tags</span>
       <span class="text-ro">Tags</span>
       <span class="text-en">Tags</span>
     </span> &rsaquo;
@@ -21,7 +21,7 @@
       {% set tag_info = TAG_MAP.get(tag_name) %}
       {% if tag_info %}
         <span class="text-ja">#{{ tag_info.ja }}</span>
-        <span class="text-ja-en">#{{ tag_info.ja_en }}</span>
+        <span class="text-ja-en">#{{ tag_name }}</span>
         <span class="text-ro">#{{ tag_name }}</span>
         <span class="text-en">#{{ tag_name }}</span>
       {% else %}
@@ -33,13 +33,13 @@
   <h1 class="page-title">
     {% set tag_info = TAG_MAP.get(tag_name) %}
     <span class="text-ja">タグ「{% if tag_info %}#{{ tag_info.ja }}{% else %}#{{ tag_name }}{% endif %}」の型一覧</span>
-    <span class="text-ja-en">タグ「{% if tag_info %}#{{ tag_info.ja_en }}{% else %}#{{ tag_name }}{% endif %}」の型一覧 (Kata tagged with #{{ tag_name }})</span>
+    <span class="text-ja-en">Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
     <span class="text-ro">Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
     <span class="text-en">Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
   </h1>
   <p style="color: var(--text-secondary); margin-top: 0.5rem;">
     <span class="text-ja">該当する型: {{ matching_kata | length }} 件</span>
-    <span class="text-ja-en">該当する型: {{ matching_kata | length }} 件 (Found {{ matching_kata | length }} matching kata)</span>
+    <span class="text-ja-en">Found {{ matching_kata | length }} kata matching this classification.</span>
     <span class="text-ro">Found {{ matching_kata | length }} kata matching this classification.</span>
     <span class="text-en">Found {{ matching_kata | length }} kata matching this classification.</span>
   </p>
@@ -49,7 +49,7 @@
 <div style="margin-bottom: 1.5rem;">
   <a href="{{ rel_root }}index.html" class="tag-link">
     <span class="text-ja">&larr; 目録に戻る</span>
-    <span class="text-ja-en">&larr; 目録に戻る (Back to Directory)</span>
+    <span class="text-ja-en">&larr; Back to Directory</span>
     <span class="text-ro">&larr; Back to Directory</span>
     <span class="text-en">&larr; Back to Directory</span>
   </a>
@@ -63,37 +63,37 @@
         <th style="width: 50px;">#</th>
         <th>
           <span class="text-ja">流派</span>
-          <span class="text-ja-en">流派 (Style)</span>
+          <span class="text-ja-en">Style</span>
           <span class="text-ro">Style</span>
           <span class="text-en">Style</span>
         </th>
         <th>
           <span class="text-ja">型名</span>
-          <span class="text-ja-en">型名 (Kata)</span>
+          <span class="text-ja-en">Kata</span>
           <span class="text-ro">Kata</span>
           <span class="text-en">Kata</span>
         </th>
         <th>
           <span class="text-ja">状態</span>
-          <span class="text-ja-en">状態 (Status)</span>
+          <span class="text-ja-en">Status</span>
           <span class="text-ro">Status</span>
           <span class="text-en">Status</span>
         </th>
         <th>
           <span class="text-ja">挙動数</span>
-          <span class="text-ja-en">挙動数 (Counts)</span>
+          <span class="text-ja-en">Counts</span>
           <span class="text-ro">Counts</span>
           <span class="text-en">Counts</span>
         </th>
         <th>
           <span class="text-ja">気合</span>
-          <span class="text-ja-en">気合 (Kiai)</span>
+          <span class="text-ja-en">Kiai</span>
           <span class="text-ro">Kiai</span>
           <span class="text-en">Kiai</span>
         </th>
         <th>
           <span class="text-ja">タグ</span>
-          <span class="text-ja-en">タグ (Tags)</span>
+          <span class="text-ja-en">Tags</span>
           <span class="text-ro">Tags</span>
           <span class="text-en">Tags</span>
         </th>
@@ -107,7 +107,7 @@
           {% set st_info = STYLE_MAP.get(k.style) %}
           {% if st_info %}
             <span class="text-ja">{{ st_info.ja }}</span>
-            <span class="text-ja-en">{{ st_info.ja_en }}</span>
+            <span class="text-ja-en">{{ st_info.en | upper }}</span>
             <span class="text-ro">{{ st_info.ro | upper }}</span>
             <span class="text-en">{{ st_info.en | upper }}</span>
           {% else %}
@@ -148,7 +148,7 @@
             <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link {% if t == tag_name %}active{% endif %}">
               {% if t_info %}
                 <span class="text-ja">{{ t_info.ja }}</span>
-                <span class="text-ja-en">{{ t_info.ja_en }}</span>
+                <span class="text-ja-en">{{ t }}</span>
                 <span class="text-ro">{{ t }}</span>
                 <span class="text-en">{{ t }}</span>
               {% else %}
