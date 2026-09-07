@@ -16,6 +16,16 @@
       }
     });
 
+    // Update webpage title for language mode
+    const titleEl = document.querySelector('title');
+    if (titleEl) {
+      if (lang === 'ja' && titleEl.dataset.titleJa) {
+        document.title = titleEl.dataset.titleJa;
+      } else if (titleEl.dataset.titleEn) {
+        document.title = titleEl.dataset.titleEn;
+      }
+    }
+
     // Update dynamic tooltips on terminology tokens
     document.querySelectorAll('.term').forEach(el => {
       const kanji = el.dataset.kanji || '';

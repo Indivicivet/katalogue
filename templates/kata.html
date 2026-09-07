@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}{{ kata.name }} ({{ kata.style | upper }}) • Karate Kata Catalogue{% endblock %}
+{% block title %}{{ kata.name }} ({{ kata.style | upper }}) • Katalogue{% endblock %}
+{% block title_ja %}{{ kata.kanji }} ({{ STYLE_MAP[kata.style].ja }}) • 型ログ{% endblock %}
 
 {% block content %}
 <div class="page-header">

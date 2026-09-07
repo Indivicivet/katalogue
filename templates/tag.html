@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}Tag #{{ tag_name }} • Karate Kata Catalogue{% endblock %}
+{% block title %}Tag #{{ tag_name }} • Katalogue{% endblock %}
+{% block title_ja %}{% set tag_info = TAG_MAP.get(tag_name) %}タグ #{% if tag_info %}{{ tag_info.ja }}{% else %}{{ tag_name }}{% endif %} • 型ログ{% endblock %}
 
 {% block content %}
 <div class="page-header">

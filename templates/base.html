@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Kata Catalogue{% endblock %}</title>
+  <title data-title-ja="{% block title_ja %}型ログ{% endblock %}" data-title-en="{% block title %}Katalogue{% endblock %}">{{ self.title_ja()|trim }}</title>
   <link rel="stylesheet" href="{{ rel_root }}static/style.css">
   {% block head %}{% endblock %}
 </head>
@@ -12,10 +12,10 @@
     <div class="container header-inner">
       <a href="{{ rel_root }}index.html" class="site-logo">
         <span class="logo-badge">JKA</span>
-        <span class="text-ja">型目録</span>
-        <span class="text-ja-en">Kata Catalogue</span>
-        <span class="text-ro">Kata Catalogue</span>
-        <span class="text-en">Kata Catalogue</span>
+        <span class="text-ja">型ログ</span>
+        <span class="text-ja-en">Katalogue</span>
+        <span class="text-ro">Katalogue</span>
+        <span class="text-en">Katalogue</span>
       </a>
 
       <div class="lang-toggle-group" title="Linguistic Display Mode">
@@ -49,10 +49,10 @@
   <footer class="site-footer">
     <div class="container">
       <p>
-        <span class="text-ja">空手型目録 &bull; 体系的空手道リファレンス</span>
-        <span class="text-ja-en">Karate Kata Catalogue &bull; Schema-Driven Martial Arts Reference</span>
-        <span class="text-ro">Karate Kata Catalogue &bull; Schema-Driven Martial Arts Reference</span>
-        <span class="text-en">Karate Kata Catalogue &bull; Schema-Driven Martial Arts Reference</span>
+        <span class="text-ja">型ログ &bull; 体系的空手道リファレンス</span>
+        <span class="text-ja-en">Katalogue &bull; Schema-Driven Martial Arts Reference</span>
+        <span class="text-ro">Katalogue &bull; Schema-Driven Martial Arts Reference</span>
+        <span class="text-en">Katalogue &bull; Schema-Driven Martial Arts Reference</span>
       </p>
       <p style="margin-top: 0.25rem; font-size: 0.8rem;">
         <span class="text-ja">JKA松濤館流を中心とした流派間比較型カタログ</span>
