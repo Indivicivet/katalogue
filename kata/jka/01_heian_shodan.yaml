@@ -6,7 +6,9 @@ style: jka
 order: 1
 status: full_draft
 last_updated: '2026-09-07'
-reviewer: Masatoshi Nakayama, Best Karate Vol. 5
+reviewer: null
+sources:
+- 'Masatoshi Nakayama, Best Karate Vol. 5: Heian, Tekki'
 tags:
 - kyu_grade
 - 9th_kyu

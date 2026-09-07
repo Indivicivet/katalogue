@@ -6,7 +6,9 @@ style: jka
 order: 9
 status: full_draft
 last_updated: '2026-09-07'
-reviewer: Masatoshi Nakayama, Best Karate Vol. 6
+reviewer: null
+sources:
+- 'Masatoshi Nakayama, Best Karate Vol. 6: Bassai Dai, Kanku Dai'
 tags:
 - sentei
 - shitei

@@ -7,6 +7,8 @@ order: 14
 status: early_draft
 last_updated: '2026-09-07'
 reviewer: null
+sources:
+- 'Masatoshi Nakayama, Best Karate Vol. 7: Jitte, Hangetsu, Enpi'
 tags:
 - black_belt
 steps:
@@ -21,7 +23,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 1 of Jitte
+  notes: null
 - id: '2'
   count: 2
   subcount: null
@@ -33,7 +35,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 2 of Jitte
+  notes: null
 - id: '3'
   count: 3
   subcount: null
@@ -45,7 +47,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 3 of Jitte
+  notes: null
 - id: '4'
   count: 4
   subcount: null
@@ -57,7 +59,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 4 of Jitte
+  notes: null
 - id: '5'
   count: 5
   subcount: null
@@ -69,7 +71,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 5 of Jitte
+  notes: null
 - id: '6'
   count: 6
   subcount: null
@@ -81,7 +83,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 6 of Jitte
+  notes: null
 - id: '7'
   count: 7
   subcount: null
@@ -93,7 +95,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 7 of Jitte
+  notes: null
 - id: '8'
   count: 8
   subcount: null
@@ -105,7 +107,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 8 of Jitte
+  notes: null
 - id: '9'
   count: 9
   subcount: null
@@ -117,7 +119,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 9 of Jitte
+  notes: null
 - id: '10'
   count: 10
   subcount: null
@@ -129,7 +131,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 10 of Jitte
+  notes: null
 - id: '11'
   count: 11
   subcount: null
@@ -141,7 +143,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 11 of Jitte
+  notes: null
 - id: '12'
   count: 12
   subcount: null
@@ -153,7 +155,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Step 12 of Jitte
+  notes: null
 - id: '13'
   count: 13
   subcount: null
@@ -165,7 +167,7 @@ steps:
   turn: '0'
   facing: S
   kiai: true
-  notes: Step 13 of Jitte
+  notes: null
 - id: '14'
   count: 14
   subcount: null
@@ -177,7 +179,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 14 of Jitte
+  notes: null
 - id: '15'
   count: 15
   subcount: null
@@ -189,7 +191,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 15 of Jitte
+  notes: null
 - id: '16'
   count: 16
   subcount: null
@@ -201,7 +203,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 16 of Jitte
+  notes: null
 - id: '17'
   count: 17
   subcount: null
@@ -213,7 +215,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 17 of Jitte
+  notes: null
 - id: '18'
   count: 18
   subcount: null
@@ -225,7 +227,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 18 of Jitte
+  notes: null
 - id: '19'
   count: 19
   subcount: null
@@ -237,7 +239,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 19 of Jitte
+  notes: null
 - id: '20'
   count: 20
   subcount: null
@@ -249,7 +251,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 20 of Jitte
+  notes: null
 - id: '21'
   count: 21
   subcount: null
@@ -261,7 +263,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 21 of Jitte
+  notes: null
 - id: '22'
   count: 22
   subcount: null
@@ -273,7 +275,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 22 of Jitte
+  notes: null
 - id: '23'
   count: 23
   subcount: null
@@ -285,7 +287,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Step 23 of Jitte
+  notes: null
 - id: '24'
   count: 24
   subcount: null
@@ -297,4 +299,4 @@ steps:
   turn: '0'
   facing: S
   kiai: true
-  notes: Step 24 of Jitte
+  notes: null

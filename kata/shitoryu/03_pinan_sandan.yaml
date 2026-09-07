@@ -6,7 +6,9 @@ style: shitoryu
 order: 3
 status: early_draft
 last_updated: '2026-09-07'
-reviewer: Kenwa Mabuni lineage reference
+reviewer: null
+sources:
+- Kenwa Mabuni, Karate-do Nyumon
 tags:
 - pinan
 - shitoryu
@@ -22,7 +24,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 1
+  notes: null
 - id: '2'
   count: 2
   subcount: null
@@ -34,7 +36,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 2
+  notes: null
 - id: '3'
   count: 3
   subcount: null
@@ -46,7 +48,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 3
+  notes: null
 - id: '4'
   count: 4
   subcount: null
@@ -58,7 +60,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 4
+  notes: null
 - id: '5'
   count: 5
   subcount: null
@@ -70,7 +72,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 5
+  notes: null
 - id: '6'
   count: 6
   subcount: null
@@ -82,7 +84,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 6
+  notes: null
 - id: '7'
   count: 7
   subcount: null
@@ -94,7 +96,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 7
+  notes: null
 - id: '8'
   count: 8
   subcount: null
@@ -106,7 +108,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 8
+  notes: null
 - id: '9'
   count: 9
   subcount: null
@@ -118,7 +120,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 9
+  notes: null
 - id: '10'
   count: 10
   subcount: null
@@ -130,7 +132,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Pinan Sandan step 10
+  notes: null
 - id: '11'
   count: 11
   subcount: null
@@ -142,7 +144,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 11
+  notes: null
 - id: '12'
   count: 12
   subcount: null
@@ -154,7 +156,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 12
+  notes: null
 - id: '13'
   count: 13
   subcount: null
@@ -166,7 +168,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 13
+  notes: null
 - id: '14'
   count: 14
   subcount: null
@@ -178,7 +180,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 14
+  notes: null
 - id: '15'
   count: 15
   subcount: null
@@ -190,7 +192,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 15
+  notes: null
 - id: '16'
   count: 16
   subcount: null
@@ -202,7 +204,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 16
+  notes: null
 - id: '17'
   count: 17
   subcount: null
@@ -214,7 +216,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 17
+  notes: null
 - id: '18'
   count: 18
   subcount: null
@@ -226,7 +228,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 18
+  notes: null
 - id: '19'
   count: 19
   subcount: null
@@ -238,7 +240,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Sandan step 19
+  notes: null
 - id: '20'
   count: 20
   subcount: null
@@ -250,4 +252,4 @@ steps:
   turn: '0'
   facing: S
   kiai: true
-  notes: Pinan Sandan step 20
+  notes: null

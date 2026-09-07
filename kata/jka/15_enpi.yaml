@@ -6,7 +6,9 @@ style: jka
 order: 15
 status: full_draft
 last_updated: '2026-09-07'
-reviewer: Masatoshi Nakayama, Best Karate Vol. 7
+reviewer: null
+sources:
+- 'Masatoshi Nakayama, Best Karate Vol. 7: Jitte, Hangetsu, Enpi'
 tags:
 - sentei
 - shitei
@@ -82,7 +84,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 6 in Enpi
+  notes: null
 - id: '7'
   count: 7
   subcount: null
@@ -94,7 +96,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 7 in Enpi
+  notes: null
 - id: '8'
   count: 8
   subcount: null
@@ -106,7 +108,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 8 in Enpi
+  notes: null
 - id: '9'
   count: 9
   subcount: null
@@ -118,7 +120,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 9 in Enpi
+  notes: null
 - id: '10'
   count: 10
   subcount: null
@@ -130,7 +132,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 10 in Enpi
+  notes: null
 - id: '11'
   count: 11
   subcount: null
@@ -142,7 +144,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 11 in Enpi
+  notes: null
 - id: '12'
   count: 12
   subcount: null
@@ -154,7 +156,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 12 in Enpi
+  notes: null
 - id: '13'
   count: 13
   subcount: null
@@ -166,7 +168,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 13 in Enpi
+  notes: null
 - id: '14'
   count: 14
   subcount: null
@@ -178,7 +180,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 14 in Enpi
+  notes: null
 - id: '15'
   count: 15
   subcount: null
@@ -190,7 +192,7 @@ steps:
   turn: '0'
   facing: N
   kiai: true
-  notes: Move count 15 in Enpi
+  notes: null
 - id: '16'
   count: 16
   subcount: null
@@ -202,7 +204,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 16 in Enpi
+  notes: null
 - id: '17'
   count: 17
   subcount: null
@@ -214,7 +216,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 17 in Enpi
+  notes: null
 - id: '18'
   count: 18
   subcount: null
@@ -226,7 +228,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 18 in Enpi
+  notes: null
 - id: '19'
   count: 19
   subcount: null
@@ -238,7 +240,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 19 in Enpi
+  notes: null
 - id: '20'
   count: 20
   subcount: null
@@ -250,7 +252,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 20 in Enpi
+  notes: null
 - id: '21'
   count: 21
   subcount: null
@@ -262,7 +264,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 21 in Enpi
+  notes: null
 - id: '22'
   count: 22
   subcount: null
@@ -274,7 +276,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 22 in Enpi
+  notes: null
 - id: '23'
   count: 23
   subcount: null
@@ -286,7 +288,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 23 in Enpi
+  notes: null
 - id: '24'
   count: 24
   subcount: null
@@ -298,7 +300,7 @@ steps:
   turn: '0'
   facing: N
   kiai: false
-  notes: Move count 24 in Enpi
+  notes: null
 - id: '25'
   count: 25
   subcount: null
@@ -310,7 +312,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 25 in Enpi
+  notes: null
 - id: '26'
   count: 26
   subcount: null
@@ -322,7 +324,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 26 in Enpi
+  notes: null
 - id: '27'
   count: 27
   subcount: null
@@ -334,7 +336,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 27 in Enpi
+  notes: null
 - id: '28'
   count: 28
   subcount: null
@@ -346,7 +348,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 28 in Enpi
+  notes: null
 - id: '29'
   count: 29
   subcount: null
@@ -358,7 +360,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 29 in Enpi
+  notes: null
 - id: '30'
   count: 30
   subcount: null
@@ -370,7 +372,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 30 in Enpi
+  notes: null
 - id: '31'
   count: 31
   subcount: null
@@ -382,7 +384,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 31 in Enpi
+  notes: null
 - id: '32'
   count: 32
   subcount: null
@@ -394,7 +396,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 32 in Enpi
+  notes: null
 - id: '33'
   count: 33
   subcount: null
@@ -406,7 +408,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 33 in Enpi
+  notes: null
 - id: '34'
   count: 34
   subcount: null
@@ -418,7 +420,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 34 in Enpi
+  notes: null
 - id: '35'
   count: 35
   subcount: null
@@ -430,7 +432,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 35 in Enpi
+  notes: null
 - id: '36'
   count: 36
   subcount: null
@@ -442,7 +444,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Move count 36 in Enpi
+  notes: null
 - id: '37'
   count: 37
   subcount: null

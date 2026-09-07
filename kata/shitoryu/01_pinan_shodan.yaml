@@ -6,7 +6,10 @@ style: shitoryu
 order: 1
 status: early_draft
 last_updated: '2026-09-07'
-reviewer: Kenwa Mabuni lineage reference
+reviewer: null
+sources:
+- Kenwa Mabuni, Karate-do Nyumon
+- Shito-ryu Karate-do Kata Textbook
 tags:
 - pinan
 - shitoryu
@@ -166,7 +169,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 12
+  notes: null
 - id: '13'
   count: 13
   subcount: null
@@ -178,7 +181,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 13
+  notes: null
 - id: '14'
   count: 14
   subcount: null
@@ -190,7 +193,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 14
+  notes: null
 - id: '15'
   count: 15
   subcount: null
@@ -202,7 +205,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 15
+  notes: null
 - id: '16'
   count: 16
   subcount: null
@@ -214,7 +217,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 16
+  notes: null
 - id: '17'
   count: 17
   subcount: null
@@ -226,7 +229,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 17
+  notes: null
 - id: '18'
   count: 18
   subcount: null
@@ -238,7 +241,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 18
+  notes: null
 - id: '19'
   count: 19
   subcount: null
@@ -250,7 +253,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 19
+  notes: null
 - id: '20'
   count: 20
   subcount: null
@@ -262,7 +265,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 20
+  notes: null
 - id: '21'
   count: 21
   subcount: null
@@ -274,7 +277,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 21
+  notes: null
 - id: '22'
   count: 22
   subcount: null
@@ -286,7 +289,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 22
+  notes: null
 - id: '23'
   count: 23
   subcount: null
@@ -298,7 +301,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 23
+  notes: null
 - id: '24'
   count: 24
   subcount: null
@@ -310,7 +313,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 24
+  notes: null
 - id: '25'
   count: 25
   subcount: null
@@ -322,7 +325,7 @@ steps:
   turn: '0'
   facing: S
   kiai: false
-  notes: Pinan Shodan step 25
+  notes: null
 - id: '26'
   count: 26
   subcount: null
@@ -334,4 +337,4 @@ steps:
   turn: '0'
   facing: S
   kiai: true
-  notes: Pinan Shodan step 26
+  notes: null

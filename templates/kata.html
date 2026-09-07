@@ -54,12 +54,21 @@
       <span class="meta-label">Review Status</span>
       <span class="meta-value">
         <span class="badge badge-{{ kata.status }}">{{ kata.status | replace('_', ' ') }}</span>
+        {% if kata.reviewer %}
+          <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 0.25rem;">({{ kata.reviewer }})</span>
+        {% else %}
+          <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">(Unreviewed)</span>
+        {% endif %}
       </span>
     </div>
     <div class="meta-item">
-      <span class="meta-label">Canonical Source</span>
+      <span class="meta-label">Sources</span>
       <span class="meta-value" style="font-size: 0.85rem; color: var(--text-secondary);">
-        {{ kata.reviewer or 'Historical reference' }}
+        {% if kata.sources %}
+          {{ kata.sources | join(' • ') }}
+        {% else %}
+          None
+        {% endif %}
       </span>
     </div>
   </div>
