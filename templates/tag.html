@@ -76,4 +76,16 @@
     </tbody>
   </table>
 </div>
+
+<!-- Tag Analytics Section -->
+<div style="margin-top: 3rem;">
+  <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem;">
+    <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">
+      Analytics for #{{ tag_name }}
+    </h2>
+    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">{{ matching_kata | length }} Kata</span>
+  </div>
+
+  {% include "analytics_partial.html" %}
+</div>
 {% endblock %}

@@ -77,6 +77,98 @@ def check_rotation(prev_facing: str, turn: str, current_facing: str) -> str | No
     return None
 
 
+STANCE_COLORS = {
+    "zenkutsu_dachi": "#2563eb",
+    "kiba_dachi": "#7c3aed",
+    "kokutsu_dachi": "#db2777",
+    "neko_ashi_dachi": "#059669",
+    "shiko_dachi": "#d97706",
+    "heisoku_dachi": "#475569",
+    "kosa_dachi": "#ea580c",
+    "tsuru_ashi_dachi": "#c026d3",
+    "hachiji_dachi": "#65a30d",
+    "hangetsu_dachi": "#4f46e5",
+    "sanchin_dachi": "#0891b2",
+    "fudo_dachi": "#0d9488",
+    "sochin_dachi": "#0d9488",
+    "renoji_dachi": "#9333ea",
+    "teiji_dachi": "#0284c7",
+    "musubi_dachi": "#57534e",
+    "heiko_dachi": "#16a34a",
+    "moto_dachi": "#ca8a04",
+    "gankaku_dachi": "#c026d3",
+    "uchi_hachiji_dachi": "#65a30d",
+    "kake_dachi": "#e11d48",
+}
+
+
+def compute_analytics(kata_list: list, stances: dict, techniques: dict) -> dict:
+    total_moves = sum(k["move_count"] for k in kata_list)
+    total_kiai = sum(len(k["kiai_steps"]) for k in kata_list)
+
+    stance_counts = {}
+    tech_counts = {}
+    category_counts = {
+        "block": 0,
+        "punch": 0,
+        "strike": 0,
+        "kick": 0,
+        "other": 0,
+    }
+
+    for k in kata_list:
+        for s in k["rendered_steps"]:
+            st = s.get("stance")
+            if st:
+                stance_counts[st] = stance_counts.get(st, 0) + 1
+            tc = s.get("technique")
+            if tc:
+                tech_counts[tc] = tech_counts.get(tc, 0) + 1
+            cat = s.get("category", "other")
+            category_counts[cat] = category_counts.get(cat, 0) + 1
+
+    category_percents = {
+        k: (round((v / total_moves) * 100, 1) if total_moves > 0 else 0)
+        for k, v in category_counts.items()
+    }
+
+    stance_ranks = []
+    for st_id, cnt in sorted(stance_counts.items(), key=lambda x: x[1], reverse=True):
+        stance_ranks.append(
+            {
+                "id": st_id,
+                "data": stances.get(st_id, {}),
+                "count": cnt,
+                "percent": (
+                    round((cnt / total_moves) * 100, 1) if total_moves > 0 else 0
+                ),
+                "color": STANCE_COLORS.get(st_id, "#94a3b8"),
+            }
+        )
+
+    top_techniques = []
+    for tech_id, cnt in sorted(tech_counts.items(), key=lambda x: x[1], reverse=True)[
+        :15
+    ]:
+        top_techniques.append(
+            {
+                "id": tech_id,
+                "data": techniques.get(tech_id, {}),
+                "count": cnt,
+            }
+        )
+
+    return {
+        "total_kata": len(kata_list),
+        "total_moves": total_moves,
+        "total_kiai": total_kiai,
+        "category_counts": category_counts,
+        "category_percents": category_percents,
+        "stance_ranks": stance_ranks,
+        "top_techniques": top_techniques,
+    }
+
+
 def main():
     start_time = time.perf_counter()
     print("Starting Katalogue build...")
@@ -110,6 +202,11 @@ def main():
         full_key = f"{style}/{kata_id}"
         data["full_key"] = full_key
 
+        kata_tags = list(data.get("tags", []))
+        if style and style not in kata_tags:
+            kata_tags.append(style)
+        data["tags"] = kata_tags
+
         steps = data.get("steps", [])
         rendered_steps = []
         kiai_steps = []
@@ -120,6 +217,7 @@ def main():
             "kick": 0,
             "other": 0,
         }
+        stance_counts = {}
         prev_facing = "N"
 
         for step in steps:
@@ -132,6 +230,8 @@ def main():
                 missing_refs.append(
                     f"[{full_key}] Step {step.get('id')}: Unknown stance '{st_key}'"
                 )
+            if st_key:
+                stance_counts[st_key] = stance_counts.get(st_key, 0) + 1
             # Validate Technique
             if tech_key and tech_key not in techniques:
                 missing_refs.append(
@@ -179,6 +279,22 @@ def main():
             for k, v in cat_counts.items()
         }
 
+        kata_stance_ranks = []
+        for st_id, cnt in sorted(
+            stance_counts.items(), key=lambda x: x[1], reverse=True
+        ):
+            kata_stance_ranks.append(
+                {
+                    "id": st_id,
+                    "data": stances.get(st_id, {}),
+                    "count": cnt,
+                    "percent": (
+                        round((cnt / total_steps) * 100, 1) if total_steps > 0 else 0
+                    ),
+                    "color": STANCE_COLORS.get(st_id, "#94a3b8"),
+                }
+            )
+
         # Base count calculation
         base_counts = set(s.get("count") for s in steps if s.get("count") is not None)
         data["base_count"] = max(base_counts) if base_counts else len(steps)
@@ -187,6 +303,7 @@ def main():
         data["kiai_steps"] = kiai_steps
         data["category_counts"] = cat_counts
         data["category_percents"] = cat_percents
+        data["stance_ranks"] = kata_stance_ranks
 
         all_kata.append(data)
 
@@ -223,75 +340,8 @@ def main():
     # Collect All Tags
     all_tags = sorted(list(set(t for k in all_kata for t in k.get("tags", []))))
 
-    # 5. Global Analytics Computation (focused on JKA canon)
-    jka_all = jka_kata
-    total_jka_moves = sum(k["move_count"] for k in jka_all)
-    total_jka_kiai = sum(len(k["kiai_steps"]) for k in jka_all)
-
-    global_stance_counts = {}
-    global_tech_counts = {}
-    global_category_counts = {
-        "block": 0,
-        "punch": 0,
-        "strike": 0,
-        "kick": 0,
-        "other": 0,
-    }
-
-    for k in jka_all:
-        for s in k["rendered_steps"]:
-            st = s.get("stance")
-            if st:
-                global_stance_counts[st] = global_stance_counts.get(st, 0) + 1
-            tc = s.get("technique")
-            if tc:
-                global_tech_counts[tc] = global_tech_counts.get(tc, 0) + 1
-            cat = s.get("category", "other")
-            global_category_counts[cat] = global_category_counts.get(cat, 0) + 1
-
-    global_category_percents = {
-        k: (round((v / total_jka_moves) * 100, 1) if total_jka_moves > 0 else 0)
-        for k, v in global_category_counts.items()
-    }
-
-    stance_ranks = []
-    for st_id, cnt in sorted(
-        global_stance_counts.items(), key=lambda x: x[1], reverse=True
-    ):
-        stance_ranks.append(
-            {
-                "id": st_id,
-                "data": stances.get(st_id, {}),
-                "count": cnt,
-                "percent": (
-                    round((cnt / total_jka_moves) * 100, 1)
-                    if total_jka_moves > 0
-                    else 0
-                ),
-            }
-        )
-
-    top_techniques = []
-    for tech_id, cnt in sorted(
-        global_tech_counts.items(), key=lambda x: x[1], reverse=True
-    )[:15]:
-        top_techniques.append(
-            {
-                "id": tech_id,
-                "data": techniques.get(tech_id, {}),
-                "count": cnt,
-            }
-        )
-
-    global_stats = {
-        "total_kata": len(jka_all),
-        "total_moves": total_jka_moves,
-        "total_kiai": total_jka_kiai,
-        "category_counts": global_category_counts,
-        "category_percents": global_category_percents,
-        "stance_ranks": stance_ranks,
-        "top_techniques": top_techniques,
-    }
+    # 5. Global Analytics Computation (across all catalogued styles)
+    global_stats = compute_analytics(all_kata, stances, techniques)
 
     # 6. Initialize Jinja2 Environment
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
@@ -375,11 +425,13 @@ def main():
     tag_tpl = env.get_template("tag.html")
     for t in tqdm(all_tags, desc="Rendering Tag Pages", unit="tag"):
         matching = [k for k in all_kata if t in k.get("tags", [])]
+        tag_stats = compute_analytics(matching, stances, techniques)
         t_html = tag_tpl.render(
             rel_root="../",
             nav_active="catalog",
             tag_name=t,
             matching_kata=matching,
+            stats=tag_stats,
         )
         with open(DIST_DIR / "tags" / f"{t}.html", "w", encoding="utf-8") as f:
             f.write(t_html)

@@ -98,6 +98,28 @@
     </div>
   </div>
 
+  <!-- Stance Breakdown Progress Bar -->
+  <div style="margin-top: 1rem;">
+    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; flex-wrap: wrap; gap: 0.5rem;">
+      <span>Stance Distribution</span>
+      <span>
+        {% for st in kata.stance_ranks %}
+          <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 2px; background: {{ st.color }};"></span>
+            {{ st.count }} {{ st.data.romaji or st.id }}
+          </span>{% if not loop.last %} &bull; {% endif %}
+        {% endfor %}
+      </span>
+    </div>
+    <div class="stat-bar-container" style="height: 10px;">
+      {% for st in kata.stance_ranks %}
+        {% if st.percent > 0 %}
+          <div class="stat-bar-fill stance-{{ st.id }}" style="width: {{ st.percent }}%; background: {{ st.color }};" title="{{ st.data.romaji or st.id }}: {{ st.count }} ({{ st.percent }}%)"></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
   <!-- Tags -->
   <div style="margin-top: 1rem;">
     {% for t in kata.tags %}

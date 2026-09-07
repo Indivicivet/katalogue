@@ -534,6 +534,29 @@ body.lang-en .text-en { display: inline; font-weight: 500; }
 .stat-bar-fill.kick { background: var(--border-kick); }
 .stat-bar-fill.other { background: var(--border-other); }
 
+/* Stance distribution accents */
+.stat-bar-fill.stance-zenkutsu_dachi { background: #2563eb; }
+.stat-bar-fill.stance-kiba_dachi { background: #7c3aed; }
+.stat-bar-fill.stance-kokutsu_dachi { background: #db2777; }
+.stat-bar-fill.stance-neko_ashi_dachi { background: #059669; }
+.stat-bar-fill.stance-shiko_dachi { background: #d97706; }
+.stat-bar-fill.stance-heisoku_dachi { background: #475569; }
+.stat-bar-fill.stance-kosa_dachi { background: #ea580c; }
+.stat-bar-fill.stance-tsuru_ashi_dachi { background: #c026d3; }
+.stat-bar-fill.stance-hachiji_dachi { background: #65a30d; }
+.stat-bar-fill.stance-hangetsu_dachi { background: #4f46e5; }
+.stat-bar-fill.stance-sanchin_dachi { background: #0891b2; }
+.stat-bar-fill.stance-fudo_dachi,
+.stat-bar-fill.stance-sochin_dachi { background: #0d9488; }
+.stat-bar-fill.stance-renoji_dachi { background: #9333ea; }
+.stat-bar-fill.stance-teiji_dachi { background: #0284c7; }
+.stat-bar-fill.stance-musubi_dachi { background: #57534e; }
+.stat-bar-fill.stance-heiko_dachi { background: #16a34a; }
+.stat-bar-fill.stance-moto_dachi { background: #ca8a04; }
+.stat-bar-fill.stance-gankaku_dachi { background: #c026d3; }
+.stat-bar-fill.stance-uchi_hachiji_dachi { background: #65a30d; }
+.stat-bar-fill.stance-kake_dachi { background: #e11d48; }
+
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
