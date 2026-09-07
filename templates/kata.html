@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}{{ kata.name }} ({{ kata.style | upper }}) • Karate Kata Catalogue{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="breadcrumbs">
+    <a href="{{ rel_root }}index.html">Directory</a> &rsaquo;
+    <span>{{ kata.style | upper }}</span> &rsaquo;
+    <span>{{ kata.name }}</span>
+  </div>
+
+  <h1 class="page-title">
+    <span>{{ kata.name }}</span>
+    <span class="kanji-title"><ruby>{{ kata.kanji }}<rt>{{ kata.furigana }}</rt></ruby></span>
+    <span class="badge badge-{{ kata.status }}">{{ kata.status | replace('_', ' ') }}</span>
+  </h1>
+</div>
+
+<!-- Cross-Style Equivalent Tabs -->
+{% if equivalents_tabs %}
+<div class="style-tabs-wrapper">
+  <div class="style-tabs-label">Lineage Variants Across Disciplines</div>
+  <div class="style-tabs">
+    {% for tab in equivalents_tabs %}
+      <a href="{{ tab.url }}" class="style-tab-link {% if tab.is_current %}active{% endif %}">
+        {{ tab.label }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- Metadata Card -->
+<div class="card">
+  <div class="meta-grid">
+    <div class="meta-item">
+      <span class="meta-label">Total Movements</span>
+      <span class="meta-value">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Kiai Counts</span>
+      <span class="meta-value">
+        {% if kata.kiai_steps %}
+          {% for ki in kata.kiai_steps %}
+            <span class="kiai-badge">{{ ki }}</span>
+          {% endfor %}
+        {% else %}
+          None
+        {% endif %}
+      </span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Review Status</span>
+      <span class="meta-value">
+        <span class="badge badge-{{ kata.status }}">{{ kata.status | replace('_', ' ') }}</span>
+      </span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Canonical Source</span>
+      <span class="meta-value" style="font-size: 0.85rem; color: var(--text-secondary);">
+        {{ kata.reviewer or 'Historical reference' }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Category Breakdown Progress Bar -->
+  <div style="margin-top: 1rem;">
+    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+      <span>Technique Distribution</span>
+      <span>{{ kata.category_counts.block }} Blocks • {{ kata.category_counts.punch }} Punches • {{ kata.category_counts.strike }} Strikes • {{ kata.category_counts.kick }} Kicks</span>
+    </div>
+    <div class="stat-bar-container" style="height: 10px;">
+      {% if kata.category_percents.block > 0 %}
+        <div class="stat-bar-fill block" style="width: {{ kata.category_percents.block }}%;" title="Blocks: {{ kata.category_percents.block }}%"></div>
+      {% endif %}
+      {% if kata.category_percents.punch > 0 %}
+        <div class="stat-bar-fill punch" style="width: {{ kata.category_percents.punch }}%;" title="Punches: {{ kata.category_percents.punch }}%"></div>
+      {% endif %}
+      {% if kata.category_percents.strike > 0 %}
+        <div class="stat-bar-fill strike" style="width: {{ kata.category_percents.strike }}%;" title="Strikes: {{ kata.category_percents.strike }}%"></div>
+      {% endif %}
+      {% if kata.category_percents.kick > 0 %}
+        <div class="stat-bar-fill kick" style="width: {{ kata.category_percents.kick }}%;" title="Kicks: {{ kata.category_percents.kick }}%"></div>
+      {% endif %}
+      {% if kata.category_percents.other > 0 %}
+        <div class="stat-bar-fill other" style="width: {{ kata.category_percents.other }}%;" title="Other: {{ kata.category_percents.other }}%"></div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Tags -->
+  <div style="margin-top: 1rem;">
+    {% for t in kata.tags %}
+      <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">#{{ t }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Category Legend -->
+<div class="category-legend">
+  <span style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em;">Categories:</span>
+  <div class="legend-item"><span class="legend-dot block"></span> Block (受け)</div>
+  <div class="legend-item"><span class="legend-dot punch"></span> Punch (突き)</div>
+  <div class="legend-item"><span class="legend-dot strike"></span> Strike (打ち)</div>
+  <div class="legend-item"><span class="legend-dot kick"></span> Kick (蹴り)</div>
+  <div class="legend-item"><span class="legend-dot other"></span> Other (構え・その他)</div>
+</div>
+
+<!-- Step Table -->
+<div class="table-responsive">
+  <table class="step-table">
+    <thead>
+      <tr>
+        <th style="width: 75px;">Step</th>
+        <th>Stance (立ち方)</th>
+        <th>Lead</th>
+        <th>Primary Technique (技)</th>
+        <th>Secondary Action</th>
+        <th>Target</th>
+        <th>Turn / Facing</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in kata.rendered_steps %}
+      <tr class="row-{{ s.category }}">
+        <td style="font-weight: 700;">
+          {{ s.id }}
+          {% if s.kiai %}
+            <span class="kiai-badge">KIAI</span>
+          {% endif %}
+        </td>
+        <td>
+          {% if s.stance_data %}
+            <span class="term"
+                  data-kanji="{{ s.stance_data.kanji }}"
+                  data-furigana="{{ s.stance_data.furigana }}"
+                  data-romaji="{{ s.stance_data.romaji }}"
+                  data-en="{{ s.stance_data.en }}">
+              <span class="text-ja"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby></span>
+              <span class="text-ro">{{ s.stance_data.romaji }}</span>
+              <span class="text-en">{{ s.stance_data.en }}</span>
+            </span>
+          {% else %}
+            {{ s.stance }}
+          {% endif %}
+        </td>
+        <td style="text-transform: capitalize; color: var(--text-secondary);">
+          {{ s.lead or '—' }}
+        </td>
+        <td>
+          {% if s.tech_data %}
+            <span class="term"
+                  data-kanji="{{ s.tech_data.kanji }}"
+                  data-furigana="{{ s.tech_data.furigana }}"
+                  data-romaji="{{ s.tech_data.romaji }}"
+                  data-en="{{ s.tech_data.en }}">
+              <span class="text-ja"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby></span>
+              <span class="text-ro">{{ s.tech_data.romaji }}</span>
+              <span class="text-en">{{ s.tech_data.en }}</span>
+            </span>
+          {% else %}
+            {{ s.technique }}
+          {% endif %}
+        </td>
+        <td>
+          {% if s.sec_tech_data %}
+            <span class="term"
+                  data-kanji="{{ s.sec_tech_data.kanji }}"
+                  data-furigana="{{ s.sec_tech_data.furigana }}"
+                  data-romaji="{{ s.sec_tech_data.romaji }}"
+                  data-en="{{ s.sec_tech_data.en }}">
+              <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
+              <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
+              <span class="text-en">{{ s.sec_tech_data.en }}</span>
+            </span>
+          {% else %}
+            —
+          {% endif %}
+        </td>
+        <td style="text-transform: uppercase; font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
+          {{ s.target or '—' }}
+        </td>
+        <td>
+          <span style="font-weight: 600;">{{ s.facing }}</span>
+          {% if s.turn and s.turn != '0' %}
+            <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">({{ s.turn }})</span>
+          {% endif %}
+          {% if s.rotation_warning %}
+            <span title="{{ s.rotation_warning }}" style="cursor: help; margin-left: 0.25rem;">⚠️</span>
+          {% endif %}
+        </td>
+        <td style="color: var(--text-secondary); font-size: 0.88rem;">
+          {{ s.notes or '' }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

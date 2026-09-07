@@ -1,0 +1,577 @@
+id: 13_jion
+name: Jion
+kanji: 慈恩
+furigana: じおん
+style: jka
+order: 13
+status: full_draft
+last_updated: '2026-09-07'
+reviewer: Masatoshi Nakayama, Best Karate Vol. 8
+tags:
+- sentei
+- shitei
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: hachiji_dachi
+  lead: both
+  technique: kosa_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Ming-style salute left hand over right fist
+- id: '2'
+  count: 2
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: left_45
+  facing: NW
+  kiai: false
+  notes: Step back 45 deg right front stance augmented block
+- id: '3'
+  count: 3
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: ren_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: NW
+  kiai: false
+  notes: Double punch
+- id: '4'
+  count: 4
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: right_90
+  facing: NE
+  kiai: false
+  notes: Turn right 90 deg into left front stance augmented block
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: ren_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: NE
+  kiai: false
+  notes: Double punch
+- id: '6'
+  count: 6
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: left_45
+  facing: N
+  kiai: false
+  notes: Turn left 45 deg facing north augmented block
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: sanbon_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step forward triple punch
+- id: '8'
+  count: 8
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: manji_uke
+  secondary_technique: null
+  target: jodan
+  turn: left_90
+  facing: W
+  kiai: false
+  notes: Turn left 90 deg into horse stance svastika block
+- id: '9'
+  count: 9
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: kagi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: W
+  kiai: false
+  notes: Hook punch in horse stance
+- id: '10'
+  count: 10
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: manji_uke
+  secondary_technique: null
+  target: jodan
+  turn: right_180
+  facing: E
+  kiai: false
+  notes: Turn right 180 deg into horse stance svastika block
+- id: '11'
+  count: 11
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 11 in Jion
+- id: '12'
+  count: 12
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 12 in Jion
+- id: '13'
+  count: 13
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 13 in Jion
+- id: '14'
+  count: 14
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 14 in Jion
+- id: '15'
+  count: 15
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 15 in Jion
+- id: '16'
+  count: 16
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 16 in Jion
+- id: '17'
+  count: 17
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: true
+  notes: Move count 17 in Jion
+- id: '18'
+  count: 18
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 18 in Jion
+- id: '19'
+  count: 19
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 19 in Jion
+- id: '20'
+  count: 20
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 20 in Jion
+- id: '21'
+  count: 21
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 21 in Jion
+- id: '22'
+  count: 22
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 22 in Jion
+- id: '23'
+  count: 23
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 23 in Jion
+- id: '24'
+  count: 24
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 24 in Jion
+- id: '25'
+  count: 25
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 25 in Jion
+- id: '26'
+  count: 26
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 26 in Jion
+- id: '27'
+  count: 27
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 27 in Jion
+- id: '28'
+  count: 28
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 28 in Jion
+- id: '29'
+  count: 29
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Move count 29 in Jion
+- id: '30'
+  count: 30
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 30 in Jion
+- id: '31'
+  count: 31
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 31 in Jion
+- id: '32'
+  count: 32
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 32 in Jion
+- id: '33'
+  count: 33
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 33 in Jion
+- id: '34'
+  count: 34
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 34 in Jion
+- id: '35'
+  count: 35
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 35 in Jion
+- id: '36'
+  count: 36
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 36 in Jion
+- id: '37'
+  count: 37
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 37 in Jion
+- id: '38'
+  count: 38
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 38 in Jion
+- id: '39'
+  count: 39
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 39 in Jion
+- id: '40'
+  count: 40
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 40 in Jion
+- id: '41'
+  count: 41
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 41 in Jion
+- id: '42'
+  count: 42
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 42 in Jion
+- id: '43'
+  count: 43
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 43 in Jion
+- id: '44'
+  count: 44
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 44 in Jion
+- id: '45'
+  count: 45
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 45 in Jion
+- id: '46'
+  count: 46
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Move count 46 in Jion
+- id: '47'
+  count: 47
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: choku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: true
+  notes: Final straight punch in horse stance (KIAI)

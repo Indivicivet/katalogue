@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Tag #{{ tag_name }} • Karate Kata Catalogue{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="breadcrumbs">
+    <a href="{{ rel_root }}index.html">Directory</a> &rsaquo;
+    <span>Tags</span> &rsaquo;
+    <span>#{{ tag_name }}</span>
+  </div>
+
+  <h1 class="page-title">
+    <span>Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
+  </h1>
+  <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+    Found {{ matching_kata | length }} kata matching this classification.
+  </p>
+</div>
+
+<!-- Back to All Tags -->
+<div style="margin-bottom: 1.5rem;">
+  <a href="{{ rel_root }}index.html" class="tag-link">&larr; Back to Directory</a>
+</div>
+
+<!-- Matching Kata Table -->
+<div class="card" style="padding: 0; overflow: hidden;">
+  <table class="catalog-table">
+    <thead>
+      <tr>
+        <th style="width: 50px;">#</th>
+        <th>Style</th>
+        <th>Kata</th>
+        <th>Status</th>
+        <th>Counts</th>
+        <th>Kiai</th>
+        <th>Tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for k in matching_kata %}
+      <tr>
+        <td style="color: var(--text-muted); font-weight: 600;">{{ k.order }}</td>
+        <td style="text-transform: uppercase; font-weight: 700; font-size: 0.8rem; color: var(--text-muted);">
+          {{ k.style }}
+        </td>
+        <td>
+          <a href="{{ rel_root }}kata/{{ k.style }}/{{ k.id }}.html" class="kata-name-link">
+            <span class="term"
+                  data-kanji="{{ k.kanji }}"
+                  data-furigana="{{ k.furigana }}"
+                  data-romaji="{{ k.name }}"
+                  data-en="{{ k.name }}">
+              <span class="text-ja"><ruby>{{ k.kanji }}<rt>{{ k.furigana }}</rt></ruby> ({{ k.name }})</span>
+              <span class="text-ro">{{ k.name }}</span>
+              <span class="text-en">{{ k.name }}</span>
+            </span>
+          </a>
+        </td>
+        <td>
+          <span class="badge badge-{{ k.status }}">{{ k.status | replace('_', ' ') }}</span>
+        </td>
+        <td style="font-weight: 600;">{{ k.move_count }}</td>
+        <td>
+          {% for ki in k.kiai_steps %}
+            <span class="kiai-badge">{{ ki }}</span>
+          {% endfor %}
+        </td>
+        <td>
+          {% for t in k.tags %}
+            <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link {% if t == tag_name %}active{% endif %}">{{ t }}</a>
+          {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

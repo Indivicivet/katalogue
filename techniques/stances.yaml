@@ -1,0 +1,149 @@
+# Master Stance Dictionary
+# Keys are canonical IDs referenced by kata step definitions
+
+zenkutsu_dachi:
+  kanji: "前屈立ち"
+  furigana: "ぜんくつだち"
+  romaji: "zenkutsu-dachi"
+  en: "front stance"
+  weight: "60/40"
+
+kokutsu_dachi:
+  kanji: "後屈立ち"
+  furigana: "こうくつだち"
+  romaji: "kokutsu-dachi"
+  en: "back stance"
+  weight: "30/70"
+
+kiba_dachi:
+  kanji: "騎馬立ち"
+  furigana: "きばだち"
+  romaji: "kiba-dachi"
+  en: "horse stance"
+  weight: "50/50"
+
+shiko_dachi:
+  kanji: "四股立ち"
+  furigana: "しこだち"
+  romaji: "shiko-dachi"
+  en: "square stance"
+  weight: "50/50"
+
+fudo_dachi:
+  kanji: "不動立ち"
+  furigana: "ふどうだち"
+  romaji: "fudo-dachi"
+  en: "rooted stance"
+  weight: "50/50"
+
+sochin_dachi:
+  kanji: "壮鎮立ち"
+  furigana: "そうちんだち"
+  romaji: "sochin-dachi"
+  en: "sochin stance"
+  weight: "50/50"
+
+neko_ashi_dachi:
+  kanji: "猫足立ち"
+  furigana: "ねこあしだち"
+  romaji: "neko-ashi-dachi"
+  en: "cat foot stance"
+  weight: "10/90"
+
+sanchin_dachi:
+  kanji: "三戦立ち"
+  furigana: "さんちんだち"
+  romaji: "sanchin-dachi"
+  en: "hourglass stance"
+  weight: "50/50"
+
+hangetsu_dachi:
+  kanji: "半月立ち"
+  furigana: "はんげつだち"
+  romaji: "hangetsu-dachi"
+  en: "half-moon stance"
+  weight: "50/50"
+
+kosa_dachi:
+  kanji: "交差立ち"
+  furigana: "こうさだち"
+  romaji: "kosa-dachi"
+  en: "crossed-leg stance"
+  weight: "variable"
+
+tsuru_ashi_dachi:
+  kanji: "鶴足立ち"
+  furigana: "つるあしだち"
+  romaji: "tsuru-ashi-dachi"
+  en: "crane leg stance"
+  weight: "100/0"
+
+gankaku_dachi:
+  kanji: "岩鶴立ち"
+  furigana: "がんかくだち"
+  romaji: "gankaku-dachi"
+  en: "crane on a rock stance"
+  weight: "100/0"
+
+renoji_dachi:
+  kanji: "レの字立ち"
+  furigana: "れのじだち"
+  romaji: "renoji-dachi"
+  en: "L-stance"
+  weight: "30/70"
+
+teiji_dachi:
+  kanji: "丁の字立ち"
+  furigana: "ていじだち"
+  romaji: "teiji-dachi"
+  en: "T-stance"
+  weight: "30/70"
+
+heisoku_dachi:
+  kanji: "閉足立ち"
+  furigana: "へいそくだち"
+  romaji: "heisoku-dachi"
+  en: "closed feet stance"
+  weight: "50/50"
+
+musubi_dachi:
+  kanji: "結び立ち"
+  furigana: "むすびだち"
+  romaji: "musubi-dachi"
+  en: "open-toes stance"
+  weight: "50/50"
+
+hachiji_dachi:
+  kanji: "八字立ち"
+  furigana: "はちじだち"
+  romaji: "hachiji-dachi"
+  en: "natural natural stance"
+  weight: "50/50"
+
+heiko_dachi:
+  kanji: "平行立ち"
+  furigana: "へいこうだち"
+  romaji: "heiko-dachi"
+  en: "parallel stance"
+  weight: "50/50"
+
+moto_dachi:
+  kanji: "基立ち"
+  furigana: "もとだち"
+  romaji: "moto-dachi"
+  en: "foundational stance"
+  weight: "50/50"
+
+uchi_hachiji_dachi:
+  kanji: "内八字立ち"
+  furigana: "うちはちじだち"
+  romaji: "uchi-hachiji-dachi"
+  en: "inverted natural stance"
+  weight: "50/50"
+
+kake_dachi:
+  kanji: "掛足立ち"
+  furigana: "かけだち"
+  romaji: "kake-dachi"
+  en: "hooked foot stance"
+  weight: "10/90"

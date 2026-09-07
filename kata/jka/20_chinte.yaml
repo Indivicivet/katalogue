@@ -1,0 +1,408 @@
+id: 20_chinte
+name: Chinte
+kanji: 珍手
+furigana: ちんて
+style: jka
+order: 20
+status: early_draft
+last_updated: '2026-09-07'
+reviewer: null
+tags:
+- black_belt
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 1 of Chinte
+- id: '2'
+  count: 2
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 2 of Chinte
+- id: '3'
+  count: 3
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 3 of Chinte
+- id: '4'
+  count: 4
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 4 of Chinte
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 5 of Chinte
+- id: '6'
+  count: 6
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 6 of Chinte
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 7 of Chinte
+- id: '8'
+  count: 8
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 8 of Chinte
+- id: '9'
+  count: 9
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 9 of Chinte
+- id: '10'
+  count: 10
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 10 of Chinte
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 11 of Chinte
+- id: '12'
+  count: 12
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 12 of Chinte
+- id: '13'
+  count: 13
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 13 of Chinte
+- id: '14'
+  count: 14
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 14 of Chinte
+- id: '15'
+  count: 15
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 15 of Chinte
+- id: '16'
+  count: 16
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 16 of Chinte
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 17 of Chinte
+- id: '18'
+  count: 18
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 18 of Chinte
+- id: '19'
+  count: 19
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 19 of Chinte
+- id: '20'
+  count: 20
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 20 of Chinte
+- id: '21'
+  count: 21
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 21 of Chinte
+- id: '22'
+  count: 22
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 22 of Chinte
+- id: '23'
+  count: 23
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 23 of Chinte
+- id: '24'
+  count: 24
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 24 of Chinte
+- id: '25'
+  count: 25
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 25 of Chinte
+- id: '26'
+  count: 26
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 26 of Chinte
+- id: '27'
+  count: 27
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 27 of Chinte
+- id: '28'
+  count: 28
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 28 of Chinte
+- id: '29'
+  count: 29
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 29 of Chinte
+- id: '30'
+  count: 30
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 30 of Chinte
+- id: '31'
+  count: 31
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 31 of Chinte
+- id: '32'
+  count: 32
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 32 of Chinte
+- id: '33'
+  count: 33
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 33 of Chinte

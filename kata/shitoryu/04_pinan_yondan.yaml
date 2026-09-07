@@ -1,0 +1,337 @@
+id: 04_pinan_yondan
+name: Pinan Yondan
+kanji: 平安四段
+furigana: ぴーあんよんだん
+style: shitoryu
+order: 4
+status: early_draft
+last_updated: '2026-09-07'
+reviewer: Kenwa Mabuni lineage reference
+tags:
+- pinan
+- shitoryu
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 1
+- id: '2'
+  count: 2
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 2
+- id: '3'
+  count: 3
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 3
+- id: '4'
+  count: 4
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 4
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 5
+- id: '6'
+  count: 6
+  subcount: null
+  stance: shiko_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 6
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 7
+- id: '8'
+  count: 8
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 8
+- id: '9'
+  count: 9
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 9
+- id: '10'
+  count: 10
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 10
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 11
+- id: '12'
+  count: 12
+  subcount: null
+  stance: shiko_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Yondan step 12
+- id: '13'
+  count: 13
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: true
+  notes: Pinan Yondan step 13
+- id: '14'
+  count: 14
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 14
+- id: '15'
+  count: 15
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 15
+- id: '16'
+  count: 16
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 16
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 17
+- id: '18'
+  count: 18
+  subcount: null
+  stance: shiko_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 18
+- id: '19'
+  count: 19
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 19
+- id: '20'
+  count: 20
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 20
+- id: '21'
+  count: 21
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 21
+- id: '22'
+  count: 22
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 22
+- id: '23'
+  count: 23
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 23
+- id: '24'
+  count: 24
+  subcount: null
+  stance: shiko_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 24
+- id: '25'
+  count: 25
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 25
+- id: '26'
+  count: 26
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Yondan step 26
+- id: '27'
+  count: 27
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Pinan Yondan step 27

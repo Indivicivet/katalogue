@@ -1,0 +1,573 @@
+/* Katalogue: Karate Kata Catalogue Styling */
+:root {
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-jp: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-card: #e2e8f0;
+  
+  /* Technique category accents */
+  --bg-block: #e0f2fe;
+  --border-block: #38bdf8;
+  --text-block: #0369a1;
+
+  --bg-punch: #fee2e2;
+  --border-punch: #f87171;
+  --text-punch: #b91c1c;
+
+  --bg-strike: #ffedd5;
+  --border-strike: #fb923c;
+  --text-strike: #c2410c;
+
+  --bg-kick: #fef3c7;
+  --border-kick: #fbbf24;
+  --text-kick: #b45309;
+
+  --bg-other: #f1f5f9;
+  --border-other: #94a3b8;
+  --text-other: #475569;
+
+  /* Primary branding */
+  --primary: #dc2626;
+  --primary-hover: #b91c1c;
+  --primary-subtle: #fef2f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header & Navigation */
+header.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-card);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.logo-badge {
+  background: var(--primary);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+/* Linguistic Toggle */
+.lang-toggle-group {
+  display: flex;
+  background: #e2e8f0;
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.15s ease;
+}
+
+.lang-btn.active {
+  background: white;
+  color: var(--text-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero / Breadcrumbs */
+.page-header {
+  margin: 2rem 0 1.5rem;
+}
+
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumbs a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+h1.page-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.page-title .kanji-title {
+  font-family: var(--font-jp);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* Kata Style Switcher Tabs */
+.style-tabs-wrapper {
+  margin: 1.5rem 0 2rem;
+}
+
+.style-tabs-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.style-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-card);
+  padding-bottom: 1px;
+}
+
+.style-tab-link {
+  text-decoration: none;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  border-bottom: none;
+  margin-bottom: -2px;
+  transition: all 0.15s ease;
+}
+
+.style-tab-link:hover {
+  color: var(--primary);
+  background: white;
+}
+
+.style-tab-link.active {
+  background: white;
+  color: var(--primary);
+  border-color: var(--border-card);
+  border-bottom: 2px solid white;
+}
+
+/* Cards & Panels */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-early_draft {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.badge-full_draft {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.badge-student_reviewed {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.badge-black_belt_reviewed {
+  background: #ede9fe;
+  color: #5b21b6;
+  border: 1px solid #ddd6fe;
+}
+
+.badge-sentei {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-shitei {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.tag-link {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.25rem 0.25rem 0;
+}
+
+.tag-link:hover {
+  background: #e2e8f0;
+  color: var(--primary);
+}
+
+/* Metadata Grid */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0.2rem;
+}
+
+/* Step Table */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  background: white;
+}
+
+table.step-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+table.step-table th {
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-card);
+}
+
+table.step-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+table.step-table tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Row Category Accents */
+tr.row-block {
+  border-left: 4px solid var(--border-block);
+}
+tr.row-punch {
+  border-left: 4px solid var(--border-punch);
+}
+tr.row-strike {
+  border-left: 4px solid var(--border-strike);
+}
+tr.row-kick {
+  border-left: 4px solid var(--border-kick);
+}
+tr.row-other {
+  border-left: 4px solid var(--border-other);
+}
+
+/* Category Legend */
+.category-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.legend-dot.block { background: var(--border-block); }
+.legend-dot.punch { background: var(--border-punch); }
+.legend-dot.strike { background: var(--border-strike); }
+.legend-dot.kick { background: var(--border-kick); }
+.legend-dot.other { background: var(--border-other); }
+
+/* Kiai Pill */
+.kiai-badge {
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+/* Linguistic Token Engine */
+.term {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  border-bottom: 1px dotted var(--text-muted);
+}
+
+/* Default ruby styling */
+ruby {
+  font-family: var(--font-jp);
+}
+rt {
+  font-size: 0.65em;
+  color: var(--text-secondary);
+}
+
+/* Mode-dependent display */
+body.lang-ja .text-ja { display: inline; }
+body.lang-ja .text-ro { display: none; }
+body.lang-ja .text-en { display: none; }
+
+body.lang-ro .text-ja { display: none; }
+body.lang-ro .text-ro { display: inline; font-weight: 600; }
+body.lang-ro .text-en { display: none; }
+
+body.lang-en .text-ja { display: none; }
+body.lang-en .text-ro { display: none; }
+body.lang-en .text-en { display: inline; font-weight: 500; }
+
+/* Pure CSS Tooltip on Hover */
+.term::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: white;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 50;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-main);
+  font-weight: normal;
+}
+
+.term:hover::after {
+  opacity: 1;
+}
+
+/* Catalog Table & Grids */
+.catalog-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+}
+
+.catalog-table th {
+  background: #f8fafc;
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-card);
+}
+
+.catalog-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.catalog-table tr:hover {
+  background-color: #f8fafc;
+}
+
+.kata-name-link {
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.kata-name-link:hover {
+  color: var(--primary);
+}
+
+/* Statistics Progress Bars */
+.stat-bar-container {
+  background: #e2e8f0;
+  border-radius: 4px;
+  height: 12px;
+  overflow: hidden;
+  display: flex;
+  margin-top: 0.3rem;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.stat-bar-fill.block { background: var(--border-block); }
+.stat-bar-fill.punch { background: var(--border-punch); }
+.stat-bar-fill.strike { background: var(--border-strike); }
+.stat-bar-fill.kick { background: var(--border-kick); }
+.stat-bar-fill.other { background: var(--border-other); }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.stat-card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.stat-big-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Footer */
+footer.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--border-card);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

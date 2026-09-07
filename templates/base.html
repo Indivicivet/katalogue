@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Kata Catalogue{% endblock %}</title>
+  <link rel="stylesheet" href="{{ rel_root }}static/style.css">
+  {% block head %}{% endblock %}
+</head>
+<body class="lang-ja">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="{{ rel_root }}index.html" class="site-logo">
+        <span class="logo-badge">JKA</span>
+        <span>Kata Catalogue</span>
+      </a>
+
+      <div class="lang-toggle-group" title="Linguistic Display Mode">
+        <button type="button" class="lang-btn active" data-lang="ja">日本語</button>
+        <button type="button" class="lang-btn" data-lang="ro">Rōmaji</button>
+        <button type="button" class="lang-btn" data-lang="en">English</button>
+      </div>
+
+      <nav class="main-nav">
+        <a href="{{ rel_root }}index.html" class="{% if nav_active == 'catalog' %}active{% endif %}">Catalog</a>
+        <a href="{{ rel_root }}stats.html" class="{% if nav_active == 'stats' %}active{% endif %}">Statistics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Karate Kata Catalogue &bull; Schema-Driven Martial Arts Reference</p>
+      <p style="margin-top: 0.25rem; font-size: 0.8rem;">Focusing on JKA Shotokan with cross-discipline lineage mappings.</p>
+    </div>
+  </footer>
+
+  <script src="{{ rel_root }}static/script.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

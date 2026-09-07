@@ -1,0 +1,336 @@
+id: 10_bassai_sho
+name: Bassai Sho
+kanji: 披塞小
+furigana: ばっさいしょう
+style: jka
+order: 10
+status: early_draft
+last_updated: '2026-09-07'
+reviewer: null
+tags:
+- black_belt
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 1 of Bassai Sho
+- id: '2'
+  count: 2
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 2 of Bassai Sho
+- id: '3'
+  count: 3
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 3 of Bassai Sho
+- id: '4'
+  count: 4
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 4 of Bassai Sho
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 5 of Bassai Sho
+- id: '6'
+  count: 6
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 6 of Bassai Sho
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 7 of Bassai Sho
+- id: '8'
+  count: 8
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 8 of Bassai Sho
+- id: '9'
+  count: 9
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 9 of Bassai Sho
+- id: '10'
+  count: 10
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 10 of Bassai Sho
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 11 of Bassai Sho
+- id: '12'
+  count: 12
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 12 of Bassai Sho
+- id: '13'
+  count: 13
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 13 of Bassai Sho
+- id: '14'
+  count: 14
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 14 of Bassai Sho
+- id: '15'
+  count: 15
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 15 of Bassai Sho
+- id: '16'
+  count: 16
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 16 of Bassai Sho
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 17 of Bassai Sho
+- id: '18'
+  count: 18
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 18 of Bassai Sho
+- id: '19'
+  count: 19
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 19 of Bassai Sho
+- id: '20'
+  count: 20
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 20 of Bassai Sho
+- id: '21'
+  count: 21
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 21 of Bassai Sho
+- id: '22'
+  count: 22
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 22 of Bassai Sho
+- id: '23'
+  count: 23
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 23 of Bassai Sho
+- id: '24'
+  count: 24
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 24 of Bassai Sho
+- id: '25'
+  count: 25
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 25 of Bassai Sho
+- id: '26'
+  count: 26
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 26 of Bassai Sho
+- id: '27'
+  count: 27
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 27 of Bassai Sho

@@ -1,0 +1,300 @@
+id: 14_jitte
+name: Jitte
+kanji: 十手
+furigana: じって
+style: jka
+order: 14
+status: early_draft
+last_updated: '2026-09-07'
+reviewer: null
+tags:
+- black_belt
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 1 of Jitte
+- id: '2'
+  count: 2
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 2 of Jitte
+- id: '3'
+  count: 3
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 3 of Jitte
+- id: '4'
+  count: 4
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 4 of Jitte
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 5 of Jitte
+- id: '6'
+  count: 6
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 6 of Jitte
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 7 of Jitte
+- id: '8'
+  count: 8
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 8 of Jitte
+- id: '9'
+  count: 9
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 9 of Jitte
+- id: '10'
+  count: 10
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 10 of Jitte
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 11 of Jitte
+- id: '12'
+  count: 12
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 12 of Jitte
+- id: '13'
+  count: 13
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 13 of Jitte
+- id: '14'
+  count: 14
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 14 of Jitte
+- id: '15'
+  count: 15
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 15 of Jitte
+- id: '16'
+  count: 16
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 16 of Jitte
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 17 of Jitte
+- id: '18'
+  count: 18
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 18 of Jitte
+- id: '19'
+  count: 19
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 19 of Jitte
+- id: '20'
+  count: 20
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 20 of Jitte
+- id: '21'
+  count: 21
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 21 of Jitte
+- id: '22'
+  count: 22
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 22 of Jitte
+- id: '23'
+  count: 23
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 23 of Jitte
+- id: '24'
+  count: 24
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 24 of Jitte

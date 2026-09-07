@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics & Statistics • Karate Kata Catalogue{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Karate Kata Global Analytics</h1>
+  <p style="color: var(--text-secondary); margin-top: 0.5rem;">
+    Structural distribution of stances, techniques, and categories across the 26 JKA Shotokan kata.
+  </p>
+</div>
+
+<!-- Overview Metric Cards -->
+<div class="stat-grid" style="margin-bottom: 2rem;">
+  <div class="stat-card">
+    <div class="stat-card-title">JKA Kata Evaluated</div>
+    <div class="stat-big-number">{{ stats.total_kata }}</div>
+    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">25 Competition + 1 Lineage Extra</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-card-title">Total Movements</div>
+    <div class="stat-big-number">{{ stats.total_moves }}</div>
+    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Discrete tactical actions</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-card-title">Canonical Kiai Points</div>
+    <div class="stat-big-number">{{ stats.total_kiai }}</div>
+    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Prescribed focal points</div>
+  </div>
+</div>
+
+<!-- Technique Category Distribution -->
+<div class="card" style="margin-bottom: 2rem;">
+  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">Global Technique Category Balance</h2>
+  
+  <div class="stat-bar-container" style="height: 18px; margin-bottom: 1.25rem;">
+    <div class="stat-bar-fill block" style="width: {{ stats.category_percents.block }}%;" title="Blocks: {{ stats.category_percents.block }}%"></div>
+    <div class="stat-bar-fill punch" style="width: {{ stats.category_percents.punch }}%;" title="Punches: {{ stats.category_percents.punch }}%"></div>
+    <div class="stat-bar-fill strike" style="width: {{ stats.category_percents.strike }}%;" title="Strikes: {{ stats.category_percents.strike }}%"></div>
+    <div class="stat-bar-fill kick" style="width: {{ stats.category_percents.kick }}%;" title="Kicks: {{ stats.category_percents.kick }}%"></div>
+    <div class="stat-bar-fill other" style="width: {{ stats.category_percents.other }}%;" title="Other: {{ stats.category_percents.other }}%"></div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+    <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-block);">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Blocks (受け)</div>
+      <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-block);">{{ stats.category_counts.block }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.block }}%)</span></div>
+    </div>
+    <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-punch);">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Punches (突き)</div>
+      <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-punch);">{{ stats.category_counts.punch }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.punch }}%)</span></div>
+    </div>
+    <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-strike);">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Strikes (打ち)</div>
+      <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-strike);">{{ stats.category_counts.strike }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.strike }}%)</span></div>
+    </div>
+    <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-kick);">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Kicks (蹴り)</div>
+      <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-kick);">{{ stats.category_counts.kick }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.kick }}%)</span></div>
+    </div>
+    <div style="padding: 0.75rem; background: #f8fafc; border-radius: 6px; border-left: 4px solid var(--border-other);">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Other (その他)</div>
+      <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-other);">{{ stats.category_counts.other }} <span style="font-size: 0.85rem; font-weight: 600;">({{ stats.category_percents.other }}%)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Global Stance Distribution -->
+<div class="card" style="margin-bottom: 2rem;">
+  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">JKA Stance Distribution</h2>
+  <table class="catalog-table">
+    <thead>
+      <tr>
+        <th>Stance</th>
+        <th>Occurrences</th>
+        <th>Distribution</th>
+        <th>Weight Distribution</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in stats.stance_ranks %}
+      <tr>
+        <td style="font-weight: 700;">
+          <span class="term"
+                data-kanji="{{ item.data.kanji }}"
+                data-furigana="{{ item.data.furigana }}"
+                data-romaji="{{ item.data.romaji }}"
+                data-en="{{ item.data.en }}">
+            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> ({{ item.data.romaji }})</span>
+            <span class="text-ro">{{ item.data.romaji }}</span>
+            <span class="text-en">{{ item.data.en }}</span>
+          </span>
+        </td>
+        <td style="font-weight: 600;">{{ item.count }}</td>
+        <td>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div class="stat-bar-container" style="flex: 1; height: 8px;">
+              <div class="stat-bar-fill block" style="width: {{ item.percent }}%;"></div>
+            </div>
+            <span style="font-size: 0.85rem; font-weight: 600; width: 45px;">{{ item.percent }}%</span>
+          </div>
+        </td>
+        <td style="color: var(--text-secondary); font-size: 0.85rem;">{{ item.data.weight or '—' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Top Techniques Table -->
+<div class="card" style="margin-bottom: 2rem;">
+  <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">Most Frequent JKA Techniques</h2>
+  <table class="catalog-table">
+    <thead>
+      <tr>
+        <th style="width: 50px;">Rank</th>
+        <th>Technique</th>
+        <th>Category</th>
+        <th>Occurrences</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in stats.top_techniques %}
+      <tr>
+        <td style="color: var(--text-muted); font-weight: 600;">#{{ loop.index }}</td>
+        <td>
+          <span class="term"
+                data-kanji="{{ item.data.kanji }}"
+                data-furigana="{{ item.data.furigana }}"
+                data-romaji="{{ item.data.romaji }}"
+                data-en="{{ item.data.en }}">
+            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> ({{ item.data.romaji }})</span>
+            <span class="text-ro">{{ item.data.romaji }}</span>
+            <span class="text-en">{{ item.data.en }}</span>
+          </span>
+        </td>
+        <td>
+          <span class="badge badge-{{ item.data.category }}">{{ item.data.category }}</span>
+        </td>
+        <td style="font-weight: 700;">{{ item.count }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

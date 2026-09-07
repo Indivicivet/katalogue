@@ -1,0 +1,279 @@
+id: 03_heian_sandan
+name: Heian Sandan
+kanji: 平安三段
+furigana: へいあんさんだん
+style: jka
+order: 3
+status: full_draft
+last_updated: '2026-09-07'
+reviewer: Masatoshi Nakayama, Best Karate Vol. 5
+tags:
+- kyu_grade
+- 6th_kyu
+- shitei
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: uchi_uke
+  secondary_technique: null
+  target: chudan
+  turn: left_90
+  facing: W
+  kiai: false
+  notes: Turn left 90 deg into left back stance inside block
+- id: 2a
+  count: 2
+  subcount: a
+  stance: heisoku_dachi
+  lead: both
+  technique: uchi_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: W
+  kiai: false
+  notes: Draw right foot to left foot in closed stance, right inside block
+- id: 2b
+  count: 2
+  subcount: b
+  stance: heisoku_dachi
+  lead: both
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: W
+  kiai: false
+  notes: Simultaneous left downward block
+- id: '3'
+  count: 3
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: uchi_uke
+  secondary_technique: null
+  target: chudan
+  turn: right_180
+  facing: E
+  kiai: false
+  notes: Turn right 180 deg into right back stance inside block
+- id: 4a
+  count: 4
+  subcount: a
+  stance: heisoku_dachi
+  lead: both
+  technique: uchi_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: E
+  kiai: false
+  notes: Draw left foot into closed stance, left inside block
+- id: 4b
+  count: 4
+  subcount: b
+  stance: heisoku_dachi
+  lead: both
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: E
+  kiai: false
+  notes: Simultaneous right downward block
+- id: '5'
+  count: 5
+  subcount: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: left_90
+  facing: N
+  kiai: false
+  notes: Turn left 90 deg into left back stance augmented block
+- id: '6'
+  count: 6
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: shihon_nukite
+  secondary_technique: osae_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step forward right front stance spear-hand strike
+- id: '7'
+  count: 7
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: tettsui_uchi
+  secondary_technique: null
+  target: chudan
+  turn: left_180
+  facing: S
+  kiai: false
+  notes: Turn left 180 deg into horse stance, hammer fist side strike
+- id: '8'
+  count: 8
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step forward into right front stance middle lunge punch
+- id: '9'
+  count: 9
+  subcount: null
+  stance: heisoku_dachi
+  lead: both
+  technique: kamae
+  secondary_technique: null
+  target: null
+  turn: left_180
+  facing: N
+  kiai: false
+  notes: Turn left 180 deg facing north, fists on hips in closed stance
+- id: '10'
+  count: 10
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: fumikomi
+  secondary_technique: empi_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: true
+  notes: Stomp into horse stance, elbow block/strike (KIAI)
+- id: '11'
+  count: 11
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: uraken_uchi
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Right backfist strike in horse stance
+- id: '12'
+  count: 12
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: fumikomi
+  secondary_technique: empi_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step along line, stomp into horse stance, elbow block
+- id: '13'
+  count: 13
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: uraken_uchi
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Left backfist strike in horse stance
+- id: '14'
+  count: 14
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: fumikomi
+  secondary_technique: empi_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step along line, stomp into horse stance, elbow block
+- id: '15'
+  count: 15
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: uraken_uchi
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Right backfist strike in horse stance
+- id: '16'
+  count: 16
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: tate_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Shift into right front stance slow vertical punch
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step forward into left front stance lunge punch
+- id: '18'
+  count: 18
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: ushiro_empi_uchi
+  secondary_technique: yama_zuki
+  target: chudan
+  turn: left_180
+  facing: S
+  kiai: false
+  notes: Slide and turn into horse stance with rear elbow strike and punch over shoulder
+- id: '19'
+  count: 19
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: ushiro_empi_uchi
+  secondary_technique: yama_zuki
+  target: chudan
+  turn: right_180
+  facing: S
+  kiai: false
+  notes: Slide along line into horse stance with rear elbow strike and punch over
+    shoulder
+- id: '20'
+  count: 20
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: kiai
+  secondary_technique: null
+  target: null
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Final focus in horse stance (KIAI)

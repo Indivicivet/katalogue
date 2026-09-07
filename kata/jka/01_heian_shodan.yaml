@@ -1,0 +1,267 @@
+id: 01_heian_shodan
+name: Heian Shodan
+kanji: 平安初段
+furigana: へいあんしょだん
+style: jka
+order: 1
+status: full_draft
+last_updated: '2026-09-07'
+reviewer: Masatoshi Nakayama, Best Karate Vol. 5
+tags:
+- kyu_grade
+- 9th_kyu
+- 8th_kyu
+- shitei
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: left_90
+  facing: W
+  kiai: false
+  notes: Turn left 90 deg into left front stance with downward block
+- id: '2'
+  count: 2
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: W
+  kiai: false
+  notes: Step forward into right front stance with middle lunge punch
+- id: '3'
+  count: 3
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: right_180
+  facing: E
+  kiai: false
+  notes: Turn right 180 deg into right front stance with downward block
+- id: '4'
+  count: 4
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: tettsui_uchi
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: E
+  kiai: false
+  notes: Pull right foot slightly, right hammer fist strike
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: E
+  kiai: false
+  notes: Step forward into left front stance with middle lunge punch
+- id: '6'
+  count: 6
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: left_90
+  facing: N
+  kiai: false
+  notes: Turn left 90 deg into left front stance downward block
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Left rising block in left front stance
+- id: '8'
+  count: 8
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step forward into right front stance with right rising block
+- id: '9'
+  count: 9
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  kiai: true
+  notes: Step forward into left front stance with left rising block (KIAI)
+- id: '10'
+  count: 10
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: left_225
+  facing: SE
+  kiai: false
+  notes: Turn left 225 deg into left front stance downward block
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: SE
+  kiai: false
+  notes: Step forward into right front stance with middle lunge punch
+- id: '12'
+  count: 12
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: right_90
+  facing: SW
+  kiai: false
+  notes: Turn right 90 deg into right front stance downward block
+- id: '13'
+  count: 13
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: SW
+  kiai: false
+  notes: Step forward into left front stance with middle lunge punch
+- id: '14'
+  count: 14
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: left_135
+  facing: S
+  kiai: false
+  notes: Turn left 135 deg into left front stance downward block
+- id: '15'
+  count: 15
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step forward into right front stance with middle lunge punch
+- id: '16'
+  count: 16
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step forward into left front stance with middle lunge punch
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step forward into right front stance with middle lunge punch (KIAI)
+- id: '18'
+  count: 18
+  subcount: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: left_225
+  facing: NW
+  kiai: false
+  notes: Turn left 225 deg into left back stance with middle knife-hand block
+- id: '19'
+  count: 19
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: right_90
+  facing: NE
+  kiai: false
+  notes: Step forward 45 deg right into right back stance knife-hand block
+- id: '20'
+  count: 20
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: right_135
+  facing: SW
+  kiai: false
+  notes: Turn right 135 deg into right back stance knife-hand block
+- id: '21'
+  count: 21
+  subcount: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: left_90
+  facing: SE
+  kiai: false
+  notes: Step forward 45 deg left into left back stance knife-hand block

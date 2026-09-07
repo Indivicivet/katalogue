@@ -1,0 +1,420 @@
+id: 19_nijushiho
+name: Nijushiho
+kanji: 二十四歩
+furigana: にじゅうしほ
+style: jka
+order: 19
+status: early_draft
+last_updated: '2026-09-07'
+reviewer: null
+tags:
+- black_belt
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 1 of Nijushiho
+- id: '2'
+  count: 2
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 2 of Nijushiho
+- id: '3'
+  count: 3
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 3 of Nijushiho
+- id: '4'
+  count: 4
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 4 of Nijushiho
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 5 of Nijushiho
+- id: '6'
+  count: 6
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 6 of Nijushiho
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 7 of Nijushiho
+- id: '8'
+  count: 8
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 8 of Nijushiho
+- id: '9'
+  count: 9
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 9 of Nijushiho
+- id: '10'
+  count: 10
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 10 of Nijushiho
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 11 of Nijushiho
+- id: '12'
+  count: 12
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 12 of Nijushiho
+- id: '13'
+  count: 13
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 13 of Nijushiho
+- id: '14'
+  count: 14
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 14 of Nijushiho
+- id: '15'
+  count: 15
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 15 of Nijushiho
+- id: '16'
+  count: 16
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 16 of Nijushiho
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step 17 of Nijushiho
+- id: '18'
+  count: 18
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 18 of Nijushiho
+- id: '19'
+  count: 19
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 19 of Nijushiho
+- id: '20'
+  count: 20
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 20 of Nijushiho
+- id: '21'
+  count: 21
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 21 of Nijushiho
+- id: '22'
+  count: 22
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 22 of Nijushiho
+- id: '23'
+  count: 23
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 23 of Nijushiho
+- id: '24'
+  count: 24
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 24 of Nijushiho
+- id: '25'
+  count: 25
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 25 of Nijushiho
+- id: '26'
+  count: 26
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 26 of Nijushiho
+- id: '27'
+  count: 27
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 27 of Nijushiho
+- id: '28'
+  count: 28
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 28 of Nijushiho
+- id: '29'
+  count: 29
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 29 of Nijushiho
+- id: '30'
+  count: 30
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 30 of Nijushiho
+- id: '31'
+  count: 31
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 31 of Nijushiho
+- id: '32'
+  count: 32
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 32 of Nijushiho
+- id: '33'
+  count: 33
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Step 33 of Nijushiho
+- id: '34'
+  count: 34
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step 34 of Nijushiho

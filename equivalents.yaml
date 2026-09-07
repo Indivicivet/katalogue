@@ -1,0 +1,29 @@
+# Cross-Style Lineage Equivalents Map
+# Defines equivalence groups between kata in different styles
+
+- name: "Heian Shodan / Pinan Nidan"
+  note: "Funakoshi inverted Pinan 1 and 2 when creating Heian. Shito-ryu preserves Itosu's original numbering."
+  kata:
+    - "jka/01_heian_shodan"
+    - "shitoryu/02_pinan_nidan"
+
+- name: "Heian Nidan / Pinan Shodan"
+  note: "Funakoshi inverted Pinan 1 and 2 when creating Heian. Shito-ryu preserves Itosu's original numbering."
+  kata:
+    - "jka/02_heian_nidan"
+    - "shitoryu/01_pinan_shodan"
+
+- name: "Heian Sandan / Pinan Sandan"
+  kata:
+    - "jka/03_heian_sandan"
+    - "shitoryu/03_pinan_sandan"
+
+- name: "Heian Yondan / Pinan Yondan"
+  kata:
+    - "jka/04_heian_yondan"
+    - "shitoryu/04_pinan_yondan"
+
+- name: "Heian Godan / Pinan Godan"
+  kata:
+    - "jka/05_heian_godan"
+    - "shitoryu/05_pinan_godan"

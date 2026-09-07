@@ -1,0 +1,314 @@
+id: 05_heian_godan
+name: Heian Godan
+kanji: 平安五段
+furigana: へいあんごだん
+style: jka
+order: 5
+status: full_draft
+last_updated: '2026-09-07'
+reviewer: Masatoshi Nakayama, Best Karate Vol. 5
+tags:
+- kyu_grade
+- 4th_kyu
+- shitei
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: uchi_uke
+  secondary_technique: null
+  target: chudan
+  turn: left_90
+  facing: W
+  kiai: false
+  notes: Turn left 90 deg into left back stance inside block
+- id: '2'
+  count: 2
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: W
+  kiai: false
+  notes: Right reverse punch in front stance
+- id: '3'
+  count: 3
+  subcount: null
+  stance: heisoku_dachi
+  lead: both
+  technique: kamae
+  secondary_technique: null
+  target: null
+  turn: right_90
+  facing: N
+  kiai: false
+  notes: Draw left foot back to right foot, fists to right hip
+- id: '4'
+  count: 4
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: uchi_uke
+  secondary_technique: null
+  target: chudan
+  turn: right_90
+  facing: E
+  kiai: false
+  notes: Step into right back stance inside block
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: E
+  kiai: false
+  notes: Left reverse punch in front stance
+- id: '6'
+  count: 6
+  subcount: null
+  stance: heisoku_dachi
+  lead: both
+  technique: kamae
+  secondary_technique: null
+  target: null
+  turn: left_90
+  facing: N
+  kiai: false
+  notes: Draw right foot back to left foot, fists to left hip
+- id: '7'
+  count: 7
+  subcount: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step forward into right back stance augmented block
+- id: '8'
+  count: 8
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: juji_uke_gedan
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step forward into left front stance downward X-block
+- id: '9'
+  count: 9
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: juji_uke_jodan
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Raise arms into upward X-block
+- id: '10'
+  count: 10
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: ura_zuki
+  secondary_technique: osae_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Twist fists, pull back, close-range punch over pressing palm
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Step forward into right front stance lunge punch
+- id: '12'
+  count: 12
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: left_180
+  facing: S
+  kiai: true
+  notes: Turn left 180 deg into right front stance with downward block (KIAI)
+- id: '13'
+  count: 13
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: mikazuki_geri
+  secondary_technique: haishu_uke
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Right crescent kick into open left palm
+- id: '14'
+  count: 14
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: mae_empi_uchi
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Land in horse stance with right forward elbow strike
+- id: '15'
+  count: 15
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Right augmented block in horse stance
+- id: '16'
+  count: 16
+  subcount: null
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: jodan_zuki
+  secondary_technique: gedan_barai
+  target: jodan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Raise left knee, upper vertical fist and lower block
+- id: '17'
+  count: 17
+  subcount: null
+  stance: kosa_dachi
+  lead: right
+  technique: juji_uke_gedan
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Jump forward landing in cross stance with low X-block
+- id: '18'
+  count: 18
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: morote_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Step out into right front stance augmented block
+- id: '19'
+  count: 19
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: nagashi_uke
+  secondary_technique: gedan_barai
+  target: gedan
+  turn: left_180
+  facing: N
+  kiai: true
+  notes: Turn left 180 deg into left front stance with sweeping block (KIAI)
+- id: '20'
+  count: 20
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: teisho_awase_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Double palm-heel press block
+- id: 21a
+  count: 21
+  subcount: a
+  stance: kiba_dachi
+  lead: both
+  technique: manji_uke
+  secondary_technique: null
+  target: jodan
+  turn: right_90
+  facing: E
+  kiai: false
+  notes: Step into horse stance with svastika block
+- id: 21b
+  count: 21
+  subcount: b
+  stance: kiba_dachi
+  lead: both
+  technique: sokutei_osae_uke
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: E
+  kiai: false
+  notes: Sole pressing block
+- id: '22'
+  count: 22
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: oi_zuki
+  secondary_technique: null
+  target: chudan
+  turn: left_90
+  facing: N
+  kiai: false
+  notes: Shift into right front stance lunge punch
+- id: 23a
+  count: 23
+  subcount: a
+  stance: kiba_dachi
+  lead: both
+  technique: manji_uke
+  secondary_technique: null
+  target: jodan
+  turn: left_90
+  facing: W
+  kiai: false
+  notes: Step into horse stance with svastika block
+- id: 23b
+  count: 23
+  subcount: b
+  stance: kiba_dachi
+  lead: both
+  technique: sokutei_osae_uke
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: W
+  kiai: false
+  notes: Sole pressing block

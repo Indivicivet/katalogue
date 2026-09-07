@@ -1,0 +1,253 @@
+id: 03_pinan_sandan
+name: Pinan Sandan
+kanji: 平安三段
+furigana: ぴーあんさんだん
+style: shitoryu
+order: 3
+status: early_draft
+last_updated: '2026-09-07'
+reviewer: Kenwa Mabuni lineage reference
+tags:
+- pinan
+- shitoryu
+steps:
+- id: '1'
+  count: 1
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 1
+- id: '2'
+  count: 2
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 2
+- id: '3'
+  count: 3
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 3
+- id: '4'
+  count: 4
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 4
+- id: '5'
+  count: 5
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 5
+- id: '6'
+  count: 6
+  subcount: null
+  stance: shiko_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 6
+- id: '7'
+  count: 7
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 7
+- id: '8'
+  count: 8
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 8
+- id: '9'
+  count: 9
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 9
+- id: '10'
+  count: 10
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Pinan Sandan step 10
+- id: '11'
+  count: 11
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 11
+- id: '12'
+  count: 12
+  subcount: null
+  stance: shiko_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 12
+- id: '13'
+  count: 13
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 13
+- id: '14'
+  count: 14
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 14
+- id: '15'
+  count: 15
+  subcount: null
+  stance: shiko_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 15
+- id: '16'
+  count: 16
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 16
+- id: '17'
+  count: 17
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 17
+- id: '18'
+  count: 18
+  subcount: null
+  stance: shiko_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 18
+- id: '19'
+  count: 19
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: false
+  notes: Pinan Sandan step 19
+- id: '20'
+  count: 20
+  subcount: null
+  stance: neko_ashi_dachi
+  lead: right
+  technique: shuto_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: S
+  kiai: true
+  notes: Pinan Sandan step 20
