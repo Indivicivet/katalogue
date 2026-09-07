@@ -4,7 +4,7 @@ kanji: 披塞大
 furigana: ばっさいだい
 style: jka
 order: 9
-status: full_draft
+status: early_draft
 last_updated: '2026-09-07'
 reviewer: null
 sources:
@@ -352,180 +352,180 @@ steps:
 - id: '28'
   count: 28
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: left_90
-  facing: W
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Turn left into front stance knife-hand block
+  notes: null
 - id: '29'
   count: 29
   subcount: null
-  stance: kokutsu_dachi
-  lead: right
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: W
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Step forward right back stance knife-hand block
+  notes: null
 - id: '30'
   count: 30
   subcount: null
-  stance: kokutsu_dachi
-  lead: left
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: W
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Step forward left back stance knife-hand block
+  notes: null
 - id: '31'
   count: 31
   subcount: null
-  stance: zenkutsu_dachi
-  lead: right
-  technique: gyaku_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: W
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Right front stance reverse punch
+  notes: null
 - id: '32'
   count: 32
   subcount: null
-  stance: kokutsu_dachi
-  lead: right
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: right_180
-  facing: E
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Turn right 180 deg into right back stance knife-hand block
+  notes: null
 - id: '33'
   count: 33
   subcount: null
-  stance: kokutsu_dachi
-  lead: left
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: E
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Step forward left back stance knife-hand block
+  notes: null
 - id: '34'
   count: 34
   subcount: null
-  stance: kokutsu_dachi
-  lead: right
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: E
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Step forward right back stance knife-hand block
+  notes: null
 - id: '35'
   count: 35
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: gyaku_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: E
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Left front stance reverse punch
+  notes: null
 - id: '36'
   count: 36
   subcount: null
-  stance: kokutsu_dachi
-  lead: left
-  technique: morote_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: left_90
-  facing: N
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Turn left 90 deg into left back stance augmented block
+  notes: null
 - id: '37'
   count: 37
   subcount: null
-  stance: kokutsu_dachi
-  lead: right
-  technique: morote_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Step forward right back stance augmented block
+  notes: null
 - id: '38'
   count: 38
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: gedan_barai
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: gedan
-  turn: '0'
-  facing: N
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Step forward left front stance downward block
+  notes: null
 - id: '39'
   count: 39
   subcount: null
-  stance: zenkutsu_dachi
-  lead: right
-  technique: age_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: jodan
-  turn: '0'
-  facing: N
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Step forward right front stance rising block
+  notes: null
 - id: '40'
   count: 40
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: shuto_uchi
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: jodan
-  turn: '0'
-  facing: N
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Left knife-hand strike
+  notes: null
 - id: '41'
   count: 41
   subcount: null
-  stance: zenkutsu_dachi
-  lead: right
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
+  target: null
+  turn: null
+  facing: null
   kiai: false
-  notes: Right lunge punch
+  notes: null
 - id: '42'
   count: 42
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: gyaku_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
+  target: null
+  turn: null
+  facing: null
   kiai: true
-  notes: Left reverse punch (KIAI)
+  notes: null

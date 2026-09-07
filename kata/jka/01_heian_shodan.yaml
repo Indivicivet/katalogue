@@ -91,18 +91,6 @@ steps:
   count: 7
   subcount: null
   stance: zenkutsu_dachi
-  lead: left
-  technique: age_uke
-  secondary_technique: null
-  target: jodan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Left rising block in left front stance
-- id: '8'
-  count: 8
-  subcount: null
-  stance: zenkutsu_dachi
   lead: right
   technique: age_uke
   secondary_technique: null
@@ -111,8 +99,8 @@ steps:
   facing: N
   kiai: false
   notes: Step forward into right front stance with right rising block
-- id: '9'
-  count: 9
+- id: '8'
+  count: 8
   subcount: null
   stance: zenkutsu_dachi
   lead: left
@@ -121,8 +109,20 @@ steps:
   target: jodan
   turn: '0'
   facing: N
+  kiai: false
+  notes: Step forward into left front stance with left rising block
+- id: '9'
+  count: 9
+  subcount: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
   kiai: true
-  notes: Step forward into left front stance with left rising block (KIAI)
+  notes: Step forward into right front stance with right rising block (KIAI)
 - id: '10'
   count: 10
   subcount: null
@@ -179,10 +179,10 @@ steps:
   technique: gedan_barai
   secondary_technique: null
   target: gedan
-  turn: left_135
+  turn: left_45
   facing: S
   kiai: false
-  notes: Turn left 135 deg into left front stance downward block
+  notes: Turn left 45 deg into left front stance downward block
 - id: '15'
   count: 15
   subcount: null
@@ -251,10 +251,10 @@ steps:
   technique: shuto_uke
   secondary_technique: null
   target: chudan
-  turn: right_135
+  turn: right_180
   facing: SW
   kiai: false
-  notes: Turn right 135 deg into right back stance knife-hand block
+  notes: Turn right 180 deg into right back stance knife-hand block
 - id: '21'
   count: 21
   subcount: null

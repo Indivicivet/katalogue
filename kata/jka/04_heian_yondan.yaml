@@ -312,8 +312,8 @@ steps:
   target: chudan
   turn: '0'
   facing: W
-  kiai: false
-  notes: Right knee strike pulling hands down
+  kiai: true
+  notes: Right knee strike pulling hands down (KIAI)
 - id: '24'
   count: 24
   subcount: null
@@ -336,5 +336,5 @@ steps:
   target: chudan
   turn: '0'
   facing: E
-  kiai: true
-  notes: Step forward into right back stance knife-hand block (KIAI)
+  kiai: false
+  notes: Step forward into right back stance knife-hand block

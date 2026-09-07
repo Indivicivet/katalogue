@@ -5,22 +5,54 @@
 {% block content %}
 <div class="page-header">
   <div class="breadcrumbs">
-    <a href="{{ rel_root }}index.html">Directory</a> &rsaquo;
-    <span>Tags</span> &rsaquo;
-    <span>#{{ tag_name }}</span>
+    <a href="{{ rel_root }}index.html">
+      <span class="text-ja">目録</span>
+      <span class="text-ja-en">Directory</span>
+      <span class="text-ro">Directory</span>
+      <span class="text-en">Directory</span>
+    </a> &rsaquo;
+    <span>
+      <span class="text-ja">タグ</span>
+      <span class="text-ja-en">Tags</span>
+      <span class="text-ro">Tags</span>
+      <span class="text-en">Tags</span>
+    </span> &rsaquo;
+    <span>
+      {% set tag_info = TAG_MAP.get(tag_name) %}
+      {% if tag_info %}
+        <span class="text-ja">#{{ tag_info.ja }}</span>
+        <span class="text-ja-en">#{{ tag_name }}</span>
+        <span class="text-ro">#{{ tag_name }}</span>
+        <span class="text-en">#{{ tag_name }}</span>
+      {% else %}
+        #{{ tag_name }}
+      {% endif %}
+    </span>
   </div>
 
   <h1 class="page-title">
-    <span>Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
+    {% set tag_info = TAG_MAP.get(tag_name) %}
+    <span class="text-ja">タグ「{% if tag_info %}#{{ tag_info.ja }}{% else %}#{{ tag_name }}{% endif %}」の型一覧</span>
+    <span class="text-ja-en">Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
+    <span class="text-ro">Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
+    <span class="text-en">Kata tagged with <span style="color: var(--primary);">#{{ tag_name }}</span></span>
   </h1>
   <p style="color: var(--text-secondary); margin-top: 0.5rem;">
-    Found {{ matching_kata | length }} kata matching this classification.
+    <span class="text-ja">該当する型: {{ matching_kata | length }} 件</span>
+    <span class="text-ja-en">Found {{ matching_kata | length }} kata matching this classification.</span>
+    <span class="text-ro">Found {{ matching_kata | length }} kata matching this classification.</span>
+    <span class="text-en">Found {{ matching_kata | length }} kata matching this classification.</span>
   </p>
 </div>
 
 <!-- Back to All Tags -->
 <div style="margin-bottom: 1.5rem;">
-  <a href="{{ rel_root }}index.html" class="tag-link">&larr; Back to Directory</a>
+  <a href="{{ rel_root }}index.html" class="tag-link">
+    <span class="text-ja">&larr; 目録に戻る</span>
+    <span class="text-ja-en">&larr; Back to Directory</span>
+    <span class="text-ro">&larr; Back to Directory</span>
+    <span class="text-en">&larr; Back to Directory</span>
+  </a>
 </div>
 
 <!-- Matching Kata Table -->
@@ -29,20 +61,58 @@
     <thead>
       <tr>
         <th style="width: 50px;">#</th>
-        <th>Style</th>
-        <th>Kata</th>
-        <th>Status</th>
-        <th>Counts</th>
-        <th>Kiai</th>
-        <th>Tags</th>
+        <th>
+          <span class="text-ja">流派</span>
+          <span class="text-ja-en">Style</span>
+          <span class="text-ro">Style</span>
+          <span class="text-en">Style</span>
+        </th>
+        <th>
+          <span class="text-ja">型名</span>
+          <span class="text-ja-en">Kata</span>
+          <span class="text-ro">Kata</span>
+          <span class="text-en">Kata</span>
+        </th>
+        <th>
+          <span class="text-ja">状態</span>
+          <span class="text-ja-en">Status</span>
+          <span class="text-ro">Status</span>
+          <span class="text-en">Status</span>
+        </th>
+        <th>
+          <span class="text-ja">挙動数</span>
+          <span class="text-ja-en">Counts</span>
+          <span class="text-ro">Counts</span>
+          <span class="text-en">Counts</span>
+        </th>
+        <th>
+          <span class="text-ja">気合</span>
+          <span class="text-ja-en">Kiai</span>
+          <span class="text-ro">Kiai</span>
+          <span class="text-en">Kiai</span>
+        </th>
+        <th>
+          <span class="text-ja">タグ</span>
+          <span class="text-ja-en">Tags</span>
+          <span class="text-ro">Tags</span>
+          <span class="text-en">Tags</span>
+        </th>
       </tr>
     </thead>
     <tbody>
       {% for k in matching_kata %}
       <tr>
         <td style="color: var(--text-muted); font-weight: 600;">{{ k.order }}</td>
-        <td style="text-transform: uppercase; font-weight: 700; font-size: 0.8rem; color: var(--text-muted);">
-          {{ k.style }}
+        <td style="font-weight: 700; font-size: 0.8rem; color: var(--text-muted);">
+          {% set st_info = STYLE_MAP.get(k.style) %}
+          {% if st_info %}
+            <span class="text-ja">{{ st_info.ja }}</span>
+            <span class="text-ja-en">{{ st_info.en | upper }}</span>
+            <span class="text-ro">{{ st_info.ro | upper }}</span>
+            <span class="text-en">{{ st_info.en | upper }}</span>
+          {% else %}
+            {{ k.style | upper }}
+          {% endif %}
         </td>
         <td>
           <a href="{{ rel_root }}kata/{{ k.style }}/{{ k.id }}.html" class="kata-name-link">
@@ -51,14 +121,20 @@
                   data-furigana="{{ k.furigana }}"
                   data-romaji="{{ k.name }}"
                   data-en="{{ k.name }}">
-              <span class="text-ja"><ruby>{{ k.kanji }}<rt>{{ k.furigana }}</rt></ruby> ({{ k.name }})</span>
+              <span class="text-ja"><ruby>{{ k.kanji }}<rt>{{ k.furigana }}</rt></ruby></span>
+              <span class="text-ja-en"><ruby>{{ k.kanji }}<rt>{{ k.furigana }}</rt></ruby> <span class="sub-term">({{ k.name }})</span></span>
               <span class="text-ro">{{ k.name }}</span>
               <span class="text-en">{{ k.name }}</span>
             </span>
           </a>
         </td>
         <td>
-          <span class="badge badge-{{ k.status }}">{{ k.status | replace('_', ' ') }}</span>
+          <span class="badge badge-{{ k.status }}">
+            <span class="text-ja">{{ STATUS_MAP[k.status].ja }}</span>
+            <span class="text-ja-en">{{ STATUS_MAP[k.status].ja_en }}</span>
+            <span class="text-ro">{{ STATUS_MAP[k.status].ro }}</span>
+            <span class="text-en">{{ STATUS_MAP[k.status].en }}</span>
+          </span>
         </td>
         <td style="font-weight: 600;">{{ k.move_count }}</td>
         <td>
@@ -68,7 +144,17 @@
         </td>
         <td>
           {% for t in k.tags %}
-            <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link {% if t == tag_name %}active{% endif %}">{{ t }}</a>
+            {% set t_info = TAG_MAP.get(t) %}
+            <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link {% if t == tag_name %}active{% endif %}">
+              {% if t_info %}
+                <span class="text-ja">{{ t_info.ja }}</span>
+                <span class="text-ja-en">{{ t }}</span>
+                <span class="text-ro">{{ t }}</span>
+                <span class="text-en">{{ t }}</span>
+              {% else %}
+                {{ t }}
+              {% endif %}
+            </a>
           {% endfor %}
         </td>
       </tr>

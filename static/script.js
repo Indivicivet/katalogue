@@ -5,7 +5,7 @@
   const DEFAULT_LANG = 'ja';
 
   function setLanguage(lang) {
-    document.body.classList.remove('lang-ja', 'lang-ro', 'lang-en');
+    document.body.classList.remove('lang-ja', 'lang-ja-en', 'lang-ro', 'lang-en');
     document.body.classList.add('lang-' + lang);
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -23,8 +23,11 @@
       const romaji = el.dataset.romaji || '';
       const en = el.dataset.en || '';
 
-      if (lang === 'ja') {
-        el.setAttribute('data-tooltip', `${romaji} • ${en}`);
+      if (lang === 'ja' || lang === 'ja-en') {
+        const tooltipParts = [];
+        if (romaji) tooltipParts.push(romaji);
+        if (en && en !== romaji) tooltipParts.push(en);
+        el.setAttribute('data-tooltip', tooltipParts.join(' • '));
       } else if (lang === 'ro') {
         el.setAttribute('data-tooltip', `${kanji} [${furigana}] • ${en}`);
       } else if (lang === 'en') {

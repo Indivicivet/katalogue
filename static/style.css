@@ -436,16 +436,36 @@ rt {
 
 /* Mode-dependent display */
 body.lang-ja .text-ja { display: inline; }
-body.lang-ja .text-ro { display: none; }
-body.lang-ja .text-en { display: none; }
+body.lang-ja .text-ja-en, body.lang-ja .text-ro, body.lang-ja .text-en { display: none; }
 
-body.lang-ro .text-ja { display: none; }
+body.lang-ja-en .text-ja-en { display: inline; }
+body.lang-ja-en .text-ja, body.lang-ja-en .text-ro, body.lang-ja-en .text-en { display: none; }
+
 body.lang-ro .text-ro { display: inline; font-weight: 600; }
-body.lang-ro .text-en { display: none; }
+body.lang-ro .text-ja, body.lang-ro .text-ja-en, body.lang-ro .text-en { display: none; }
 
-body.lang-en .text-ja { display: none; }
-body.lang-en .text-ro { display: none; }
 body.lang-en .text-en { display: inline; font-weight: 500; }
+body.lang-en .text-ja, body.lang-en .text-ja-en, body.lang-en .text-ro { display: none; }
+
+/* Mode-dependent block / layout visibility */
+body.lang-ja .show-ja { display: revert; }
+body.lang-ja .show-ja-en, body.lang-ja .show-ro, body.lang-ja .show-en, body.lang-ja .show-latin { display: none !important; }
+
+body.lang-ja-en .show-ja-en { display: revert; }
+body.lang-ja-en .show-ja, body.lang-ja-en .show-ro, body.lang-ja-en .show-en, body.lang-ja-en .show-latin { display: none !important; }
+
+body.lang-ro .show-ro, body.lang-ro .show-latin { display: revert; }
+body.lang-ro .show-ja, body.lang-ro .show-ja-en, body.lang-ro .show-en { display: none !important; }
+
+body.lang-en .show-en, body.lang-en .show-latin { display: revert; }
+body.lang-en .show-ja, body.lang-en .show-ja-en, body.lang-en .show-ro { display: none !important; }
+
+.sub-term {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
 
 /* Pure CSS Tooltip on Hover */
 .term::after {
