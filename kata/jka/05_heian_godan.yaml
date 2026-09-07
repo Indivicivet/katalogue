@@ -144,8 +144,8 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
-  notes: Step forward into right front stance lunge punch
+  kiai: true
+  notes: Step forward into right front stance lunge punch (KIAI)
 - id: '12'
   count: 12
   subcount: null
@@ -156,8 +156,8 @@ steps:
   target: gedan
   turn: left_180
   facing: S
-  kiai: true
-  notes: Turn left 180 deg into right front stance with downward block (KIAI)
+  kiai: false
+  notes: Turn left 180 deg into right front stance with downward block
 - id: '13'
   count: 13
   subcount: null
@@ -216,8 +216,8 @@ steps:
   target: gedan
   turn: '0'
   facing: S
-  kiai: false
-  notes: Jump forward landing in cross stance with low X-block
+  kiai: true
+  notes: Jump forward landing in cross stance with low X-block (KIAI)
 - id: '18'
   count: 18
   subcount: null
@@ -240,8 +240,8 @@ steps:
   target: gedan
   turn: left_180
   facing: N
-  kiai: true
-  notes: Turn left 180 deg into left front stance with sweeping block (KIAI)
+  kiai: false
+  notes: Turn left 180 deg into left front stance with sweeping block
 - id: '20'
   count: 20
   subcount: null

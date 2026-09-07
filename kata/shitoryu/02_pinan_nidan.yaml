@@ -124,144 +124,144 @@ steps:
 - id: '10'
   count: 10
   subcount: null
-  stance: neko_ashi_dachi
-  lead: right
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '11'
   count: 11
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '12'
   count: 12
   subcount: null
-  stance: neko_ashi_dachi
-  lead: right
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '13'
   count: 13
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '14'
   count: 14
   subcount: null
-  stance: neko_ashi_dachi
-  lead: right
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '15'
   count: 15
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '16'
   count: 16
   subcount: null
-  stance: neko_ashi_dachi
-  lead: right
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '17'
   count: 17
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: oi_zuki
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: true
   notes: null
 - id: '18'
   count: 18
   subcount: null
-  stance: neko_ashi_dachi
-  lead: right
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '19'
   count: 19
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '20'
   count: 20
   subcount: null
-  stance: neko_ashi_dachi
-  lead: right
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null
 - id: '21'
   count: 21
   subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: shuto_uke
+  stance: null
+  lead: null
+  technique: null
   secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: S
+  target: null
+  turn: null
+  facing: null
   kiai: false
   notes: null

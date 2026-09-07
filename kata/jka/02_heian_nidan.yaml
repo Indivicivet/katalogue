@@ -86,9 +86,9 @@ steps:
   facing: E
   kiai: false
   notes: Upper backfist strike
-- id: 7a
+- id: '7'
   count: 7
-  subcount: a
+  subcount: null
   stance: tsuru_ashi_dachi
   lead: right
   technique: yoko_geri_keage
@@ -98,9 +98,9 @@ steps:
   facing: N
   kiai: false
   notes: Side snap kick and backfist strike
-- id: 7b
-  count: 7
-  subcount: b
+- id: '8'
+  count: 8
+  subcount: null
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
@@ -110,8 +110,8 @@ steps:
   facing: N
   kiai: false
   notes: Land in left back stance knife-hand block
-- id: '8'
-  count: 8
+- id: '9'
+  count: 9
   subcount: null
   stance: kokutsu_dachi
   lead: right
@@ -122,8 +122,8 @@ steps:
   facing: N
   kiai: false
   notes: Step forward into right back stance knife-hand block
-- id: '9'
-  count: 9
+- id: '10'
+  count: 10
   subcount: null
   stance: kokutsu_dachi
   lead: left
@@ -134,8 +134,8 @@ steps:
   facing: N
   kiai: false
   notes: Step forward into left back stance knife-hand block
-- id: '10'
-  count: 10
+- id: '11'
+  count: 11
   subcount: null
   stance: zenkutsu_dachi
   lead: right
@@ -144,21 +144,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
-  notes: Step forward into right front stance with spear-hand strike over pressing
-    block
-- id: '11'
-  count: 11
-  subcount: null
-  stance: zenkutsu_dachi
-  lead: right
-  technique: shihon_nukite
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
   kiai: true
-  notes: Thrust four-finger spear-hand (KIAI)
+  notes: Step forward into right front stance with spear-hand strike over pressing
+    block (KIAI)
 - id: '12'
   count: 12
   subcount: null
@@ -191,7 +179,7 @@ steps:
   technique: shuto_uke
   secondary_technique: null
   target: chudan
-  turn: right_135
+  turn: right_90
   facing: NW
   kiai: false
   notes: Turn right 135 deg into right back stance knife-hand block
@@ -203,7 +191,7 @@ steps:
   technique: shuto_uke
   secondary_technique: null
   target: chudan
-  turn: left_90
+  turn: right_90
   facing: NE
   kiai: false
   notes: Step forward 45 deg left into left back stance knife-hand block
@@ -215,7 +203,7 @@ steps:
   technique: uchi_uke
   secondary_technique: null
   target: chudan
-  turn: left_135
+  turn: right_135
   facing: S
   kiai: false
   notes: Turn left 135 deg into left front stance inside block
@@ -323,7 +311,7 @@ steps:
   technique: gedan_barai
   secondary_technique: null
   target: gedan
-  turn: right_135
+  turn: right_180
   facing: SW
   kiai: false
   notes: Turn right 135 deg into right front stance downward block

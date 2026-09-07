@@ -262,20 +262,19 @@ steps:
   technique: ushiro_empi_uchi
   secondary_technique: yama_zuki
   target: chudan
-  turn: right_180
+  turn: '0'
   facing: S
   kiai: false
-  notes: Slide along line into horse stance with rear elbow strike and punch over
-    shoulder
+  notes: Slide along line into horse stance with rear elbow strike and punch over shoulder
 - id: '20'
   count: 20
   subcount: null
   stance: kiba_dachi
   lead: both
-  technique: kiai
-  secondary_technique: null
-  target: null
+  technique: ushiro_empi_uchi
+  secondary_technique: yama_zuki
+  target: chudan
   turn: '0'
   facing: S
   kiai: true
-  notes: Final focus in horse stance (KIAI)
+  notes: Slide along line into horse stance with rear elbow strike and punch over shoulder (KIAI)
