@@ -99,21 +99,35 @@
     <div class="meta-item">
       <span class="meta-label">
         <span class="text-ja">総挙動数</span>
-        <span class="text-ja-en">Total Movements</span>
-        <span class="text-ro">Total Movements</span>
-        <span class="text-en">Total Movements</span>
+        <span class="text-ja-en">Total Moves</span>
+        <span class="text-ro">Total Moves</span>
+        <span class="text-en">Total Moves</span>
       </span>
       <span class="meta-value">
         {% if kata.placeholder_count > 0 %}
-          <span class="text-ja">{{ kata.steps | length }} ({{ kata.base_count }}挙動 / 確定{{ kata.defined_count }}・未確定{{ kata.placeholder_count }})</span>
-          <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</span>
-          <span class="text-ro">{{ kata.steps | length }} ({{ kata.base_count }} counts: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</span>
-          <span class="text-en">{{ kata.steps | length }} ({{ kata.base_count }} counts: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</span>
+          {% if kata.steps | length != kata.base_count %}
+            <span class="text-ja">{{ kata.base_count }} <small>({{ kata.steps | length }}動作 / 確定{{ kata.defined_count }}・未確定{{ kata.placeholder_count }})</small></span>
+            <span class="text-ja-en">{{ kata.base_count }} <small>({{ kata.steps | length }} submoves: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</small></span>
+            <span class="text-ro">{{ kata.base_count }} <small>({{ kata.steps | length }} submoves: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</small></span>
+            <span class="text-en">{{ kata.base_count }} <small>({{ kata.steps | length }} submoves: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</small></span>
+          {% else %}
+            <span class="text-ja">{{ kata.base_count }} <small>(確定{{ kata.defined_count }}・未確定{{ kata.placeholder_count }})</small></span>
+            <span class="text-ja-en">{{ kata.base_count }} <small>({{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</small></span>
+            <span class="text-ro">{{ kata.base_count }} <small>({{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</small></span>
+            <span class="text-en">{{ kata.base_count }} <small>({{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</small></span>
+          {% endif %}
         {% else %}
-          <span class="text-ja">{{ kata.steps | length }} ({{ kata.base_count }}挙動)</span>
-          <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
-          <span class="text-ro">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
-          <span class="text-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+          {% if kata.steps | length != kata.base_count %}
+            <span class="text-ja">{{ kata.base_count }} <small>({{ kata.steps | length }}動作)</small></span>
+            <span class="text-ja-en">{{ kata.base_count }} <small>({{ kata.steps | length }} submoves)</small></span>
+            <span class="text-ro">{{ kata.base_count }} <small>({{ kata.steps | length }} submoves)</small></span>
+            <span class="text-en">{{ kata.base_count }} <small>({{ kata.steps | length }} submoves)</small></span>
+          {% else %}
+            <span class="text-ja">{{ kata.base_count }}</span>
+            <span class="text-ja-en">{{ kata.base_count }}</span>
+            <span class="text-ro">{{ kata.base_count }}</span>
+            <span class="text-en">{{ kata.base_count }}</span>
+          {% endif %}
         {% endif %}
       </span>
     </div>
