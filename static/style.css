@@ -591,3 +591,64 @@ footer.site-footer {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
+/* Review Status Banners */
+.review-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.review-banner-draft {
+  background-color: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #991b1b;
+  padding: 1.15rem 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.1);
+}
+
+.review-banner-student {
+  background-color: #ffedd5;
+  border: 2px solid #f97316;
+  color: #9a3412;
+  padding: 0.95rem 1.15rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.review-banner-verified {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.review-banner-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Placeholder Row & Badge Styling */
+tr.row-placeholder {
+  border-left: 4px solid #cbd5e1;
+  background-color: #fafbfc;
+}
+
+.placeholder-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px dashed #cbd5e1;
+}
