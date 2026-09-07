@@ -147,20 +147,25 @@ def main():
             tech_obj = techniques.get(tech_key)
             sec_tech_obj = techniques.get(sec_tech_key)
 
-            cat = tech_obj.get("category", "other") if tech_obj else "other"
-            cat_counts[cat] = cat_counts.get(cat, 0) + 1
+            if not tech_key:
+                cat = "placeholder"
+            else:
+                cat = tech_obj.get("category", "other") if tech_obj else "other"
+                cat_counts[cat] = cat_counts.get(cat, 0) + 1
 
             if step.get("kiai"):
                 kiai_steps.append(step.get("id"))
 
-            # Rotation check
+            # Rotation check: only run when turn and facing are explicitly provided
             turn_str = step.get("turn")
-            facing_str = step.get("facing", prev_facing)
-            rot_warn = check_rotation(prev_facing, turn_str, facing_str)
-            if rot_warn:
-                rotation_warnings_count += 1
-
-            prev_facing = facing_str
+            facing_str = step.get("facing")
+            if turn_str is not None and facing_str is not None:
+                rot_warn = check_rotation(prev_facing, turn_str, facing_str)
+                if rot_warn:
+                    rotation_warnings_count += 1
+                prev_facing = facing_str
+            else:
+                rot_warn = None
 
             rendered_steps.append(
                 {
@@ -174,8 +179,10 @@ def main():
             )
 
         total_steps = len(steps)
+        placeholder_count = sum(1 for s in steps if not s.get("technique"))
+        defined_count = total_steps - placeholder_count
         cat_percents = {
-            k: (round((v / total_steps) * 100, 1) if total_steps > 0 else 0)
+            k: (round((v / defined_count) * 100, 1) if defined_count > 0 else 0)
             for k, v in cat_counts.items()
         }
 
@@ -183,6 +190,8 @@ def main():
         base_counts = set(s.get("count") for s in steps if s.get("count") is not None)
         data["base_count"] = max(base_counts) if base_counts else len(steps)
         data["move_count"] = len(steps)
+        data["placeholder_count"] = placeholder_count
+        data["defined_count"] = defined_count
         data["rendered_steps"] = rendered_steps
         data["kiai_steps"] = kiai_steps
         data["category_counts"] = cat_counts
@@ -247,10 +256,16 @@ def main():
             if tc:
                 global_tech_counts[tc] = global_tech_counts.get(tc, 0) + 1
             cat = s.get("category", "other")
-            global_category_counts[cat] = global_category_counts.get(cat, 0) + 1
+            if cat in global_category_counts:
+                global_category_counts[cat] += 1
 
+    total_jka_defined_moves = sum(k["defined_count"] for k in jka_all)
     global_category_percents = {
-        k: (round((v / total_jka_moves) * 100, 1) if total_jka_moves > 0 else 0)
+        k: (
+            round((v / total_jka_defined_moves) * 100, 1)
+            if total_jka_defined_moves > 0
+            else 0
+        )
         for k, v in global_category_counts.items()
     }
 
@@ -264,8 +279,8 @@ def main():
                 "data": stances.get(st_id, {}),
                 "count": cnt,
                 "percent": (
-                    round((cnt / total_jka_moves) * 100, 1)
-                    if total_jka_moves > 0
+                    round((cnt / total_jka_defined_moves) * 100, 1)
+                    if total_jka_defined_moves > 0
                     else 0
                 ),
             }
@@ -286,6 +301,7 @@ def main():
     global_stats = {
         "total_kata": len(jka_all),
         "total_moves": total_jka_moves,
+        "total_defined_moves": total_jka_defined_moves,
         "total_kiai": total_jka_kiai,
         "category_counts": global_category_counts,
         "category_percents": global_category_percents,
