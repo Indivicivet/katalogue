@@ -39,6 +39,38 @@
   </h1>
 </div>
 
+<!-- Review Status Warning Banner -->
+{% if not kata.reviewer or kata.status in ['early_draft', 'full_draft'] %}
+<div class="review-banner review-banner-draft">
+  <div class="review-banner-icon">⚠️</div>
+  <div class="review-banner-text">
+    <span class="text-ja"><strong>注意:</strong> この型は<strong>草案（ドラフト）</strong>であり、誤りが含まれている可能性があるため、参考資料として用いることはできません。本草案をもとに型の練習や判断を行わないでください。</span>
+    <span class="text-ja-en"><strong>NOTE:</strong> This kata is a DRAFT, may be entirely incorrect, and should not be taken as a reference. Please do NOT base any aspect of your kata on this draft.</span>
+    <span class="text-ro"><strong>NOTE:</strong> This kata is a DRAFT, may be entirely incorrect, and should not be taken as a reference. Please do NOT base any aspect of your kata on this draft.</span>
+    <span class="text-en"><strong>NOTE:</strong> This kata is a DRAFT, may be entirely incorrect, and should not be taken as a reference. Please do NOT base any aspect of your kata on this draft.</span>
+  </div>
+</div>
+{% elif kata.status == 'student_reviewed' %}
+<div class="review-banner review-banner-student">
+  <div class="review-banner-icon">⚠️</div>
+  <div class="review-banner-text">
+    <span class="text-ja"><strong>注意:</strong> この型は高段者・指導員による査読を受けておらず、誤りが含まれている可能性があるため、確定的な参考資料として扱わないでください。疑問がある場合は指導員（先生）にご相談ください。</span>
+    <span class="text-ja-en"><strong>NOTE:</strong> This kata has not been reviewed by a senior karateka, may be incorrect, and should not be taken as a definitive reference. Please consult your sensei if you have any doubts.</span>
+    <span class="text-ro"><strong>NOTE:</strong> This kata has not been reviewed by a senior karateka, may be incorrect, and should not be taken as a definitive reference. Please consult your sensei if you have any doubts.</span>
+    <span class="text-en"><strong>NOTE:</strong> This kata has not been reviewed by a senior karateka, may be incorrect, and should not be taken as a definitive reference. Please consult your sensei if you have any doubts.</span>
+  </div>
+</div>
+{% elif kata.status in ['black_belt_reviewed', 'instructor_reviewed', 'kata_book_reviewed'] %}
+<div class="review-banner review-banner-verified">
+  <div class="review-banner-text">
+    <span class="text-ja"><strong>注意:</strong> この型には不整合や解釈・流派による相違、または誤りが含まれている可能性があるため、あくまで参考情報としてご利用ください。疑問がある場合は指導員（先生）にご相談ください。</span>
+    <span class="text-ja-en"><strong>NOTE:</strong> This kata may contain inconsistencies, stylistic differences or errors and is only intended as a reference. Please consult your sensei if you have any doubts.</span>
+    <span class="text-ro"><strong>NOTE:</strong> This kata may contain inconsistencies, stylistic differences or errors and is only intended as a reference. Please consult your sensei if you have any doubts.</span>
+    <span class="text-en"><strong>NOTE:</strong> This kata may contain inconsistencies, stylistic differences or errors and is only intended as a reference. Please consult your sensei if you have any doubts.</span>
+  </div>
+</div>
+{% endif %}
+
 <!-- Cross-Style Equivalent Tabs -->
 {% if equivalents_tabs %}
 <div class="style-tabs-wrapper">
@@ -72,10 +104,17 @@
         <span class="text-en">Total Movements</span>
       </span>
       <span class="meta-value">
-        <span class="text-ja">{{ kata.steps | length }} ({{ kata.base_count }}挙動)</span>
-        <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
-        <span class="text-ro">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
-        <span class="text-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+        {% if kata.placeholder_count > 0 %}
+          <span class="text-ja">{{ kata.steps | length }} ({{ kata.base_count }}挙動 / 確定{{ kata.defined_count }}・未確定{{ kata.placeholder_count }})</span>
+          <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</span>
+          <span class="text-ro">{{ kata.steps | length }} ({{ kata.base_count }} counts: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</span>
+          <span class="text-en">{{ kata.steps | length }} ({{ kata.base_count }} counts: {{ kata.defined_count }} defined, {{ kata.placeholder_count }} TBD)</span>
+        {% else %}
+          <span class="text-ja">{{ kata.steps | length }} ({{ kata.base_count }}挙動)</span>
+          <span class="text-ja-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+          <span class="text-ro">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+          <span class="text-en">{{ kata.steps | length }} ({{ kata.base_count }} counts)</span>
+        {% endif %}
       </span>
     </div>
     <div class="meta-item">
@@ -318,8 +357,15 @@
               <span class="text-ro">{{ s.stance_data.romaji }}</span>
               <span class="text-en">{{ s.stance_data.en }}</span>
             </span>
-          {% else %}
+          {% elif s.stance %}
             {{ s.stance }}
+          {% else %}
+            <span class="placeholder-tag">
+              <span class="text-ja">⚠️ 未確定</span>
+              <span class="text-ja-en">⚠️ PLACEHOLDER</span>
+              <span class="text-ro">⚠️ PLACEHOLDER</span>
+              <span class="text-en">⚠️ PLACEHOLDER</span>
+            </span>
           {% endif %}
         </td>
         <td style="text-transform: capitalize; color: var(--text-secondary);">
@@ -344,8 +390,15 @@
               <span class="text-ro">{{ s.tech_data.romaji }}</span>
               <span class="text-en">{{ s.tech_data.en }}</span>
             </span>
-          {% else %}
+          {% elif s.technique %}
             {{ s.technique }}
+          {% else %}
+            <span class="placeholder-tag">
+              <span class="text-ja">⚠️ 未確定</span>
+              <span class="text-ja-en">⚠️ PLACEHOLDER</span>
+              <span class="text-ro">⚠️ PLACEHOLDER</span>
+              <span class="text-en">⚠️ PLACEHOLDER</span>
+            </span>
           {% endif %}
         </td>
         <td>
@@ -381,8 +434,10 @@
               <span class="text-ja-en">{{ FACING_MAP[s.facing].ja_en }}</span>
               <span class="text-ro">{{ FACING_MAP[s.facing].ro }}</span>
               <span class="text-en">{{ FACING_MAP[s.facing].en }}</span>
-            {% else %}
+            {% elif s.facing %}
               {{ s.facing }}
+            {% else %}
+              —
             {% endif %}
           </span>
           {% if s.turn and TURN_MAP.get(s.turn) and s.turn != '0' %}
