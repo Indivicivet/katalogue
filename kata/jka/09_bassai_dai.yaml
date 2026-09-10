@@ -20,64 +20,62 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: Right forward cross stance entry with two-handed guard
+  notes: launch forward, do not jump, feet finish almost simultaneously
 - id: '2'
   count: 2
   stance: zenkutsu_dachi
-  lead: right
+  lead: left
   technique: uchi_uke
-  secondary_technique: gedan_barai
   target: chudan
-  turn: '0'
-  facing: N
-  notes: Right front stance inside block and downward block
+  turn: left_180
+  facing: S
+  notes: middle of body
 - id: '3'
   count: 3
   stance: zenkutsu_dachi
   lead: left
-  technique: uchi_uke
-  secondary_technique: gedan_barai
+  technique: gyaku_uchi_uke
   target: chudan
-  turn: left_180
+  turn: "0"
   facing: S
-  notes: Turn left 180 deg into left front stance inside/downward block
+  notes: middle of body
 - id: '4'
   count: 4
   stance: zenkutsu_dachi
   lead: right
-  technique: uchi_uke
-  secondary_technique: gedan_barai
+  technique: gyaku_uchi_uke
   target: chudan
   turn: right_180
   facing: N
-  notes: Turn right 180 deg into right front stance inside/downward block
+  notes: middle of body
 - id: '5'
   count: 5
-  stance: kokutsu_dachi
-  lead: left
-  technique: morote_uke
+  stance: zenkutsu_dachi
+  lead: right
+  technique: uchi_uke
   target: chudan
   turn: '0'
   facing: N
-  notes: Left back stance augmented block
+  notes: middle of body
 - id: '6'
   count: 6
   stance: zenkutsu_dachi
   lead: right
-  technique: choku_zuki
+  technique: soto_uke
   target: chudan
-  turn: '0'
-  facing: N
-  notes: Shift to right front stance straight punch
+  turn: right_90
+  facing: E
+  notes: draw back into heisoku-dachi, sweep with straight arm to shoulder height
+  # ^ todo -- support stance tagging in notes? `heisoku-dachi` ?
 - id: '7'
   count: 7
   stance: zenkutsu_dachi
-  lead: left
-  technique: gyaku_zuki
+  lead: right
+  technique: gyaku_uchi_uke
   target: chudan
   turn: '0'
-  facing: N
-  notes: Left reverse punch
+  facing: E
+# ANYTHING BELOW HERE IS GARBAGE :)
 - id: '8'
   count: 8
   stance: kokutsu_dachi

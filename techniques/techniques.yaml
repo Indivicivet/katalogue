@@ -30,6 +30,20 @@ uchi_uke:
   en: "inside forearm block"
   category: "block"
 
+gyaku_soto_uke:
+  kanji: "逆外受け"
+  furigana: "ぎゃくそとうけ"
+  romaji: "gyaku-soto-uke"
+  en: "reverse outside forearm block"
+  category: "block"
+
+gyaku_uchi_uke:
+  kanji: "逆内受け"
+  furigana: "ぎゃくうちうけ"
+  romaji: "gyaku-uchi-uke"
+  en: "reverse inside forearm block"
+  category: "block"
+
 shuto_uke:
   kanji: "手刀受け"
   furigana: "しゅとうけ"
