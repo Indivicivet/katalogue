@@ -492,7 +492,7 @@
           {% endif %}
         </td>
         <td style="color: var(--text-secondary); font-size: 0.88rem;">
-          {{ s.notes or '' }}
+          {% if s.slow %}<span style="font-style: italic; color: var(--text-muted);">(slow) </span>{% endif %}{{ s.notes or '' }}
         </td>
       </tr>
       {% endfor %}

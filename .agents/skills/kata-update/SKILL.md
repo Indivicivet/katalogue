@@ -42,7 +42,7 @@ tags:
 steps:
   - id: "1"
     count: 1
-    subcount: null
+    subcount: null        # default: null — use for sub-moves like "25a", "25b"
     stance: "zenkutsu_dachi"
     lead: "left"          # left | right | both | none
     technique: "gedan_barai"
@@ -50,8 +50,9 @@ steps:
     target: "gedan"       # jodan | chudan | gedan | null
     turn: "left_90"       # 0 | left_90 | right_90 | left_180 | right_180 | left_45 | etc.
     facing: "W"           # N | S | E | W | NE | NW | SE | SW (relative to initial start facing North)
-    kiai: false
-    notes: "Turn left 90 deg into left front stance with downward block."
+    kiai: false           # default: false
+    slow: false           # default: false — set true for explicitly slow (引き付け etc.) movements; renders "(slow)" in the Notes column
+    notes: "Turn left 90 deg into left front stance with downward block."  # default: null
 ```
 
 ---

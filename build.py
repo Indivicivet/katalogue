@@ -228,6 +228,12 @@ def main():
         prev_facing = "N"
 
         for step in steps:
+            # Apply defaults for optional fields
+            step.setdefault("subcount", None)
+            step.setdefault("kiai", False)
+            step.setdefault("notes", None)
+            step.setdefault("slow", False)
+
             st_key = step.get("stance")
             tech_key = step.get("technique")
             sec_tech_key = step.get("secondary_technique")

@@ -24,7 +24,7 @@ steps:
   target: jodan
   turn: left_90
   facing: W
-  kiai: false
+  slow: true
   notes: Slow double open-hand rising block in left back stance
 - id: '2'
   count: 2
@@ -36,7 +36,7 @@ steps:
   target: jodan
   turn: right_180
   facing: E
-  kiai: false
+  slow: true
   notes: Slow double open-hand rising block in right back stance
 - id: '3'
   count: 3
