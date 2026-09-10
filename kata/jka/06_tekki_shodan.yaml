@@ -42,7 +42,6 @@ steps:
   stance: kiba_dachi
   lead: left
   technique: mae_empi_uchi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -62,7 +61,6 @@ steps:
   stance: kiba_dachi
   lead: left
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -71,7 +69,6 @@ steps:
   stance: kiba_dachi
   lead: right
   technique: kagi_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -80,7 +77,6 @@ steps:
   stance: kosa_dachi
   lead: right
   technique: jotai_sonomama
-  secondary_technique: null
   target: null
   turn: '0'
   facing: N
@@ -110,7 +106,6 @@ steps:
   stance: kiba_dachi
   lead: none
   technique: kao_muki
-  secondary_technique: null
   target: null
   turn: '0'
   facing: N
@@ -120,7 +115,6 @@ steps:
   stance: kiba_dachi
   lead: right
   technique: nami_gaeshi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -130,7 +124,6 @@ steps:
   stance: kiba_dachi
   lead: none
   technique: kao_muki
-  secondary_technique: null
   target: null
   turn: '0'
   facing: N
@@ -140,7 +133,6 @@ steps:
   stance: kiba_dachi
   lead: left
   technique: nami_gaeshi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -171,7 +163,6 @@ steps:
   stance: kiba_dachi
   lead: left
   technique: kake_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -181,7 +172,6 @@ steps:
   stance: kiba_dachi
   lead: right
   technique: mae_empi_uchi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -201,7 +191,6 @@ steps:
   stance: kiba_dachi
   lead: right
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -210,7 +199,6 @@ steps:
   stance: kiba_dachi
   lead: left
   technique: kagi_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -219,7 +207,6 @@ steps:
   stance: kosa_dachi
   lead: left
   technique: jotai_sonomama
-  secondary_technique: null
   target: null
   turn: '0'
   facing: N
@@ -249,7 +236,6 @@ steps:
   stance: kiba_dachi
   lead: none
   technique: kao_muki
-  secondary_technique: null
   target: null
   turn: '0'
   facing: N
@@ -259,7 +245,6 @@ steps:
   stance: kiba_dachi
   lead: left
   technique: nami_gaeshi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -269,7 +254,6 @@ steps:
   stance: kiba_dachi
   lead: none
   technique: kao_muki
-  secondary_technique: null
   target: null
   turn: '0'
   facing: N
@@ -279,7 +263,6 @@ steps:
   stance: kiba_dachi
   lead: right
   technique: nami_gaeshi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N

@@ -8,17 +8,15 @@ status: early_draft
 last_updated: '2026-09-07'
 reviewer: null
 sources:
-- 'Masatoshi Nakayama, Best Karate Vol. 6: Bassai Dai, Kanku Dai'
+- TBD
 tags:
 - sentei
-- shitei
 steps:
 - id: '1'
   count: 1
   stance: kosa_dachi
   lead: right
-  technique: morote_tsukami
-  secondary_technique: null
+  technique: morote_tsukami # CHECK! morote... something, but not tsukami
   target: chudan
   turn: '0'
   facing: N
@@ -58,7 +56,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: morote_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -68,7 +65,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: choku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -78,7 +74,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -88,7 +83,6 @@ steps:
   stance: kokutsu_dachi
   lead: right
   technique: morote_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -98,7 +92,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: choku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -108,7 +101,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -118,7 +110,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: morote_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -128,7 +119,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: sukui_uke
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -138,7 +128,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: shuto_sakotsu_uchi
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
@@ -148,7 +137,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: shuto_sakotsu_uchi
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
@@ -158,7 +146,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: choku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -168,7 +155,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -178,7 +164,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: haishu_uchi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -198,7 +183,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: yama_zuki
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
@@ -209,7 +193,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: left_180
   facing: S
@@ -219,7 +202,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: yama_zuki
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: S
@@ -229,7 +211,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: right_180
   facing: N
@@ -239,7 +220,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: yama_zuki
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
@@ -249,7 +229,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: sukui_uke
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -260,7 +239,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: fumikomi
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -271,7 +249,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: yoko_empi_uchi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -281,7 +258,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -291,7 +267,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: kagi_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -301,7 +276,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -310,7 +284,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -319,7 +292,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -328,7 +300,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -337,7 +308,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -346,7 +316,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -355,7 +324,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -364,7 +332,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -373,7 +340,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -382,7 +348,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -391,7 +356,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -400,7 +364,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -409,7 +372,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -418,7 +380,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -427,7 +388,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null

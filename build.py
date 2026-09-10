@@ -230,6 +230,7 @@ def main():
         for step in steps:
             # Apply defaults for optional fields
             step.setdefault("subcount", None)
+            step.setdefault("secondary_technique", None)
             step.setdefault("kiai", False)
             step.setdefault("notes", None)
             step.setdefault("slow", False)

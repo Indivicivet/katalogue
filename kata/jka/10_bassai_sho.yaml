@@ -16,7 +16,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -25,7 +24,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -34,7 +32,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -43,7 +40,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -52,7 +48,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -61,7 +56,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -70,7 +64,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -79,7 +72,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -88,7 +80,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -97,7 +88,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -106,7 +96,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -115,7 +104,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -124,7 +112,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -133,7 +120,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -142,7 +128,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -151,7 +136,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -160,7 +144,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -169,7 +152,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -178,7 +160,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -188,7 +169,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -197,7 +177,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -206,7 +185,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -215,7 +193,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -224,7 +201,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -233,7 +209,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -242,7 +217,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -251,7 +225,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null

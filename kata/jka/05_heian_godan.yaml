@@ -19,7 +19,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: uchi_uke
-  secondary_technique: null
   target: chudan
   turn: left_90
   facing: W
@@ -29,7 +28,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: W
@@ -39,7 +37,6 @@ steps:
   stance: heisoku_dachi
   lead: both
   technique: kamae
-  secondary_technique: null
   target: null
   turn: right_90
   facing: N
@@ -49,7 +46,6 @@ steps:
   stance: kokutsu_dachi
   lead: right
   technique: uchi_uke
-  secondary_technique: null
   target: chudan
   turn: right_90
   facing: E
@@ -59,7 +55,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: E
@@ -69,7 +64,6 @@ steps:
   stance: heisoku_dachi
   lead: both
   technique: kamae
-  secondary_technique: null
   target: null
   turn: left_90
   facing: N
@@ -79,7 +73,6 @@ steps:
   stance: kokutsu_dachi
   lead: right
   technique: morote_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -89,7 +82,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: juji_uke_gedan
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
@@ -99,7 +91,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: juji_uke_jodan
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
@@ -119,7 +110,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: oi_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -130,7 +120,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: left_180
   facing: S
@@ -150,7 +139,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: mae_empi_uchi
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: S
@@ -160,7 +148,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: morote_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: S
@@ -180,7 +167,6 @@ steps:
   stance: kosa_dachi
   lead: right
   technique: juji_uke_gedan
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: S
@@ -191,7 +177,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: morote_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: S
@@ -211,7 +196,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: teisho_awase_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -222,7 +206,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: manji_uke
-  secondary_technique: null
   target: jodan
   turn: right_90
   facing: E
@@ -233,7 +216,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: sokutei_osae_uke
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: E
@@ -243,7 +225,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: oi_zuki
-  secondary_technique: null
   target: chudan
   turn: left_90
   facing: N
@@ -254,7 +235,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: manji_uke
-  secondary_technique: null
   target: jodan
   turn: left_90
   facing: W
@@ -265,7 +245,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: sokutei_osae_uke
-  secondary_technique: null
   target: gedan
   turn: '0'
   facing: W

@@ -18,7 +18,6 @@ steps:
   stance: hachiji_dachi
   lead: both
   technique: kaishu_kamae
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
@@ -28,7 +27,6 @@ steps:
   stance: hachiji_dachi
   lead: both
   technique: ryosho_kamae
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -38,7 +36,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: left_90
   facing: W
@@ -48,7 +45,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: choku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: W
@@ -58,7 +54,6 @@ steps:
   stance: kokutsu_dachi
   lead: right
   technique: uchi_uke
-  secondary_technique: null
   target: chudan
   turn: right_180
   facing: E
@@ -68,7 +63,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: choku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: E
@@ -78,7 +72,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: left_90
   facing: N
@@ -88,7 +81,6 @@ steps:
   stance: kokutsu_dachi
   lead: right
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -98,7 +90,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -118,7 +109,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: shihon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
@@ -127,7 +117,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: left_225
   facing: SE
@@ -137,7 +126,6 @@ steps:
   stance: kokutsu_dachi
   lead: right
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: right_90
   facing: SW
@@ -147,7 +135,6 @@ steps:
   stance: kokutsu_dachi
   lead: right
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: right_90
   facing: NW
@@ -157,7 +144,6 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
-  secondary_technique: null
   target: chudan
   turn: right_90
   facing: NE
@@ -168,7 +154,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: gedan_barai
-  secondary_technique: null
   target: gedan
   turn: right_135
   facing: S
@@ -178,7 +163,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: age_uke
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: S
@@ -188,7 +172,6 @@ steps:
   stance: zenkutsu_dachi
   lead: left
   technique: age_uke
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: S
@@ -198,7 +181,6 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: age_uke
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: S
@@ -208,7 +190,6 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: manji_uke
-  secondary_technique: null
   target: jodan
   turn: left_180
   facing: N
@@ -218,7 +199,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -227,7 +207,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -236,7 +215,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -245,7 +223,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -254,7 +231,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -263,7 +239,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -272,7 +247,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -281,7 +255,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -290,7 +263,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -299,7 +271,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -308,7 +279,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -317,7 +287,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -326,7 +295,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -335,7 +303,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -344,7 +311,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -353,7 +319,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -362,7 +327,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -371,7 +335,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -380,7 +343,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -389,7 +351,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -398,7 +359,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -407,7 +367,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -416,7 +375,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -425,7 +383,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -434,7 +391,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -443,7 +399,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -452,7 +407,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -461,7 +415,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -470,7 +423,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -479,7 +431,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -488,7 +439,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -497,7 +447,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -506,7 +455,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -515,7 +463,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -524,7 +471,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -533,7 +479,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -542,7 +487,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -551,7 +495,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -560,7 +503,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -569,7 +511,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -578,7 +519,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -587,7 +527,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -596,7 +535,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -605,7 +543,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
@@ -614,7 +551,6 @@ steps:
   stance: null
   lead: null
   technique: null
-  secondary_technique: null
   target: null
   turn: null
   facing: null
