@@ -16,7 +16,6 @@ tags:
 steps:
 - id: '1'
   count: 1
-  subcount: null
   stance: kokutsu_dachi
   lead: left
   technique: haiwan_uke
@@ -28,7 +27,6 @@ steps:
   notes: Slow double open-hand rising block in left back stance
 - id: '2'
   count: 2
-  subcount: null
   stance: kokutsu_dachi
   lead: right
   technique: haiwan_uke
@@ -40,7 +38,6 @@ steps:
   notes: Slow double open-hand rising block in right back stance
 - id: '3'
   count: 3
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: juji_uke_gedan
@@ -48,11 +45,9 @@ steps:
   target: gedan
   turn: left_90
   facing: N
-  kiai: false
   notes: Step forward into left front stance with downward X-block
 - id: '4'
   count: 4
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: morote_uke
@@ -60,11 +55,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Step forward into right front stance with augmented block
 - id: '5'
   count: 5
-  subcount: null
   stance: kosa_dachi
   lead: left
   technique: kosa_uke
@@ -72,7 +65,6 @@ steps:
   target: gedan
   turn: '0'
   facing: N
-  kiai: false
   notes: Cross step forward with low cross block
 - id: 6a
   count: 6
@@ -84,7 +76,6 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Side snap kick and backfist strike
 - id: 6b
   count: 6
@@ -96,7 +87,6 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Land in left front stance with forward elbow strike
 - id: 7a
   count: 7
@@ -108,7 +98,6 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Side snap kick and backfist strike to the right
 - id: 7b
   count: 7
@@ -120,11 +109,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Land in right front stance with forward elbow strike
 - id: '8'
   count: 8
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: shuto_uchi
@@ -132,11 +119,9 @@ steps:
   target: jodan
   turn: '0'
   facing: N
-  kiai: false
   notes: Left open knife-hand strike and right downward knife-hand block
 - id: '9'
   count: 9
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: mae_geri
@@ -144,11 +129,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Right front snap kick
 - id: '10'
   count: 10
-  subcount: null
   stance: kosa_dachi
   lead: right
   technique: uraken_uchi
@@ -156,11 +139,9 @@ steps:
   target: jodan
   turn: '0'
   facing: N
-  kiai: false
   notes: Land in cross stance with jumping backfist strike
 - id: '11'
   count: 11
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: kakiwake_uke
@@ -168,11 +149,9 @@ steps:
   target: chudan
   turn: left_180
   facing: S
-  kiai: false
   notes: Turn left 180 deg into left front stance wedge block
 - id: '12'
   count: 12
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: mae_geri
@@ -180,11 +159,9 @@ steps:
   target: chudan
   turn: '0'
   facing: S
-  kiai: false
   notes: Right front snap kick
 - id: '13'
   count: 13
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: oi_zuki
@@ -196,7 +173,6 @@ steps:
   notes: Step into right front stance with middle lunge punch (KIAI)
 - id: '14'
   count: 14
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: gyaku_zuki
@@ -204,11 +180,9 @@ steps:
   target: chudan
   turn: '0'
   facing: S
-  kiai: false
   notes: Reverse punch in right front stance
 - id: '15'
   count: 15
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: kakiwake_uke
@@ -216,11 +190,9 @@ steps:
   target: chudan
   turn: right_180
   facing: N
-  kiai: false
   notes: Turn right 180 deg into right front stance wedge block
 - id: '16'
   count: 16
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: mae_geri
@@ -228,11 +200,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Left front snap kick
 - id: '17'
   count: 17
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: oi_zuki
@@ -240,11 +210,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Step into left front stance with middle lunge punch
 - id: '18'
   count: 18
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: gyaku_zuki
@@ -252,11 +220,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Reverse punch in left front stance
 - id: '19'
   count: 19
-  subcount: null
   stance: kokutsu_dachi
   lead: left
   technique: morote_uke
@@ -264,11 +230,9 @@ steps:
   target: chudan
   turn: left_90
   facing: W
-  kiai: false
   notes: Turn left 90 deg into left back stance augmented block
 - id: '20'
   count: 20
-  subcount: null
   stance: kokutsu_dachi
   lead: right
   technique: morote_uke
@@ -276,11 +240,9 @@ steps:
   target: chudan
   turn: '0'
   facing: W
-  kiai: false
   notes: Step forward into right back stance augmented block
 - id: '21'
   count: 21
-  subcount: null
   stance: kokutsu_dachi
   lead: left
   technique: morote_uke
@@ -288,11 +250,9 @@ steps:
   target: chudan
   turn: '0'
   facing: W
-  kiai: false
   notes: Step forward into left back stance augmented block
 - id: '22'
   count: 22
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: morote_tsukami
@@ -300,11 +260,9 @@ steps:
   target: jodan
   turn: '0'
   facing: W
-  kiai: false
   notes: Reach forward grabbing opponent head/shoulders
 - id: '23'
   count: 23
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: hiza_geri
@@ -316,7 +274,6 @@ steps:
   notes: Right knee strike pulling hands down (KIAI)
 - id: '24'
   count: 24
-  subcount: null
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
@@ -324,11 +281,9 @@ steps:
   target: chudan
   turn: left_180
   facing: E
-  kiai: false
   notes: Land back into left back stance with knife-hand block
 - id: '25'
   count: 25
-  subcount: null
   stance: kokutsu_dachi
   lead: right
   technique: shuto_uke
@@ -336,5 +291,4 @@ steps:
   target: chudan
   turn: '0'
   facing: E
-  kiai: false
   notes: Step forward into right back stance knife-hand block

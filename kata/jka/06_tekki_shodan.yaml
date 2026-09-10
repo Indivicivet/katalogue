@@ -19,7 +19,6 @@ tags:
 steps:
 - id: '1'
   count: 1
-  subcount: null
   stance: kosa_dachi
   lead: left
   technique: kao_muki
@@ -27,11 +26,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head right, cross left foot in front into crossed stance
 - id: '2'
   count: 2
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: fumikomi
@@ -39,11 +36,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Right hooking block (haishu-uke variation) with stomp into horse stance
 - id: '3'
   count: 3
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: mae_empi_uchi
@@ -51,11 +46,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Left elbow strike into right palm
 - id: '4'
   count: 4
-  subcount: null
   stance: kiba_dachi
   lead: both
   technique: kao_muki
@@ -63,11 +56,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head left, draw fists to right hip
 - id: '5'
   count: 5
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: gedan_barai
@@ -75,11 +66,8 @@ steps:
   target: gedan
   turn: '0'
   facing: N
-  kiai: false
-  notes: null
 - id: '6'
   count: 6
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: kagi_zuki
@@ -87,11 +75,8 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
-  notes: null
 - id: '7'
   count: 7
-  subcount: null
   stance: kosa_dachi
   lead: right
   technique: jotai_sonomama
@@ -99,11 +84,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Slow cross step to the right holding upper body posture
 - id: '8'
   count: 8
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: fumikomi
@@ -111,11 +94,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Stomp into horse stance with left inside block
 - id: '9'
   count: 9
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: uraken_uchi
@@ -123,11 +104,9 @@ steps:
   target: jodan
   turn: '0'
   facing: N
-  kiai: false
   notes: Left backfist strike over right downward forearm block
 - id: '10'
   count: 10
-  subcount: null
   stance: kiba_dachi
   lead: none
   technique: kao_muki
@@ -135,11 +114,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head right
 - id: '11'
   count: 11
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: nami_gaeshi
@@ -147,11 +124,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Right returning wave kick holding forearm guard
 - id: '12'
   count: 12
-  subcount: null
   stance: kiba_dachi
   lead: none
   technique: kao_muki
@@ -159,11 +134,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head left
 - id: '13'
   count: 13
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: nami_gaeshi
@@ -171,11 +144,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Left returning wave kick holding forearm guard
 - id: '14'
   count: 14
-  subcount: null
   stance: kiba_dachi
   lead: both
   technique: kao_muki
@@ -183,11 +154,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head right, draw fists to left hip
 - id: '15'
   count: 15
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: morote_zuki
@@ -199,7 +168,6 @@ steps:
   notes: Simultaneous side punch and hook punch (KIAI)
 - id: '16'
   count: 16
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: kake_uke
@@ -207,11 +175,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Slow left hooking block (haishu-uke variation)
 - id: '17'
   count: 17
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: mae_empi_uchi
@@ -219,11 +185,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Right elbow strike into left palm
 - id: '18'
   count: 18
-  subcount: null
   stance: kiba_dachi
   lead: both
   technique: kao_muki
@@ -231,11 +195,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head right, draw fists to left hip
 - id: '19'
   count: 19
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: gedan_barai
@@ -243,11 +205,8 @@ steps:
   target: gedan
   turn: '0'
   facing: N
-  kiai: false
-  notes: null
 - id: '20'
   count: 20
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: kagi_zuki
@@ -255,11 +214,8 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
-  notes: null
 - id: '21'
   count: 21
-  subcount: null
   stance: kosa_dachi
   lead: left
   technique: jotai_sonomama
@@ -267,11 +223,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Slow cross step to the left holding upper body posture
 - id: '22'
   count: 22
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: fumikomi
@@ -279,11 +233,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Stomp into horse stance with right inside block
 - id: '23'
   count: 23
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: uraken_uchi
@@ -291,11 +243,9 @@ steps:
   target: jodan
   turn: '0'
   facing: N
-  kiai: false
   notes: Right backfist strike over left downward forearm block
 - id: '24'
   count: 24
-  subcount: null
   stance: kiba_dachi
   lead: none
   technique: kao_muki
@@ -303,11 +253,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head left
 - id: '25'
   count: 25
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: nami_gaeshi
@@ -315,11 +263,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Left returning wave kick holding forearm guard
 - id: '26'
   count: 26
-  subcount: null
   stance: kiba_dachi
   lead: none
   technique: kao_muki
@@ -327,11 +273,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head right
 - id: '27'
   count: 27
-  subcount: null
   stance: kiba_dachi
   lead: right
   technique: nami_gaeshi
@@ -339,11 +283,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Right returning wave kick holding forearm guard
 - id: '28'
   count: 28
-  subcount: null
   stance: kiba_dachi
   lead: both
   technique: kao_muki
@@ -351,11 +293,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Turn head left, draw fists to right hip
 - id: '29'
   count: 29
-  subcount: null
   stance: kiba_dachi
   lead: left
   technique: morote_zuki

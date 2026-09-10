@@ -15,7 +15,6 @@ tags:
 steps:
 - id: '1'
   count: 1
-  subcount: null
   stance: heisoku_dachi
   lead: both
   technique: kamae
@@ -23,11 +22,9 @@ steps:
   target: null
   turn: '0'
   facing: N
-  kiai: false
   notes: Right hand covering left fist at right hip
 - id: '2'
   count: 2
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: gedan_barai
@@ -35,11 +32,9 @@ steps:
   target: gedan
   turn: '0'
   facing: N
-  kiai: false
   notes: Step back left front stance downward block
 - id: '3'
   count: 3
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: age_zuki
@@ -47,11 +42,9 @@ steps:
   target: jodan
   turn: '0'
   facing: N
-  kiai: false
   notes: Step forward right front stance rising punch
 - id: '4'
   count: 4
-  subcount: null
   stance: kiba_dachi
   lead: both
   technique: empi_uchi
@@ -59,11 +52,9 @@ steps:
   target: chudan
   turn: left_90
   facing: W
-  kiai: false
   notes: Turn left 90 deg into horse stance elbow strike
 - id: '5'
   count: 5
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: gedan_barai
@@ -71,11 +62,9 @@ steps:
   target: gedan
   turn: right_180
   facing: E
-  kiai: false
   notes: Turn right 180 deg downward block
 - id: '6'
   count: 6
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -83,11 +72,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '7'
   count: 7
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -95,11 +81,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '8'
   count: 8
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -107,11 +90,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '9'
   count: 9
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -119,11 +99,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '10'
   count: 10
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -131,11 +108,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '11'
   count: 11
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -143,11 +117,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '12'
   count: 12
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -155,11 +126,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '13'
   count: 13
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -167,11 +135,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '14'
   count: 14
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -179,11 +144,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '15'
   count: 15
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -192,10 +154,8 @@ steps:
   turn: null
   facing: null
   kiai: true
-  notes: null
 - id: '16'
   count: 16
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -203,11 +163,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '17'
   count: 17
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -215,11 +172,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '18'
   count: 18
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -227,11 +181,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '19'
   count: 19
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -239,11 +190,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '20'
   count: 20
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -251,11 +199,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '21'
   count: 21
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -263,11 +208,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '22'
   count: 22
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -275,11 +217,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '23'
   count: 23
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -287,11 +226,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '24'
   count: 24
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -299,11 +235,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '25'
   count: 25
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -311,11 +244,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '26'
   count: 26
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -323,11 +253,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '27'
   count: 27
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -335,11 +262,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '28'
   count: 28
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -347,11 +271,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '29'
   count: 29
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -359,11 +280,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '30'
   count: 30
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -371,11 +289,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '31'
   count: 31
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -383,11 +298,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '32'
   count: 32
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -395,11 +307,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '33'
   count: 33
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -407,11 +316,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '34'
   count: 34
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -419,11 +325,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '35'
   count: 35
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -431,11 +334,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '36'
   count: 36
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -443,11 +343,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '37'
   count: 37
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -456,4 +353,3 @@ steps:
   turn: null
   facing: null
   kiai: true
-  notes: null

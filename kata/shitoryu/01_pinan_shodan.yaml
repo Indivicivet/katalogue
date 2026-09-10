@@ -15,7 +15,6 @@ tags:
 steps:
 - id: '1'
   count: 1
-  subcount: null
   stance: neko_ashi_dachi
   lead: left
   technique: haiwan_uke
@@ -23,11 +22,9 @@ steps:
   target: jodan
   turn: left_90
   facing: W
-  kiai: false
   notes: Turn left 90 deg into left cat stance with double forearm block
 - id: '2'
   count: 2
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: gyaku_zuki
@@ -35,11 +32,9 @@ steps:
   target: chudan
   turn: '0'
   facing: W
-  kiai: false
   notes: Shift to front stance middle reverse punch
 - id: '3'
   count: 3
-  subcount: null
   stance: zenkutsu_dachi
   lead: left
   technique: uraken_uchi
@@ -47,11 +42,9 @@ steps:
   target: jodan
   turn: '0'
   facing: W
-  kiai: false
   notes: Upper backfist strike
 - id: '4'
   count: 4
-  subcount: null
   stance: neko_ashi_dachi
   lead: right
   technique: haiwan_uke
@@ -59,11 +52,9 @@ steps:
   target: jodan
   turn: right_180
   facing: E
-  kiai: false
   notes: Turn right 180 deg into right cat stance double forearm block
 - id: '5'
   count: 5
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: gyaku_zuki
@@ -71,11 +62,9 @@ steps:
   target: chudan
   turn: '0'
   facing: E
-  kiai: false
   notes: Middle reverse punch
 - id: '6'
   count: 6
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: uraken_uchi
@@ -83,7 +72,6 @@ steps:
   target: jodan
   turn: '0'
   facing: E
-  kiai: false
   notes: Upper backfist strike
 - id: 7a
   count: 7
@@ -95,7 +83,6 @@ steps:
   target: chudan
   turn: left_90
   facing: N
-  kiai: false
   notes: Side snap kick and backfist strike
 - id: 7b
   count: 7
@@ -107,11 +94,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Land in left cat stance knife-hand block
 - id: '8'
   count: 8
-  subcount: null
   stance: neko_ashi_dachi
   lead: right
   technique: shuto_uke
@@ -119,11 +104,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Step forward right cat stance knife-hand block
 - id: '9'
   count: 9
-  subcount: null
   stance: neko_ashi_dachi
   lead: left
   technique: shuto_uke
@@ -131,11 +114,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Step forward left cat stance knife-hand block
 - id: '10'
   count: 10
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: shihon_nukite
@@ -143,11 +124,9 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  kiai: false
   notes: Step forward right front stance spear-hand strike
 - id: '11'
   count: 11
-  subcount: null
   stance: zenkutsu_dachi
   lead: right
   technique: shihon_nukite
@@ -159,7 +138,6 @@ steps:
   notes: Thrust four-finger spear-hand (KIAI)
 - id: '12'
   count: 12
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -167,11 +145,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '13'
   count: 13
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -179,11 +154,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '14'
   count: 14
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -191,11 +163,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '15'
   count: 15
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -203,11 +172,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '16'
   count: 16
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -215,11 +181,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '17'
   count: 17
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -227,11 +190,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '18'
   count: 18
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -239,11 +199,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '19'
   count: 19
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -251,11 +208,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '20'
   count: 20
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -263,11 +217,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '21'
   count: 21
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -275,11 +226,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '22'
   count: 22
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -287,11 +235,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '23'
   count: 23
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -299,11 +244,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '24'
   count: 24
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -311,11 +253,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '25'
   count: 25
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -323,11 +262,8 @@ steps:
   target: null
   turn: null
   facing: null
-  kiai: false
-  notes: null
 - id: '26'
   count: 26
-  subcount: null
   stance: null
   lead: null
   technique: null
@@ -336,4 +272,3 @@ steps:
   turn: null
   facing: null
   kiai: true
-  notes: null
