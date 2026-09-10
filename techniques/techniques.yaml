@@ -170,6 +170,13 @@ chudan_kake_uke:
   en: "middle hooking block"
   category: "block"
 
+kake_uke:
+  kanji: "掛け受け"
+  furigana: "かけうけ"
+  romaji: "kake-uke"
+  en: "hooking block"
+  category: "block"
+
 soto_haishu_uke:
   kanji: "外背手受け"
   furigana: "そとはいしゅうけ"
@@ -690,4 +697,25 @@ nage:
   furigana: "なげ"
   romaji: "nage"
   en: "throw"
+  category: "other"
+
+kao_muki:
+  kanji: "顔向き"
+  furigana: "かおむき"
+  romaji: "kao-muki"
+  en: "face turning"
+  category: "other"
+
+koshi_kamae:
+  kanji: "腰構え"
+  furigana: "こしがまえ"
+  romaji: "koshi-kamae"
+  en: "hip posture"
+  category: "other"
+
+jotai_sonomama:
+  kanji: "上体そのまま"
+  furigana: "じょうたいそのまま"
+  romaji: "jotai-sonomama"
+  en: "upper body unchanged posture"
   category: "other"
