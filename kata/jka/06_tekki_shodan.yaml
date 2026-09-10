@@ -5,10 +5,11 @@ furigana: てっきしょだん
 style: jka
 order: 6
 status: full_draft
-last_updated: '2026-09-07'
+last_updated: '2026-09-08'
 reviewer: null
 sources:
 - 'Masatoshi Nakayama, Best Karate Vol. 5: Heian, Tekki'
+- 'Shotokan Karate CSL, Tekki Shodan (https://shotokankaratecsl.com/Kata%2006%20-%20Tekki%20Shodan.html)'
 tags:
 - kyu_grade
 - 3rd_kyu
@@ -19,33 +20,33 @@ steps:
 - id: '1'
   count: 1
   subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: kosa_uke
-  secondary_technique: null
-  target: gedan
+  stance: kosa_dachi
+  lead: left
+  technique: kao_muki
+  secondary_technique: kosa_gamae
+  target: null
   turn: '0'
   facing: N
   kiai: false
-  notes: Cross step and drop into horse stance with crossed arms
+  notes: Turn head right, cross left foot in front into crossed stance
 - id: '2'
   count: 2
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: haishu_uke
-  secondary_technique: null
+  lead: right
+  technique: fumikomi
+  secondary_technique: kake_uke
   target: chudan
   turn: '0'
   facing: N
   kiai: false
-  notes: Right back-hand block
+  notes: Right hooking block (haishu-uke variation) with stomp into horse stance
 - id: '3'
   count: 3
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: empi_uchi
+  lead: left
+  technique: mae_empi_uchi
   secondary_technique: null
   target: chudan
   turn: '0'
@@ -57,163 +58,163 @@ steps:
   subcount: null
   stance: kiba_dachi
   lead: both
-  technique: gedan_barai
-  secondary_technique: kagi_zuki
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Downward block and hook punch
-- id: '5'
-  count: 5
-  subcount: null
-  stance: kosa_dachi
-  lead: left
-  technique: kosa_gamae
-  secondary_technique: null
+  technique: kao_muki
+  secondary_technique: koshi_kamae
   target: null
   turn: '0'
   facing: N
   kiai: false
-  notes: Cross step to the right
-- id: '6'
-  count: 6
+  notes: Turn head left, draw fists to right hip
+- id: '5'
+  count: 5
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: haishu_uke
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Step out to horse stance back-hand block
-- id: '7'
-  count: 7
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: nami_gaeshi
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Right returning wave kick
-- id: '8'
-  count: 8
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: morote_uke
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Augmented forearm block
-- id: '9'
-  count: 9
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: nami_gaeshi
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Left returning wave kick
-- id: '10'
-  count: 10
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: morote_uke
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Augmented forearm block
-- id: '11'
-  count: 11
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: morote_zuki
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Double punch
-- id: '12'
-  count: 12
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: uraken_uchi
-  secondary_technique: null
-  target: jodan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Backfist strike
-- id: '13'
-  count: 13
-  subcount: null
-  stance: kiba_dachi
-  lead: both
+  lead: left
   technique: gedan_barai
   secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
   kiai: false
-  notes: Downward block
-- id: '14'
-  count: 14
+  notes: null
+- id: '6'
+  count: 6
   subcount: null
   stance: kiba_dachi
-  lead: both
+  lead: right
   technique: kagi_zuki
   secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
   kiai: false
-  notes: Hook punch
-- id: '15'
-  count: 15
+  notes: null
+- id: '7'
+  count: 7
+  subcount: null
+  stance: kosa_dachi
+  lead: right
+  technique: jotai_sonomama
+  secondary_technique: null
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Slow cross step to the right holding upper body posture
+- id: '8'
+  count: 8
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: choku_zuki
-  secondary_technique: null
+  lead: left
+  technique: fumikomi
+  secondary_technique: uchi_uke
   target: chudan
   turn: '0'
   facing: N
-  kiai: true
-  notes: Straight punch in horse stance (KIAI)
-- id: '16'
-  count: 16
+  kiai: false
+  notes: Stomp into horse stance with left inside block
+- id: '9'
+  count: 9
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: haishu_uke
+  lead: left
+  technique: uraken_uchi
+  secondary_technique: gedan_barai
+  target: jodan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Left backfist strike over right downward forearm block
+- id: '10'
+  count: 10
+  subcount: null
+  stance: kiba_dachi
+  lead: none
+  technique: kao_muki
+  secondary_technique: null
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Turn head right
+- id: '11'
+  count: 11
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: nami_gaeshi
   secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
   kiai: false
-  notes: Left back-hand block
+  notes: Right returning wave kick holding forearm guard
+- id: '12'
+  count: 12
+  subcount: null
+  stance: kiba_dachi
+  lead: none
+  technique: kao_muki
+  secondary_technique: null
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Turn head left
+- id: '13'
+  count: 13
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: nami_gaeshi
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Left returning wave kick holding forearm guard
+- id: '14'
+  count: 14
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: kao_muki
+  secondary_technique: koshi_kamae
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Turn head right, draw fists to left hip
+- id: '15'
+  count: 15
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: morote_zuki
+  secondary_technique: kagi_zuki
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: true
+  notes: Simultaneous side punch and hook punch (KIAI)
+- id: '16'
+  count: 16
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: kake_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Slow left hooking block (haishu-uke variation)
 - id: '17'
   count: 17
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: empi_uchi
+  lead: right
+  technique: mae_empi_uchi
   secondary_technique: null
   target: chudan
   turn: '0'
@@ -225,142 +226,142 @@ steps:
   subcount: null
   stance: kiba_dachi
   lead: both
-  technique: gedan_barai
-  secondary_technique: kagi_zuki
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Downward block and hook punch
-- id: '19'
-  count: 19
-  subcount: null
-  stance: kosa_dachi
-  lead: right
-  technique: kosa_gamae
-  secondary_technique: null
+  technique: kao_muki
+  secondary_technique: koshi_kamae
   target: null
   turn: '0'
   facing: N
   kiai: false
-  notes: Cross step to the left
-- id: '20'
-  count: 20
+  notes: Turn head right, draw fists to left hip
+- id: '19'
+  count: 19
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: haishu_uke
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Step out to horse stance back-hand block
-- id: '21'
-  count: 21
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: nami_gaeshi
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Left returning wave kick
-- id: '22'
-  count: 22
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: morote_uke
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Augmented forearm block
-- id: '23'
-  count: 23
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: nami_gaeshi
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Right returning wave kick
-- id: '24'
-  count: 24
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: morote_uke
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Augmented forearm block
-- id: '25'
-  count: 25
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: morote_zuki
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Double punch
-- id: '26'
-  count: 26
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: uraken_uchi
-  secondary_technique: null
-  target: jodan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Backfist strike
-- id: '27'
-  count: 27
-  subcount: null
-  stance: kiba_dachi
-  lead: both
+  lead: right
   technique: gedan_barai
   secondary_technique: null
   target: gedan
   turn: '0'
   facing: N
   kiai: false
-  notes: Downward block
-- id: '28'
-  count: 28
+  notes: null
+- id: '20'
+  count: 20
   subcount: null
   stance: kiba_dachi
-  lead: both
+  lead: left
   technique: kagi_zuki
   secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
   kiai: false
-  notes: Hook punch
-- id: '29'
-  count: 29
+  notes: null
+- id: '21'
+  count: 21
+  subcount: null
+  stance: kosa_dachi
+  lead: left
+  technique: jotai_sonomama
+  secondary_technique: null
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Slow cross step to the left holding upper body posture
+- id: '22'
+  count: 22
   subcount: null
   stance: kiba_dachi
-  lead: both
-  technique: choku_zuki
+  lead: right
+  technique: fumikomi
+  secondary_technique: uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Stomp into horse stance with right inside block
+- id: '23'
+  count: 23
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: uraken_uchi
+  secondary_technique: gedan_barai
+  target: jodan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Right backfist strike over left downward forearm block
+- id: '24'
+  count: 24
+  subcount: null
+  stance: kiba_dachi
+  lead: none
+  technique: kao_muki
+  secondary_technique: null
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Turn head left
+- id: '25'
+  count: 25
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: nami_gaeshi
   secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
+  kiai: false
+  notes: Left returning wave kick holding forearm guard
+- id: '26'
+  count: 26
+  subcount: null
+  stance: kiba_dachi
+  lead: none
+  technique: kao_muki
+  secondary_technique: null
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Turn head right
+- id: '27'
+  count: 27
+  subcount: null
+  stance: kiba_dachi
+  lead: right
+  technique: nami_gaeshi
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Right returning wave kick holding forearm guard
+- id: '28'
+  count: 28
+  subcount: null
+  stance: kiba_dachi
+  lead: both
+  technique: kao_muki
+  secondary_technique: koshi_kamae
+  target: null
+  turn: '0'
+  facing: N
+  kiai: false
+  notes: Turn head left, draw fists to right hip
+- id: '29'
+  count: 29
+  subcount: null
+  stance: kiba_dachi
+  lead: left
+  technique: morote_zuki
+  secondary_technique: kagi_zuki
+  target: chudan
+  turn: '0'
+  facing: N
   kiai: true
-  notes: Straight punch in horse stance (KIAI)
+  notes: Simultaneous side punch and hook punch (KIAI)
