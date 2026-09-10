@@ -5,575 +5,576 @@ furigana: じおん
 style: jka
 order: 13
 status: early_draft
-last_updated: '2026-09-07'
+last_updated: '2026-09-10'
 reviewer: null
 sources:
-- 'Masatoshi Nakayama, Best Karate Vol. 8: Gankaku, Jion'
+  - 'Masatoshi Nakayama, Best Karate Vol. 8: Gankaku, Jion'
+  - 'ATSK (Association of Traditional Shotokan Karate), jion sequence: https://www.atsk.co.uk/jion'
 tags:
-- sentei
-- shitei
+  - sentei
+  - shitei
 steps:
-- id: '1'
-  count: 1
-  subcount: null
-  stance: hachiji_dachi
-  lead: both
-  technique: kosa_uke
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Ming-style salute left hand over right fist
-- id: '2'
-  count: 2
-  subcount: null
-  stance: zenkutsu_dachi
-  lead: right
-  technique: morote_uke
-  secondary_technique: null
-  target: chudan
-  turn: left_45
-  facing: NW
-  kiai: false
-  notes: Step back 45 deg right front stance augmented block
-- id: '3'
-  count: 3
-  subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: ren_zuki
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: NW
-  kiai: false
-  notes: Double punch
-- id: '4'
-  count: 4
-  subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: morote_uke
-  secondary_technique: null
-  target: chudan
-  turn: right_90
-  facing: NE
-  kiai: false
-  notes: Turn right 90 deg into left front stance augmented block
-- id: '5'
-  count: 5
-  subcount: null
-  stance: zenkutsu_dachi
-  lead: right
-  technique: ren_zuki
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: NE
-  kiai: false
-  notes: Double punch
-- id: '6'
-  count: 6
-  subcount: null
-  stance: zenkutsu_dachi
-  lead: left
-  technique: morote_uke
-  secondary_technique: null
-  target: chudan
-  turn: left_45
-  facing: N
-  kiai: false
-  notes: Turn left 45 deg facing north augmented block
-- id: '7'
-  count: 7
-  subcount: null
-  stance: zenkutsu_dachi
-  lead: right
-  technique: sanbon_zuki
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: N
-  kiai: false
-  notes: Step forward triple punch
-- id: '8'
-  count: 8
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: manji_uke
-  secondary_technique: null
-  target: jodan
-  turn: left_90
-  facing: W
-  kiai: false
-  notes: Turn left 90 deg into horse stance svastika block
-- id: '9'
-  count: 9
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: kagi_zuki
-  secondary_technique: null
-  target: chudan
-  turn: '0'
-  facing: W
-  kiai: false
-  notes: Hook punch in horse stance
-- id: '10'
-  count: 10
-  subcount: null
-  stance: kiba_dachi
-  lead: both
-  technique: manji_uke
-  secondary_technique: null
-  target: jodan
-  turn: right_180
-  facing: E
-  kiai: false
-  notes: Turn right 180 deg into horse stance svastika block
-- id: '11'
-  count: 11
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '12'
-  count: 12
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '13'
-  count: 13
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '14'
-  count: 14
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '15'
-  count: 15
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '16'
-  count: 16
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '17'
-  count: 17
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: true
-  notes: null
-- id: '18'
-  count: 18
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '19'
-  count: 19
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '20'
-  count: 20
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '21'
-  count: 21
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '22'
-  count: 22
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '23'
-  count: 23
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '24'
-  count: 24
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '25'
-  count: 25
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '26'
-  count: 26
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '27'
-  count: 27
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '28'
-  count: 28
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '29'
-  count: 29
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '30'
-  count: 30
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '31'
-  count: 31
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '32'
-  count: 32
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '33'
-  count: 33
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '34'
-  count: 34
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '35'
-  count: 35
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '36'
-  count: 36
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '37'
-  count: 37
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '38'
-  count: 38
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '39'
-  count: 39
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '40'
-  count: 40
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '41'
-  count: 41
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '42'
-  count: 42
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '43'
-  count: 43
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '44'
-  count: 44
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '45'
-  count: 45
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '46'
-  count: 46
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: false
-  notes: null
-- id: '47'
-  count: 47
-  subcount: null
-  stance: null
-  lead: null
-  technique: null
-  secondary_technique: null
-  target: null
-  turn: null
-  facing: null
-  kiai: true
-  notes: null
+  - id: '1'
+    count: 1
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: kosa_uke
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Jiai-no-kamae opening salute (left palm over right fist), step back into left front stance kosa-uke
+  - id: '2'
+    count: 2
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: kakiwake_uke
+    secondary_technique: null
+    target: chudan
+    turn: left_45
+    facing: NW
+    kiai: false
+    notes: Turn left 45 deg into left front stance wedge block
+  - id: '3'
+    count: 3
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: mae_geri_keage
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: NW
+    kiai: false
+    notes: Right jodan front snap kick
+  - id: '4'
+    count: 4
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: oi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: NW
+    kiai: false
+    notes: Land in right front stance chudan lunge punch
+  - id: '5'
+    count: 5
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: gyaku_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: NW
+    kiai: false
+    notes: Left reverse punch
+  - id: '6'
+    count: 6
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: oi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: NW
+    kiai: false
+    notes: Right lunge punch (sanbon completion)
+  - id: '7'
+    count: 7
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: kakiwake_uke
+    secondary_technique: null
+    target: chudan
+    turn: right_90
+    facing: NE
+    kiai: false
+    notes: Turn right 90 deg into right front stance wedge block
+  - id: '8'
+    count: 8
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: mae_geri_keage
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: NE
+    kiai: false
+    notes: Left jodan front snap kick
+  - id: '9'
+    count: 9
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: oi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: NE
+    kiai: false
+    notes: Land in left front stance chudan lunge punch
+  - id: '10'
+    count: 10
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: gyaku_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: NE
+    kiai: false
+    notes: Right reverse punch
+  - id: '11'
+    count: 11
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: oi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: NE
+    kiai: false
+    notes: Left lunge punch (sanbon completion)
+  - id: '12'
+    count: 12
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: age_uke
+    secondary_technique: null
+    target: jodan
+    turn: left_45
+    facing: N
+    kiai: false
+    notes: Turn left 45 deg into left front stance rising block
+  - id: '13'
+    count: 13
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: gyaku_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Right reverse punch
+  - id: '14'
+    count: 14
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: age_uke
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward right front stance rising block
+  - id: '15'
+    count: 15
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: gyaku_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Left reverse punch
+  - id: '16'
+    count: 16
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: age_uke
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward left front stance rising block
+  - id: '17'
+    count: 17
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: oi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: true
+    notes: Step forward right front stance chudan lunge punch (KIAI)
+  - id: '18'
+    count: 18
+    subcount: null
+    stance: kokutsu_dachi
+    lead: left
+    technique: manji_uke
+    secondary_technique: null
+    target: chudan
+    turn: left_90
+    facing: W
+    kiai: false
+    notes: Turn left 90 deg into left back stance manji-uke
+  - id: '19'
+    count: 19
+    subcount: null
+    stance: kiba_dachi
+    lead: right
+    technique: kagi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: W
+    kiai: false
+    notes: Shift into horse stance right chudan hook punch
+  - id: '20'
+    count: 20
+    subcount: null
+    stance: kokutsu_dachi
+    lead: right
+    technique: manji_uke
+    secondary_technique: null
+    target: chudan
+    turn: right_180
+    facing: E
+    kiai: false
+    notes: Turn right 180 deg into right back stance manji-uke
+  - id: '21'
+    count: 21
+    subcount: null
+    stance: kiba_dachi
+    lead: left
+    technique: kagi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: E
+    kiai: false
+    notes: Shift into horse stance left chudan hook punch
+  - id: '22'
+    count: 22
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: gedan_barai
+    secondary_technique: null
+    target: gedan
+    turn: left_90
+    facing: N
+    kiai: false
+    notes: Turn left 90 deg into left front stance downward block
+  - id: '23'
+    count: 23
+    subcount: null
+    stance: kiba_dachi
+    lead: right
+    technique: teisho_uchi
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Slide into horse stance right palm-heel strike
+  - id: '24'
+    count: 24
+    subcount: null
+    stance: kiba_dachi
+    lead: left
+    technique: teisho_uchi
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Left palm-heel strike in horse stance
+  - id: '25'
+    count: 25
+    subcount: null
+    stance: kiba_dachi
+    lead: right
+    technique: teisho_uchi
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Right palm-heel strike in horse stance
+  - id: '26'
+    count: 26
+    subcount: null
+    stance: kosa_dachi
+    lead: right
+    technique: juji_uke
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Cross-step into right forward kosa-dachi jodan X-block
+  - id: '27'
+    count: 27
+    subcount: null
+    stance: kiba_dachi
+    lead: left
+    technique: teisho_uchi
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step out into horse stance left palm-heel strike
+  - id: '28'
+    count: 28
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: gedan_barai
+    secondary_technique: null
+    target: gedan
+    turn: left_90
+    facing: W
+    kiai: false
+    notes: Turn left 90 deg into left front stance downward block
+  - id: '29'
+    count: 29
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: uchi_uke
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: W
+    kiai: false
+    notes: Step forward left front stance inside forearm block
+  - id: '30'
+    count: 30
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: gedan_barai
+    secondary_technique: null
+    target: gedan
+    turn: right_180
+    facing: E
+    kiai: false
+    notes: Turn right 180 deg into right front stance downward block
+  - id: '31'
+    count: 31
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: uchi_uke
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: E
+    kiai: false
+    notes: Step forward right front stance inside forearm block
+  - id: '32'
+    count: 32
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: gedan_barai
+    secondary_technique: null
+    target: gedan
+    turn: left_90
+    facing: N
+    kiai: false
+    notes: Turn left 90 deg into left front stance downward block
+  - id: '33'
+    count: 33
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: uchi_uke
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward left front stance inside forearm block
+  - id: '34'
+    count: 34
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: age_uke
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward right front stance rising block
+  - id: '35'
+    count: 35
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: gyaku_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Left reverse punch
+  - id: '36'
+    count: 36
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: age_uke
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward left front stance rising block
+  - id: '37'
+    count: 37
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: gyaku_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Right reverse punch
+  - id: '38'
+    count: 38
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: age_uke
+    secondary_technique: null
+    target: jodan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward right front stance rising block
+  - id: '39'
+    count: 39
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: oi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Right chudan lunge punch
+  - id: '40'
+    count: 40
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: uchi_uke
+    secondary_technique: null
+    target: chudan
+    turn: left_180
+    facing: S
+    kiai: false
+    notes: Turn left 180 deg into left front stance inside forearm block
+  - id: '41'
+    count: 41
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: oi_zuki
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: S
+    kiai: false
+    notes: Step forward right front stance lunge punch
+  - id: '42'
+    count: 42
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: gedan_barai
+    secondary_technique: null
+    target: gedan
+    turn: right_180
+    facing: N
+    kiai: false
+    notes: Turn right 180 deg into left front stance downward block
+  - id: '43'
+    count: 43
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: otoshi_uke
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward right front stance dropping block
+  - id: '44'
+    count: 44
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: left
+    technique: otoshi_uke
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward left front stance dropping block
+  - id: '45'
+    count: 45
+    subcount: null
+    stance: zenkutsu_dachi
+    lead: right
+    technique: otoshi_uke
+    secondary_technique: null
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Step forward right front stance dropping block
+  - id: '46'
+    count: 46
+    subcount: null
+    stance: kiba_dachi
+    lead: both
+    technique: morote_tsukami
+    secondary_technique: yoko_tsuki
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: false
+    notes: Shift into horse stance two-handed grab and side punch
+  - id: '47'
+    count: 47
+    subcount: null
+    stance: kiba_dachi
+    lead: both
+    technique: morote_tsukami
+    secondary_technique: yoko_tsuki
+    target: chudan
+    turn: '0'
+    facing: N
+    kiai: true
+    notes: Two-handed grab and side punch (KIAI)

@@ -205,6 +205,13 @@ sokuto_osae_uke:
   en: "foot-edge pressing block"
   category: "block"
 
+otoshi_uke:
+  kanji: "落とし受け"
+  furigana: "おとしうけ"
+  romaji: "otoshi-uke"
+  en: "dropping block"
+  category: "block"
+
 # Punches (Tsuki)
 jodan_zuki:
   kanji: "上段突き"
@@ -330,6 +337,13 @@ keiko_zuki:
   furigana: "けいこうづき"
   romaji: "keiko-zuki"
   en: "chicken-beak punch"
+  category: "punch"
+
+yoko_tsuki:
+  kanji: "横突き"
+  furigana: "よこづき"
+  romaji: "yoko-tsuki"
+  en: "side punch"
   category: "punch"
 
 # Strikes (Uchi)
