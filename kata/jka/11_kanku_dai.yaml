@@ -4,11 +4,13 @@ kanji: 観空大
 furigana: かんくうだい
 style: jka
 order: 11
-status: early_draft
-last_updated: '2026-09-07'
+status: full_draft
+last_updated: '2026-09-12'
 reviewer: null
 sources:
+- Shotokan Karate CSL, Kanku Dai (scraped_refs/11_kanku_dai_csl.html)
 - 'Masatoshi Nakayama, Best Karate Vol. 6: Bassai Dai, Kanku Dai'
+- JKA Karate-Do Kata Vol. 1
 tags:
 - sentei
 - shitei
@@ -21,81 +23,132 @@ steps:
   target: jodan
   turn: '0'
   facing: N
+  slow: true
   notes: Form triangle with hands gazing toward sky
 - id: '2'
   count: 2
   stance: hachiji_dachi
   lead: both
   technique: ryosho_kamae
-  target: chudan
+  target: null
   turn: '0'
   facing: N
+  slow: true
   notes: Separate hands in wide circle to sides
 - id: '3'
   count: 3
   stance: kokutsu_dachi
   lead: left
+  technique: haiwan_uke
+  secondary_technique: kamae
+  target: jodan
+  turn: left_90
+  facing: W
+  notes: null
+- id: '4'
+  count: 4
+  stance: kokutsu_dachi
+  lead: right
+  technique: haiwan_uke
+  secondary_technique: kamae
+  target: jodan
+  turn: right_180
+  facing: E
+  notes: null
+- id: '5'
+  count: 5
+  stance: hachiji_dachi
+  lead: left
   technique: shuto_uke
   target: chudan
   turn: left_90
-  facing: W
-  notes: Turn left 90 deg into left back stance knife-hand block
-- id: '4'
-  count: 4
-  stance: zenkutsu_dachi
+  facing: N
+  slow: true
+  notes: Vertical knife-hand block (tate-shuto-uke)
+- id: '6'
+  count: 6
+  stance: hachiji_dachi
   lead: right
   technique: choku_zuki
   target: chudan
   turn: '0'
-  facing: W
-  notes: Right front stance straight punch
-- id: '5'
-  count: 5
-  stance: kokutsu_dachi
+  facing: N
+  notes: null
+- id: '7'
+  count: 7
+  stance: hachiji_dachi
   lead: right
   technique: uchi_uke
   target: chudan
-  turn: right_180
-  facing: E
-  notes: Turn right 180 deg into right back stance inside block
-- id: '6'
-  count: 6
-  stance: zenkutsu_dachi
+  turn: '0'
+  facing: N
+  notes: Twist hips to the left into hizakutsu
+- id: '8'
+  count: 8
+  stance: hachiji_dachi
   lead: left
   technique: choku_zuki
   target: chudan
   turn: '0'
+  facing: N
+  notes: null
+- id: '9'
+  count: 9
+  stance: hachiji_dachi
+  lead: left
+  technique: uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Twist hips to the right into hizakutsu
+- id: '10'
+  count: 10
+  stance: tsuru_ashi_dachi
+  lead: left
+  technique: koshi_kamae
+  target: null
+  turn: '0'
+  facing: N
+  notes: Look east with fists at left hip
+- id: '11'
+  count: 11
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: yoko_geri_keage
+  secondary_technique: uraken_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Simultaneous right side snap kick and backfist strike to the east
+- id: '12'
+  count: 12
+  stance: kokutsu_dachi
+  lead: left
+  technique: shuto_uke
+  target: chudan
+  turn: left_90
+  facing: W
+  notes: null
+- id: '13'
+  count: 13
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  target: chudan
+  turn: right_180
   facing: E
-  notes: Left front stance straight punch
-- id: '7'
-  count: 7
+  notes: null
+- id: '14'
+  count: 14
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
   target: chudan
   turn: left_90
   facing: N
-  notes: Turn left 90 deg into left back stance knife-hand block
-- id: '8'
-  count: 8
-  stance: kokutsu_dachi
-  lead: right
-  technique: shuto_uke
-  target: chudan
-  turn: '0'
-  facing: N
-  notes: Step forward right back stance knife-hand block
-- id: '9'
-  count: 9
-  stance: kokutsu_dachi
-  lead: left
-  technique: shuto_uke
-  target: chudan
-  turn: '0'
-  facing: N
-  notes: Step forward left back stance knife-hand block
-- id: '10'
-  count: 10
+  notes: null
+- id: '15'
+  count: 15
   stance: zenkutsu_dachi
   lead: right
   technique: shihon_nukite
@@ -103,455 +156,473 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: Step forward right front stance spear-hand strike
-- id: '11'
-  count: 11
-  stance: zenkutsu_dachi
-  lead: right
-  technique: shihon_nukite
-  target: chudan
-  turn: '0'
-  facing: N
-- id: '12'
-  count: 12
-  stance: kokutsu_dachi
-  lead: left
-  technique: shuto_uke
-  target: chudan
-  turn: left_225
-  facing: SE
-  notes: Turn left 225 deg into left back stance knife-hand block
-- id: '13'
-  count: 13
-  stance: kokutsu_dachi
-  lead: right
-  technique: shuto_uke
-  target: chudan
-  turn: right_90
-  facing: SW
-  notes: Step forward right back stance knife-hand block
-- id: '14'
-  count: 14
-  stance: kokutsu_dachi
-  lead: right
-  technique: shuto_uke
-  target: chudan
-  turn: right_90
-  facing: NW
-  notes: Turn right 90 deg into right back stance knife-hand block
-- id: '15'
-  count: 15
-  stance: kokutsu_dachi
-  lead: left
-  technique: shuto_uke
-  target: chudan
-  turn: right_90
-  facing: NE
   kiai: true
-  notes: Step forward left back stance knife-hand block (KIAI)
+  notes: null
 - id: '16'
   count: 16
   stance: zenkutsu_dachi
   lead: left
-  technique: gedan_barai
-  target: gedan
-  turn: right_135
+  technique: shuto_uchi
+  secondary_technique: shuto_uke
+  target: jodan
+  turn: left_180
   facing: S
-  notes: Turn right 135 deg into left front stance downward block
+  notes: Gyaku-hanmi in short front stance
 - id: '17'
   count: 17
-  stance: zenkutsu_dachi
+  stance: tsuru_ashi_dachi
   lead: right
-  technique: age_uke
+  technique: mae_geri
   target: jodan
   turn: '0'
   facing: S
-  notes: Step forward into right front stance rising block
+  notes: null
 - id: '18'
   count: 18
-  stance: zenkutsu_dachi
-  lead: left
-  technique: age_uke
-  target: jodan
-  turn: '0'
-  facing: S
-  notes: Step forward into left front stance rising block
-- id: '19'
-  count: 19
-  stance: zenkutsu_dachi
+  stance: kokutsu_dachi
   lead: right
-  technique: age_uke
-  target: jodan
-  turn: '0'
-  facing: S
-  notes: Step forward into right front stance rising block
-- id: '20'
-  count: 20
-  stance: kiba_dachi
-  lead: both
   technique: manji_uke
   target: jodan
   turn: left_180
   facing: N
-  notes: Turn left 180 deg into horse stance svastika block
+  notes: null
+- id: '19'
+  count: 19
+  stance: zenkutsu_dachi
+  lead: left
+  technique: nagashi_uke
+  secondary_technique: shuto_uchi
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
+- id: '20'
+  count: 20
+  stance: renoji_dachi
+  lead: left
+  technique: gedan_barai
+  target: gedan
+  turn: '0'
+  facing: N
+  slow: true
+  notes: null
 - id: '21'
   count: 21
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uchi
+  secondary_technique: shuto_uke
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: Gyaku-hanmi in short front stance
 - id: '22'
   count: 22
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: mae_geri
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '23'
   count: 23
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: manji_uke
+  target: jodan
+  turn: left_180
+  facing: S
+  notes: null
 - id: '24'
   count: 24
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: nagashi_uke
+  secondary_technique: shuto_uchi
+  target: jodan
+  turn: '0'
+  facing: S
+  notes: null
 - id: '25'
   count: 25
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: renoji_dachi
+  lead: left
+  technique: gedan_barai
+  target: gedan
+  turn: '0'
+  facing: S
+  slow: true
+  notes: null
 - id: '26'
   count: 26
-  stance: null
-  lead: null
-  technique: null
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: right_90
+  facing: W
+  notes: Look east with fists at right hip
 - id: '27'
   count: 27
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: tsuru_ashi_dachi
+  lead: left
+  technique: yoko_geri_keage
+  secondary_technique: uraken_uchi
+  target: chudan
+  turn: '0'
+  facing: W
+  notes: Simultaneous left side snap kick and backfist strike to the east
 - id: '28'
   count: 28
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: mae_empi_uchi
+  target: chudan
+  turn: left_90
+  facing: S
+  notes: Right front elbow strike into left palm
 - id: '29'
   count: 29
-  stance: null
-  lead: null
-  technique: null
+  stance: tsuru_ashi_dachi
+  lead: left
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: left_180
+  facing: N
+  notes: Look west with fists at left hip
 - id: '30'
   count: 30
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: yoko_geri_keage
+  secondary_technique: uraken_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Simultaneous right side snap kick and backfist strike to the west
 - id: '31'
   count: 31
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: mae_empi_uchi
+  target: chudan
+  turn: right_90
+  facing: E
+  notes: Left front elbow strike into right palm
 - id: '32'
   count: 32
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: shuto_uke
+  target: chudan
+  turn: left_135
+  facing: NW
+  notes: null
 - id: '33'
   count: 33
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  target: chudan
+  turn: right_90
+  facing: NE
+  notes: null
 - id: '34'
   count: 34
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  target: chudan
+  turn: right_90
+  facing: SE
+  notes: null
 - id: '35'
   count: 35
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: shuto_uke
+  target: chudan
+  turn: right_90
+  facing: SW
+  notes: null
 - id: '36'
   count: 36
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: shuto_uchi
+  secondary_technique: shuto_uke
+  target: jodan
+  turn: right_135
+  facing: N
+  notes: Gyaku-hanmi in short front stance
 - id: '37'
   count: 37
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: mae_geri
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '38'
   count: 38
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kosa_dachi
+  lead: right
+  technique: uraken_uchi
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '39'
   count: 39
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '40'
   count: 40
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: gyaku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '41'
   count: 41
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: choku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '42'
   count: 42
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: ura_zuki
+  secondary_technique: hiza_geri
+  target: jodan
+  turn: left_180
+  facing: S
+  notes: Left hand supports right wrist during right knee strike
 - id: '43'
   count: 43
-  stance: null
-  lead: null
-  technique: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: S
+  notes: Drop body low with fingertips on floor (ude-tate-fuse)
 - id: '44'
   count: 44
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: shuto_uke
+  target: gedan
+  turn: left_180
+  facing: N
+  notes: Low knife-hand block in right back stance
 - id: '45'
   count: 45
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: shuto_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '46'
   count: 46
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: uchi_uke
+  target: chudan
+  turn: left_180
+  facing: S
+  notes: null
 - id: '47'
   count: 47
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: gyaku_zuki
+  target: chudan
+  turn: '0'
+  facing: S
+  notes: null
 - id: '48'
   count: 48
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: uchi_uke
+  target: chudan
+  turn: right_180
+  facing: N
+  notes: null
 - id: '49'
   count: 49
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: gyaku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '50'
   count: 50
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: choku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '51'
   count: 51
-  stance: null
-  lead: null
-  technique: null
+  stance: tsuru_ashi_dachi
+  lead: left
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  notes: Look east with fists at left hip
 - id: '52'
   count: 52
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: yoko_geri_keage
+  secondary_technique: uraken_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Simultaneous right side snap kick and backfist strike to the east
 - id: '53'
   count: 53
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: shuto_uke
+  target: chudan
+  turn: left_90
+  facing: W
+  notes: null
 - id: '54'
   count: 54
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: shihon_nukite
+  secondary_technique: osae_uke
+  target: chudan
+  turn: right_90
+  facing: N
+  notes: null
 - id: '55'
   count: 55
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: uraken_uchi
+  target: jodan
+  turn: right_90
+  facing: E
+  notes: Twist right arm outward stepping into horse stance with vertical backfist
+    strike
 - id: '56'
   count: 56
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: tettsui_uchi
+  target: chudan
+  turn: '0'
+  facing: E
+  notes: Side slide (yori-ashi) with inside hammer-fist strike
 - id: '57'
   count: 57
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: mae_empi_uchi
+  target: chudan
+  turn: '0'
+  facing: E
+  notes: Right front elbow strike into left palm
 - id: '58'
   count: 58
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: both
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: E
+  notes: Both fists to left hip
 - id: '59'
   count: 59
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: gedan_barai
+  target: gedan
+  turn: '0'
+  facing: E
+  notes: null
 - id: '60'
   count: 60
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: gedan_barai
+  target: gedan
+  turn: right_180
+  facing: W
+  notes: Turn clockwise into horse stance with left forearm down block and right rising
+    swing
 - id: '61'
   count: 61
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: choku_zuki
+  target: gedan
+  turn: '0'
+  facing: W
+  notes: Downward punch (otoshi-zuki)
 - id: '62'
   count: 62
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: hachiji_dachi
+  lead: both
+  technique: juji_uke_jodan
+  target: jodan
+  turn: '0'
+  facing: W
+  notes: Double open palms crossed block (kaisho-kosa-uke)
 - id: '63'
   count: 63
-  stance: null
-  lead: null
-  technique: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: kaiten
   target: null
-  turn: null
-  facing: null
+  turn: right_180
+  facing: E
+  notes: Clockwise pivot on right foot keeping hands crossed above head
 - id: '64'
   count: 64
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: kosa_gamae
+  target: chudan
+  turn: '0'
+  facing: E
+  slow: true
+  notes: Draw crossed fists down in front of chest slowly
 - id: '65'
   count: 65
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: tobi_geri
+  secondary_technique: uraken_uchi
+  target: jodan
+  turn: '0'
+  facing: E
   kiai: true
+  notes: Double jumping front kicks (nidan-geri) landing in right front stance vertical
+    backfist strike

@@ -4,205 +4,250 @@ kanji: 鉄騎二段
 furigana: てっきにだん
 style: jka
 order: 7
-status: early_draft
-last_updated: '2026-09-07'
+status: full_draft
+last_updated: '2026-09-12'
 reviewer: null
 sources:
+- 'Shotokan Karate CSL, Tekki Nidan (https://shotokankaratecsl.com/Kata%2007%20-%20Tekki%20Nidan.html)'
 - 'Masatoshi Nakayama, Best Karate Vol. 5: Heian, Tekki'
 tags:
 - black_belt
 steps:
 - id: '1'
   count: 1
-  stance: null
-  lead: null
-  technique: null
+  stance: kosa_dachi
+  lead: both
+  technique: ryo_zenwan_suihei_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
+  notes: Cross left foot in front of right into crossed stance
 - id: '2'
   count: 2
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: zenwan_sokumen_uke
+  secondary_technique: zenwan_suihei_mune_kamae
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Stomp right foot into horse stance with right forearm block to side and left horizontal forearm posture
 - id: '3'
   count: 3
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kosa_dachi
+  lead: both
+  technique: zenwan_shomen_gedan_kensei
+  target: gedan
+  turn: '0'
+  facing: N
+  notes: Cross right foot in front of left with forearm frontal low feint
 - id: '4'
   count: 4
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: zenwan_sokumen_gedan_uke
+  secondary_technique: oshi_uke
+  target: gedan
+  turn: '0'
+  facing: N
+  notes: Step left foot out into horse stance with low forearm block to side (pushing block)
 - id: '5'
   count: 5
-  stance: null
-  lead: null
-  technique: null
+  stance: heisoku_dachi
+  lead: both
+  technique: ryo_zenwan_suihei_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
+  notes: Draw left foot to right into closed feet stance
 - id: '6'
   count: 6
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: zenwan_sokumen_uke
+  secondary_technique: zenwan_suihei_mune_kamae
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Step left foot out into horse stance with left forearm block to side and right horizontal forearm posture
 - id: '7'
   count: 7
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kosa_dachi
+  lead: both
+  technique: zenwan_shomen_gedan_kensei
+  target: gedan
+  turn: '0'
+  facing: N
+  notes: Cross left foot in front of right with forearm frontal low feint
 - id: '8'
   count: 8
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: zenwan_sokumen_gedan_uke
+  secondary_technique: oshi_uke
+  target: gedan
+  turn: '0'
+  facing: N
+  notes: Step right foot out into horse stance with low forearm block to side (pushing block)
 - id: '9'
   count: 9
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: both
+  technique: kao_muki
+  secondary_technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  notes: Turn head left, draw fists to right hip
 - id: '10'
   count: 10
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: soete_uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Left inside block with right open hand supporting left forearm
 - id: '11'
   count: 11
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: fumikomi
+  secondary_technique: mae_empi_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Raise right knee with koshi-kamae, stomp into horse stance with right front elbow strike into left palm
 - id: '12'
   count: 12
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: tsukami_uke
+  secondary_technique: koko_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  slow: true
+  notes: Right grasping block with tiger-mouth hand
 - id: '13'
   count: 13
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: kagi_zuki
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Left hook punch
 - id: '14'
   count: 14
-  stance: null
-  lead: null
-  technique: null
+  stance: kosa_dachi
+  lead: right
+  technique: jotai_sonomama
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
+  notes: Slow cross step to the right holding upper body posture
 - id: '15'
   count: 15
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: fumikomi
+  secondary_technique: uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Stomp left foot into horse stance with left inside block
 - id: '16'
   count: 16
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: tate_uraken_uchi
+  secondary_technique: zenwan_suihei_mune_kamae
+  target: jodan
+  turn: '0'
+  facing: N
   kiai: true
+  notes: Left vertical backfist strike with right horizontal forearm chest posture (and gedan-uke chamber)
 - id: '17'
   count: 17
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: both
+  technique: kao_muki
+  secondary_technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  notes: Turn head right, draw fists to left hip
 - id: '18'
   count: 18
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: soete_uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Right inside block with left open hand supporting right forearm
 - id: '19'
   count: 19
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: fumikomi
+  secondary_technique: mae_empi_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Raise left knee with koshi-kamae, stomp into horse stance with left front elbow strike into right palm
 - id: '20'
   count: 20
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: tsukami_uke
+  secondary_technique: koko_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  slow: true
+  notes: Left grasping block with tiger-mouth hand
 - id: '21'
   count: 21
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: kagi_zuki
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Right hook punch
 - id: '22'
   count: 22
-  stance: null
-  lead: null
-  technique: null
+  stance: kosa_dachi
+  lead: left
+  technique: jotai_sonomama
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
+  notes: Slow cross step to the left holding upper body posture
 - id: '23'
   count: 23
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: fumikomi
+  secondary_technique: uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: Stomp right foot into horse stance with right inside block
 - id: '24'
   count: 24
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: tate_uraken_uchi
+  secondary_technique: zenwan_suihei_mune_kamae
+  target: jodan
+  turn: '0'
+  facing: N
   kiai: true
+  notes: Right vertical backfist strike with left horizontal forearm chest posture (and gedan-uke chamber)

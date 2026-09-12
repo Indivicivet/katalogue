@@ -5,10 +5,11 @@ furigana: へいあんよんだん
 style: jka
 order: 4
 status: full_draft
-last_updated: '2026-09-07'
+last_updated: '2026-09-12'
 reviewer: null
 sources:
 - 'Masatoshi Nakayama, Best Karate Vol. 5: Heian, Tekki'
+- 'Shotokan Karate CSL, Heian Yondan (scraped_refs/04_heian_yondan_csl.html)'
 tags:
 - kyu_grade
 - 5th_kyu
@@ -19,21 +20,21 @@ steps:
   stance: kokutsu_dachi
   lead: left
   technique: haiwan_uke
+  secondary_technique: kamae
   target: jodan
   turn: left_90
   facing: W
   slow: true
-  notes: Slow double open-hand rising block in left back stance
 - id: '2'
   count: 2
   stance: kokutsu_dachi
   lead: right
   technique: haiwan_uke
+  secondary_technique: kamae
   target: jodan
   turn: right_180
   facing: E
   slow: true
-  notes: Slow double open-hand rising block in right back stance
 - id: '3'
   count: 3
   stance: zenkutsu_dachi
@@ -42,49 +43,24 @@ steps:
   target: gedan
   turn: left_90
   facing: N
-  notes: Step forward into left front stance with downward X-block
 - id: '4'
   count: 4
-  stance: zenkutsu_dachi
+  stance: kokutsu_dachi
   lead: right
   technique: morote_uke
   target: chudan
   turn: '0'
   facing: N
-  notes: Step forward into right front stance with augmented block
 - id: '5'
   count: 5
-  stance: kosa_dachi
-  lead: left
-  technique: kosa_uke
-  target: gedan
-  turn: '0'
-  facing: N
-  notes: Cross step forward with low cross block
-- id: 6a
-  count: 6
-  subcount: a
   stance: tsuru_ashi_dachi
-  lead: right
-  technique: yoko_geri_keage
-  secondary_technique: uraken_uchi
-  target: chudan
-  turn: '0'
-  facing: N
-  notes: Side snap kick and backfist strike
-- id: 6b
-  count: 6
-  subcount: b
-  stance: zenkutsu_dachi
   lead: left
-  technique: mae_empi_uchi
-  target: chudan
+  technique: koshi_kamae
+  target: null
   turn: '0'
   facing: N
-  notes: Land in left front stance with forward elbow strike
-- id: 7a
-  count: 7
-  subcount: a
+- id: '6'
+  count: 6
   stance: tsuru_ashi_dachi
   lead: left
   technique: yoko_geri_keage
@@ -92,19 +68,41 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: Side snap kick and backfist strike to the right
-- id: 7b
+- id: '7'
   count: 7
-  subcount: b
   stance: zenkutsu_dachi
   lead: right
   technique: mae_empi_uchi
   target: chudan
   turn: '0'
   facing: N
-  notes: Land in right front stance with forward elbow strike
 - id: '8'
   count: 8
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: koshi_kamae
+  target: null
+  turn: '0'
+  facing: N
+- id: '9'
+  count: 9
+  stance: tsuru_ashi_dachi
+  lead: right
+  technique: yoko_geri_keage
+  secondary_technique: uraken_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+- id: '10'
+  count: 10
+  stance: zenkutsu_dachi
+  lead: left
+  technique: mae_empi_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+- id: '11'
+  count: 11
   stance: zenkutsu_dachi
   lead: left
   technique: shuto_uchi
@@ -112,159 +110,136 @@ steps:
   target: jodan
   turn: '0'
   facing: N
-  notes: Left open knife-hand strike and right downward knife-hand block
-- id: '9'
-  count: 9
+- id: '12'
+  count: 12
   stance: zenkutsu_dachi
   lead: right
   technique: mae_geri
-  target: chudan
+  target: jodan
   turn: '0'
   facing: N
-  notes: Right front snap kick
-- id: '10'
-  count: 10
+- id: '13'
+  count: 13
   stance: kosa_dachi
   lead: right
   technique: uraken_uchi
   target: jodan
   turn: '0'
   facing: N
-  notes: Land in cross stance with jumping backfist strike
-- id: '11'
-  count: 11
-  stance: zenkutsu_dachi
+  kiai: true
+- id: '14'
+  count: 14
+  stance: kokutsu_dachi
   lead: left
   technique: kakiwake_uke
   target: chudan
   turn: left_180
   facing: S
-  notes: Turn left 180 deg into left front stance wedge block
-- id: '12'
-  count: 12
+  slow: true
+- id: '15'
+  count: 15
   stance: zenkutsu_dachi
   lead: left
   technique: mae_geri
-  target: chudan
+  target: jodan
   turn: '0'
   facing: S
-  notes: Right front snap kick
-- id: '13'
-  count: 13
+- id: '16'
+  count: 16
   stance: zenkutsu_dachi
   lead: right
   technique: oi_zuki
   target: chudan
   turn: '0'
   facing: S
-  kiai: true
-  notes: Step into right front stance with middle lunge punch (KIAI)
-- id: '14'
-  count: 14
+- id: '17'
+  count: 17
   stance: zenkutsu_dachi
   lead: right
   technique: gyaku_zuki
   target: chudan
   turn: '0'
   facing: S
-  notes: Reverse punch in right front stance
-- id: '15'
-  count: 15
-  stance: zenkutsu_dachi
+- id: '18'
+  count: 18
+  stance: kokutsu_dachi
   lead: right
   technique: kakiwake_uke
   target: chudan
   turn: right_180
   facing: N
-  notes: Turn right 180 deg into right front stance wedge block
-- id: '16'
-  count: 16
+  slow: true
+- id: '19'
+  count: 19
   stance: zenkutsu_dachi
   lead: right
   technique: mae_geri
-  target: chudan
+  target: jodan
   turn: '0'
   facing: N
-  notes: Left front snap kick
-- id: '17'
-  count: 17
+- id: '20'
+  count: 20
   stance: zenkutsu_dachi
   lead: left
   technique: oi_zuki
   target: chudan
   turn: '0'
   facing: N
-  notes: Step into left front stance with middle lunge punch
-- id: '18'
-  count: 18
+- id: '21'
+  count: 21
   stance: zenkutsu_dachi
   lead: left
   technique: gyaku_zuki
   target: chudan
   turn: '0'
   facing: N
-  notes: Reverse punch in left front stance
-- id: '19'
-  count: 19
+- id: '22'
+  count: 22
   stance: kokutsu_dachi
   lead: left
   technique: morote_uke
   target: chudan
   turn: left_90
   facing: W
-  notes: Turn left 90 deg into left back stance augmented block
-- id: '20'
-  count: 20
+- id: '23'
+  count: 23
   stance: kokutsu_dachi
   lead: right
   technique: morote_uke
   target: chudan
   turn: '0'
   facing: W
-  notes: Step forward into right back stance augmented block
-- id: '21'
-  count: 21
+- id: '24'
+  count: 24
   stance: kokutsu_dachi
   lead: left
   technique: morote_uke
   target: chudan
   turn: '0'
   facing: W
-  notes: Step forward into left back stance augmented block
-- id: '22'
-  count: 22
-  stance: zenkutsu_dachi
-  lead: left
-  technique: morote_tsukami
-  target: jodan
-  turn: '0'
-  facing: W
-  notes: Reach forward grabbing opponent head/shoulders
-- id: '23'
-  count: 23
+- id: '25'
+  count: 25
   stance: zenkutsu_dachi
   lead: left
   technique: hiza_geri
+  secondary_technique: morote_tsukami
   target: chudan
   turn: '0'
   facing: W
   kiai: true
-  notes: Right knee strike pulling hands down (KIAI)
-- id: '24'
-  count: 24
+- id: '26'
+  count: 26
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
   target: chudan
   turn: left_180
   facing: E
-  notes: Land back into left back stance with knife-hand block
-- id: '25'
-  count: 25
+- id: '27'
+  count: 27
   stance: kokutsu_dachi
   lead: right
   technique: shuto_uke
   target: chudan
   turn: '0'
   facing: E
-  notes: Step forward into right back stance knife-hand block

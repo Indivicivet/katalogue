@@ -5,9 +5,10 @@ furigana: へいあんにだん
 style: jka
 order: 2
 status: full_draft
-last_updated: '2026-09-07'
+last_updated: '2026-09-12'
 reviewer: null
 sources:
+- Shotokan Karate CSL, Heian Nidan (https://shotokankaratecsl.com/Kata%2002%20-%20Heian%20Nidan.html)
 - 'Masatoshi Nakayama, Best Karate Vol. 5: Heian, Tekki'
 tags:
 - kyu_grade
@@ -23,7 +24,7 @@ steps:
   target: jodan
   turn: left_90
   facing: W
-  notes: Left back stance double forearm block
+  notes: null
 - id: '2'
   count: 2
   stance: kokutsu_dachi
@@ -32,7 +33,7 @@ steps:
   target: chudan
   turn: '0'
   facing: W
-  notes: Middle reverse punch releasing chamber
+  notes: target opponent's elbow
 - id: '3'
   count: 3
   stance: kokutsu_dachi
@@ -41,7 +42,7 @@ steps:
   target: jodan
   turn: '0'
   facing: W
-  notes: Upper backfist strike
+  notes: null
 - id: '4'
   count: 4
   stance: kokutsu_dachi
@@ -51,7 +52,7 @@ steps:
   target: jodan
   turn: right_180
   facing: E
-  notes: Turn right 180 deg into right back stance double forearm block
+  notes: null
 - id: '5'
   count: 5
   stance: kokutsu_dachi
@@ -60,7 +61,7 @@ steps:
   target: chudan
   turn: '0'
   facing: E
-  notes: Middle reverse punch
+  notes: target opponent's elbow
 - id: '6'
   count: 6
   stance: kokutsu_dachi
@@ -69,7 +70,7 @@ steps:
   target: jodan
   turn: '0'
   facing: E
-  notes: Upper backfist strike
+  notes: null
 - id: '7'
   count: 7
   stance: tsuru_ashi_dachi
@@ -79,7 +80,7 @@ steps:
   target: chudan
   turn: left_90
   facing: N
-  notes: Side snap kick and backfist strike
+  notes: null
 - id: '8'
   count: 8
   stance: kokutsu_dachi
@@ -88,7 +89,7 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: Land in left back stance knife-hand block
+  notes: null
 - id: '9'
   count: 9
   stance: kokutsu_dachi
@@ -97,7 +98,7 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: Step forward into right back stance knife-hand block
+  notes: null
 - id: '10'
   count: 10
   stance: kokutsu_dachi
@@ -106,7 +107,7 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: Step forward into left back stance knife-hand block
+  notes: null
 - id: '11'
   count: 11
   stance: zenkutsu_dachi
@@ -117,8 +118,7 @@ steps:
   turn: '0'
   facing: N
   kiai: true
-  notes: Step forward into right front stance with spear-hand strike over pressing
-    block (KIAI)
+  notes: null
 - id: '12'
   count: 12
   stance: kokutsu_dachi
@@ -127,7 +127,7 @@ steps:
   target: chudan
   turn: left_225
   facing: SE
-  notes: Turn left 225 deg into left back stance knife-hand block
+  notes: null
 - id: '13'
   count: 13
   stance: kokutsu_dachi
@@ -136,25 +136,25 @@ steps:
   target: chudan
   turn: right_90
   facing: SW
-  notes: Step forward 45 deg right into right back stance knife-hand block
+  notes: null
 - id: '14'
   count: 14
   stance: kokutsu_dachi
   lead: right
   technique: shuto_uke
   target: chudan
-  turn: right_90
+  turn: right_180
   facing: NW
-  notes: Turn right 135 deg into right back stance knife-hand block
+  notes: null
 - id: '15'
   count: 15
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
   target: chudan
-  turn: right_90
+  turn: left_90
   facing: NE
-  notes: Step forward 45 deg left into left back stance knife-hand block
+  notes: null
 - id: '16'
   count: 16
   stance: zenkutsu_dachi
@@ -163,16 +163,16 @@ steps:
   target: chudan
   turn: right_135
   facing: S
-  notes: Turn left 135 deg into left front stance inside block
+  notes: gyaku-hanmi
 - id: '17'
   count: 17
-  stance: zenkutsu_dachi
-  lead: left
+  stance: tsuru_ashi_dachi
+  lead: right
   technique: mae_geri
   target: chudan
   turn: '0'
   facing: S
-  notes: Right front kick
+  notes: null
 - id: '18'
   count: 18
   stance: zenkutsu_dachi
@@ -181,7 +181,7 @@ steps:
   target: chudan
   turn: '0'
   facing: S
-  notes: Land in right front stance reverse punch
+  notes: null
 - id: '19'
   count: 19
   stance: zenkutsu_dachi
@@ -190,16 +190,16 @@ steps:
   target: chudan
   turn: '0'
   facing: S
-  notes: Right inside block
+  notes: gyaku-hanmi
 - id: '20'
   count: 20
-  stance: zenkutsu_dachi
-  lead: right
+  stance: tsuru_ashi_dachi
+  lead: left
   technique: mae_geri
   target: chudan
   turn: '0'
   facing: S
-  notes: Left front kick
+  notes: null
 - id: '21'
   count: 21
   stance: zenkutsu_dachi
@@ -208,7 +208,7 @@ steps:
   target: chudan
   turn: '0'
   facing: S
-  notes: Land in left front stance reverse punch
+  notes: null
 - id: '22'
   count: 22
   stance: zenkutsu_dachi
@@ -217,7 +217,7 @@ steps:
   target: chudan
   turn: '0'
   facing: S
-  notes: Step forward into right front stance augmented block
+  notes: null
 - id: '23'
   count: 23
   stance: zenkutsu_dachi
@@ -226,7 +226,7 @@ steps:
   target: gedan
   turn: left_225
   facing: NW
-  notes: Turn left 225 deg into left front stance downward block
+  notes: null
 - id: '24'
   count: 24
   stance: zenkutsu_dachi
@@ -235,7 +235,7 @@ steps:
   target: jodan
   turn: right_90
   facing: NE
-  notes: Step forward 45 deg right into right front stance rising block
+  notes: null
 - id: '25'
   count: 25
   stance: zenkutsu_dachi
@@ -244,7 +244,7 @@ steps:
   target: gedan
   turn: right_180
   facing: SW
-  notes: Turn right 135 deg into right front stance downward block
+  notes: null
 - id: '26'
   count: 26
   stance: zenkutsu_dachi
@@ -254,4 +254,4 @@ steps:
   turn: left_90
   facing: SE
   kiai: true
-  notes: Step forward 45 deg left into left front stance rising block (KIAI)
+  notes: null

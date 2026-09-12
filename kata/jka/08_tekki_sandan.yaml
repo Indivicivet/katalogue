@@ -4,301 +4,315 @@ kanji: 鉄騎三段
 furigana: てっきさんだん
 style: jka
 order: 8
-status: early_draft
-last_updated: '2026-09-07'
+status: full_draft
+last_updated: '2026-09-12'
 reviewer: null
 sources:
+- 'Shotokan Karate CSL, Tekki Sandan (https://shotokankaratecsl.com/Kata%2008%20-%20Tekki%20Sandan.html)'
 - 'Masatoshi Nakayama, Best Karate Vol. 5: Heian, Tekki'
 tags:
 - black_belt
 steps:
 - id: '1'
   count: 1
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '2'
   count: 2
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: uchi_uke
+  secondary_technique: gedan_barai
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '3'
   count: 3
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: zenwan_uchiotoshi
+  secondary_technique: zenwan_osae_uke
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '4'
   count: 4
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: haiwan_uchi_nagashi_uke
+  target: jodan
+  turn: '0'
+  facing: N
 - id: '5'
   count: 5
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: tate_uraken_uchi
+  target: jodan
+  turn: '0'
+  facing: N
 - id: '6'
   count: 6
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: both
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
 - id: '7'
   count: 7
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: choku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '8'
   count: 8
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: zenwan_hineri
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '9'
   count: 9
-  stance: null
-  lead: null
-  technique: null
+  stance: kosa_dachi
+  lead: right
+  technique: jotai_sonomama
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
 - id: '10'
   count: 10
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: zenwan_sokumen_gedan_uke
+  target: gedan
+  turn: '0'
+  facing: N
 - id: '11'
   count: 11
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: zenwan_gedan_furisute
+  target: gedan
+  turn: '0'
+  facing: N
 - id: '12'
   count: 12
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: both
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
 - id: '13'
   count: 13
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: choku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '14'
   count: 14
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: uchi_uke
+  secondary_technique: gedan_barai
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '15'
   count: 15
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: uchi_uke
+  secondary_technique: gedan_barai
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '16'
   count: 16
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: tate_uraken_uchi
+  secondary_technique: zenwan_suihei_mune_kamae
+  target: jodan
+  turn: '0'
+  facing: N
   kiai: true
 - id: '17'
   count: 17
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: none
+  technique: kao_muki
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
 - id: '18'
   count: 18
-  stance: null
-  lead: null
-  technique: null
+  stance: kosa_dachi
+  lead: left
+  technique: jotai_sonomama
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
 - id: '19'
   count: 19
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: fumikomi
+  target: gedan
+  turn: '0'
+  facing: N
 - id: '20'
   count: 20
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: zenwan_uchiotoshi
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '21'
   count: 21
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: haiwan_uchi_nagashi_uke
+  target: jodan
+  turn: '0'
+  facing: N
 - id: '22'
   count: 22
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: tate_uraken_uchi
+  target: jodan
+  turn: '0'
+  facing: N
 - id: '23'
   count: 23
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: both
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
 - id: '24'
   count: 24
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: choku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '25'
   count: 25
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: zenwan_hineri
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '26'
   count: 26
-  stance: null
-  lead: null
-  technique: null
+  stance: kosa_dachi
+  lead: left
+  technique: jotai_sonomama
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
 - id: '27'
   count: 27
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: zenwan_sokumen_gedan_uke
+  target: gedan
+  turn: '0'
+  facing: N
 - id: '28'
   count: 28
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: zenwan_gedan_furisute
+  target: gedan
+  turn: '0'
+  facing: N
 - id: '29'
   count: 29
-  stance: null
-  lead: null
-  technique: null
+  stance: kiba_dachi
+  lead: both
+  technique: koshi_kamae
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
 - id: '30'
   count: 30
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: choku_zuki
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '31'
   count: 31
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: tsukami_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  slow: true
 - id: '32'
   count: 32
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: kagi_zuki
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '33'
   count: 33
-  stance: null
-  lead: null
-  technique: null
+  stance: kosa_dachi
+  lead: left
+  technique: jotai_sonomama
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
 - id: '34'
   count: 34
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: fumikomi
+  secondary_technique: uchi_uke
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '35'
   count: 35
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: uchi_uke
+  secondary_technique: gedan_barai
+  target: chudan
+  turn: '0'
+  facing: N
 - id: '36'
   count: 36
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: tate_uraken_uchi
+  secondary_technique: zenwan_suihei_mune_kamae
+  target: jodan
+  turn: '0'
+  facing: N
   kiai: true

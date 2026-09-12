@@ -163,6 +163,13 @@ tsukami_uke:
   en: "grasping block"
   category: "block"
 
+soete_tsukami_uke:
+  kanji: "添え手掴み受け"
+  furigana: "そえてつかみうけ"
+  romaji: "soete-tsukami-uke"
+  en: "added-hand grasping block"
+  category: "block"
+
 kaishu_haiwan_uke:
   kanji: "開手背腕受け"
   furigana: "かいしゅはいわんうけ"
@@ -205,6 +212,20 @@ bo_uke:
   en: "staff block"
   category: "block"
 
+ryosho_bo_uke:
+  kanji: "両掌棒受け"
+  furigana: "りょうしょうぼううけ"
+  romaji: "ryosho-bo-uke"
+  en: "both palms staff block"
+  category: "block"
+
+bo_oshikomi:
+  kanji: "棒押し込み"
+  furigana: "ぼうおしこみ"
+  romaji: "bo-oshikomi"
+  en: "staff pushing thrust"
+  category: "block"
+
 sokutei_osae_uke:
   kanji: "測定押さえ受け"
   furigana: "そくていおさえうけ"
@@ -225,6 +246,63 @@ otoshi_uke:
   romaji: "otoshi-uke"
   en: "dropping block"
   category: "block"
+
+zenwan_uchiotoshi:
+  kanji: "前腕打ち落とし"
+  furigana: "ぜんわんうちおとし"
+  romaji: "zenwan-uchiotoshi"
+  en: "forearm downward strike/block"
+  category: "block"
+
+zenwan_osae_uke:
+  kanji: "前腕押さえ受け"
+  furigana: "ぜんわんおさえうけ"
+  romaji: "zenwan-osae-uke"
+  en: "forearm pressing block"
+  category: "block"
+
+haiwan_uchi_nagashi_uke:
+  kanji: "背腕内流し受け"
+  furigana: "はいわんうちながしうけ"
+  romaji: "haiwan-uchi-nagashi-uke"
+  en: "back-forearm inside flowing block"
+  category: "block"
+
+zenwan_sokumen_gedan_uke:
+  kanji: "前腕側面下段受け"
+  furigana: "ぜんわんそくめんげだんうけ"
+  romaji: "zenwan-sokumen-gedan-uke"
+  en: "low forearm block to side"
+  category: "block"
+
+zenwan_sokumen_uke:
+  kanji: "前腕側面受け"
+  furigana: "ぜんわんそくめんうけ"
+  romaji: "zenwan-sokumen-uke"
+  en: "forearm block to side"
+  category: "block"
+
+soete_uchi_uke:
+  kanji: "添え手内受け"
+  furigana: "そえてうちうけ"
+  romaji: "soete-uchi-uke"
+  en: "added-hand inside block"
+  category: "block"
+
+oshi_uke:
+  kanji: "押し受け"
+  furigana: "おしうけ"
+  romaji: "oshi-uke"
+  en: "pushing block"
+  category: "block"
+
+zenwan_gedan_furisute:
+  kanji: "前腕下段振り捨て"
+  furigana: "ぜんわんげだんふりすて"
+  romaji: "zenwan-gedan-furisute"
+  en: "low forearm downward swing"
+  category: "block"
+
 
 # Punches (Tsuki)
 jodan_zuki:
@@ -367,6 +445,14 @@ uraken_uchi:
   romaji: "uraken-uchi"
   en: "backfist strike"
   category: "strike"
+
+tate_uraken_uchi:
+  kanji: "縦裏拳打ち"
+  furigana: "たてうらけんうち"
+  romaji: "tate-uraken-uchi"
+  en: "vertical back-fist strike"
+  category: "strike"
+
 
 tettsui_uchi:
   kanji: "鉄槌打ち"
@@ -747,3 +833,32 @@ jotai_sonomama:
   romaji: "jotai-sonomama"
   en: "upper body unchanged posture"
   category: "other"
+
+zenwan_hineri:
+  kanji: "前腕捻り"
+  furigana: "ぜんわんひねり"
+  romaji: "zenwan-hineri"
+  en: "forearm twist"
+  category: "other"
+
+zenwan_suihei_mune_kamae:
+  kanji: "前腕水平胸構え"
+  furigana: "ぜんわんすいへいむねかまえ"
+  romaji: "zenwan-suihei-mune-kamae"
+  en: "horizontal forearm chest posture"
+  category: "other"
+
+ryo_zenwan_suihei_kamae:
+  kanji: "両前腕水平構え"
+  furigana: "りょうぜんわんすいへいかまえ"
+  romaji: "ryo-zenwan-suihei-kamae"
+  en: "horizontal forearms posture"
+  category: "other"
+
+zenwan_shomen_gedan_kensei:
+  kanji: "前腕正面下段牽制"
+  furigana: "ぜんわんしょうめんげだんけんせい"
+  romaji: "zenwan-shomen-gedan-kensei"
+  en: "forearm frontal low feint"
+  category: "other"
+
