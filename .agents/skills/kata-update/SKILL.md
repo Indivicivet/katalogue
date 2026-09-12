@@ -32,8 +32,8 @@ order: 1
 status: "full_draft"      # early_draft | full_draft | student_reviewed | black_belt_reviewed | kata_book_reviewed | instructor_reviewed
 last_updated: "2026-09-07"
 reviewer: null            # MUST remain null until explicitly verified by a human reviewer
-sources:                  # List of source references (books, video links, sensei manuals)
-  - "Masatoshi Nakayama, Best Karate Vol. 5: Heian, Tekki"
+sources:                  # List of source references (books, video links, etc)
+  - null
 tags:
   - "kyu_grade"
   - "9th_kyu"
@@ -42,7 +42,7 @@ tags:
 steps:
   - id: "1"
     count: 1
-    subcount: null        # default: null — use for sub-moves like "25a", "25b"
+    subcount: null        # could be 1, 2, etc if move has sub-counts
     stance: "zenkutsu_dachi"
     lead: "left"          # left | right | both | none
     technique: "gedan_barai"
@@ -50,9 +50,9 @@ steps:
     target: "gedan"       # jodan | chudan | gedan | null
     turn: "left_90"       # 0 | left_90 | right_90 | left_180 | right_180 | left_45 | etc.
     facing: "W"           # N | S | E | W | NE | NW | SE | SW (relative to initial start facing North)
-    kiai: false           # default: false
-    slow: false           # default: false — set true for explicitly slow (引き付け etc.) movements; renders "(slow)" in the Notes column
-    notes: "Turn left 90 deg into left front stance with downward block."  # default: null
+    kiai: true  # for kiai
+    slow: true  # for deliberately slow moves
+    notes: "feet land together"  # null is default and TOTALLY FINE
 ```
 
 ---
@@ -60,9 +60,11 @@ steps:
 ## Core Drafting Rules
 
 ### 1. Step Numbering and Splitting
-- The base `count` integer must match the official canonical dojo count (e.g. 21 counts for Heian Shodan, 42 counts for Bassai Dai).
-- **Sub-counts (`25a`, `25b`)**: Split a count into sub-moves only when multiple distinct tactical actions occur within that single count (for example, stomp `25a` followed by side elbow strike `25b` in Bassai Dai).
-- **Never split preparation or chambering**: Ordinary chambering (such as pulling hand to hip `hiki-te` or loading a block) is part of the execution and must not be split into separate steps unless standard canonical literature explicitly numbers it.
+- The base `count` integer must match the official canonical JKA* count (e.g. 21 counts for Heian Shodan, 42 counts for Bassai Dai).
+- **Sub-counts (`25a`, `25b`)**: Split a count into sub-moves only when multiple distinct actions occur within that single count (for example, gedan nukite 25a followed by manje-uke 25b in Bassai Dai).
+- **Preparation is implicitly included for most standard techniques**: Ordinary chambering (such as pulling hand to hip `hiki-te` or loading a block) is part of the execution and must not be split into separate steps unless standard canonical literature explicitly numbers it.
+
+*for JKA kata
 
 ### 2. Referential Integrity
 - Every `stance` must exist in `techniques/stances.yaml`.
@@ -80,16 +82,17 @@ steps:
 
 ### 4. Human Review & Source Attribution
 - **`reviewer`**: Must be `null` unless an actual human (student, black belt, instructor) has personally reviewed and confirmed the entry. AI assistants must never populate `reviewer` with their own name or references.
-- **`sources`**: Use this field to document references, books (e.g. Nakayama's *Best Karate* series), and video links.
+- **`sources`**: Use this field to document references which have EXPLICITLY been used in construction, and MATCH the data of the kata .yaml. This must NEVER have a reference which doesn't match the page data. Try to keep this empty and request human review if you wish to populate it.
 - **`status`**: New files start as `early_draft`. Once full sequences and counts are verified against canonical literature, they may be set to `full_draft`.
 
 ### 5. Notes Quality (Zero Slop)
-- Avoid redundant filler notes. Do not write "Step 5 of Kanku Dai" or "Move 1 of Chinte"—the step ID already conveys this.
+- Avoid redundant filler notes. Do not write "Step 5 of Kanku Dai" or "Move 1 of Chinte"; the step ID already conveys this.
 - If a step does not need additional clarifying tactical or footwork commentary, leave `notes: null`.
+- - You do not need to write "kiai" or similar in the notes; instead just set kiai: true and move on. Similarly you should make SURE to REMOVE anything from notes that's already described by ANY of the other fields.
 
 ### 6. Cross-Discipline Equivalents
 - When adding or modifying kata that have counterparts in other styles (e.g. Shotokan Heian and Shito-ryu Pinan), maintain `equivalents.yaml`.
-- Remember historical swaps: Shotokan Heian Shodan corresponds to Shito-ryu Pinan Nidan; Heian Nidan corresponds to Shito-ryu Pinan Shodan.
+- Remember historical swaps: Shotokan Heian Shodan corresponds to Shito-ryu Pinan Nidan; Heian Nidan corresponds to Shito-ryu Pinan Shodan. Some styles may swap Gojushiho kata.
 
 ### 7. Source Contradictions & Ambiguities (Flag to Human Reviewer Only)
 - **Never guess or resolve conflicting sources silently.** If different authoritative sources disagree (for example, Nakayama specifies `kokutsu_dachi` while an official JKA tournament manual specifies `fudo_dachi` or `kiba_dachi`, or if sources differ on target height or lead hand), you MUST flag the contradiction directly to the user.
