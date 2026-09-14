@@ -23,272 +23,230 @@ steps:
   turn: '0'
   facing: N
   slow: true
-  notes: null
 - id: '2'
   count: 2
   stance: zenkutsu_dachi
   lead: left
   technique: morote_tate_uke_zuki
-  secondary_technique: null
   target: chudan
-  turn: '0'
-  facing: N
+  turn: left_45
+  facing: NW
   slow: true
-  notes: null
 - id: '3'
   count: 3
   stance: zenkutsu_dachi
   lead: right
   technique: morote_tate_uke_zuki
-  secondary_technique: null
   target: chudan
-  turn: '0'
-  facing: N
+  turn: right_90
+  facing: NE
   slow: true
-  notes: null
 - id: '4'
   count: 4
   stance: zenkutsu_dachi
   lead: left
   technique: tate_shuto_uke
-  secondary_technique: null
   target: chudan
-  turn: '0'
-  facing: N
+  turn: left_90
+  facing: NW
   slow: true
-  notes: null
 - id: '5'
   count: 5
   stance: zenkutsu_dachi
-  lead: right
+  lead: left
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: NW
 - id: '6'
   count: 6
   stance: zenkutsu_dachi
   lead: left
   technique: choku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: NW
 - id: '7'
   count: 7
   stance: tsuru_ashi_dachi
   lead: right
   technique: mae_geri
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: NW
+  notes: and back
 - id: '8'
   count: 8
   stance: zenkutsu_dachi
   lead: left
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: NW
 - id: '9'
   count: 9
   stance: zenkutsu_dachi
   lead: right
   technique: tate_shuto_uke
-  secondary_technique: null
   target: chudan
-  turn: '0'
-  facing: N
+  turn: right_90
+  facing: NE
   slow: true
-  notes: null
 - id: '10'
   count: 10
   stance: zenkutsu_dachi
   lead: left
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: NE
 - id: '11'
   count: 11
   stance: zenkutsu_dachi
   lead: right
-  technique: oi_zuki
-  secondary_technique: null
+  technique: choku_zuki
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: NE
 - id: '12'
   count: 12
   stance: tsuru_ashi_dachi
   lead: left
   technique: mae_geri
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: NE
+  notes: and back
 - id: '13'
   count: 13
   stance: zenkutsu_dachi
   lead: right
   technique: gyaku_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
-  notes: null
 - id: '14'
   count: 14
   stance: zenkutsu_dachi
-  lead: left
+  lead: right
   technique: tate_empi_uchi
-  secondary_technique: null
   target: jodan
-  turn: '0'
+  turn: left_45
   facing: N
-  notes: null
 - id: '15'
   count: 15
   stance: zenkutsu_dachi
-  lead: both
+  lead: left
   technique: koko_sukui_uke
   secondary_technique: koko_osae
   target: gedan
-  turn: '0'
-  facing: N
-  notes: null
+  turn: left_180
+  facing: S
 - id: '16'
   count: 16
   stance: neko_ashi_dachi
   lead: right
   technique: keito_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
+  facing: S
   slow: true
   notes: kitsutsuki-no-kamae
 - id: '17'
   count: 17
   stance: neko_ashi_dachi
-  lead: both
-  technique: keito_kamae
-  secondary_technique: gedan_barai
+  lead: right
+  technique: keito_nagashi_uke
+  secondary_technique: keito_gedan_barai
   target: chudan
   turn: '0'
-  facing: N
+  facing: S
   slow: true
-  notes: null
 - id: '18'
   count: 18
   stance: neko_ashi_dachi
   lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: yori-ashi
+  facing: S
+  notes: yori-ashi (TODO: is this considered gedan?)
 - id: '19'
   count: 19
   stance: neko_ashi_dachi
   lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: S
+  notes: left hand
 - id: '20'
   count: 20
   stance: neko_ashi_dachi
   lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: S
 - id: '21'
   count: 21
   stance: neko_ashi_dachi
-  lead: left
+  lead: right
   technique: keito_uke
-  secondary_technique: null
   target: chudan
-  turn: left_90
-  facing: W
+  turn: left_180
+  facing: N
   slow: true
   notes: kitsutsuki-no-kamae
 - id: '22'
   count: 22
   stance: neko_ashi_dachi
-  lead: both
-  technique: keito_kamae
-  secondary_technique: gedan_barai
+  lead: right
+  technique: keito_nagashi_uke
+  secondary_technique: keito_gedan_barai
   target: chudan
   turn: '0'
-  facing: W
+  facing: N
   slow: true
-  notes: null
 - id: '23'
   count: 23
   stance: neko_ashi_dachi
-  lead: left
+  lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: W
-  notes: null
+  facing: N
 - id: '24'
   count: 24
   stance: neko_ashi_dachi
-  lead: left
+  lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: W
-  notes: null
+  facing: N
+  notes: left hand
 - id: '25'
   count: 25
   stance: neko_ashi_dachi
-  lead: left
+  lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: W
-  notes: null
+  facing: N
 - id: '26'
   count: 26
   stance: kiba_dachi
-  lead: right
+  lead: left
   technique: haito_uke
-  secondary_technique: null
   target: gedan
-  turn: right_180
+  turn: left_270
   facing: E
-  notes: null
+  notes: todo : check technique name
 - id: '27'
   count: 27
   stance: kosa_dachi
   lead: left
   technique: jotai_sonomama
-  secondary_technique: null
-  target: null
   turn: '0'
   facing: E
   slow: true
@@ -298,28 +256,24 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: ryosho_bo_tsukami_uke
-  secondary_technique: null
   target: chudan
-  turn: '0'
-  facing: E
-  notes: null
+  turn: right_90
+  facing: S
+  notes: todo check this technique
 - id: '29'
   count: 29
   stance: kiba_dachi
-  lead: left
+  lead: right
   technique: haito_uke
-  secondary_technique: null
   target: gedan
-  turn: left_180
+  turn: right_90
   facing: W
-  notes: null
+  notes: todo : check this technique
 - id: '30'
   count: 30
   stance: kosa_dachi
   lead: right
   technique: jotai_sonomama
-  secondary_technique: null
-  target: null
   turn: '0'
   facing: W
   slow: true
@@ -329,71 +283,61 @@ steps:
   stance: kiba_dachi
   lead: both
   technique: ryosho_bo_tsukami_uke
-  secondary_technique: null
   target: chudan
-  turn: '0'
-  facing: W
-  notes: null
+  turn: left_90
+  facing: S
 - id: '32'
   count: 32
   stance: neko_ashi_dachi
   lead: right
   technique: keito_uke
-  secondary_technique: null
   target: chudan
-  turn: right_90
-  facing: N
+  turn: '0'
+  facing: S
   slow: true
   notes: kitsutsuki-no-kamae
 - id: '33'
   count: 33
   stance: neko_ashi_dachi
-  lead: both
-  technique: keito_kamae
-  secondary_technique: gedan_barai
+  lead: right
+  technique: keito_nagashi_uke
+  secondary_technique: keito_gedan_barai
   target: chudan
   turn: '0'
-  facing: N
+  facing: S
   slow: true
-  notes: null
 - id: '34'
   count: 34
   stance: neko_ashi_dachi
   lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: S
 - id: '35'
   count: 35
   stance: neko_ashi_dachi
   lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: S
+  notes: left hand
 - id: '36'
   count: 36
   stance: neko_ashi_dachi
   lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
-  notes: null
+  facing: S
 - id: '37'
   count: 37
   stance: zenkutsu_dachi
   lead: left
   technique: shihon_nukite
-  secondary_technique: null
   target: gedan
-  turn: '0'
+  turn: left_180
   facing: N
   notes: yoko-nukite
 - id: '38'
@@ -401,63 +345,55 @@ steps:
   stance: zenkutsu_dachi
   lead: right
   technique: tate_uraken_uchi
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
   slow: true
-  notes: null
+  notes: todo : chyeck jodan
 - id: '39'
   count: 39
   stance: zenkutsu_dachi
   lead: right
-  technique: shihon_nukite
-  secondary_technique: null
+  technique: yoko_nukite
   target: gedan
   turn: '0'
   facing: N
-  notes: yoko-nukite
+  notes: also called shihon nukite?? todo : check
 - id: '40'
   count: 40
   stance: zenkutsu_dachi
   lead: left
   technique: tate_uraken_uchi
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
   slow: true
-  notes: null
 - id: '41'
   count: 41
   stance: zenkutsu_dachi
   lead: right
   technique: washide_otoshi_uchi
-  secondary_technique: null
-  target: gedan
+  target: chudan
   turn: '0'
   facing: N
-  notes: null
+  notes: todo : is this considered chudan?
 - id: '42'
   count: 42
   stance: zenkutsu_dachi
   lead: right
   technique: washide_tsuki_age
-  secondary_technique: null
   target: jodan
   turn: '0'
   facing: N
-  notes: null
 - id: '43'
   count: 43
   stance: tsuru_ashi_dachi
   lead: left
   technique: mae_geri
-  secondary_technique: null
-  target: jodan
+  target: chudan
   turn: '0'
   facing: N
-  notes: null
+  note: todo check chudan, could be jodan
 - id: '44'
   count: 44
   stance: tsuru_ashi_dachi
@@ -467,7 +403,7 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: null
+  note: todo check kata book, idk if there's a technique here...
 - id: '45'
   count: 45
   stance: hizakutsu
@@ -477,13 +413,12 @@ steps:
   target: jodan
   turn: '0'
   facing: N
-  notes: rear down block with side elbow strike
+  notes: body turns left 180 to face S but look N
 - id: '46'
   count: 46
   stance: neko_ashi_dachi
   lead: left
   technique: keito_uke
-  secondary_technique: null
   target: chudan
   turn: left_180
   facing: S
@@ -492,60 +427,52 @@ steps:
 - id: '47'
   count: 47
   stance: neko_ashi_dachi
-  lead: both
-  technique: keito_kamae
-  secondary_technique: gedan_barai
+  lead: right
+  technique: keito_nagashi_uke
+  secondary_technique: keito_gedan_barai
   target: chudan
   turn: '0'
   facing: S
   slow: true
-  notes: null
 - id: '48'
   count: 48
   stance: neko_ashi_dachi
-  lead: left
+  lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: S
-  notes: null
 - id: '49'
   count: 49
   stance: neko_ashi_dachi
-  lead: left
+  lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: S
-  notes: null
+  notes: left hand
 - id: '50'
   count: 50
   stance: neko_ashi_dachi
-  lead: left
+  lead: right
   technique: otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: S
-  notes: null
 - id: '51'
   count: 51
   stance: kiba_dachi
   lead: right
   technique: haito_uke
-  secondary_technique: null
   target: gedan
-  turn: right_90
+  turn: left_270
   facing: W
-  notes: null
+  notes: check technique
 - id: '52'
   count: 52
   stance: kosa_dachi
   lead: left
   technique: jotai_sonomama
-  secondary_technique: null
   target: null
   turn: '0'
   facing: W
@@ -555,29 +482,25 @@ steps:
   count: 53
   stance: kiba_dachi
   lead: both
-  technique: tate_shuto_uke
-  secondary_technique: shihon_nukite
+  technique: shihon_nukite
+  secondary_technique: hari_empi_koshi_kamae
   target: chudan
-  turn: '0'
-  facing: W
-  notes: hari-empi-koshi-kamae
+  turn: right_90
+  facing: N
+  notes: via tate_shuto_uke
 - id: '54'
   count: 54
   stance: kiba_dachi
-  lead: left
+  lead: right
   technique: haito_uke
-  secondary_technique: null
   target: gedan
-  turn: left_180
+  turn: right_90
   facing: E
-  notes: null
 - id: '55'
   count: 55
   stance: kosa_dachi
   lead: right
   technique: jotai_sonomama
-  secondary_technique: null
-  target: null
   turn: '0'
   facing: E
   slow: true
@@ -586,116 +509,101 @@ steps:
   count: 56
   stance: kiba_dachi
   lead: both
-  technique: tate_shuto_uke
-  secondary_technique: shihon_nukite
+  technique: shihon_nukite
+  secondary_technique: hari_empi_koshi_kamae
   target: chudan
-  turn: '0'
-  facing: E
-  notes: hari-empi-koshi-kamae
+  turn: left_90
+  facing: N
+  notes: via tate_shuto_uke
 - id: '57'
   count: 57
   stance: zenkutsu_dachi
-  lead: left
+  lead: right
   technique: mizu_nagare_uraken_kamae
   secondary_technique: tate_uraken_uchi
   target: jodan
-  turn: left_90
+  turn: '0'
   facing: N
   slow: true
-  notes: null
 - id: '58'
   count: 58
   stance: kiba_dachi
-  lead: right
-  technique: kentsui_uchi_mawashi_uchi
-  secondary_technique: null
+  lead: left
+  technique: tettsui_uchi
   target: chudan
   turn: '0'
   facing: N
-  notes: null
+  notes: step back. todo, check technique, is it really "kentsui_uchi_mawashi_uchi"?
 - id: '59'
   count: 59
   stance: zenkutsu_dachi
   lead: right
   technique: oi_zuki
-  secondary_technique: null
   target: chudan
   turn: '0'
   facing: N
   kiai: true
-  notes: null
 - id: '60'
   count: 60
   stance: hachiji_dachi
   lead: both
   technique: ryo_hiji_suihei_kamae
-  secondary_technique: null
   target: null
-  turn: left_180
-  facing: S
+  turn: left_90
+  facing: W
   slow: true
-  notes: null
+  notes: todo: check stance, not sure if it's hachiji or parallel
 - id: '61'
   count: 61
   stance: hachiji_dachi
   lead: both
   technique: ryo_kentsui_koho_hasami_uchi
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: S
-  notes: null
+  facing: W
 - id: '62'
   count: 62
   stance: hachiji_dachi
   lead: both
   technique: ryo_hiji_suihei_kamae
-  secondary_technique: null
   target: null
   turn: '0'
-  facing: S
-  notes: null
+  facing: W
 - id: '63'
   count: 63
   stance: zenkutsu_dachi
-  lead: right
-  technique: ryoken_sonomama
-  secondary_technique: null
+  lead: left
+  technique: ryo_hiji_suihei_kamae
   target: null
-  turn: right_180
-  facing: N
-  notes: null
+  turn: left_90
+  facing: S
 - id: '64'
   count: 64
   stance: neko_ashi_dachi
-  lead: both
+  lead: right
   technique: ryosho_kakiwake_uke
-  secondary_technique: null
   target: gedan
   turn: '0'
-  facing: N
+  facing: S
   slow: true
-  notes: null
+  todo: check this is indeed in keito? and sensible name?
 - id: '65'
   count: 65
   stance: neko_ashi_dachi
-  lead: both
+  lead: right
   technique: ryo_keito_hane_age_uke
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
+  facing: S
   slow: true
-  notes: null
 - id: '66'
   count: 66
   stance: neko_ashi_dachi
-  lead: both
+  lead: right
   technique: ryo_otoshi_ippon_nukite
-  secondary_technique: null
   target: chudan
   turn: '0'
-  facing: N
+  facing: S
   kiai: true
   notes: yori-ashi
 - id: '67'
@@ -703,9 +611,8 @@ steps:
   stance: neko_ashi_dachi
   lead: right
   technique: keito_uke
-  secondary_technique: null
   target: chudan
-  turn: '0'
+  turn: left_180
   facing: N
   slow: true
   notes: kitsutsuki-no-kamae
