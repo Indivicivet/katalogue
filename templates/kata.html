@@ -272,7 +272,7 @@
             <span class="text-ro">{{ dt.romaji }}</span>
             <span class="text-en">{{ dt.en }}</span>
           </span>
-        </a>{% if not loop.last %} &bull; {% endif %}
+        </a>{% if dt.step_ids %} <span style="font-size: 0.85em; color: var(--text-muted); font-weight: 600;">({{ dt.step_ids | join(', ') }})</span>{% endif %}{% if not loop.last %} &bull; {% endif %}
       {% endfor %}
     </div>
     {% endif %}
@@ -296,7 +296,7 @@
             <span class="text-ro">{{ ds.romaji }}</span>
             <span class="text-en">{{ ds.en }}</span>
           </span>
-        </a>{% if not loop.last %} &bull; {% endif %}
+        </a>{% if ds.step_ids %} <span style="font-size: 0.85em; color: var(--text-muted); font-weight: 600;">({{ ds.step_ids | join(', ') }})</span>{% endif %}{% if not loop.last %} &bull; {% endif %}
       {% endfor %}
     </div>
     {% endif %}

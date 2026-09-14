@@ -438,40 +438,49 @@ def main():
                 }
             )
 
-        # Collect distinct distinctive techniques and stances for this kata
-        kata_distinctive_tech_ids = []
-        kata_distinctive_stance_ids = []
+        # Collect distinct distinctive techniques and stances for this kata with step numbers
+        kata_distinctive_tech_map = {}
+        kata_distinctive_stance_map = {}
         for s in steps:
+            step_id = s.get("id")
             st = s.get("stance")
             t1 = s.get("technique")
             t2 = s.get("secondary_technique")
-            if (
-                st
-                and st in distinctive_stances
-                and st not in kata_distinctive_stance_ids
-            ):
-                kata_distinctive_stance_ids.append(st)
-            if (
-                t1
-                and t1 in distinctive_techniques
-                and t1 not in kata_distinctive_tech_ids
-            ):
-                kata_distinctive_tech_ids.append(t1)
-            if (
-                t2
-                and t2 in distinctive_techniques
-                and t2 not in kata_distinctive_tech_ids
-            ):
-                kata_distinctive_tech_ids.append(t2)
+            if st and st in distinctive_stances:
+                if st not in kata_distinctive_stance_map:
+                    kata_distinctive_stance_map[st] = []
+                if (
+                    step_id is not None
+                    and step_id not in kata_distinctive_stance_map[st]
+                ):
+                    kata_distinctive_stance_map[st].append(step_id)
+            if t1 and t1 in distinctive_techniques:
+                if t1 not in kata_distinctive_tech_map:
+                    kata_distinctive_tech_map[t1] = []
+                if step_id is not None and step_id not in kata_distinctive_tech_map[t1]:
+                    kata_distinctive_tech_map[t1].append(step_id)
+            if t2 and t2 in distinctive_techniques:
+                if t2 not in kata_distinctive_tech_map:
+                    kata_distinctive_tech_map[t2] = []
+                if step_id is not None and step_id not in kata_distinctive_tech_map[t2]:
+                    kata_distinctive_tech_map[t2].append(step_id)
 
         data["distinctive_techniques"] = [
-            {"id": tid, **techniques[tid]}
-            for tid in kata_distinctive_tech_ids
+            {
+                "id": tid,
+                "step_ids": kata_distinctive_tech_map[tid],
+                **techniques[tid],
+            }
+            for tid in kata_distinctive_tech_map
             if tid in techniques
         ]
         data["distinctive_stances"] = [
-            {"id": sid, **stances[sid]}
-            for sid in kata_distinctive_stance_ids
+            {
+                "id": sid,
+                "step_ids": kata_distinctive_stance_map[sid],
+                **stances[sid],
+            }
+            for sid in kata_distinctive_stance_map
             if sid in stances
         ]
 
