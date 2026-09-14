@@ -147,3 +147,11 @@ kake_dachi:
   romaji: "kake-dachi"
   en: "hooked foot stance"
   weight: "10/90"
+
+hizakutsu:
+  kanji: "膝屈"
+  furigana: "ひざくつ"
+  romaji: "hizakutsu"
+  en: "kneeling / bent knee stance"
+  weight: "variable"
+

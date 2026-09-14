@@ -303,6 +303,78 @@ zenwan_gedan_furisute:
   en: "low forearm downward swing"
   category: "block"
 
+tate_shuto_uke:
+  kanji: "縦手刀受け"
+  furigana: "たてしゅとうけ"
+  romaji: "tate-shuto-uke"
+  en: "vertical knife-hand block"
+  category: "block"
+
+koko_sukui_uke:
+  kanji: "虎口掬い受け"
+  furigana: "ここうすくいうけ"
+  romaji: "koko-sukui-uke"
+  en: "tiger-mouth scooping block"
+  category: "block"
+
+keito_uke:
+  kanji: "鶏頭受け"
+  furigana: "けいとううけ"
+  romaji: "keito-uke"
+  en: "chicken-head wrist block"
+  category: "block"
+
+keito_nagashi_uke:
+  kanji: "鶏頭流し受け"
+  furigana: "けいとうながしうけ"
+  romaji: "keito-nagashi-uke"
+  en: "chicken-head sweeping block"
+  category: "block"
+
+keito_gedan_barai:
+  kanji: "鶏頭下段払い"
+  furigana: "けいとうげだんばらい"
+  romaji: "keito-gedan-barai"
+  en: "chicken-head downward sweeping block"
+  category: "block"
+
+
+haito_uke:
+  kanji: "背刀受け"
+  furigana: "はいとううけ"
+  romaji: "haito-uke"
+  en: "ridge-hand block"
+  category: "block"
+
+ryosho_bo_tsukami_uke:
+  kanji: "両掌棒掴み受け"
+  furigana: "りょうしょうぼうつかみうけ"
+  romaji: "ryosho-bo-tsukami-uke"
+  en: "both palms staff grasping block"
+  category: "block"
+
+ryosho_kakiwake_uke:
+  kanji: "両掌掻き分け受け"
+  furigana: "りょうしょうかきわけうけ"
+  romaji: "ryosho-kakiwake-uke"
+  en: "both palms wedge block"
+  category: "block"
+
+ryo_keito_hane_age_uke:
+  kanji: "両鶏頭跳ね上げ受け"
+  furigana: "りょうけいとうはねあげうけ"
+  romaji: "ryo-keito-hane-age-uke"
+  en: "both hands chicken-head rising block"
+  category: "block"
+
+morote_tate_uke_zuki:
+  kanji: "諸手縦受け突き"
+  furigana: "もろてたてうけづき"
+  romaji: "morote-tate-uke-zuki"
+  en: "augmented vertical block-punch"
+  category: "block"
+
+
 
 # Punches (Tsuki)
 jodan_zuki:
@@ -468,6 +540,21 @@ tettsui_hasami_uchi:
   en: "scissor hammer-fist strike"
   category: "strike"
 
+ryo_kentsui_koho_hasami_uchi:
+  kanji: "両鉄槌後方挟み打ち"
+  furigana: "りょうてっついこうほうはさみうち"
+  romaji: "ryo-kentsui-koho-hasami-uchi"
+  en: "both hammer-fists rear scissor strike"
+  category: "strike"
+
+kentsui_uchi_mawashi_uchi:
+  kanji: "拳槌内回し打ち"
+  furigana: "けんついうちまわしうち"
+  romaji: "kentsui-uchi-mawashi-uchi"
+  en: "inward roundhouse hammer-fist strike"
+  category: "strike"
+
+
 shuto_uchi:
   kanji: "手刀打ち"
   furigana: "しゅとううち"
@@ -545,12 +632,28 @@ otoshi_empi_uchi:
   en: "downward elbow strike"
   category: "strike"
 
+tate_empi_uchi:
+  kanji: "縦猿臂打ち"
+  furigana: "たてえんぴうち"
+  romaji: "tate-empi-uchi"
+  en: "vertical elbow strike"
+  category: "strike"
+
+
 shihon_nukite:
   kanji: "四本貫手"
   furigana: "しほんにくて"
   romaji: "shihon-nukite"
   en: "four-finger spear-hand"
   category: "strike"
+
+yoko_nukite:
+  kanji: "横貫手"
+  furigana: "よこにくて"
+  romaji: "yoko-nukite"
+  en: "side spear-hand"
+  category: "strike"
+
 
 nihon_nukite:
   kanji: "二本貫手"
@@ -566,12 +669,41 @@ ippon_nukite:
   en: "single-finger spear-hand"
   category: "strike"
 
+otoshi_ippon_nukite:
+  kanji: "落とし一本貫手"
+  furigana: "おとしいっぽんにくて"
+  romaji: "otoshi-ippon-nukite"
+  en: "dropping single-finger spear-hand"
+  category: "strike"
+
+ryo_otoshi_ippon_nukite:
+  kanji: "両落とし一本貫手"
+  furigana: "りょうおとしいっぽんにくて"
+  romaji: "ryo-otoshi-ippon-nukite"
+  en: "both dropping single-finger spear-hands"
+  category: "strike"
+
 washide_uchi:
   kanji: "鷲手打ち"
   furigana: "わしでうち"
   romaji: "washide-uchi"
   en: "eagle-hand strike"
   category: "strike"
+
+washide_otoshi_uchi:
+  kanji: "鷲手落とし打ち"
+  furigana: "わしでおとしうち"
+  romaji: "washide-otoshi-uchi"
+  en: "eagle-hand downward strike"
+  category: "strike"
+
+washide_tsuki_age:
+  kanji: "鷲手突き上げ"
+  furigana: "わしでつきあげ"
+  romaji: "washide-tsuki-age"
+  en: "eagle-hand rising thrust"
+  category: "strike"
+
 
 kumade_uchi:
   kanji: "熊手打ち"
@@ -861,4 +993,54 @@ zenwan_shomen_gedan_kensei:
   romaji: "zenwan-shomen-gedan-kensei"
   en: "forearm frontal low feint"
   category: "other"
+
+mizu_nagare_uraken_kamae:
+  kanji: "水流れ裏拳構え"
+  furigana: "みずながれうらけんかまえ"
+  romaji: "mizu-nagare-uraken-kamae"
+  en: "flowing-water back-fist posture"
+  category: "other"
+
+koko_osae:
+  kanji: "虎口押さえ"
+  furigana: "ここうおさえ"
+  romaji: "koko-osae"
+  en: "tiger-mouth press"
+  category: "other"
+
+keito_kamae:
+  kanji: "鶏頭構え"
+  furigana: "けいとうかまえ"
+  romaji: "keito-kamae"
+  en: "chicken-head posture"
+  category: "other"
+
+hari_empi_koshi_kamae:
+  kanji: "張り猿臂腰構え"
+  furigana: "はりえんぴこしかまえ"
+  romaji: "hari-empi-koshi-kamae"
+  en: "tension elbow hip posture"
+  category: "other"
+
+ken_kata_ue_kamae:
+  kanji: "拳肩上構え"
+  furigana: "けんかたうえかまえ"
+  romaji: "ken-kata-ue-kamae"
+  en: "fist above shoulder posture"
+  category: "other"
+
+ryo_hiji_suihei_kamae:
+  kanji: "両肘水平構え"
+  furigana: "りょうひじすいへいかまえ"
+  romaji: "ryo-hiji-suihei-kamae"
+  en: "horizontal elbows posture"
+  category: "other"
+
+ryoken_sonomama:
+  kanji: "両拳そのまま"
+  furigana: "りょうけんそのまま"
+  romaji: "ryoken-sonomama"
+  en: "both fists unchanged posture"
+  category: "other"
+
 
