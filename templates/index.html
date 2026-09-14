@@ -382,4 +382,122 @@
   </table>
 </div>
 {% endif %}
+
+<!-- Section 4: Asai-ryu Junro Series -->
+{% if asai_ryu_kata %}
+<div style="margin-bottom: 3rem;">
+  <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem;">
+    <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">
+      <span class="text-ja">浅井流 • 順路系</span>
+      <span class="text-ja-en">Asai-ryu (浅井流) • Junro Series</span>
+      <span class="text-ro">Asai-ryu (浅井流) • Junro Series</span>
+      <span class="text-en">Asai-ryu (浅井流) • Junro Series</span>
+    </h2>
+    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">
+      <span class="text-ja">浅井哲彦創出型</span>
+      <span class="text-ja-en">Tetsuhiko Asai Lineage</span>
+      <span class="text-ro">Tetsuhiko Asai Lineage</span>
+      <span class="text-en">Tetsuhiko Asai Lineage</span>
+    </span>
+  </div>
+  <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+    <span class="text-ja">浅井哲彦が創出した5つの順路型。引き押し、腰の回転、運足など、基本から応用までの身体操作を体系的に習得する体系。</span>
+    <span class="text-ja-en">Five Junro kata developed by Tetsuhiko Asai to systematically cultivate fundamental body mechanics, including push-and-pull (hikioshi), hip rotation (koshi-kaiten), and complex footwork (unsoku).</span>
+    <span class="text-ro">Five Junro kata developed by Tetsuhiko Asai to systematically cultivate fundamental body mechanics, including push-and-pull (hikioshi), hip rotation (koshi-kaiten), and complex footwork (unsoku).</span>
+    <span class="text-en">Five Junro kata developed by Tetsuhiko Asai to systematically cultivate fundamental body mechanics, including push-and-pull (hikioshi), hip rotation (koshi-kaiten), and complex footwork (unsoku).</span>
+  </p>
+
+  <table class="catalog-table">
+    <thead>
+      <tr>
+        <th style="width: 50px;">#</th>
+        <th>
+          <span class="text-ja">型名</span>
+          <span class="text-ja-en">Kata</span>
+          <span class="text-ro">Kata</span>
+          <span class="text-en">Kata</span>
+        </th>
+        <th>
+          <span class="text-ja">状態</span>
+          <span class="text-ja-en">Status</span>
+          <span class="text-ro">Status</span>
+          <span class="text-en">Status</span>
+        </th>
+        <th>
+          <span class="text-ja">挙動数</span>
+          <span class="text-ja-en">Counts</span>
+          <span class="text-ro">Counts</span>
+          <span class="text-en">Counts</span>
+        </th>
+        <th>
+          <span class="text-ja">気合</span>
+          <span class="text-ja-en">Kiai</span>
+          <span class="text-ro">Kiai</span>
+          <span class="text-en">Kiai</span>
+        </th>
+        <th>
+          <span class="text-ja">タグ</span>
+          <span class="text-ja-en">Tags</span>
+          <span class="text-ro">Tags</span>
+          <span class="text-en">Tags</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for k in asai_ryu_kata %}
+      <tr>
+        <td style="color: var(--text-muted); font-weight: 600;">{{ k.order }}</td>
+        <td>
+          <a href="{{ rel_root }}kata/asai_ryu/{{ k.id }}.html" class="kata-name-link">
+            <span class="term"
+                  data-kanji="{{ k.kanji }}"
+                  data-furigana="{{ k.furigana }}"
+                  data-romaji="{{ k.name }}"
+                  data-en="{{ k.name }}">
+              <span class="text-ja"><ruby>{{ k.kanji }}<rt>{{ k.furigana }}</rt></ruby></span>
+              <span class="text-ja-en"><ruby>{{ k.kanji }}<rt>{{ k.furigana }}</rt></ruby> <span class="sub-term">({{ k.name }})</span></span>
+              <span class="text-ro">{{ k.name }}</span>
+              <span class="text-en">{{ k.name }}</span>
+            </span>
+          </a>
+        </td>
+        <td>
+          <span class="badge badge-{{ k.status }}">
+            <span class="text-ja">{{ STATUS_MAP[k.status].ja }}</span>
+            <span class="text-ja-en">{{ STATUS_MAP[k.status].ja_en }}</span>
+            <span class="text-ro">{{ STATUS_MAP[k.status].ro }}</span>
+            <span class="text-en">{{ STATUS_MAP[k.status].en }}</span>
+          </span>
+        </td>
+        <td style="font-weight: 600;">{{ k.move_count }}</td>
+        <td>
+          {% if k.kiai_steps %}
+            {% for ki in k.kiai_steps %}
+              <span class="kiai-badge">{{ ki }}</span>
+            {% endfor %}
+          {% else %}
+            —
+          {% endif %}
+        </td>
+        <td>
+          {% for t in k.tags %}
+            {% set tag_info = TAG_MAP.get(t) %}
+            <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">
+              {% if tag_info %}
+                <span class="text-ja">{{ tag_info.ja }}</span>
+                <span class="text-ja-en">{{ t }}</span>
+                <span class="text-ro">{{ t }}</span>
+                <span class="text-en">{{ t }}</span>
+              {% else %}
+                {{ t }}
+              {% endif %}
+            </a>
+          {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
 {% endblock %}
