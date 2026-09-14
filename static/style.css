@@ -363,43 +363,43 @@ table.step-table tr:hover {
 /* Row Category Accents */
 tr.row-block {
   border-left: 4px solid var(--border-block);
-  background-color: rgba(56, 189, 248, 0.05);
+  background-color: rgba(56, 189, 248, 0.2);
 }
 tr.row-punch {
   border-left: 4px solid var(--border-punch);
-  background-color: rgba(248, 113, 113, 0.05);
+  background-color: rgba(248, 113, 113, 0.2);
 }
 tr.row-strike {
   border-left: 4px solid var(--border-strike);
-  background-color: rgba(251, 146, 60, 0.05);
+  background-color: rgba(251, 146, 60, 0.2);
 }
 tr.row-kick {
   border-left: 4px solid var(--border-kick);
-  background-color: rgba(251, 191, 36, 0.06);
+  background-color: rgba(251, 191, 36, 0.2);
 }
 tr.row-other {
   border-left: 4px solid var(--border-other);
-  background-color: rgba(148, 163, 184, 0.04);
+  background-color: rgba(148, 163, 184, 0.2);
 }
 
 /* Kiai Row Highlights: loosely highlighted with increased tint intensity */
 tr.row-kiai.row-block {
-  background-color: rgba(56, 189, 248, 0.16);
+  background-color: rgba(56, 189, 248, 0.4);
 }
 tr.row-kiai.row-punch {
-  background-color: rgba(248, 113, 113, 0.16);
+  background-color: rgba(248, 113, 113, 0.4);
 }
 tr.row-kiai.row-strike {
-  background-color: rgba(251, 146, 60, 0.16);
+  background-color: rgba(251, 146, 60, 0.4);
 }
 tr.row-kiai.row-kick {
-  background-color: rgba(251, 191, 36, 0.18);
+  background-color: rgba(251, 191, 36, 0.4);
 }
 tr.row-kiai.row-other {
-  background-color: rgba(148, 163, 184, 0.14);
+  background-color: rgba(148, 163, 184, 0.4);
 }
 tr.row-kiai {
-  background-color: rgba(239, 68, 68, 0.08);
+  background-color: rgba(239, 68, 68, 0.4);
 }
 
 /* Step Table Kiai Indicator */
