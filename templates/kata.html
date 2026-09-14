@@ -204,12 +204,20 @@
   <!-- Stance Breakdown Progress Bar -->
   <div style="margin-top: 1rem;">
     <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; flex-wrap: wrap; gap: 0.5rem;">
-      <span>Stance Distribution</span>
+      <span>
+        <span class="text-ja">立ち方の構成比</span>
+        <span class="text-ja-en">Stance Distribution</span>
+        <span class="text-ro">Stance Distribution</span>
+        <span class="text-en">Stance Distribution</span>
+      </span>
       <span>
         {% for st in kata.stance_ranks %}
           <span style="display: inline-flex; align-items: center; gap: 0.25rem;">
             <span style="display: inline-block; width: 8px; height: 8px; border-radius: 2px; background: {{ st.color }};"></span>
-            {{ st.count }} {{ st.data.romaji or st.id }}
+            <span class="text-ja">{{ st.count }} {{ st.data.kanji or st.data.romaji or st.id }}</span>
+            <span class="text-ja-en">{{ st.count }} {{ st.data.kanji or st.data.romaji or st.id }} ({{ st.data.romaji or st.id }})</span>
+            <span class="text-ro">{{ st.count }} {{ st.data.romaji or st.id }}</span>
+            <span class="text-en">{{ st.count }} {{ st.data.en or st.data.romaji or st.id }}</span>
           </span>{% if not loop.last %} &bull; {% endif %}
         {% endfor %}
       </span>
