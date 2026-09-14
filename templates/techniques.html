@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Techniques • Katalogue{% endblock %}
+{% block title_ja %}技 • 型ログ{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="breadcrumbs">
+    <a href="{{ rel_root }}index.html">
+      <span class="text-ja">目録</span>
+      <span class="text-ja-en">Directory</span>
+      <span class="text-ro">Directory</span>
+      <span class="text-en">Directory</span>
+    </a> &rsaquo;
+    <span>
+      <span class="text-ja">技</span>
+      <span class="text-ja-en">Techniques</span>
+      <span class="text-ro">Techniques</span>
+      <span class="text-en">Techniques</span>
+    </span>
+  </div>
+
+  <h1 class="page-title">
+    <span class="text-ja">技</span>
+    <span class="text-ja-en">Techniques</span>
+    <span class="text-ro">Techniques</span>
+    <span class="text-en">Techniques</span>
+  </h1>
+</div>
+
+<!-- Quick Category Jump Links -->
+<div class="catalog-jump-bar">
+  {% for cat, cat_items in techniques_by_cat.items() %}
+    {% if cat_items %}
+      {% set cat_info = CATEGORY_MAP.get(cat) %}
+      <a href="#cat-{{ cat }}" class="catalog-jump-link">
+        {% if cat_info %}
+          <span class="text-ja">{{ cat_info.ja }} ({{ cat_items | length }})</span>
+          <span class="text-ja-en">{{ cat_info.ja_en }} ({{ cat_items | length }})</span>
+          <span class="text-ro">{{ cat_info.en }} ({{ cat_items | length }})</span>
+          <span class="text-en">{{ cat_info.en }} ({{ cat_items | length }})</span>
+        {% else %}
+          {{ cat | capitalize }} ({{ cat_items | length }})
+        {% endif %}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Grouped Techniques by Category -->
+{% for cat, items in techniques_by_cat.items() %}
+  {% if items %}
+    {% set cat_info = CATEGORY_MAP.get(cat) %}
+    <div class="catalog-section" id="cat-{{ cat }}">
+      <div class="catalog-section-title">
+        {% if cat_info %}
+          <span class="text-ja">{{ cat_info.ja }}</span>
+          <span class="text-ja-en">{{ cat_info.ja_en }}</span>
+          <span class="text-ro">{{ cat_info.en }}</span>
+          <span class="text-en">{{ cat_info.en }}</span>
+        {% else %}
+          {{ cat | capitalize }}
+        {% endif %}
+        <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">({{ items | length }})</span>
+      </div>
+
+      {% for tech in items %}
+        <div class="catalog-item-card" id="{{ tech.id }}">
+          <a id="{{ tech.id | replace('_', '-') }}" style="position: relative; top: -80px; display: block; visibility: hidden;"></a>
+          <div class="catalog-item-header">
+            <div class="catalog-item-title">
+              <span class="term"
+                    data-kanji="{{ tech.data.kanji }}"
+                    data-furigana="{{ tech.data.furigana }}"
+                    data-romaji="{{ tech.data.romaji }}"
+                    data-en="{{ tech.data.en }}">
+                <span class="text-ja"><ruby>{{ tech.data.kanji }}<rt>{{ tech.data.furigana }}</rt></ruby></span>
+                <span class="text-ja-en"><ruby>{{ tech.data.kanji }}<rt>{{ tech.data.furigana }}</rt></ruby> <span class="sub-term">({{ tech.data.romaji }})</span></span>
+                <span class="text-ro">{{ tech.data.romaji }}</span>
+                <span class="text-en">{{ tech.data.en }}</span>
+              </span>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <span class="badge badge-{{ tech.category }}">
+                {% if cat_info %}
+                  <span class="text-ja">{{ cat_info.ja }}</span>
+                  <span class="text-ja-en">{{ cat_info.ja_en }}</span>
+                  <span class="text-ro">{{ tech.category }}</span>
+                  <span class="text-en">{{ tech.category }}</span>
+                {% else %}
+                  {{ tech.category }}
+                {% endif %}
+              </span>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);">
+                {{ tech.total_count }} {% if tech.total_count == 1 %}time{% else %}times{% endif %}
+              </span>
+            </div>
+          </div>
+
+          <div class="catalog-item-occurrences">
+            <span class="catalog-item-occurrences-label">
+              <span class="text-ja">出現する型 ({{ tech.occurrences | length }})</span>
+              <span class="text-ja-en">Appears in ({{ tech.occurrences | length }})</span>
+              <span class="text-ro">Appears in ({{ tech.occurrences | length }})</span>
+              <span class="text-en">Appears in ({{ tech.occurrences | length }})</span>
+            </span>
+            {% if tech.occurrences %}
+              {% for occ in tech.occurrences %}
+                <a href="{{ rel_root }}kata/{{ occ.kata.style }}/{{ occ.kata.id }}.html" class="kata-inline-link">
+                  <span class="text-ja">{{ occ.kata.kanji }}</span>
+                  <span class="text-ja-en">{{ occ.kata.kanji }} ({{ occ.kata.name }})</span>
+                  <span class="text-ro">{{ occ.kata.name }}</span>
+                  <span class="text-en">{{ occ.kata.name }}</span>
+                </a> ({{ occ.count }}){% if not loop.last %}, {% endif %}
+              {% endfor %}
+            {% else %}
+              <span style="color: var(--text-muted); font-style: italic;">
+                <span class="text-ja">未登場</span>
+                <span class="text-ja-en">None catalogued</span>
+                <span class="text-ro">None catalogued</span>
+                <span class="text-en">None catalogued</span>
+              </span>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endfor %}
+{% endblock %}

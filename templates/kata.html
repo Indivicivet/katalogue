@@ -241,6 +241,69 @@
   </div>
 </div>
 
+<!-- Distinctive Techniques & Stances Box -->
+{% if kata.distinctive_techniques or kata.distinctive_stances %}
+<div class="distinctive-box">
+  <div class="distinctive-box-title">
+    <span>⭐</span>
+    <span class="text-ja">この型固有の技・立ち方</span>
+    <span class="text-ja-en">Distinctive Techniques & Stances (Only in this kata)</span>
+    <span class="text-ro">Distinctive Techniques & Stances (Only in this kata)</span>
+    <span class="text-en">Distinctive Techniques & Stances (Only in this kata)</span>
+  </div>
+  <div class="distinctive-box-content">
+    {% if kata.distinctive_techniques %}
+    <div class="distinctive-box-group">
+      <span class="distinctive-box-label">
+        <span class="text-ja">固有技:</span>
+        <span class="text-ja-en">Techniques:</span>
+        <span class="text-ro">Techniques:</span>
+        <span class="text-en">Techniques:</span>
+      </span>
+      {% for dt in kata.distinctive_techniques %}
+        <a href="{{ rel_root }}techniques.html#{{ dt.id }}" class="term-link">
+          <span class="term"
+                data-kanji="{{ dt.kanji }}"
+                data-furigana="{{ dt.furigana }}"
+                data-romaji="{{ dt.romaji }}"
+                data-en="{{ dt.en }}">
+            <span class="text-ja"><ruby>{{ dt.kanji }}<rt>{{ dt.furigana }}</rt></ruby></span>
+            <span class="text-ja-en"><ruby>{{ dt.kanji }}<rt>{{ dt.furigana }}</rt></ruby> <span class="sub-term">({{ dt.romaji }})</span></span>
+            <span class="text-ro">{{ dt.romaji }}</span>
+            <span class="text-en">{{ dt.en }}</span>
+          </span>
+        </a>{% if not loop.last %} &bull; {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if kata.distinctive_stances %}
+    <div class="distinctive-box-group">
+      <span class="distinctive-box-label">
+        <span class="text-ja">固有立ち方:</span>
+        <span class="text-ja-en">Stances:</span>
+        <span class="text-ro">Stances:</span>
+        <span class="text-en">Stances:</span>
+      </span>
+      {% for ds in kata.distinctive_stances %}
+        <a href="{{ rel_root }}stances.html#{{ ds.id }}" class="term-link">
+          <span class="term"
+                data-kanji="{{ ds.kanji }}"
+                data-furigana="{{ ds.furigana }}"
+                data-romaji="{{ ds.romaji }}"
+                data-en="{{ ds.en }}">
+            <span class="text-ja"><ruby>{{ ds.kanji }}<rt>{{ ds.furigana }}</rt></ruby></span>
+            <span class="text-ja-en"><ruby>{{ ds.kanji }}<rt>{{ ds.furigana }}</rt></ruby> <span class="sub-term">({{ ds.romaji }})</span></span>
+            <span class="text-ro">{{ ds.romaji }}</span>
+            <span class="text-en">{{ ds.en }}</span>
+          </span>
+        </a>{% if not loop.last %} &bull; {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
 <!-- Category Legend -->
 <div class="category-legend">
   <span style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em;">
@@ -346,16 +409,21 @@
         </td>
         <td>
           {% if s.stance_data %}
-            <span class="term"
-                  data-kanji="{{ s.stance_data.kanji }}"
-                  data-furigana="{{ s.stance_data.furigana }}"
-                  data-romaji="{{ s.stance_data.romaji }}"
-                  data-en="{{ s.stance_data.en }}">
-              <span class="text-ja"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby></span>
-              <span class="text-ja-en"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.stance_data.romaji }})</span></span>
-              <span class="text-ro">{{ s.stance_data.romaji }}</span>
-              <span class="text-en">{{ s.stance_data.en }}</span>
-            </span>
+            <a href="{{ rel_root }}stances.html#{{ s.stance }}" class="term-link">
+              <span class="term"
+                    data-kanji="{{ s.stance_data.kanji }}"
+                    data-furigana="{{ s.stance_data.furigana }}"
+                    data-romaji="{{ s.stance_data.romaji }}"
+                    data-en="{{ s.stance_data.en }}">
+                <span class="text-ja"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby></span>
+                <span class="text-ja-en"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.stance_data.romaji }})</span></span>
+                <span class="text-ro">{{ s.stance_data.romaji }}</span>
+                <span class="text-en">{{ s.stance_data.en }}</span>
+              </span>
+            </a>
+            {% if s.st_is_distinctive %}
+              <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+            {% endif %}
           {% elif s.stance %}
             {{ s.stance }}
           {% else %}
@@ -379,16 +447,21 @@
         </td>
         <td>
           {% if s.tech_data %}
-            <span class="term"
-                  data-kanji="{{ s.tech_data.kanji }}"
-                  data-furigana="{{ s.tech_data.furigana }}"
-                  data-romaji="{{ s.tech_data.romaji }}"
-                  data-en="{{ s.tech_data.en }}">
-              <span class="text-ja"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby></span>
-              <span class="text-ja-en"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.tech_data.romaji }})</span></span>
-              <span class="text-ro">{{ s.tech_data.romaji }}</span>
-              <span class="text-en">{{ s.tech_data.en }}</span>
-            </span>
+            <a href="{{ rel_root }}techniques.html#{{ s.technique }}" class="term-link">
+              <span class="term"
+                    data-kanji="{{ s.tech_data.kanji }}"
+                    data-furigana="{{ s.tech_data.furigana }}"
+                    data-romaji="{{ s.tech_data.romaji }}"
+                    data-en="{{ s.tech_data.en }}">
+                <span class="text-ja"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby></span>
+                <span class="text-ja-en"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.tech_data.romaji }})</span></span>
+                <span class="text-ro">{{ s.tech_data.romaji }}</span>
+                <span class="text-en">{{ s.tech_data.en }}</span>
+              </span>
+            </a>
+            {% if s.tech_is_distinctive %}
+              <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+            {% endif %}
           {% elif s.technique %}
             {{ s.technique }}
           {% else %}
@@ -402,16 +475,21 @@
           {% if s.sec_tech_data or s.secondary_technique %}
             <span class="text-ja">・</span><span class="text-ja-en">・</span><span class="text-ro"> and </span><span class="text-en"> and </span>
             {% if s.sec_tech_data %}
-              <span class="term"
-                    data-kanji="{{ s.sec_tech_data.kanji }}"
-                    data-furigana="{{ s.sec_tech_data.furigana }}"
-                    data-romaji="{{ s.sec_tech_data.romaji }}"
-                    data-en="{{ s.sec_tech_data.en }}">
-                <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
-                <span class="text-ja-en"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.sec_tech_data.romaji }})</span></span>
-                <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
-                <span class="text-en">{{ s.sec_tech_data.en }}</span>
-              </span>
+              <a href="{{ rel_root }}techniques.html#{{ s.secondary_technique }}" class="term-link">
+                <span class="term"
+                      data-kanji="{{ s.sec_tech_data.kanji }}"
+                      data-furigana="{{ s.sec_tech_data.furigana }}"
+                      data-romaji="{{ s.sec_tech_data.romaji }}"
+                      data-en="{{ s.sec_tech_data.en }}">
+                  <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
+                  <span class="text-ja-en"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.sec_tech_data.romaji }})</span></span>
+                  <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
+                  <span class="text-en">{{ s.sec_tech_data.en }}</span>
+                </span>
+              </a>
+              {% if s.sec_tech_is_distinctive %}
+                <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+              {% endif %}
             {% else %}
               {{ s.secondary_technique }}
             {% endif %}

@@ -2,18 +2,12 @@
 <div class="stat-grid" style="margin-bottom: 2rem;">
   <div class="stat-card">
     <div class="stat-card-title">
-      <span class="text-ja">分析対象型数</span>
-      <span class="text-ja-en">Kata Evaluated</span>
-      <span class="text-ro">Kata Evaluated</span>
-      <span class="text-en">Kata Evaluated</span>
+      <span class="text-ja">型数</span>
+      <span class="text-ja-en">Kata Count</span>
+      <span class="text-ro">Kata Count</span>
+      <span class="text-en">Kata Count</span>
     </div>
     <div class="stat-big-number">{{ stats.total_kata }}</div>
-    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
-      <span class="text-ja">{{ stats.total_kata }}型を分析</span>
-      <span class="text-ja-en">{{ stats.total_kata }} kata in scope</span>
-      <span class="text-ro">{{ stats.total_kata }} kata in scope</span>
-      <span class="text-en">{{ stats.total_kata }} kata in scope</span>
-    </div>
   </div>
 
   <div class="stat-card">
@@ -24,28 +18,16 @@
       <span class="text-en">Total Movements</span>
     </div>
     <div class="stat-big-number">{{ stats.total_moves }}</div>
-    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
-      <span class="text-ja">個別の技動作</span>
-      <span class="text-ja-en">Discrete tactical actions</span>
-      <span class="text-ro">Discrete tactical actions</span>
-      <span class="text-en">Discrete tactical actions</span>
-    </div>
   </div>
 
   <div class="stat-card">
     <div class="stat-card-title">
-      <span class="text-ja">公式気合点</span>
-      <span class="text-ja-en">Canonical Kiai Points</span>
-      <span class="text-ro">Canonical Kiai Points</span>
-      <span class="text-en">Canonical Kiai Points</span>
+      <span class="text-ja">気合数</span>
+      <span class="text-ja-en">Kiai Count</span>
+      <span class="text-ro">Kiai Count</span>
+      <span class="text-en">Kiai Count</span>
     </div>
     <div class="stat-big-number">{{ stats.total_kiai }}</div>
-    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
-      <span class="text-ja">規定の極め・気合点</span>
-      <span class="text-ja-en">Prescribed focal points</span>
-      <span class="text-ro">Prescribed focal points</span>
-      <span class="text-en">Prescribed focal points</span>
-    </div>
   </div>
 </div>
 
@@ -166,16 +148,18 @@
       <tr>
         <td style="font-weight: 700;">
           <span style="display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: {{ item.color }}; margin-right: 0.4rem; vertical-align: middle;"></span>
-          <span class="term"
-                data-kanji="{{ item.data.kanji }}"
-                data-furigana="{{ item.data.furigana }}"
-                data-romaji="{{ item.data.romaji }}"
-                data-en="{{ item.data.en }}">
-            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby></span>
-            <span class="text-ja-en"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> <span class="sub-term">({{ item.data.romaji }})</span></span>
-            <span class="text-ro">{{ item.data.romaji }}</span>
-            <span class="text-en">{{ item.data.en }}</span>
-          </span>
+          <a href="{{ rel_root }}stances.html#{{ item.id }}" class="term-link">
+            <span class="term"
+                  data-kanji="{{ item.data.kanji }}"
+                  data-furigana="{{ item.data.furigana }}"
+                  data-romaji="{{ item.data.romaji }}"
+                  data-en="{{ item.data.en }}">
+              <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby></span>
+              <span class="text-ja-en"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> <span class="sub-term">({{ item.data.romaji }})</span></span>
+              <span class="text-ro">{{ item.data.romaji }}</span>
+              <span class="text-en">{{ item.data.en }}</span>
+            </span>
+          </a>
         </td>
         <td style="font-weight: 600;">{{ item.count }}</td>
         <td>
@@ -227,19 +211,21 @@
     </thead>
     <tbody>
       {% for item in stats.top_techniques %}
-      <tr>
+      <tr class="row-{{ item.data.category }}">
         <td style="color: var(--text-muted); font-weight: 600;">#{{ loop.index }}</td>
         <td>
-          <span class="term"
-                data-kanji="{{ item.data.kanji }}"
-                data-furigana="{{ item.data.furigana }}"
-                data-romaji="{{ item.data.romaji }}"
-                data-en="{{ item.data.en }}">
-            <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby></span>
-            <span class="text-ja-en"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> <span class="sub-term">({{ item.data.romaji }})</span></span>
-            <span class="text-ro">{{ item.data.romaji }}</span>
-            <span class="text-en">{{ item.data.en }}</span>
-          </span>
+          <a href="{{ rel_root }}techniques.html#{{ item.id }}" class="term-link">
+            <span class="term"
+                  data-kanji="{{ item.data.kanji }}"
+                  data-furigana="{{ item.data.furigana }}"
+                  data-romaji="{{ item.data.romaji }}"
+                  data-en="{{ item.data.en }}">
+              <span class="text-ja"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby></span>
+              <span class="text-ja-en"><ruby>{{ item.data.kanji }}<rt>{{ item.data.furigana }}</rt></ruby> <span class="sub-term">({{ item.data.romaji }})</span></span>
+              <span class="text-ro">{{ item.data.romaji }}</span>
+              <span class="text-en">{{ item.data.en }}</span>
+            </span>
+          </a>
         </td>
         <td>
           {% set cat_info = CATEGORY_MAP.get(item.data.category) %}

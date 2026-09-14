@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Stances • Katalogue{% endblock %}
+{% block title_ja %}立ち方 • 型ログ{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="breadcrumbs">
+    <a href="{{ rel_root }}index.html">
+      <span class="text-ja">目録</span>
+      <span class="text-ja-en">Directory</span>
+      <span class="text-ro">Directory</span>
+      <span class="text-en">Directory</span>
+    </a> &rsaquo;
+    <span>
+      <span class="text-ja">立ち方</span>
+      <span class="text-ja-en">Stances</span>
+      <span class="text-ro">Stances</span>
+      <span class="text-en">Stances</span>
+    </span>
+  </div>
+
+  <h1 class="page-title">
+    <span class="text-ja">立ち方</span>
+    <span class="text-ja-en">Stances</span>
+    <span class="text-ro">Stances</span>
+    <span class="text-en">Stances</span>
+  </h1>
+</div>
+
+<!-- Stances List -->
+<div class="catalog-section">
+  {% for stance in stances_catalog %}
+    <div class="catalog-item-card" id="{{ stance.id }}">
+      <a id="{{ stance.id | replace('_', '-') }}" style="position: relative; top: -80px; display: block; visibility: hidden;"></a>
+      <div class="catalog-item-header">
+        <div class="catalog-item-title">
+          <span style="display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: {{ stance.color }};"></span>
+          <span class="term"
+                data-kanji="{{ stance.data.kanji }}"
+                data-furigana="{{ stance.data.furigana }}"
+                data-romaji="{{ stance.data.romaji }}"
+                data-en="{{ stance.data.en }}">
+            <span class="text-ja"><ruby>{{ stance.data.kanji }}<rt>{{ stance.data.furigana }}</rt></ruby></span>
+            <span class="text-ja-en"><ruby>{{ stance.data.kanji }}<rt>{{ stance.data.furigana }}</rt></ruby> <span class="sub-term">({{ stance.data.romaji }})</span></span>
+            <span class="text-ro">{{ stance.data.romaji }}</span>
+            <span class="text-en">{{ stance.data.en }}</span>
+          </span>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          {% if stance.data.weight %}
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); background: #f1f5f9; padding: 0.2rem 0.5rem; border-radius: 4px;">
+              Weight: {{ stance.data.weight }}
+            </span>
+          {% endif %}
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted);">
+            {{ stance.total_count }} {% if stance.total_count == 1 %}time{% else %}times{% endif %}
+          </span>
+        </div>
+      </div>
+
+      <div class="catalog-item-occurrences">
+        <span class="catalog-item-occurrences-label">
+          <span class="text-ja">出現する型 ({{ stance.occurrences | length }})</span>
+          <span class="text-ja-en">Appears in ({{ stance.occurrences | length }})</span>
+          <span class="text-ro">Appears in ({{ stance.occurrences | length }})</span>
+          <span class="text-en">Appears in ({{ stance.occurrences | length }})</span>
+        </span>
+        {% if stance.occurrences %}
+          {% for occ in stance.occurrences %}
+            <a href="{{ rel_root }}kata/{{ occ.kata.style }}/{{ occ.kata.id }}.html" class="kata-inline-link">
+              <span class="text-ja">{{ occ.kata.kanji }}</span>
+              <span class="text-ja-en">{{ occ.kata.kanji }} ({{ occ.kata.name }})</span>
+              <span class="text-ro">{{ occ.kata.name }}</span>
+              <span class="text-en">{{ occ.kata.name }}</span>
+            </a> ({{ occ.count }}){% if not loop.last %}, {% endif %}
+          {% endfor %}
+        {% else %}
+          <span style="color: var(--text-muted); font-style: italic;">
+            <span class="text-ja">未登場</span>
+            <span class="text-ja-en">None catalogued</span>
+            <span class="text-ro">None catalogued</span>
+            <span class="text-en">None catalogued</span>
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

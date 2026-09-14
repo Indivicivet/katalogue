@@ -277,13 +277,52 @@ def main():
     kata_files = sorted(list(KATA_DIR.rglob("*.yaml")))
     print(f"Discovered {len(kata_files)} kata definitions.")
 
+    # Pre-calculate technique and stance occurrences across the entire catalog
+    # to identify distinctive items (appearing in exactly 1 kata)
+    raw_kata_list = [load_yaml(kf) for kf in kata_files]
+    tech_usage = {}
+    stance_usage = {}
+
+    for kdata in raw_kata_list:
+        k_full_key = f"{kdata.get('style', 'jka')}/{kdata.get('id')}"
+        for step in kdata.get("steps", []):
+            st_key = step.get("stance")
+            tech_key = step.get("technique")
+            sec_tech_key = step.get("secondary_technique")
+
+            if st_key:
+                if st_key not in stance_usage:
+                    stance_usage[st_key] = {"total": 0, "kata": {}}
+                stance_usage[st_key]["total"] += 1
+                stance_usage[st_key]["kata"][k_full_key] = (
+                    stance_usage[st_key]["kata"].get(k_full_key, 0) + 1
+                )
+
+            if tech_key:
+                if tech_key not in tech_usage:
+                    tech_usage[tech_key] = {"total": 0, "kata": {}}
+                tech_usage[tech_key]["total"] += 1
+                tech_usage[tech_key]["kata"][k_full_key] = (
+                    tech_usage[tech_key]["kata"].get(k_full_key, 0) + 1
+                )
+
+            if sec_tech_key:
+                if sec_tech_key not in tech_usage:
+                    tech_usage[sec_tech_key] = {"total": 0, "kata": {}}
+                tech_usage[sec_tech_key]["total"] += 1
+                tech_usage[sec_tech_key]["kata"][k_full_key] = (
+                    tech_usage[sec_tech_key]["kata"].get(k_full_key, 0) + 1
+                )
+
+    distinctive_techniques = {t for t, u in tech_usage.items() if len(u["kata"]) == 1}
+    distinctive_stances = {s for s, u in stance_usage.items() if len(u["kata"]) == 1}
+
     all_kata = []
     missing_refs = []
     rotation_warnings_count = 0
 
     print("Validating and parsing kata definitions:")
-    for kf in tqdm(kata_files, desc="Parsing Kata", unit="kata"):
-        data = load_yaml(kf)
+    for data in tqdm(raw_kata_list, desc="Parsing Kata", unit="kata"):
         kata_id = data.get("id")
         style = data.get("style", "jka")
         full_key = f"{style}/{kata_id}"
@@ -367,6 +406,9 @@ def main():
                     "stance_data": st_obj,
                     "tech_data": tech_obj,
                     "sec_tech_data": sec_tech_obj,
+                    "st_is_distinctive": st_key in distinctive_stances,
+                    "tech_is_distinctive": tech_key in distinctive_techniques,
+                    "sec_tech_is_distinctive": sec_tech_key in distinctive_techniques,
                     "category": cat,
                     "rotation_warning": rot_warn,
                 }
@@ -395,6 +437,43 @@ def main():
                     "color": STANCE_COLORS.get(st_id, "#94a3b8"),
                 }
             )
+
+        # Collect distinct distinctive techniques and stances for this kata
+        kata_distinctive_tech_ids = []
+        kata_distinctive_stance_ids = []
+        for s in steps:
+            st = s.get("stance")
+            t1 = s.get("technique")
+            t2 = s.get("secondary_technique")
+            if (
+                st
+                and st in distinctive_stances
+                and st not in kata_distinctive_stance_ids
+            ):
+                kata_distinctive_stance_ids.append(st)
+            if (
+                t1
+                and t1 in distinctive_techniques
+                and t1 not in kata_distinctive_tech_ids
+            ):
+                kata_distinctive_tech_ids.append(t1)
+            if (
+                t2
+                and t2 in distinctive_techniques
+                and t2 not in kata_distinctive_tech_ids
+            ):
+                kata_distinctive_tech_ids.append(t2)
+
+        data["distinctive_techniques"] = [
+            {"id": tid, **techniques[tid]}
+            for tid in kata_distinctive_tech_ids
+            if tid in techniques
+        ]
+        data["distinctive_stances"] = [
+            {"id": sid, **stances[sid]}
+            for sid in kata_distinctive_stance_ids
+            if sid in stances
+        ]
 
         # Base count calculation
         base_counts = set(s.get("count") for s in steps if s.get("count") is not None)
@@ -775,7 +854,83 @@ def main():
     with open(DIST_DIR / "stats.html", "w", encoding="utf-8") as f:
         f.write(stats_html)
 
-    # 9. Render Individual Kata Pages
+    # 9. Prepare and Render Techniques & Stances Directory Pages
+    def kata_sort_key(k_obj):
+        return (
+            0 if k_obj.get("style") == "jka" else 1,
+            k_obj.get("order", 999),
+            k_obj.get("name", ""),
+        )
+
+    # Build Technique Catalog Grouped by Category in YAML Order
+    categories_order = ["block", "punch", "strike", "kick", "other"]
+    techniques_by_cat = {cat: [] for cat in categories_order}
+
+    for tid, tdata in techniques.items():
+        cat = tdata.get("category", "other")
+        usage_info = tech_usage.get(tid, {"total": 0, "kata": {}})
+        occurrences = []
+        for full_k, count in usage_info["kata"].items():
+            k_obj = kata_by_key.get(full_k)
+            if k_obj:
+                occurrences.append({"kata": k_obj, "count": count})
+        occurrences.sort(key=lambda x: kata_sort_key(x["kata"]))
+
+        tech_entry = {
+            "id": tid,
+            "data": tdata,
+            "category": cat,
+            "total_count": usage_info["total"],
+            "is_distinctive": tid in distinctive_techniques,
+            "occurrences": occurrences,
+        }
+        if cat not in techniques_by_cat:
+            techniques_by_cat[cat] = []
+        techniques_by_cat[cat].append(tech_entry)
+
+    techniques_tpl = env.get_template("techniques.html")
+    techniques_html = techniques_tpl.render(
+        rel_root="",
+        nav_active="techniques",
+        techniques_by_cat=techniques_by_cat,
+        total_techniques=len(techniques),
+    )
+    with open(DIST_DIR / "techniques.html", "w", encoding="utf-8") as f:
+        f.write(techniques_html)
+
+    # Build Stances Catalog in YAML Order
+    stances_catalog = []
+    for sid, sdata in stances.items():
+        usage_info = stance_usage.get(sid, {"total": 0, "kata": {}})
+        occurrences = []
+        for full_k, count in usage_info["kata"].items():
+            k_obj = kata_by_key.get(full_k)
+            if k_obj:
+                occurrences.append({"kata": k_obj, "count": count})
+        occurrences.sort(key=lambda x: kata_sort_key(x["kata"]))
+
+        stances_catalog.append(
+            {
+                "id": sid,
+                "data": sdata,
+                "color": STANCE_COLORS.get(sid, "#94a3b8"),
+                "total_count": usage_info["total"],
+                "is_distinctive": sid in distinctive_stances,
+                "occurrences": occurrences,
+            }
+        )
+
+    stances_tpl = env.get_template("stances.html")
+    stances_html = stances_tpl.render(
+        rel_root="",
+        nav_active="stances",
+        stances_catalog=stances_catalog,
+        total_stances=len(stances),
+    )
+    with open(DIST_DIR / "stances.html", "w", encoding="utf-8") as f:
+        f.write(stances_html)
+
+    # 10. Render Individual Kata Pages
     kata_tpl = env.get_template("kata.html")
     for k in tqdm(all_kata, desc="Rendering Kata Pages", unit="page"):
         # Construct tabs for equivalents
