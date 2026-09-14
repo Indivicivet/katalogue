@@ -12,12 +12,12 @@
       <span class="text-ro">Directory</span>
       <span class="text-en">Directory</span>
     </a> &rsaquo;
-    <span>
+    <a href="{{ rel_root }}tags/{{ kata.style }}.html">
       <span class="text-ja">{{ STYLE_MAP[kata.style].ja }}</span>
       <span class="text-ja-en">{{ STYLE_MAP[kata.style].ro | upper }}</span>
       <span class="text-ro">{{ STYLE_MAP[kata.style].ro | upper }}</span>
       <span class="text-en">{{ STYLE_MAP[kata.style].en | upper }}</span>
-    </span> &rsaquo;
+    </a> &rsaquo;
     <span>
       <span class="text-ja">{{ kata.kanji }}</span>
       <span class="text-ja-en">{{ kata.kanji }} ({{ kata.name }})</span>
@@ -75,12 +75,6 @@
 <!-- Cross-Style Equivalent Tabs -->
 {% if equivalents_tabs %}
 <div class="style-tabs-wrapper">
-  <div class="style-tabs-label">
-    <span class="text-ja">流派間の対応形</span>
-    <span class="text-ja-en">Lineage Variants Across Disciplines</span>
-    <span class="text-ro">Lineage Variants Across Disciplines</span>
-    <span class="text-en">Lineage Variants Across Disciplines</span>
-  </div>
   <div class="style-tabs">
     {% for tab in equivalents_tabs %}
       <a href="{{ tab.url }}" class="style-tab-link {% if tab.is_current %}active{% endif %}">
@@ -141,40 +135,12 @@
       </span>
       <span class="meta-value">
         {% if kata.kiai_steps %}
-          {% for ki in kata.kiai_steps %}
-            <span class="kiai-badge">{{ ki }}</span>
-          {% endfor %}
+          <span class="catalog-kiai">{{ kata.kiai_steps | join(', ') }}</span>
         {% else %}
           <span class="text-ja">なし</span>
           <span class="text-ja-en">None</span>
           <span class="text-ro">None</span>
           <span class="text-en">None</span>
-        {% endif %}
-      </span>
-    </div>
-    <div class="meta-item">
-      <span class="meta-label">
-        <span class="text-ja">審査状況</span>
-        <span class="text-ja-en">Review Status</span>
-        <span class="text-ro">Review Status</span>
-        <span class="text-en">Review Status</span>
-      </span>
-      <span class="meta-value">
-        <span class="badge badge-{{ kata.status }}">
-          <span class="text-ja">{{ STATUS_MAP[kata.status].ja }}</span>
-          <span class="text-ja-en">{{ STATUS_MAP[kata.status].ja_en }}</span>
-          <span class="text-ro">{{ STATUS_MAP[kata.status].ro }}</span>
-          <span class="text-en">{{ STATUS_MAP[kata.status].en }}</span>
-        </span>
-        {% if kata.reviewer %}
-          <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 0.25rem;">({{ kata.reviewer }})</span>
-        {% else %}
-          <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.25rem;">
-            <span class="text-ja">(未査読)</span>
-            <span class="text-ja-en">(Unreviewed)</span>
-            <span class="text-ro">(Unreviewed)</span>
-            <span class="text-en">(Unreviewed)</span>
-          </span>
         {% endif %}
       </span>
     </div>
@@ -187,7 +153,9 @@
       </span>
       <span class="meta-value" style="font-size: 0.85rem; color: var(--text-secondary);">
         {% if kata.sources %}
-          {{ kata.sources | join(' • ') }}
+          {% for src in kata.sources %}
+            {{ src | rich_text(rel_root) }}{% if not loop.last %} • {% endif %}
+          {% endfor %}
         {% else %}
           <span class="text-ja">なし</span>
           <span class="text-ja-en">None</span>
@@ -338,15 +306,9 @@
         </th>
         <th>
           <span class="text-ja">技</span>
-          <span class="text-ja-en">Primary Technique</span>
-          <span class="text-ro">Primary Technique</span>
-          <span class="text-en">Primary Technique</span>
-        </th>
-        <th>
-          <span class="text-ja">補助動作</span>
-          <span class="text-ja-en">Secondary Action</span>
-          <span class="text-ro">Secondary Action</span>
-          <span class="text-en">Secondary Action</span>
+          <span class="text-ja-en">Technique</span>
+          <span class="text-ro">Technique</span>
+          <span class="text-en">Technique</span>
         </th>
         <th>
           <span class="text-ja">目標</span>
@@ -370,11 +332,11 @@
     </thead>
     <tbody>
       {% for s in kata.rendered_steps %}
-      <tr class="row-{{ s.category }}">
+      <tr class="row-{{ s.category }}{% if s.kiai %} row-kiai{% endif %}">
         <td style="font-weight: 700;">
           {{ s.id }}
           {% if s.kiai %}
-            <span class="kiai-badge">
+            <span class="step-kiai-tag">
               <span class="text-ja">気合</span>
               <span class="text-ja-en">気合 (KIAI)</span>
               <span class="text-ro">KIAI</span>
@@ -437,21 +399,22 @@
               <span class="text-en">⚠️ PLACEHOLDER</span>
             </span>
           {% endif %}
-        </td>
-        <td>
-          {% if s.sec_tech_data %}
-            <span class="term"
-                  data-kanji="{{ s.sec_tech_data.kanji }}"
-                  data-furigana="{{ s.sec_tech_data.furigana }}"
-                  data-romaji="{{ s.sec_tech_data.romaji }}"
-                  data-en="{{ s.sec_tech_data.en }}">
-              <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
-              <span class="text-ja-en"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.sec_tech_data.romaji }})</span></span>
-              <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
-              <span class="text-en">{{ s.sec_tech_data.en }}</span>
-            </span>
-          {% else %}
-            —
+          {% if s.sec_tech_data or s.secondary_technique %}
+            <span class="text-ja">・</span><span class="text-ja-en">・</span><span class="text-ro"> and </span><span class="text-en"> and </span>
+            {% if s.sec_tech_data %}
+              <span class="term"
+                    data-kanji="{{ s.sec_tech_data.kanji }}"
+                    data-furigana="{{ s.sec_tech_data.furigana }}"
+                    data-romaji="{{ s.sec_tech_data.romaji }}"
+                    data-en="{{ s.sec_tech_data.en }}">
+                <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
+                <span class="text-ja-en"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.sec_tech_data.romaji }})</span></span>
+                <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
+                <span class="text-en">{{ s.sec_tech_data.en }}</span>
+              </span>
+            {% else %}
+              {{ s.secondary_technique }}
+            {% endif %}
           {% endif %}
         </td>
         <td style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
@@ -492,7 +455,7 @@
           {% endif %}
         </td>
         <td style="color: var(--text-secondary); font-size: 0.88rem;">
-          {% if s.slow %}<span style="font-style: italic; color: var(--text-muted);">(slow) </span>{% endif %}{{ s.notes or '' }}
+          {% if s.slow %}<span style="font-style: italic; color: var(--text-muted);">(slow) </span>{% endif %}{{ (s.notes or '') | rich_text(rel_root) }}
         </td>
       </tr>
       {% endfor %}

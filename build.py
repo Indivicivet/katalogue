@@ -5,10 +5,13 @@ Compiles YAML kata definitions, validates referential integrity and rotation geo
 computes global and per-kata analytics, and renders a zero-dependency static site.
 """
 
+import html
 import os
+import re
 import shutil
 import time
 from pathlib import Path
+from markupsafe import Markup
 import yaml
 from jinja2 import Environment, FileSystemLoader
 from tqdm import tqdm
@@ -56,6 +59,83 @@ TURN_DELTAS = {
 def load_yaml(path: Path) -> dict:
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f) or {}
+
+
+def create_rich_text_filter(kata_lookup: dict):
+    def render_rich_text(text: str | None, rel_root: str = "") -> Markup:
+        if not text:
+            return Markup("")
+
+        s = html.escape(str(text))
+
+        # 1. Process Kata cross-references: [[kata:target|alias]] or [[target]]
+        def replace_kata_link(match):
+            inner = match.group(1).strip()
+            if inner.lower().startswith("kata:"):
+                inner = inner[5:].strip()
+
+            if "|" in inner:
+                target, custom_label = [part.strip() for part in inner.split("|", 1)]
+            else:
+                target = inner
+                custom_label = None
+
+            k = kata_lookup.get(target.lower()) or kata_lookup.get(target)
+
+            if k:
+                href = f"{rel_root}kata/{k['style']}/{k['id']}.html"
+                if custom_label:
+                    return (
+                        f'<a href="{href}" class="kata-inline-link">{custom_label}</a>'
+                    )
+                return (
+                    f'<a href="{href}" class="kata-inline-link">'
+                    f'<span class="text-ja">{html.escape(k["kanji"])}</span>'
+                    f'<span class="text-ja-en">{html.escape(k["kanji"])} ({html.escape(k["name"])})</span>'
+                    f'<span class="text-ro">{html.escape(k["name"])}</span>'
+                    f'<span class="text-en">{html.escape(k["name"])}</span>'
+                    f"</a>"
+                )
+            return custom_label or target
+
+        s = re.sub(r"\[\[(.*?)\]\]", replace_kata_link, s)
+
+        # 2. Process standard markdown links: [label](url)
+        def replace_md_link(match):
+            label = match.group(1)
+            url = match.group(2).strip()
+            is_external = url.startswith("http://") or url.startswith("https://")
+            target_attr = (
+                ' target="_blank" rel="noopener noreferrer"' if is_external else ""
+            )
+            return f'<a href="{url}"{target_attr}>{label}</a>'
+
+        s = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", replace_md_link, s)
+
+        # 3. Autolink bare URLs not already inside an <a> tag
+        pattern = re.compile(
+            r"(<a\b[^>]*>.*?</a>)|((?:https?://)[^\s<\"'\)]+)",
+            re.IGNORECASE | re.DOTALL,
+        )
+
+        def _sub(m):
+            if m.group(1):
+                return m.group(1)
+            url = m.group(2)
+            trailing = ""
+            while url and url[-1] in ").,:;":
+                trailing = url[-1] + trailing
+                url = url[:-1]
+            return (
+                f'<a href="{url}" target="_blank" rel="noopener noreferrer">'
+                f"{url}</a>{trailing}"
+            )
+
+        s = pattern.sub(_sub, s)
+
+        return Markup(s)
+
+    return render_rich_text
 
 
 def check_rotation(prev_facing: str, turn: str, current_facing: str) -> str | None:
@@ -344,6 +424,26 @@ def main():
     # 4. Catalog Index Preparation
     kata_by_key = {k["full_key"]: k for k in all_kata}
 
+    # Build versatile lookup map for cross-referencing in notes and descriptions
+    kata_lookup = {}
+    for k in all_kata:
+        kid = k.get("id", "")
+        kname = k.get("name", "")
+        kkanji = k.get("kanji", "")
+        kkey = k.get("full_key", "")
+        if kid:
+            kata_lookup[kid.lower()] = k
+            if "_" in kid and kid.split("_", 1)[0].isdigit():
+                kata_lookup[kid.split("_", 1)[1].lower()] = k
+        if kkey:
+            kata_lookup[kkey.lower()] = k
+        if kname:
+            kata_lookup[kname.lower()] = k
+            kata_lookup[kname.lower().replace(" ", "_")] = k
+            kata_lookup[kname.lower().replace(" ", "-")] = k
+        if kkanji:
+            kata_lookup[kkanji] = k
+
     # Attach equivalent object metadata
     for k in all_kata:
         equiv_keys = equiv_map.get(k["full_key"], [])
@@ -359,6 +459,7 @@ def main():
     jka_25 = [k for k in jka_kata if k.get("order", 0) <= 25]
     jka_extra = [k for k in jka_kata if k.get("order", 0) > 25]
     shitoryu_kata = [k for k in all_kata if k.get("style") == "shitoryu"]
+    asai_ryu_kata = [k for k in all_kata if k.get("style") == "asai_ryu"]
 
     # Collect All Tags
     all_tags = sorted(list(set(t for k in all_kata for t in k.get("tags", []))))
@@ -368,6 +469,7 @@ def main():
 
     # 6. Initialize Jinja2 Environment
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=True)
+    env.filters["rich_text"] = create_rich_text_filter(kata_lookup)
     env.globals.update(
         {
             "STATUS_MAP": {
@@ -408,6 +510,12 @@ def main():
                     "ja_en": "糸東流 (Shito-ryu)",
                     "ro": "Shito-ryu",
                     "en": "Shito-ryu",
+                },
+                "asai_ryu": {
+                    "ja": "浅井流",
+                    "ja_en": "浅井流 (Asai-ryu)",
+                    "ro": "Asai-ryu",
+                    "en": "Asai-ryu",
                 },
             },
             "LEAD_MAP": {
@@ -577,6 +685,8 @@ def main():
             "TAG_MAP": {
                 "pinan": {"ja": "平安", "ja_en": "pinan"},
                 "shitoryu": {"ja": "糸東流", "ja_en": "shitoryu"},
+                "junro": {"ja": "順路", "ja_en": "junro"},
+                "asai_ryu": {"ja": "浅井流", "ja_en": "asai_ryu"},
                 "extra_kata": {"ja": "追加型", "ja_en": "extra_kata"},
                 "kyu_grade": {"ja": "級位", "ja_en": "kyu_grade"},
                 "black_belt": {"ja": "有段", "ja_en": "black_belt"},
@@ -631,8 +741,8 @@ def main():
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
     DIST_DIR.mkdir(parents=True, exist_ok=True)
-    (DIST_DIR / "kata" / "jka").mkdir(parents=True, exist_ok=True)
-    (DIST_DIR / "kata" / "shitoryu").mkdir(parents=True, exist_ok=True)
+    for s in set(k["style"] for k in all_kata):
+        (DIST_DIR / "kata" / s).mkdir(parents=True, exist_ok=True)
     (DIST_DIR / "tags").mkdir(parents=True, exist_ok=True)
     (DIST_DIR / "static").mkdir(parents=True, exist_ok=True)
 
@@ -650,6 +760,7 @@ def main():
         jka_25=jka_25,
         jka_extra=jka_extra,
         shitoryu_kata=shitoryu_kata,
+        asai_ryu_kata=asai_ryu_kata,
         all_tags=all_tags,
     )
     with open(DIST_DIR / "index.html", "w", encoding="utf-8") as f:
@@ -670,8 +781,9 @@ def main():
         # Construct tabs for equivalents
         tabs = []
         # Tab 1: Current Kata
-        current_style_label = "JKA" if k["style"] == "jka" else "Shito-ryu"
-        current_style_ja = "JKA" if k["style"] == "jka" else "糸東流"
+        style_info = env.globals["STYLE_MAP"].get(k["style"], {})
+        current_style_label = style_info.get("en", k["style"])
+        current_style_ja = style_info.get("ja", k["style"])
         tabs.append(
             {
                 "label": f"{current_style_label}: {k['name']}",
@@ -687,8 +799,9 @@ def main():
         for eq_key in k.get("equivalent_keys", []):
             eq_obj = kata_by_key.get(eq_key)
             if eq_obj:
-                eq_style_label = "JKA" if eq_obj["style"] == "jka" else "Shito-ryu"
-                eq_style_ja = "JKA" if eq_obj["style"] == "jka" else "糸東流"
+                eq_style_info = env.globals["STYLE_MAP"].get(eq_obj["style"], {})
+                eq_style_label = eq_style_info.get("en", eq_obj["style"])
+                eq_style_ja = eq_style_info.get("ja", eq_obj["style"])
                 eq_url = f"../../kata/{eq_obj['style']}/{eq_obj['id']}.html"
                 tabs.append(
                     {
@@ -709,6 +822,7 @@ def main():
             equivalents_tabs=tabs if len(tabs) > 1 else None,
         )
         out_path = DIST_DIR / "kata" / k["style"] / f"{k['id']}.html"
+        out_path.parent.mkdir(parents=True, exist_ok=True)
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(k_html)
 

@@ -139,9 +139,11 @@
         </td>
         <td style="font-weight: 600;">{{ k.move_count }}</td>
         <td>
-          {% for ki in k.kiai_steps %}
-            <span class="kiai-badge">{{ ki }}</span>
-          {% endfor %}
+          {% if k.kiai_steps %}
+            <span class="catalog-kiai">{{ k.kiai_steps | join(', ') }}</span>
+          {% else %}
+            <span style="color: var(--text-muted);">—</span>
+          {% endif %}
         </td>
         <td>
           {% for t in k.tags %}

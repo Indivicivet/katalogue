@@ -357,24 +357,93 @@ table.step-table td {
 }
 
 table.step-table tr:hover {
-  background-color: #f8fafc;
+  filter: brightness(0.97);
 }
 
 /* Row Category Accents */
 tr.row-block {
   border-left: 4px solid var(--border-block);
+  background-color: rgba(56, 189, 248, 0.05);
 }
 tr.row-punch {
   border-left: 4px solid var(--border-punch);
+  background-color: rgba(248, 113, 113, 0.05);
 }
 tr.row-strike {
   border-left: 4px solid var(--border-strike);
+  background-color: rgba(251, 146, 60, 0.05);
 }
 tr.row-kick {
   border-left: 4px solid var(--border-kick);
+  background-color: rgba(251, 191, 36, 0.06);
 }
 tr.row-other {
   border-left: 4px solid var(--border-other);
+  background-color: rgba(148, 163, 184, 0.04);
+}
+
+/* Kiai Row Highlights: loosely highlighted with increased tint intensity */
+tr.row-kiai.row-block {
+  background-color: rgba(56, 189, 248, 0.16);
+}
+tr.row-kiai.row-punch {
+  background-color: rgba(248, 113, 113, 0.16);
+}
+tr.row-kiai.row-strike {
+  background-color: rgba(251, 146, 60, 0.16);
+}
+tr.row-kiai.row-kick {
+  background-color: rgba(251, 191, 36, 0.18);
+}
+tr.row-kiai.row-other {
+  background-color: rgba(148, 163, 184, 0.14);
+}
+tr.row-kiai {
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+/* Step Table Kiai Indicator */
+.step-kiai-tag {
+  display: inline-block;
+  color: #dc2626;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+/* Directory Catalog Kiai text */
+.catalog-kiai {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Inline Kata Cross-links and General Links */
+.kata-inline-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(220, 38, 38, 0.4);
+  transition: all 0.15s ease;
+}
+.kata-inline-link:hover {
+  color: var(--primary-hover);
+  border-bottom: 1px solid var(--primary-hover);
+}
+
+.step-table td a,
+.meta-value a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.step-table td a:hover,
+.meta-value a:hover {
+  color: var(--primary-hover);
 }
 
 /* Category Legend */
