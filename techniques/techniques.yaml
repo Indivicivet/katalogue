@@ -1679,3 +1679,10 @@ mikazuki_tobi_geri:
   romaji: "mikazuki-tobi-geri"
   en: "jumping crescent kick"
   category: "kick"
+
+tsuki_uke:
+  kanji: "突き受け"
+  furigana: "つきうけ"
+  romaji: "tsuki-uke"
+  en: "thrusting block"
+  category: "block"
