@@ -4,204 +4,259 @@ kanji: 十手
 furigana: じって
 style: jka
 order: 14
-status: early_draft
-last_updated: '2026-09-07'
+status: full_draft
+last_updated: '2026-09-17'
 reviewer: null
-sources: []
+sources:
+- 'Shotokan Karate CSL, Jitte (https://shotokankaratecsl.com/Kata%2013%20-%20Jitte.html)'
 tags:
 - black_belt
+- sentei
 steps:
 - id: '1'
   count: 1
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: tekubi_osae_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  slow: true
+  notes: null
 - id: '2'
   count: 2
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: teisho_oshiage_uke
+  secondary_technique: teisho_osae_uke
+  target: chudan
+  turn: '0'
+  facing: N
+  slow: true
+  notes: null
 - id: '3'
   count: 3
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: osae_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '4'
   count: 4
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: tekubi_kake_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: yori-ashi
 - id: '5'
   count: 5
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: teisho_yoko_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '6'
   count: 6
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: teisho_yoko_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '7'
   count: 7
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: teisho_yoko_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '8'
   count: 8
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kosa_dachi
+  lead: right
+  technique: juji_uke_jodan
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: kosa-ashi
 - id: '9'
   count: 9
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: ryoken_ryogawa_gedan_barai
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  notes: yori-ashi
 - id: '10'
   count: 10
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: both
+  technique: yama_gamae
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: yori-ashi
 - id: '11'
   count: 11
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: zenwan_uchi_harai
+  secondary_technique: fumikomi
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '12'
   count: 12
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: right
+  technique: zenwan_uchi_harai
+  secondary_technique: fumikomi
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '13'
   count: 13
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kiba_dachi
+  lead: left
+  technique: zenwan_uchi_harai
+  secondary_technique: fumikomi
+  target: jodan
+  turn: '0'
+  facing: N
   kiai: true
+  notes: null
 - id: '14'
   count: 14
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: hachiji_dachi
+  lead: both
+  technique: ryoken_kakiwake_uke
+  secondary_technique: null
+  target: gedan
+  turn: '0'
+  facing: N
+  slow: true
+  notes: null
 - id: '15'
   count: 15
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: tsukami_uke
+  secondary_technique: null
+  target: chudan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '16'
   count: 16
-  stance: null
-  lead: null
-  technique: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: bo_tsukami_uke
+  secondary_technique: null
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  notes: null
 - id: '17'
   count: 17
-  stance: null
-  lead: null
-  technique: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: bo_toriage
+  secondary_technique: bo_oshimodoshi
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
+  notes: yori-ashi
 - id: '18'
   count: 18
-  stance: null
-  lead: null
-  technique: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: bo_toriage
+  secondary_technique: bo_oshimodoshi
   target: null
-  turn: null
-  facing: null
+  turn: '0'
+  facing: N
+  slow: true
+  notes: yori-ashi
 - id: '19'
   count: 19
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: right
+  technique: manji_uke
+  secondary_technique: null
+  target: jodan
+  turn: left_180
+  facing: S
+  notes: null
 - id: '20'
   count: 20
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: kokutsu_dachi
+  lead: left
+  technique: manji_uke
+  secondary_technique: null
+  target: jodan
+  turn: right_180
+  facing: N
+  notes: null
 - id: '21'
   count: 21
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '22'
   count: 22
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '23'
   count: 23
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: left
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
+  notes: null
 - id: '24'
   count: 24
-  stance: null
-  lead: null
-  technique: null
-  target: null
-  turn: null
-  facing: null
+  stance: zenkutsu_dachi
+  lead: right
+  technique: age_uke
+  secondary_technique: null
+  target: jodan
+  turn: '0'
+  facing: N
   kiai: true
+  notes: yori-ashi

@@ -121,6 +121,13 @@ teisho_osae_uke:
   en: "palm-heel pressing block"
   category: "block"
 
+teisho_oshiage_uke:
+  kanji: "手掌押し上げ受け"
+  furigana: "ていしょうおしあげうけ"
+  romaji: "teisho-oshiage-uke"
+  en: "palm-heel pushing-rising block"
+  category: "block"
+
 teisho_awase_uke:
   kanji: "手掌合わせ受け"
   furigana: "ていしょうあわせうけ"
@@ -168,6 +175,13 @@ soete_tsukami_uke:
   furigana: "そえてつかみうけ"
   romaji: "soete-tsukami-uke"
   en: "added-hand grasping block"
+  category: "block"
+
+ryosho_tsukami_uke:
+  kanji: "両掌掴み受け"
+  furigana: "りょうしょうつかみうけ"
+  romaji: "ryosho-tsukami-uke"
+  en: "both palms grasping block"
   category: "block"
 
 kaishu_haiwan_uke:
@@ -719,6 +733,13 @@ koken_uchi:
   en: "wrist-arch strike"
   category: "strike"
 
+tekubi_uchi:
+  kanji: "手首打ち"
+  furigana: "てくびうち"
+  romaji: "tekubi-uchi"
+  en: "wrist strike"
+  category: "strike"
+
 seiryuto_uchi:
   kanji: "青竜刀打ち"
   furigana: "せいりゅうとううち"
@@ -1044,3 +1065,617 @@ ryoken_sonomama:
   category: "other"
 
 
+ryoken_kakiwake_uke:
+  kanji: "両拳掻き分け受け"
+  furigana: "りょうけんかきわけうけ"
+  romaji: "ryoken-kakiwake-uke"
+  en: "both fists wedge block"
+  category: "block"
+
+shuto_nagashi_uke:
+  kanji: "手刀流し受け"
+  furigana: "しゅとうながしうけ"
+  romaji: "shuto-nagashi-uke"
+  en: "knife-hand sweeping block"
+  category: "block"
+
+haishu_osae_uke:
+  kanji: "背手押さえ受け"
+  furigana: "はいしゅうおさえうけ"
+  romaji: "haishu-osae-uke"
+  en: "back-hand pressing block"
+  category: "block"
+
+shuto_gedan_uke:
+  kanji: "手刀下段受け"
+  furigana: "しゅとうげだんうけ"
+  romaji: "shuto-gedan-uke"
+  en: "knife-hand downward block"
+  category: "block"
+
+shuto_soto_mawashi_uchi:
+  kanji: "手刀外回し打ち"
+  furigana: "しゅとうそとまわしうち"
+  romaji: "shuto-soto-mawashi-uchi"
+  en: "outside knife-hand roundhouse strike"
+  category: "strike"
+
+shuto_uchi_mawashi_uchi:
+  kanji: "手刀内回し打ち"
+  furigana: "しゅとううちまわしうち"
+  romaji: "shuto-uchi-mawashi-uchi"
+  en: "inside knife-hand roundhouse strike"
+  category: "strike"
+
+gedan_zuki:
+  kanji: "下段突き"
+  furigana: "げだんづき"
+  romaji: "gedan-zuki"
+  en: "downward thrust punch"
+  category: "punch"
+
+ryowan_heiko_zuki:
+  kanji: "両腕平行突き"
+  furigana: "りょうわんへいこうづき"
+  romaji: "ryowan-heiko-zuki"
+  en: "both arms parallel punch"
+  category: "punch"
+
+ryosho_kakiwake_kamae:
+  kanji: "両掌掻き分け構え"
+  furigana: "りょうしょうかきわけかまえ"
+  romaji: "ryosho-kakiwake-kamae"
+  en: "both palms wedge posture"
+  category: "other"
+
+ryo_seiryuto_uchi:
+  kanji: "両青竜刀打ち"
+  furigana: "りょうせいりゅうとううち"
+  romaji: "ryo-seiryuto-uchi"
+  en: "both hands ox-jaw strike"
+  category: "strike"
+
+ryoken_ryokoshi_kamae:
+  kanji: "両拳両腰構え"
+  furigana: "りょうけんりょうこしかまえ"
+  romaji: "ryoken-ryokoshi-kamae"
+  en: "both fists on both hips posture"
+  category: "other"
+
+# Enpi additions
+ryoken_koshi_kamae:
+  kanji: "両拳腰構え"
+  furigana: "りょうけんこしかまえ"
+  romaji: "ryoken-koshi-kamae"
+  en: "both fists hip posture"
+  category: "other"
+
+mizu_nagare_no_kamae:
+  kanji: "水流れの構え"
+  furigana: "みずながれのかまえ"
+  romaji: "mizu-nagare-no-kamae"
+  en: "water flowing posture"
+  category: "other"
+
+ken_kata_ue:
+  kanji: "拳肩上"
+  furigana: "けんかたうえ"
+  romaji: "ken-kata-ue"
+  en: "fist above shoulder"
+  category: "other"
+
+sho_naname_mae_ue:
+  kanji: "掌斜め前上"
+  furigana: "しょうななめまえうえ"
+  romaji: "sho-naname-mae-ue"
+  en: "palm diagonally in front and above"
+  category: "other"
+
+gedan_kamae:
+  kanji: "下段構え"
+  furigana: "げだんかまえ"
+  romaji: "gedan-kamae"
+  en: "downward posture"
+  category: "other"
+
+# Jitte additions
+tekubi_osae_uke:
+  kanji: "手首押さえ受け"
+  furigana: "てくびおさえうけ"
+  romaji: "tekubi-osae-uke"
+  en: "wrist pressing block"
+  category: "block"
+
+tekubi_kake_uke:
+  kanji: "手首掛け受け"
+  furigana: "てくびかけうけ"
+  romaji: "tekubi-kake-uke"
+  en: "wrist hooking block"
+  category: "block"
+
+teisho_yoko_uke:
+  kanji: "手掌横受け"
+  furigana: "ていしょうよこうけ"
+  romaji: "teisho-yoko-uke"
+  en: "palm-heel side block"
+  category: "block"
+
+ryoken_ryogawa_gedan_barai:
+  kanji: "両拳両側下段払い"
+  furigana: "りょうけんりょうがわげだんばらい"
+  romaji: "ryoken-ryogawa-gedan-barai"
+  en: "both fists both sides downward block"
+  category: "block"
+
+yama_gamae:
+  kanji: "山構え"
+  furigana: "やまがまえ"
+  romaji: "yama-gamae"
+  en: "mountain posture"
+  category: "other"
+
+zenwan_uchi_harai:
+  kanji: "前腕内払い"
+  furigana: "ぜんわんうちはらい"
+  romaji: "zenwan-uchi-harai"
+  en: "forearm inside sweeping strike"
+  category: "strike"
+
+bo_tsukami_uke:
+  kanji: "棒掴み受け"
+  furigana: "ぼうつかみうけ"
+  romaji: "bo-tsukami-uke"
+  en: "staff grasping block"
+  category: "block"
+
+bo_toriage:
+  kanji: "棒取り上げ"
+  furigana: "ぼうとりあげ"
+  romaji: "bo-toriage"
+  en: "staff lifting"
+  category: "other"
+
+bo_oshimodoshi:
+  kanji: "棒押し戻し"
+  furigana: "ぼうおしもどし"
+  romaji: "bo-oshimodoshi"
+  en: "staff pushing back"
+  category: "other"
+
+# Bassai Sho additions
+ryosho_koho_awase_uke:
+  kanji: "両掌後方合わせ受け"
+  furigana: "りょうしょうこうほうあわせうけ"
+  romaji: "ryosho-koho-awase-uke"
+  en: "both palms rear combined block"
+  category: "block"
+
+ryosho_juji_awase_uke:
+  kanji: "両掌十字合わせ受け"
+  furigana: "りょうしょうじゅうじあわせうけ"
+  romaji: "ryosho-juji-awase-uke"
+  en: "both palms X combined block"
+  category: "block"
+
+suihei_bo_dori:
+  kanji: "水平棒捕り"
+  furigana: "すいへいぼうどり"
+  romaji: "suihei-bo-dori"
+  en: "horizontal staff grab"
+  category: "other"
+
+haito_sukui_uke:
+  kanji: "背刀掬い受け"
+  furigana: "はいとうすくいうけ"
+  romaji: "haito-sukui-uke"
+  en: "ridge-hand scooping block"
+  category: "block"
+
+ryote_koshi_kamae:
+  kanji: "両手腰構え"
+  furigana: "りょうてこしかまえ"
+  romaji: "ryote-koshi-kamae"
+  en: "both hands on hip posture"
+  category: "other"
+
+haito_yoko_mawashi_uchi:
+  kanji: "背刀横回し打ち"
+  furigana: "はいとうよこまわしうち"
+  romaji: "haito-yoko-mawashi-uchi"
+  en: "horizontal ridge-hand roundhouse strike"
+  category: "strike"
+
+sokuto_kekomi:
+  kanji: "足刀蹴込み"
+  furigana: "そくとうけこみ"
+  romaji: "sokuto-kekomi"
+  en: "sword-foot thrust kick"
+  category: "kick"
+
+ryosho_tsukamiyose:
+  kanji: "両掌掴み寄せ"
+  furigana: "りょうしょうつかみよせ"
+  romaji: "ryosho-tsukamiyose"
+  en: "both palms grasping and pulling"
+  category: "other"
+
+ryoken_ura_zuki:
+  kanji: "両拳裏突き"
+  furigana: "りょうけんうらづき"
+  romaji: "ryoken-ura-zuki"
+  en: "both fists inverted punch"
+  category: "punch"
+
+deashi_barai:
+  kanji: "出足払い"
+  furigana: "であしばらい"
+  romaji: "deashi-barai"
+  en: "advancing foot sweep"
+  category: "kick"
+
+morote_sokumen_zuki:
+  kanji: "諸手側面突き"
+  furigana: "もろてそくめんづき"
+  romaji: "morote-sokumen-zuki"
+  en: "double-hand side punch"
+  category: "punch"
+
+# Bassai Dai additions
+morote_age_uke:
+  kanji: "諸手揚受け"
+  furigana: "もろてあげうけ"
+  romaji: "morote-age-uke"
+  en: "double-hand rising block"
+  category: "block"
+
+ryo_kentsui_hasami_uchi:
+  kanji: "両拳槌挟み打ち"
+  furigana: "りょうけんついはさみうち"
+  romaji: "ryo-kentsui-hasami-uchi"
+  en: "both hammer-fists scissors strike"
+  category: "strike"
+
+soto_nagashi_uke:
+  kanji: "外流し受け"
+  furigana: "そとながしうけ"
+  romaji: "soto-nagashi-uke"
+  en: "outside flowing block"
+  category: "block"
+
+shuto_uchikomi:
+  kanji: "手刀打ち込み"
+  furigana: "しゅとううちこみ"
+  romaji: "shuto-uchikomi"
+  en: "sword-hand thrusting strike"
+  category: "strike"
+
+zenwan_mune_kamae:
+  kanji: "前腕胸構え"
+  furigana: "ぜんわんむねかまえ"
+  romaji: "zenwan-mune-kamae"
+  en: "forearm chest posture"
+  category: "other"
+
+# Hangetsu additions
+ryo_jishi_ippon_ken_kamae:
+  kanji: "両示指一本拳構え"
+  furigana: "りょうじしいっぽんけんかまえ"
+  romaji: "ryo-jishi-ippon-ken-kamae"
+  en: "both one-knuckle fists posture"
+  category: "other"
+
+ryo_jishi_ippon_ken_morote_zuki:
+  kanji: "両示指一本拳諸手突き"
+  furigana: "りょうじしいっぽんけんもろてづき"
+  romaji: "ryo-jishi-ippon-ken-morote-zuki"
+  en: "both one-knuckle fists double-hand punch"
+  category: "punch"
+
+kaisho_yama_kamae:
+  kanji: "開手山構え"
+  furigana: "かいしょやまかまえ"
+  romaji: "kaisho-yama-kamae"
+  en: "hands open mountain posture"
+  category: "other"
+
+gedan_uke:
+  kanji: "下段受け"
+  furigana: "げだんうけ"
+  romaji: "gedan-uke"
+  en: "downward block"
+  category: "block"
+
+uraken_tate_mawashi_uchi:
+  kanji: "裏拳縦回し打ち"
+  furigana: "うらけんたてまわしうち"
+  romaji: "uraken-tate-mawashi-uchi"
+  en: "vertical backfist strike"
+  category: "strike"
+
+ryo_teisho_awase_uke:
+  kanji: "両手掌合わせ受け"
+  furigana: "りょうていしょうあわせうけ"
+  romaji: "ryo-teisho-awase-uke"
+  en: "palm-heels combined block"
+  category: "block"
+
+# Gankaku additions
+ryosho_awase_uke:
+  kanji: "両掌合わせ受け"
+  furigana: "りょうしょうあわせうけ"
+  romaji: "ryosho-awase-uke"
+  en: "both palms combined block"
+  category: "block"
+
+ryosho_juji_osae_uke:
+  kanji: "両掌十字押さえ受け"
+  furigana: "りょうしょうじゅうじおさえうけ"
+  romaji: "ryosho-juji-osae-uke"
+  en: "both palms X-pressing block"
+  category: "block"
+
+sokumen_zuki:
+  kanji: "側面突き"
+  furigana: "そくめんづき"
+  romaji: "sokumen-zuki"
+  en: "side punch"
+  category: "punch"
+
+kaisho_kosa_uke:
+  kanji: "開手交差受け"
+  furigana: "かいしょこうさうけ"
+  romaji: "kaisho-kosa-uke"
+  en: "open-hand cross block"
+  category: "block"
+
+ryoken_mune_mae_kosa:
+  kanji: "両拳胸前交差"
+  furigana: "りょうけんむねまえこうさ"
+  romaji: "ryoken-mune-mae-kosa"
+  en: "both fists crossed in front of chest"
+  category: "other"
+
+nidan_geri:
+  kanji: "二段蹴り"
+  furigana: "にだんげり"
+  romaji: "nidan-geri"
+  en: "two-level kick"
+  category: "kick"
+
+furi_empi_uchi:
+  kanji: "振り猿臂打ち"
+  furigana: "ふりえんぴうち"
+  romaji: "furi-empi-uchi"
+  en: "swinging elbow strike"
+  category: "strike"
+
+manji_kamae:
+  kanji: "卍構え"
+  furigana: "まんじかまえ"
+  romaji: "manji-kamae"
+  en: "swirling posture"
+  category: "other"
+
+uraken_yoko_mawashi_uchi:
+  kanji: "裏拳横回し打ち"
+  furigana: "うらけんよこまわしうち"
+  romaji: "uraken-yoko-mawashi-uchi"
+  en: "sideways backfist roundhouse strike"
+  category: "strike"
+
+yumi_zuki:
+  kanji: "弓突き"
+  furigana: "ゆみづき"
+  romaji: "yumi-zuki"
+  en: "bow punch"
+  category: "punch"
+
+ryo_zenwan_hasami_uke:
+  kanji: "両前腕挟み受け"
+  furigana: "りょうぜんわんはさみうけ"
+  romaji: "ryo-zenwan-hasami-uke"
+  en: "double forearm scissor block"
+  category: "block"
+
+shuto_kake_uke:
+  kanji: "手刀掛け受け"
+  furigana: "しゅとうかけうけ"
+  romaji: "shuto-kake-uke"
+  en: "knife-hand hooking block"
+  category: "block"
+
+tekubi_makiotoshi_uke:
+  kanji: "手首巻落とし受け"
+  furigana: "てくびまきおとしうけ"
+  romaji: "tekubi-makiotoshi-uke"
+  en: "wrist curling-falling block"
+  category: "block"
+
+teisho_awase_zuki:
+  kanji: "手掌合わせ突き"
+  furigana: "ていしょうあわせづき"
+  romaji: "teisho-awase-zuki"
+  en: "palm-heel combined punch"
+  category: "punch"
+
+koho_haito_uchi:
+  kanji: "後方背刀打ち"
+  furigana: "こうほうはいとううち"
+  romaji: "koho-haito-uchi"
+  en: "rear ridge-hand strike"
+  category: "strike"
+
+haito_soto_mawashi_uchi:
+  kanji: "背刀外回し打ち"
+  furigana: "はいとうそとまわしうち"
+  romaji: "haito-soto-mawashi-uchi"
+  en: "outside ridge-hand roundhouse strike"
+  category: "strike"
+
+teko_uchi:
+  kanji: "手甲打ち"
+  furigana: "てこうち"
+  romaji: "teko-uchi"
+  en: "back of hand lever strike"
+  category: "strike"
+
+kentsui_tate_mawashi_uchi:
+  kanji: "拳槌縦回し打ち"
+  furigana: "けんついたてまわしうち"
+  romaji: "kentsui-tate-mawashi-uchi"
+  en: "vertical hammer-fist strike"
+  category: "strike"
+
+kaisho_morote_age_uke:
+  kanji: "開手諸手上受け"
+  furigana: "かいしょもろてあげうけ"
+  romaji: "kaisho-morote-age-uke"
+  en: "open hands double rising block"
+  category: "block"
+
+haito_mawashi_uke:
+  kanji: "背刀回し受け"
+  furigana: "はいとうまわしうけ"
+  romaji: "haito-mawashi-uke"
+  en: "ridge-hand roundhouse block"
+  category: "block"
+
+ryoken_kakiwake_kamae:
+  kanji: "両拳かき分け構え"
+  furigana: "りょうけんかきわけかまえ"
+  romaji: "ryoken-kakiwake-kamae"
+  en: "both fists wedge posture"
+  category: "other"
+
+nakadaka_ippon_ken_uchiotoshi:
+  kanji: "中高一本拳打ち落とし"
+  furigana: "なかだかいっぽんけんうちおとし"
+  romaji: "nakadaka-ippon-ken-uchiotoshi"
+  en: "middle one-knuckle fist falling strike"
+  category: "strike"
+
+nihon_nukite_uchi_uke:
+  kanji: "二本貫手内受け"
+  furigana: "にほんぬきてうちうけ"
+  romaji: "nihon-nukite-uchi-uke"
+  en: "two-finger spear-hand inside block"
+  category: "block"
+
+nihon_nukite_age_zuki:
+  kanji: "二本貫手上げ突き"
+  furigana: "にほんぬきてあげづき"
+  romaji: "nihon-nukite-age-zuki"
+  en: "two-finger spear-hand rising thrust"
+  category: "punch"
+
+teisho_soto_mawashi_uchi:
+  kanji: "手掌外回し打ち"
+  furigana: "ていしょうそとまわしうち"
+  romaji: "teisho-soto-mawashi-uchi"
+  en: "palm-heel outside roundhouse strike"
+  category: "strike"
+
+ryoken_hasami_zuki:
+  kanji: "両拳挟み突き"
+  furigana: "りょうけんはさみづき"
+  romaji: "ryoken-hasami-zuki"
+  en: "both fists scissor punch"
+  category: "punch"
+
+sho_ken_shita_ago_mae:
+  kanji: "掌拳下顎前"
+  furigana: "しょうけんしたあごまえ"
+  romaji: "sho-ken-shita-ago-mae"
+  en: "fist under palm front of chin posture"
+  category: "other"
+
+zenwan_hitae_kamae:
+  kanji: "前腕額構え"
+  furigana: "ぜんわんひたえかまえ"
+  romaji: "zenwan-hitae-kamae"
+  en: "forearm forehead posture"
+  category: "other"
+
+sankaku_tobi:
+  kanji: "三角飛び"
+  furigana: "さんかくとび"
+  romaji: "sankaku-tobi"
+  en: "triangle jump"
+  category: "other"
+
+ryo_teisho_ago_mae:
+  kanji: "両手掌顎前"
+  furigana: "りょうていしょうあごまえ"
+  romaji: "ryo-teisho-ago-mae"
+  en: "both palm-heels front of chin posture"
+  category: "other"
+
+ryote_seiryuto:
+  kanji: "両手青竜刀"
+  furigana: "りょうてせいりゅうとう"
+  romaji: "ryote-seiryuto"
+  en: "both hands ox-jaw posture"
+  category: "other"
+
+kawashi_geri:
+  kanji: "躱し蹴り"
+  furigana: "かわしげり"
+  romaji: "kawashi-geri"
+  en: "dodging roundhouse kick"
+  category: "kick"
+
+kaiun_no_te:
+  kanji: "開雲の手"
+  furigana: "かいうんのて"
+  romaji: "kaiun-no-te"
+  en: "opening clouds hands"
+  category: "other"
+
+keito_kake_uke:
+  kanji: "鶏頭掛け受け"
+  furigana: "けいとうかけうけ"
+  romaji: "keito-kake-uke"
+  en: "chicken-head hooking block"
+  category: "block"
+
+koho_teisho_uke:
+  kanji: "後方手掌受け"
+  furigana: "こうほうていしょううけ"
+  romaji: "koho-teisho-uke"
+  en: "rear palm-heel block"
+  category: "block"
+
+gedan_uke_zuki:
+  kanji: "下段受け突き"
+  furigana: "げだんうけづき"
+  romaji: "gedan-uke-zuki"
+  en: "low block punch"
+  category: "punch"
+
+teisho_hasami_uchi:
+  kanji: "手掌挟み打ち"
+  furigana: "ていしょうはさみうち"
+  romaji: "teisho-hasami-uchi"
+  en: "palm-heel scissor strike"
+  category: "strike"
+
+mae_kakato_kekomi:
+  kanji: "前踵蹴込み"
+  furigana: "まえかかとうけこみ"
+  romaji: "mae-kakato-kekomi"
+  en: "front heel thrust kick"
+  category: "kick"
+
+shuto_gedan_barai:
+  kanji: "手刀下段払い"
+  furigana: "しゅとうげだんばらい"
+  romaji: "shuto-gedan-barai"
+  en: "knife-hand low sweep"
+  category: "block"
+
+mikazuki_tobi_geri:
+  kanji: "三日月飛び蹴り"
+  furigana: "みかづきとびげり"
+  romaji: "mikazuki-tobi-geri"
+  en: "jumping crescent kick"
+  category: "kick"

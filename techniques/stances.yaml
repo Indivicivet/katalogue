@@ -155,3 +155,17 @@ hizakutsu:
   en: "kneeling / bent knee stance"
   weight: "variable"
 
+orishiki:
+  kanji: "折敷"
+  furigana: "おりしき"
+  romaji: "orishiki"
+  en: "kneeling on one knee"
+  weight: "variable"
+
+ashi_orishiki:
+  kanji: "足折敷"
+  furigana: "あしおりしき"
+  romaji: "ashi-orishiki"
+  en: "kneeling on one knee stance"
+  weight: "variable"
+
