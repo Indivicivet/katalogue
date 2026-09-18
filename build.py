@@ -814,6 +814,7 @@ def main():
                 "7th_kyu": {"ja": "七級", "ja_en": "7th_kyu"},
                 "8th_kyu": {"ja": "八級", "ja_en": "8th_kyu"},
                 "9th_kyu": {"ja": "九級", "ja_en": "9th_kyu"},
+                "10th_kyu": {"ja": "十級", "ja_en": "10th_kyu"},
             },
             "CATEGORY_MAP": {
                 "block": {

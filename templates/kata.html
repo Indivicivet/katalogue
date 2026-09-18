@@ -406,14 +406,6 @@
       <tr class="row-{{ s.category }}{% if s.kiai %} row-kiai{% endif %}">
         <td style="font-weight: 700;">
           {{ s.id }}
-          {% if s.kiai %}
-            <span class="step-kiai-tag">
-              <span class="text-ja">気合</span>
-              <span class="text-ja-en">気合 (KIAI)</span>
-              <span class="text-ro">KIAI</span>
-              <span class="text-en">KIAI</span>
-            </span>
-          {% endif %}
         </td>
         <td>
           {% if s.stance_data %}
@@ -541,6 +533,14 @@
           {% endif %}
         </td>
         <td style="color: var(--text-secondary); font-size: 0.88rem;">
+          {% if s.kiai %}
+            <span class="step-kiai-tag">
+              <span class="text-ja">気合</span>
+              <span class="text-ja-en">気合 (KIAI)</span>
+              <span class="text-ro">KIAI</span>
+              <span class="text-en">KIAI</span>
+            </span>
+          {% endif %}
           {% if s.slow %}<span style="font-style: italic; color: var(--text-muted);">(slow) </span>{% endif %}{{ (s.notes or '') | rich_text(rel_root) }}
         </td>
       </tr>
