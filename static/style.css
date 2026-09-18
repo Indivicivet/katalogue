@@ -406,12 +406,9 @@ tr.row-kiai {
   background-color: rgba(239, 68, 68, 0.4);
 }
 
-/* Inside stroke around the entire kiai row matching the category border accent */
+/* Inside stroke around the kiai row (top, bottom, and right edge) matching the category accent */
 tr.row-kiai.row-block td {
   box-shadow: inset 0 2px 0 var(--border-block), inset 0 -2px 0 var(--border-block);
-}
-tr.row-kiai.row-block td:first-child {
-  box-shadow: inset 0 2px 0 var(--border-block), inset 0 -2px 0 var(--border-block), inset 2px 0 0 var(--border-block);
 }
 tr.row-kiai.row-block td:last-child {
   box-shadow: inset 0 2px 0 var(--border-block), inset 0 -2px 0 var(--border-block), inset -2px 0 0 var(--border-block);
@@ -420,18 +417,12 @@ tr.row-kiai.row-block td:last-child {
 tr.row-kiai.row-punch td {
   box-shadow: inset 0 2px 0 var(--border-punch), inset 0 -2px 0 var(--border-punch);
 }
-tr.row-kiai.row-punch td:first-child {
-  box-shadow: inset 0 2px 0 var(--border-punch), inset 0 -2px 0 var(--border-punch), inset 2px 0 0 var(--border-punch);
-}
 tr.row-kiai.row-punch td:last-child {
   box-shadow: inset 0 2px 0 var(--border-punch), inset 0 -2px 0 var(--border-punch), inset -2px 0 0 var(--border-punch);
 }
 
 tr.row-kiai.row-strike td {
   box-shadow: inset 0 2px 0 var(--border-strike), inset 0 -2px 0 var(--border-strike);
-}
-tr.row-kiai.row-strike td:first-child {
-  box-shadow: inset 0 2px 0 var(--border-strike), inset 0 -2px 0 var(--border-strike), inset 2px 0 0 var(--border-strike);
 }
 tr.row-kiai.row-strike td:last-child {
   box-shadow: inset 0 2px 0 var(--border-strike), inset 0 -2px 0 var(--border-strike), inset -2px 0 0 var(--border-strike);
@@ -440,18 +431,12 @@ tr.row-kiai.row-strike td:last-child {
 tr.row-kiai.row-kick td {
   box-shadow: inset 0 2px 0 var(--border-kick), inset 0 -2px 0 var(--border-kick);
 }
-tr.row-kiai.row-kick td:first-child {
-  box-shadow: inset 0 2px 0 var(--border-kick), inset 0 -2px 0 var(--border-kick), inset 2px 0 0 var(--border-kick);
-}
 tr.row-kiai.row-kick td:last-child {
   box-shadow: inset 0 2px 0 var(--border-kick), inset 0 -2px 0 var(--border-kick), inset -2px 0 0 var(--border-kick);
 }
 
 tr.row-kiai.row-other td {
   box-shadow: inset 0 2px 0 var(--border-other), inset 0 -2px 0 var(--border-other);
-}
-tr.row-kiai.row-other td:first-child {
-  box-shadow: inset 0 2px 0 var(--border-other), inset 0 -2px 0 var(--border-other), inset 2px 0 0 var(--border-other);
 }
 tr.row-kiai.row-other td:last-child {
   box-shadow: inset 0 2px 0 var(--border-other), inset 0 -2px 0 var(--border-other), inset -2px 0 0 var(--border-other);
