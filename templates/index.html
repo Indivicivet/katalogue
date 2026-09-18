@@ -123,7 +123,7 @@
             <span class="text-en">{{ STATUS_MAP[k.status].en }}</span>
           </span>
         </td>
-        <td style="font-weight: 600;">{{ k.move_count }}</td>
+        <td style="font-weight: 600;">{{ k.base_count }}</td>
         <td>
           {% if k.kiai_steps %}
             <span class="catalog-kiai">{{ k.kiai_steps | join(', ') }}</span>
@@ -232,7 +232,7 @@
             <span class="text-en">{{ STATUS_MAP[k.status].en }}</span>
           </span>
         </td>
-        <td style="font-weight: 600;">{{ k.move_count }}</td>
+        <td style="font-weight: 600;">{{ k.base_count }}</td>
         <td>
           {% if k.kiai_steps %}
             <span class="catalog-kiai">{{ k.kiai_steps | join(', ') }}</span>
@@ -348,7 +348,7 @@
             <span class="text-en">{{ STATUS_MAP[k.status].en }}</span>
           </span>
         </td>
-        <td style="font-weight: 600;">{{ k.move_count }}</td>
+        <td style="font-weight: 600;">{{ k.base_count }}</td>
         <td>
           {% if k.equivalent_kata %}
             <a href="{{ rel_root }}kata/jka/{{ k.equivalent_kata.id }}.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">
@@ -469,7 +469,7 @@
             <span class="text-en">{{ STATUS_MAP[k.status].en }}</span>
           </span>
         </td>
-        <td style="font-weight: 600;">{{ k.move_count }}</td>
+        <td style="font-weight: 600;">{{ k.base_count }}</td>
         <td>
           {% if k.kiai_steps %}
             {% for ki in k.kiai_steps %}

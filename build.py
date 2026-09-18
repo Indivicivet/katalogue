@@ -487,6 +487,7 @@ def main():
         # Base count calculation
         base_counts = set(s.get("count") for s in steps if s.get("count") is not None)
         data["base_count"] = max(base_counts) if base_counts else len(steps)
+        data["count"] = data["base_count"]
         data["move_count"] = len(steps)
         data["placeholder_count"] = placeholder_count
         data["defined_count"] = defined_count
