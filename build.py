@@ -574,6 +574,30 @@ def main():
                     "ro": "Full Draft",
                     "en": "Full Draft",
                 },
+                "student_reviewed": {
+                    "ja": "門下生確認済",
+                    "ja_en": "Student Reviewed",
+                    "ro": "Student Reviewed",
+                    "en": "Student Reviewed",
+                },
+                "black_belt_reviewed": {
+                    "ja": "有段者査読済",
+                    "ja_en": "Black Belt Reviewed",
+                    "ro": "Black Belt Reviewed",
+                    "en": "Black Belt Reviewed",
+                },
+                "kata_book_reviewed": {
+                    "ja": "教本照合済",
+                    "ja_en": "Book Reviewed",
+                    "ro": "Book Reviewed",
+                    "en": "Book Reviewed",
+                },
+                "instructor_reviewed": {
+                    "ja": "指導員査読済",
+                    "ja_en": "Instructor Reviewed",
+                    "ro": "Instructor Reviewed",
+                    "en": "Instructor Reviewed",
+                },
                 "verified": {
                     "ja": "確認済",
                     "ja_en": "Verified",
