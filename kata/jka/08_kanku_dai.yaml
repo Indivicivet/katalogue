@@ -8,10 +8,10 @@ status: full_draft
 last_updated: '2026-09-12'
 reviewer: null
 sources:
-- Shotokan Karate CSL, Kanku Dai (scraped_refs/11_kanku_dai_csl.html)
+- Shotokan Karate CSL, Kanku Dai
 tags:
+- kyu_grade
 - sentei
-- shitei
 steps:
 - id: '1'
   count: 1

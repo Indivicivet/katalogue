@@ -1,4 +1,4 @@
-id: heian_godan
+id: 05_heian_godan
 name: Heian Godan
 kanji: 平安五段
 furigana: へいあんごだん
@@ -8,10 +8,10 @@ status: full_draft
 last_updated: '2026-09-12'
 reviewer: null
 sources:
-- 'Shotokan Karate CSL, Heian Godan (scraped_refs/05_heian_godan_csl.html)'
+- 'Shotokan Karate CSL, Heian Godan'
 tags:
 - kyu_grade
-- 4th_kyu
+- 5th_kyu
 - shitei
 steps:
 - id: '1'

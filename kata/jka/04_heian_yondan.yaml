@@ -8,10 +8,10 @@ status: full_draft
 last_updated: '2026-09-12'
 reviewer: null
 sources:
-- 'Shotokan Karate CSL, Heian Yondan (scraped_refs/04_heian_yondan_csl.html)'
+- 'Shotokan Karate CSL, Heian Yondan'
 tags:
 - kyu_grade
-- 5th_kyu
+- 6th_kyu
 - shitei
 steps:
 - id: '1'

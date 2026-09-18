@@ -10,8 +10,8 @@ reviewer: null
 sources:
 - Shotokan Karate CSL, Jion (https://shotokankaratecsl.com/Kata%2011%20-%20Jion.html)
 tags:
+- kyu_grade
 - sentei
-- shitei
 steps:
 - id: '1'
   count: 1

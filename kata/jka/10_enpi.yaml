@@ -10,8 +10,8 @@ reviewer: null
 sources:
 - 'Shotokan Karate CSL, Empi (https://shotokankaratecsl.com/Kata%2012%20-%20Empi.html)'
 tags:
+- kyu_grade
 - sentei
-- shitei
 steps:
 - id: '1'
   count: 1

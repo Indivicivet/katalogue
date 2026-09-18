@@ -11,9 +11,7 @@ sources:
 - 'Shotokan Karate CSL, Tekki Shodan (https://shotokankaratecsl.com/Kata%2006%20-%20Tekki%20Shodan.html)'
 tags:
 - kyu_grade
-- 3rd_kyu
-- 2nd_kyu
-- 1st_kyu
+- 4th_kyu
 - shitei
 steps:
 - id: '1'

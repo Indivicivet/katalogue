@@ -10,6 +10,7 @@ reviewer: null
 sources:
 - 'Shotokan Karate CSL, Bassai Dai (https://shotokankaratecsl.com/Kata%2009%20-%20Bassai%20Dai.html)'
 tags:
+- kyu_grade
 - sentei
 steps:
 - id: '1'
