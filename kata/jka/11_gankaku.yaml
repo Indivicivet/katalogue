@@ -19,7 +19,7 @@ steps:
   technique: ryosho_awase_uke
   secondary_technique: null
   target: jodan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '2'
@@ -29,7 +29,7 @@ steps:
   technique: ryosho_juji_osae_uke
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '3'
@@ -39,7 +39,7 @@ steps:
   technique: sokumen_zuki
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '4'
@@ -49,7 +49,7 @@ steps:
   technique: gyaku_zuki
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '5'
@@ -59,7 +59,7 @@ steps:
   technique: gedan_barai
   secondary_technique: null
   target: gedan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '6'
@@ -69,7 +69,7 @@ steps:
   technique: kaisho_kosa_uke
   secondary_technique: null
   target: jodan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '7'
@@ -79,7 +79,7 @@ steps:
   technique: ryoken_mune_mae_kosa
   secondary_technique: null
   target: null
-  turn: 0
+  turn: '0'
   facing: N
   slow: true
   notes: null
@@ -90,7 +90,7 @@ steps:
   technique: nidan_geri
   secondary_technique: juji_uke_gedan
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '9'
@@ -100,7 +100,7 @@ steps:
   technique: juji_uke_gedan
   secondary_technique: null
   target: gedan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '10'
@@ -120,7 +120,7 @@ steps:
   technique: shuto_uke
   secondary_technique: null
   target: gedan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '12'
@@ -130,7 +130,7 @@ steps:
   technique: ryosho_kakiwake_uke
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: S
   slow: true
   notes: null
@@ -141,7 +141,7 @@ steps:
   technique: ryosho_kakiwake_uke
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: S
   slow: true
   notes: null
@@ -152,7 +152,7 @@ steps:
   technique: ryoken_kakiwake_uke
   secondary_technique: null
   target: gedan
-  turn: 0
+  turn: '0'
   facing: S
   slow: true
   notes: null
@@ -163,7 +163,7 @@ steps:
   technique: manji_uke
   secondary_technique: null
   target: jodan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '16'
@@ -173,7 +173,7 @@ steps:
   technique: manji_uke
   secondary_technique: null
   target: jodan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '17'
@@ -193,7 +193,7 @@ steps:
   technique: juji_uke_gedan
   secondary_technique: null
   target: gedan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '19'
@@ -203,7 +203,7 @@ steps:
   technique: ryoken_kakiwake_uke
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   slow: true
   notes: null
@@ -214,7 +214,7 @@ steps:
   technique: ryoken_kakiwake_uke
   secondary_technique: null
   target: gedan
-  turn: 0
+  turn: '0'
   facing: N
   slow: true
   notes: null
@@ -225,7 +225,7 @@ steps:
   technique: ryoken_ryokoshi_kamae
   secondary_technique: null
   target: null
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '22'
@@ -235,7 +235,7 @@ steps:
   technique: furi_empi_uchi
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '23'
@@ -245,7 +245,7 @@ steps:
   technique: furi_empi_uchi
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '24'
@@ -255,7 +255,7 @@ steps:
   technique: ryoken_kakiwake_uke
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   slow: true
   notes: null
@@ -277,7 +277,7 @@ steps:
   technique: ryoken_koshi_kamae
   secondary_technique: null
   target: null
-  turn: 0
+  turn: '0'
   facing: S
   slow: true
   notes: null
@@ -288,7 +288,7 @@ steps:
   technique: yoko_geri_keage
   secondary_technique: uraken_yoko_mawashi_uchi
   target: chudan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '28'
@@ -298,7 +298,7 @@ steps:
   technique: oi_zuki
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: S
   kiai: true
   notes: null
@@ -320,7 +320,7 @@ steps:
   technique: ryoken_koshi_kamae
   secondary_technique: null
   target: null
-  turn: 0
+  turn: '0'
   facing: N
   slow: true
   notes: null
@@ -331,7 +331,7 @@ steps:
   technique: yoko_geri_keage
   secondary_technique: uraken_yoko_mawashi_uchi
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '32'
@@ -341,7 +341,7 @@ steps:
   technique: sokumen_zuki
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '33'
@@ -362,7 +362,7 @@ steps:
   technique: ryoken_koshi_kamae
   secondary_technique: null
   target: null
-  turn: 0
+  turn: '0'
   facing: S
   slow: true
   notes: null
@@ -373,7 +373,7 @@ steps:
   technique: yoko_geri_keage
   secondary_technique: uraken_yoko_mawashi_uchi
   target: chudan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '36'
@@ -383,7 +383,7 @@ steps:
   technique: sokumen_zuki
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '37'
@@ -393,7 +393,7 @@ steps:
   technique: shuto_uke
   secondary_technique: null
   target: jodan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '38'
@@ -403,7 +403,7 @@ steps:
   technique: tate_empi_uchi
   secondary_technique: null
   target: jodan
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '39'
@@ -413,7 +413,7 @@ steps:
   technique: ryote_koshi_kamae
   secondary_technique: null
   target: null
-  turn: 0
+  turn: '0'
   facing: S
   notes: null
 - id: '40'
@@ -433,7 +433,7 @@ steps:
   technique: yoko_geri_keage
   secondary_technique: uraken_yoko_mawashi_uchi
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   notes: null
 - id: '42'
@@ -443,7 +443,7 @@ steps:
   technique: oi_zuki
   secondary_technique: null
   target: chudan
-  turn: 0
+  turn: '0'
   facing: N
   kiai: true
   notes: null

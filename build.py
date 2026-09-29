@@ -53,6 +53,7 @@ TURN_DELTAS = {
     "right_225": 225,
     "left_270": -270,
     "right_270": 270,
+    "left_360": 0,
 }
 
 
@@ -743,6 +744,12 @@ def main():
                     "ja_en": "right 225°",
                     "ro": "right 225°",
                     "en": "right 225°",
+                },
+                "left_360": {
+                    "ja": "左360°",
+                    "ja_en": "left 360°",
+                    "ro": "left 360°",
+                    "en": "left 360°",
                 },
             },
             "FACING_MAP": {
