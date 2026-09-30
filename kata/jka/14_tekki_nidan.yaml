@@ -148,7 +148,7 @@ steps:
   turn: '0'
   facing: N
   slow: true
-  notes: Slow cross step to the right holding upper body posture
+  notes: null
 - id: '15'
   count: 15
   stance: kiba_dachi
@@ -228,7 +228,7 @@ steps:
   turn: '0'
   facing: N
   slow: true
-  notes: Slow cross step to the left holding upper body posture
+  notes: null
 - id: '23'
   count: 23
   stance: kiba_dachi
