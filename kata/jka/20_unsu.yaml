@@ -92,8 +92,8 @@ steps:
   technique: tate_shuto_uke
   secondary_technique: null
   target: chudan
-  turn: left_45
-  facing: NW
+  turn: left_90
+  facing: W
   notes: null
 - id: '9'
   count: 9
@@ -103,7 +103,7 @@ steps:
   secondary_technique: null
   target: chudan
   turn: '0'
-  facing: NW
+  facing: W
   notes: null
 - id: '10'
   count: 10
@@ -112,8 +112,8 @@ steps:
   technique: tate_shuto_uke
   secondary_technique: null
   target: chudan
-  turn: right_90
-  facing: NE
+  turn: right_180
+  facing: E
   notes: null
 - id: '11'
   count: 11
@@ -123,7 +123,7 @@ steps:
   secondary_technique: null
   target: chudan
   turn: '0'
-  facing: NE
+  facing: E
   notes: null
 - id: '12'
   count: 12
@@ -132,8 +132,8 @@ steps:
   technique: tate_shuto_uke
   secondary_technique: null
   target: chudan
-  turn: left_180
-  facing: SW
+  turn: left_90
+  facing: N
   notes: null
 - id: '13'
   count: 13
@@ -143,7 +143,7 @@ steps:
   secondary_technique: null
   target: chudan
   turn: '0'
-  facing: SW
+  facing: N
   notes: null
 - id: '14'
   count: 14
@@ -152,8 +152,8 @@ steps:
   technique: tate_shuto_uke
   secondary_technique: null
   target: chudan
-  turn: left_90
-  facing: SE
+  turn: right_180
+  facing: S
   notes: null
 - id: '15'
   count: 15
@@ -163,7 +163,7 @@ steps:
   secondary_technique: null
   target: chudan
   turn: '0'
-  facing: SE
+  facing: S
   notes: null
 - id: '16'
   count: 16
@@ -173,7 +173,7 @@ steps:
   secondary_technique: null
   target: chudan
   turn: '0'
-  facing: SE
+  facing: S
   notes: null
 - id: '17'
   count: 17
@@ -183,7 +183,7 @@ steps:
   secondary_technique: null
   target: chudan
   turn: left_180
-  facing: NW
+  facing: N
   notes: null
 - id: '18'
   count: 18
@@ -192,7 +192,7 @@ steps:
   technique: kaiun_no_te
   secondary_technique: null
   target: null
-  turn: right_45
+  turn: '0'
   facing: N
   slow: true
   notes: null
