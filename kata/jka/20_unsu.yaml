@@ -152,7 +152,7 @@ steps:
   technique: tate_shuto_uke
   secondary_technique: null
   target: chudan
-  turn: right_90
+  turn: left_90
   facing: SE
   notes: null
 - id: '15'
@@ -407,7 +407,7 @@ steps:
   technique: gedan_barai
   secondary_technique: null
   target: gedan
-  turn: left_90
+  turn: right_90
   facing: W
   notes: null
 - id: '40'

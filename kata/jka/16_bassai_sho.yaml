@@ -275,8 +275,8 @@ steps:
   technique: ryosho_tsukami_uke
   secondary_technique: null
   target: chudan
-  turn: left_135
-  facing: SE
+  turn: left_225
+  facing: NW
   slow: true
   notes: null
 - id: '27'
@@ -287,6 +287,6 @@ steps:
   secondary_technique: null
   target: chudan
   turn: right_90
-  facing: SW
+  facing: NE
   slow: true
   notes: null

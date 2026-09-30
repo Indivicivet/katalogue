@@ -238,8 +238,8 @@ steps:
   lead: left
   technique: haito_uke
   target: gedan
-  turn: left_270
-  facing: E
+  turn: left_180
+  facing: S
   notes: "todo : check technique name"
 - id: '27'
   count: 27
@@ -257,7 +257,7 @@ steps:
   technique: ryosho_bo_tsukami_uke
   target: chudan
   turn: right_90
-  facing: S
+  facing: W
   notes: "todo check this technique"
 - id: '29'
   count: 29

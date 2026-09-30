@@ -745,6 +745,18 @@ def main():
                     "ro": "right 225°",
                     "en": "right 225°",
                 },
+                "left_270": {
+                    "ja": "左270°",
+                    "ja_en": "left 270°",
+                    "ro": "left 270°",
+                    "en": "left 270°",
+                },
+                "right_270": {
+                    "ja": "右270°",
+                    "ja_en": "right 270°",
+                    "ro": "right 270°",
+                    "en": "right 270°",
+                },
                 "left_360": {
                     "ja": "左360°",
                     "ja_en": "left 360°",

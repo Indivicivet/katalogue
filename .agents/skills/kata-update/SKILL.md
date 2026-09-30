@@ -77,7 +77,7 @@ steps:
   - `0` or `advance`: No turn (straight ahead).
   - `left_90` / `right_90`: 90-degree turn.
   - `left_180` / `right_180`: 180-degree turn (disambiguates turning over left vs right shoulder).
-  - `left_45`, `right_45`, `left_135`, `right_135`, `left_225`, `right_225`.
+  - `left_45`, `right_45`, `left_135`, `right_135`, `left_225`, `right_225`, `left_270`, `right_270`, `left_360`.
 - Ensure the rotation from the previous facing equals the declared facing.
 
 ### 4. Human Review & Source Attribution
