@@ -1,0 +1,22 @@
+id: sourin_dai_ikken
+name: Sourin Dai Ikken
+kanji: 双輪大一剣
+furigana: そうりんだいいっけん
+style: asai_ryu
+order: 6
+status: early_draft
+last_updated: '2026-10-01'
+reviewer: null
+tags:
+  - asai_ryu
+  - kurumaisu
+steps:
+  - id: '1'
+    count: 1
+    stance: null
+    lead: null
+    technique: null
+    target: null
+    turn: null
+    facing: null
+    notes: Initial draft skeleton. Developed by Tetsuhiko Asai and Sadashige Kato for wheelchair (kurumaisu) karate.

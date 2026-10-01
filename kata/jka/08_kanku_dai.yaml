@@ -12,6 +12,9 @@ sources:
 tags:
 - kyu_grade
 - sentei
+- 3rd_kyu
+- 2nd_kyu
+- 1st_kyu
 steps:
 - id: '1'
   count: 1

@@ -12,6 +12,7 @@ sources:
 tags:
   - junro
   - asai_ryu
+  - 2nd_kyu
 steps:
   - id: '1'
     count: 1
