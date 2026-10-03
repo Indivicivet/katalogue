@@ -21,6 +21,8 @@ DATA_TECH_DIR = ROOT_DIR / "techniques"
 KATA_DIR = ROOT_DIR / "kata"
 TEMPLATES_DIR = ROOT_DIR / "templates"
 STATIC_DIR = ROOT_DIR / "static"
+BUILD_DIR = ROOT_DIR / "build"
+STANCES_BUILD_DIR = BUILD_DIR / "stances"
 DIST_DIR = ROOT_DIR / "dist"
 EQUIV_FILE = ROOT_DIR / "equivalents.yaml"
 
@@ -55,6 +57,71 @@ TURN_DELTAS = {
     "right_270": 270,
     "left_360": 0,
 }
+
+BELT_CONFIG = {
+    "10th_kyu": {
+        "key": "white",
+        "label_ja": "白帯 (十級)",
+        "label_en": "White Belt (10th Kyu)",
+        "stripes": 0,
+    },
+    "9th_kyu": {
+        "key": "orange",
+        "label_ja": "橙帯 (九級)",
+        "label_en": "Orange Belt (9th Kyu)",
+        "stripes": 0,
+    },
+    "8th_kyu": {
+        "key": "red",
+        "label_ja": "赤帯 (八級)",
+        "label_en": "Red Belt (8th Kyu)",
+        "stripes": 0,
+    },
+    "7th_kyu": {
+        "key": "yellow",
+        "label_ja": "黄帯 (七級)",
+        "label_en": "Yellow Belt (7th Kyu)",
+        "stripes": 0,
+    },
+    "6th_kyu": {
+        "key": "green",
+        "label_ja": "緑帯 (六級)",
+        "label_en": "Green Belt (6th Kyu)",
+        "stripes": 0,
+    },
+    "5th_kyu": {
+        "key": "purple",
+        "label_ja": "紫帯 (五級)",
+        "label_en": "Purple Belt (5th Kyu)",
+        "stripes": 0,
+    },
+    "4th_kyu": {
+        "key": "purple_white",
+        "label_ja": "紫白帯 (四級)",
+        "label_en": "Purple & White Belt (4th Kyu)",
+        "stripes": 0,
+    },
+    "3rd_kyu": {
+        "key": "brown",
+        "label_ja": "茶帯 (三級)",
+        "label_en": "Brown Belt (3rd Kyu)",
+        "stripes": 0,
+    },
+    "2nd_kyu": {
+        "key": "brown_stripe1",
+        "label_ja": "茶帯一本線 (二級)",
+        "label_en": "Brown Belt 1 Stripe (2nd Kyu)",
+        "stripes": 1,
+    },
+    "1st_kyu": {
+        "key": "brown_stripe2",
+        "label_ja": "茶帯二本線 (一級)",
+        "label_en": "Brown Belt 2 Stripes (1st Kyu)",
+        "stripes": 2,
+    },
+}
+
+BELT_SWATCHES = dict(BELT_CONFIG)
 
 
 def load_yaml(path: Path) -> dict:
@@ -183,6 +250,325 @@ STANCE_COLORS = {
 }
 
 
+def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
+    """
+    Generates foot primitives, category icons, and stance footprint diagrams
+    on the fly during build.
+    """
+    try:
+        from PIL import Image, ImageDraw
+    except ImportError:
+        print("Pillow not installed; skipping dynamic icon/stance asset generation.")
+        return
+
+    icons_dir.mkdir(parents=True, exist_ok=True)
+    stances_out_dir.mkdir(parents=True, exist_ok=True)
+
+    # 1. Foot primitive 1: entire foot (left)
+    img_full = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    d_full = ImageDraw.Draw(img_full)
+    d_full.ellipse(
+        [10, 18, 22, 29], fill=(59, 130, 246, 230), outline=(29, 78, 216, 255)
+    )
+    d_full.ellipse([7, 4, 23, 20], fill=(59, 130, 246, 230), outline=(29, 78, 216, 255))
+    d_full.ellipse([8, 2, 14, 9], fill=(37, 99, 235, 255))
+    img_full.save(icons_dir / "foot_left_full.png")
+
+    # 2. Foot primitive 2: ball of foot (left)
+    img_ball = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    d_ball = ImageDraw.Draw(img_ball)
+    d_ball.ellipse([7, 4, 23, 19], fill=(234, 88, 12, 240), outline=(194, 65, 12, 255))
+    d_ball.ellipse([8, 2, 14, 9], fill=(194, 65, 12, 255))
+    d_ball.ellipse([11, 20, 21, 28], outline=(148, 163, 184, 160), width=1)
+    img_ball.save(icons_dir / "foot_left_ball.png")
+
+    # Category icons
+    # Block
+    img_block = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    d_block = ImageDraw.Draw(img_block)
+    d_block.polygon(
+        [(16, 3), (27, 7), (24, 22), (16, 29), (8, 22), (5, 7)],
+        fill=(56, 189, 248, 220),
+        outline=(3, 105, 161, 255),
+    )
+    d_block.line([(16, 6), (16, 26)], fill=(255, 255, 255, 200), width=2)
+    img_block.save(icons_dir / "cat_block.png")
+
+    # Punch
+    img_punch = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    d_punch = ImageDraw.Draw(img_punch)
+    d_punch.rounded_rectangle(
+        [6, 8, 26, 24],
+        radius=4,
+        fill=(248, 113, 113, 220),
+        outline=(185, 28, 28, 255),
+    )
+    d_punch.line([(11, 8), (11, 19)], fill=(185, 28, 28, 255), width=2)
+    d_punch.line([(16, 8), (16, 19)], fill=(185, 28, 28, 255), width=2)
+    d_punch.line([(21, 8), (21, 19)], fill=(185, 28, 28, 255), width=2)
+    d_punch.arc([6, 14, 18, 25], 0, 180, fill=(185, 28, 28, 255), width=2)
+    img_punch.save(icons_dir / "cat_punch.png")
+
+    # Strike
+    img_strike = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    d_strike = ImageDraw.Draw(img_strike)
+    d_strike.polygon(
+        [(7, 16), (14, 5), (25, 12), (18, 27)],
+        fill=(251, 146, 60, 220),
+        outline=(194, 65, 12, 255),
+    )
+    d_strike.line([(4, 28), (28, 4)], fill=(234, 88, 12, 255), width=2)
+    img_strike.save(icons_dir / "cat_strike.png")
+
+    # Kick
+    img_kick = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    d_kick = ImageDraw.Draw(img_kick)
+    d_kick.polygon(
+        [(10, 4), (16, 4), (20, 18), (27, 21), (27, 27), (14, 27), (14, 17)],
+        fill=(251, 191, 36, 220),
+        outline=(180, 83, 9, 255),
+    )
+    img_kick.save(icons_dir / "cat_kick.png")
+
+    # Other
+    img_other = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+    d_other = ImageDraw.Draw(img_other)
+    d_other.ellipse(
+        [6, 6, 26, 26], fill=(226, 232, 240, 220), outline=(100, 116, 139, 255)
+    )
+    d_other.line([(16, 10), (16, 22)], fill=(100, 116, 139, 255), width=2)
+    d_other.line([(10, 16), (22, 16)], fill=(100, 116, 139, 255), width=2)
+    img_other.save(icons_dir / "cat_other.png")
+
+    # Right primitives via flipping
+    foot_right_full = img_full.transpose(Image.FLIP_LEFT_RIGHT)
+    foot_right_ball = img_ball.transpose(Image.FLIP_LEFT_RIGHT)
+
+    # 3. Generate Stance Footprint Diagrams (100x160 canvas)
+    stance_specs = [
+        (
+            "zenkutsu_dachi",
+            "left",
+            (img_full, 25, 20, 0),
+            (foot_right_full, 75, 110, 35),
+        ),
+        (
+            "zenkutsu_dachi",
+            "right",
+            (img_full, 25, 110, -35),
+            (foot_right_full, 75, 20, 0),
+        ),
+        (
+            "kokutsu_dachi",
+            "left",
+            (img_full, 50, 25, 0),
+            (foot_right_full, 50, 115, 90),
+        ),
+        (
+            "kokutsu_dachi",
+            "right",
+            (img_full, 50, 115, -90),
+            (foot_right_full, 50, 25, 0),
+        ),
+        ("kiba_dachi", "left", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
+        ("kiba_dachi", "right", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
+        ("kiba_dachi", "both", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
+        ("kiba_dachi", "none", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
+        (
+            "shiko_dachi",
+            "left",
+            (img_full, 18, 65, -45),
+            (foot_right_full, 82, 65, 45),
+        ),
+        (
+            "shiko_dachi",
+            "right",
+            (img_full, 18, 65, -45),
+            (foot_right_full, 82, 65, 45),
+        ),
+        (
+            "shiko_dachi",
+            "both",
+            (img_full, 18, 65, -45),
+            (foot_right_full, 82, 65, 45),
+        ),
+        ("fudo_dachi", "left", (img_full, 25, 30, 15), (foot_right_full, 75, 105, 45)),
+        (
+            "fudo_dachi",
+            "right",
+            (img_full, 25, 105, -45),
+            (foot_right_full, 75, 30, -15),
+        ),
+        (
+            "sochin_dachi",
+            "left",
+            (img_full, 25, 30, 15),
+            (foot_right_full, 75, 105, 45),
+        ),
+        (
+            "sochin_dachi",
+            "right",
+            (img_full, 25, 105, -45),
+            (foot_right_full, 75, 30, -15),
+        ),
+        (
+            "neko_ashi_dachi",
+            "left",
+            (img_ball, 45, 35, 0),
+            (foot_right_full, 55, 95, 45),
+        ),
+        (
+            "neko_ashi_dachi",
+            "right",
+            (img_full, 45, 95, -45),
+            (foot_right_ball, 55, 35, 0),
+        ),
+        (
+            "sanchin_dachi",
+            "left",
+            (img_full, 30, 40, 15),
+            (foot_right_full, 70, 90, 15),
+        ),
+        (
+            "sanchin_dachi",
+            "right",
+            (img_full, 30, 90, -15),
+            (foot_right_full, 70, 40, -15),
+        ),
+        (
+            "hangetsu_dachi",
+            "left",
+            (img_full, 28, 35, 15),
+            (foot_right_full, 72, 95, 20),
+        ),
+        (
+            "hangetsu_dachi",
+            "right",
+            (img_full, 28, 95, -20),
+            (foot_right_full, 72, 35, -15),
+        ),
+        (
+            "kosa_dachi",
+            "left",
+            (img_full, 42, 55, 15),
+            (foot_right_ball, 58, 75, 20),
+        ),
+        (
+            "kosa_dachi",
+            "right",
+            (img_ball, 42, 75, -20),
+            (foot_right_full, 58, 55, -15),
+        ),
+        ("tsuru_ashi_dachi", "left", (img_full, 50, 65, 0), None),
+        ("tsuru_ashi_dachi", "right", None, (foot_right_full, 50, 65, 0)),
+        ("gankaku_dachi", "left", (img_full, 50, 65, 0), None),
+        ("gankaku_dachi", "right", None, (foot_right_full, 50, 65, 0)),
+        ("heisoku_dachi", "both", (img_full, 35, 65, 0), (foot_right_full, 65, 65, 0)),
+        ("heisoku_dachi", "left", (img_full, 35, 65, 0), (foot_right_full, 65, 65, 0)),
+        (
+            "heisoku_dachi",
+            "right",
+            (img_full, 35, 65, 0),
+            (foot_right_full, 65, 65, 0),
+        ),
+        ("heisoku_dachi", "none", (img_full, 35, 65, 0), (foot_right_full, 65, 65, 0)),
+        (
+            "musubi_dachi",
+            "both",
+            (img_full, 38, 65, -25),
+            (foot_right_full, 62, 65, 25),
+        ),
+        (
+            "musubi_dachi",
+            "left",
+            (img_full, 38, 65, -25),
+            (foot_right_full, 62, 65, 25),
+        ),
+        (
+            "musubi_dachi",
+            "right",
+            (img_full, 38, 65, -25),
+            (foot_right_full, 62, 65, 25),
+        ),
+        (
+            "musubi_dachi",
+            "none",
+            (img_full, 38, 65, -25),
+            (foot_right_full, 62, 65, 25),
+        ),
+        (
+            "hachiji_dachi",
+            "both",
+            (img_full, 28, 65, -15),
+            (foot_right_full, 72, 65, 15),
+        ),
+        (
+            "hachiji_dachi",
+            "left",
+            (img_full, 28, 65, -15),
+            (foot_right_full, 72, 65, 15),
+        ),
+        (
+            "hachiji_dachi",
+            "right",
+            (img_full, 28, 65, -15),
+            (foot_right_full, 72, 65, 15),
+        ),
+        (
+            "hachiji_dachi",
+            "none",
+            (img_full, 28, 65, -15),
+            (foot_right_full, 72, 65, 15),
+        ),
+        ("heiko_dachi", "both", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
+        ("heiko_dachi", "left", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
+        ("heiko_dachi", "right", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
+        ("heiko_dachi", "none", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
+        ("moto_dachi", "left", (img_full, 35, 40, 0), (foot_right_full, 65, 90, 25)),
+        ("moto_dachi", "right", (img_full, 35, 90, -25), (foot_right_full, 65, 40, 0)),
+        ("renoji_dachi", "left", (img_full, 45, 45, 0), (foot_right_full, 55, 95, 90)),
+        (
+            "renoji_dachi",
+            "right",
+            (img_full, 45, 95, -90),
+            (foot_right_full, 55, 45, 0),
+        ),
+        ("teiji_dachi", "left", (img_full, 40, 45, 0), (foot_right_full, 60, 95, 90)),
+        ("teiji_dachi", "right", (img_full, 40, 95, -90), (foot_right_full, 60, 45, 0)),
+        (
+            "ashi_orishiki",
+            "left",
+            (img_full, 35, 40, 0),
+            (foot_right_ball, 65, 100, 0),
+        ),
+        (
+            "ashi_orishiki",
+            "right",
+            (img_ball, 35, 100, 0),
+            (foot_right_full, 65, 40, 0),
+        ),
+        ("orishiki", "left", (img_full, 35, 40, 0), (foot_right_ball, 65, 100, 0)),
+        ("orishiki", "right", (img_ball, 35, 100, 0), (foot_right_full, 65, 40, 0)),
+        ("hizakutsu", "left", (img_full, 35, 40, 0), (foot_right_ball, 65, 100, 0)),
+        ("hizakutsu", "right", (img_ball, 35, 100, 0), (foot_right_full, 65, 40, 0)),
+    ]
+
+    for st_id, lead, l_spec, r_spec in stance_specs:
+        img = Image.new("RGBA", (100, 160), (0, 0, 0, 0))
+        if l_spec:
+            f_img, x, y, rot = l_spec
+            rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
+            w, h = rotated.size
+            img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
+        if r_spec:
+            f_img, x, y, rot = r_spec
+            rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
+            w, h = rotated.size
+            img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
+
+        img.save(stances_out_dir / f"{st_id}_{lead}.png")
+
+
 def compute_analytics(kata_list: list, stances: dict, techniques: dict) -> dict:
     total_moves = sum(k["move_count"] for k in kata_list)
     total_defined_moves = sum(
@@ -262,6 +648,7 @@ def main():
     print("Starting Katalogue build...")
 
     # 1. Load Master Dictionaries
+    generate_stance_and_icon_assets(STATIC_DIR / "icons", STANCES_BUILD_DIR)
     stances = load_yaml(DATA_TECH_DIR / "stances.yaml")
     techniques = load_yaml(DATA_TECH_DIR / "techniques.yaml")
     equivalents_groups = load_yaml(EQUIV_FILE) if EQUIV_FILE.exists() else []
@@ -401,6 +788,22 @@ def main():
             else:
                 rot_warn = None
 
+            # Stance thumbnail path resolution
+            lead_val = step.get("lead") or "both"
+            if st_key:
+                st_filename = f"{st_key}_{lead_val}.png"
+                if not (STANCES_BUILD_DIR / st_filename).exists():
+                    st_filename = f"{st_key}_both.png"
+                    if not (STANCES_BUILD_DIR / st_filename).exists():
+                        st_filename = f"{st_key}_left.png"
+                stance_img_rel = f"static/stances/{st_filename}"
+            else:
+                stance_img_rel = None
+
+            tech_icon_rel = (
+                f"static/icons/cat_{cat}.png" if cat != "placeholder" else None
+            )
+
             rendered_steps.append(
                 {
                     **step,
@@ -412,6 +815,8 @@ def main():
                     "sec_tech_is_distinctive": sec_tech_key in distinctive_techniques,
                     "category": cat,
                     "rotation_warning": rot_warn,
+                    "stance_img": stance_img_rel,
+                    "tech_icon": tech_icon_rel,
                 }
             )
 
@@ -485,6 +890,11 @@ def main():
             if sid in stances
         ]
 
+        # Category metrics
+        data["category_counts"] = cat_counts
+        data["category_percentages"] = cat_percents
+        data["category_percents"] = cat_percents
+
         # Base count calculation
         base_counts = set(s.get("count") for s in steps if s.get("count") is not None)
         data["base_count"] = max(base_counts) if base_counts else len(steps)
@@ -494,9 +904,26 @@ def main():
         data["defined_count"] = defined_count
         data["rendered_steps"] = rendered_steps
         data["kiai_steps"] = kiai_steps
-        data["category_counts"] = cat_counts
-        data["category_percents"] = cat_percents
         data["stance_ranks"] = kata_stance_ranks
+
+        # Determine belt bands from kyu tags
+        belt_bands = []
+        for kyu_tag in [
+            "10th_kyu",
+            "9th_kyu",
+            "8th_kyu",
+            "7th_kyu",
+            "6th_kyu",
+            "5th_kyu",
+            "4th_kyu",
+            "3rd_kyu",
+            "2nd_kyu",
+            "1st_kyu",
+        ]:
+            if kyu_tag in kata_tags and kyu_tag in BELT_CONFIG:
+                belt_bands.append(BELT_CONFIG[kyu_tag])
+        data["belt_bands"] = belt_bands
+        data["belt_band"] = belt_bands[0] if belt_bands else None
 
         all_kata.append(data)
 
@@ -819,6 +1246,7 @@ def main():
                 "shitoryu": {"ja": "糸東流", "ja_en": "shitoryu"},
                 "junro": {"ja": "順路", "ja_en": "junro"},
                 "asai_ryu": {"ja": "浅井流", "ja_en": "asai_ryu"},
+                "kurumaisu": {"ja": "車椅子空手", "ja_en": "wheelchair"},
                 "extra_kata": {"ja": "追加型", "ja_en": "extra_kata"},
                 "kyu_grade": {"ja": "級位", "ja_en": "kyu_grade"},
                 "black_belt": {"ja": "有段", "ja_en": "black_belt"},
@@ -867,6 +1295,8 @@ def main():
                     "en": "Other",
                 },
             },
+            "BELT_CONFIG": BELT_CONFIG,
+            "BELT_SWATCHES": BELT_SWATCHES,
         }
     )
 
@@ -877,12 +1307,15 @@ def main():
     for s in set(k["style"] for k in all_kata):
         (DIST_DIR / "kata" / s).mkdir(parents=True, exist_ok=True)
     (DIST_DIR / "tags").mkdir(parents=True, exist_ok=True)
-    (DIST_DIR / "static").mkdir(parents=True, exist_ok=True)
+    # Copy Static Assets recursively (preserving icons/)
+    shutil.copytree(STATIC_DIR, DIST_DIR / "static", dirs_exist_ok=True)
 
-    # Copy Static Assets
-    for asset in STATIC_DIR.glob("*"):
-        if asset.is_file():
-            shutil.copy(asset, DIST_DIR / "static" / asset.name)
+    # Deploy dynamically generated stances from build/stances to dist/static/stances
+    dist_stances_dir = DIST_DIR / "static" / "stances"
+    dist_stances_dir.mkdir(parents=True, exist_ok=True)
+    if STANCES_BUILD_DIR.exists():
+        for st_file in STANCES_BUILD_DIR.glob("*.png"):
+            shutil.copy(st_file, dist_stances_dir / st_file.name)
 
     # 8. Render Catalog Index & Stats Pages
     print("Rendering HTML pages:")

@@ -68,7 +68,8 @@
         <div class="catalog-item-card" id="{{ tech.id }}">
           <a id="{{ tech.id | replace('_', '-') }}" style="position: relative; top: -80px; display: block; visibility: hidden;"></a>
           <div class="catalog-item-header">
-            <div class="catalog-item-title">
+            <div class="catalog-item-title" style="display: flex; align-items: center; gap: 0.5rem;">
+              <img src="{{ rel_root }}static/icons/cat_{{ tech.category }}.png" alt="{{ tech.category }}" class="tech-cat-icon">
               <span class="term"
                     data-kanji="{{ tech.data.kanji }}"
                     data-furigana="{{ tech.data.furigana }}"

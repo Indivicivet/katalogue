@@ -37,6 +37,18 @@
       <span class="text-ro">{{ STATUS_MAP[kata.status].ro }}</span>
       <span class="text-en">{{ STATUS_MAP[kata.status].en }}</span>
     </span>
+    {% if kata.belt_bands %}
+      {% for b in kata.belt_bands %}
+        <span class="belt-ribbon belt-{{ b.key }}" title="{{ b.key }}">
+          {% if b.stripes == 1 %}
+            <span class="belt-stripe-1"></span>
+          {% elif b.stripes == 2 %}
+            <span class="belt-stripe-2a"></span>
+            <span class="belt-stripe-2b"></span>
+          {% endif %}
+        </span>
+      {% endfor %}
+    {% endif %}
   </h1>
 </div>
 
@@ -232,10 +244,21 @@
   </div>
 
   <!-- Tags -->
-  <div style="margin-top: 1rem;">
+  <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
     {% for t in kata.tags %}
       {% set tag_info = TAG_MAP.get(t) %}
       <a href="{{ rel_root }}tags/{{ t }}.html" class="tag-link">
+        {% if BELT_SWATCHES.get(t) %}
+          {% set b = BELT_SWATCHES.get(t) %}
+          <span class="belt-ribbon belt-{{ b.key }}" style="margin-right: 0.35rem;" title="{{ b.key }}">
+            {% if b.stripes == 1 %}
+              <span class="belt-stripe-1"></span>
+            {% elif b.stripes == 2 %}
+              <span class="belt-stripe-2a"></span>
+              <span class="belt-stripe-2b"></span>
+            {% endif %}
+          </span>
+        {% endif %}
         {% if tag_info %}
           <span class="text-ja">#{{ tag_info.ja }}</span>
           <span class="text-ja-en">#{{ t }}</span>
@@ -320,31 +343,31 @@
     <span class="text-ro">Categories:</span>
     <span class="text-en">Categories:</span>
   </span>
-  <div class="legend-item"><span class="legend-dot block"></span>
+  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_block.png" alt="block" class="tech-cat-icon"><span class="legend-dot block"></span>
     <span class="text-ja">受け</span>
     <span class="text-ja-en">受け (Block)</span>
     <span class="text-ro">Block (受け)</span>
     <span class="text-en">Block</span>
   </div>
-  <div class="legend-item"><span class="legend-dot punch"></span>
+  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_punch.png" alt="punch" class="tech-cat-icon"><span class="legend-dot punch"></span>
     <span class="text-ja">突き</span>
     <span class="text-ja-en">突き (Punch)</span>
     <span class="text-ro">Punch (突き)</span>
     <span class="text-en">Punch</span>
   </div>
-  <div class="legend-item"><span class="legend-dot strike"></span>
+  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_strike.png" alt="strike" class="tech-cat-icon"><span class="legend-dot strike"></span>
     <span class="text-ja">打ち</span>
     <span class="text-ja-en">打ち (Strike)</span>
     <span class="text-ro">Strike (打ち)</span>
     <span class="text-en">Strike</span>
   </div>
-  <div class="legend-item"><span class="legend-dot kick"></span>
+  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_kick.png" alt="kick" class="tech-cat-icon"><span class="legend-dot kick"></span>
     <span class="text-ja">蹴り</span>
     <span class="text-ja-en">蹴り (Kick)</span>
     <span class="text-ro">Kick (蹴り)</span>
     <span class="text-en">Kick</span>
   </div>
-  <div class="legend-item"><span class="legend-dot other"></span>
+  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_other.png" alt="other" class="tech-cat-icon"><span class="legend-dot other"></span>
     <span class="text-ja">その他</span>
     <span class="text-ja-en">その他 (Other)</span>
     <span class="text-ro">Other (構え・その他)</span>
@@ -407,33 +430,42 @@
         <td style="font-weight: 700;">
           {{ s.id }}
         </td>
-        <td>
-          {% if s.stance_data %}
-            <a href="{{ rel_root }}stances.html#{{ s.stance }}" class="term-link">
-              <span class="term"
-                    data-kanji="{{ s.stance_data.kanji }}"
-                    data-furigana="{{ s.stance_data.furigana }}"
-                    data-romaji="{{ s.stance_data.romaji }}"
-                    data-en="{{ s.stance_data.en }}">
-                <span class="text-ja"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby></span>
-                <span class="text-ja-en"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.stance_data.romaji }})</span></span>
-                <span class="text-ro">{{ s.stance_data.romaji }}</span>
-                <span class="text-en">{{ s.stance_data.en }}</span>
-              </span>
-            </a>
-            {% if s.st_is_distinctive %}
-              <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+        <td style="vertical-align: middle;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            {% if s.stance_img %}
+              <div class="stance-thumb-wrap" title="{{ s.stance_data.romaji or s.stance }}">
+                <img src="{{ rel_root }}{{ s.stance_img }}" alt="{{ s.stance }}" class="stance-thumb-img">
+              </div>
             {% endif %}
-          {% elif s.stance %}
-            {{ s.stance }}
-          {% else %}
-            <span class="placeholder-tag">
-              <span class="text-ja">⚠️ 未確定</span>
-              <span class="text-ja-en">⚠️ PLACEHOLDER</span>
-              <span class="text-ro">⚠️ PLACEHOLDER</span>
-              <span class="text-en">⚠️ PLACEHOLDER</span>
-            </span>
-          {% endif %}
+            <div>
+              {% if s.stance_data %}
+                <a href="{{ rel_root }}stances.html#{{ s.stance }}" class="term-link">
+                  <span class="term"
+                        data-kanji="{{ s.stance_data.kanji }}"
+                        data-furigana="{{ s.stance_data.furigana }}"
+                        data-romaji="{{ s.stance_data.romaji }}"
+                        data-en="{{ s.stance_data.en }}">
+                    <span class="text-ja"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby></span>
+                    <span class="text-ja-en"><ruby>{{ s.stance_data.kanji }}<rt>{{ s.stance_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.stance_data.romaji }})</span></span>
+                    <span class="text-ro">{{ s.stance_data.romaji }}</span>
+                    <span class="text-en">{{ s.stance_data.en }}</span>
+                  </span>
+                </a>
+                {% if s.st_is_distinctive %}
+                  <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+                {% endif %}
+              {% elif s.stance %}
+                {{ s.stance }}
+              {% else %}
+                <span class="placeholder-tag">
+                  <span class="text-ja">⚠️ 未確定</span>
+                  <span class="text-ja-en">⚠️ PLACEHOLDER</span>
+                  <span class="text-ro">⚠️ PLACEHOLDER</span>
+                  <span class="text-en">⚠️ PLACEHOLDER</span>
+                </span>
+              {% endif %}
+            </div>
+          </div>
         </td>
         <td style="text-transform: capitalize; color: var(--text-secondary);">
           {% if s.lead and LEAD_MAP.get(s.lead) %}
@@ -445,55 +477,62 @@
             —
           {% endif %}
         </td>
-        <td>
-          {% if s.tech_data %}
-            <a href="{{ rel_root }}techniques.html#{{ s.technique }}" class="term-link">
-              <span class="term"
-                    data-kanji="{{ s.tech_data.kanji }}"
-                    data-furigana="{{ s.tech_data.furigana }}"
-                    data-romaji="{{ s.tech_data.romaji }}"
-                    data-en="{{ s.tech_data.en }}">
-                <span class="text-ja"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby></span>
-                <span class="text-ja-en"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.tech_data.romaji }})</span></span>
-                <span class="text-ro">{{ s.tech_data.romaji }}</span>
-                <span class="text-en">{{ s.tech_data.en }}</span>
-              </span>
-            </a>
-            {% if s.tech_is_distinctive %}
-              <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+        <td style="vertical-align: middle;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            {% if s.tech_icon %}
+              <img src="{{ rel_root }}{{ s.tech_icon }}" alt="{{ s.category }}" class="tech-cat-icon" title="{{ s.category | capitalize }}">
             {% endif %}
-          {% elif s.technique %}
-            {{ s.technique }}
-          {% else %}
-            <span class="placeholder-tag">
-              <span class="text-ja">⚠️ 未確定</span>
-              <span class="text-ja-en">⚠️ PLACEHOLDER</span>
-              <span class="text-ro">⚠️ PLACEHOLDER</span>
-              <span class="text-en">⚠️ PLACEHOLDER</span>
-            </span>
-          {% endif %}
-          {% if s.sec_tech_data or s.secondary_technique %}
-            <span class="text-ja">・</span><span class="text-ja-en">・</span><span class="text-ro"> and </span><span class="text-en"> and </span>
-            {% if s.sec_tech_data %}
-              <a href="{{ rel_root }}techniques.html#{{ s.secondary_technique }}" class="term-link">
-                <span class="term"
-                      data-kanji="{{ s.sec_tech_data.kanji }}"
-                      data-furigana="{{ s.sec_tech_data.furigana }}"
-                      data-romaji="{{ s.sec_tech_data.romaji }}"
-                      data-en="{{ s.sec_tech_data.en }}">
-                  <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
-                  <span class="text-ja-en"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.sec_tech_data.romaji }})</span></span>
-                  <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
-                  <span class="text-en">{{ s.sec_tech_data.en }}</span>
+            <div>
+              {% if s.tech_data %}
+                <a href="{{ rel_root }}techniques.html#{{ s.technique }}" class="term-link">
+                  <span class="term"
+                        data-kanji="{{ s.tech_data.kanji }}"
+                        data-furigana="{{ s.tech_data.furigana }}"
+                        data-romaji="{{ s.tech_data.romaji }}"
+                        data-en="{{ s.tech_data.en }}">
+                    <span class="text-ja"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby></span>
+                    <span class="text-ja-en"><ruby>{{ s.tech_data.kanji }}<rt>{{ s.tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.tech_data.romaji }})</span></span>
+                    <span class="text-ro">{{ s.tech_data.romaji }}</span>
+                    <span class="text-en">{{ s.tech_data.en }}</span>
+                  </span>
+                </a>
+                {% if s.tech_is_distinctive %}
+                  <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+                {% endif %}
+              {% elif s.technique %}
+                {{ s.technique }}
+              {% else %}
+                <span class="placeholder-tag">
+                  <span class="text-ja">⚠️ 未確定</span>
+                  <span class="text-ja-en">⚠️ PLACEHOLDER</span>
+                  <span class="text-ro">⚠️ PLACEHOLDER</span>
+                  <span class="text-en">⚠️ PLACEHOLDER</span>
                 </span>
-              </a>
-              {% if s.sec_tech_is_distinctive %}
-                <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
               {% endif %}
-            {% else %}
-              {{ s.secondary_technique }}
-            {% endif %}
-          {% endif %}
+              {% if s.sec_tech_data or s.secondary_technique %}
+                <span class="text-ja">・</span><span class="text-ja-en">・</span><span class="text-ro"> and </span><span class="text-en"> and </span>
+                {% if s.sec_tech_data %}
+                  <a href="{{ rel_root }}techniques.html#{{ s.secondary_technique }}" class="term-link">
+                    <span class="term"
+                          data-kanji="{{ s.sec_tech_data.kanji }}"
+                          data-furigana="{{ s.sec_tech_data.furigana }}"
+                          data-romaji="{{ s.sec_tech_data.romaji }}"
+                          data-en="{{ s.sec_tech_data.en }}">
+                      <span class="text-ja"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby></span>
+                      <span class="text-ja-en"><ruby>{{ s.sec_tech_data.kanji }}<rt>{{ s.sec_tech_data.furigana }}</rt></ruby> <span class="sub-term">({{ s.sec_tech_data.romaji }})</span></span>
+                      <span class="text-ro">{{ s.sec_tech_data.romaji }}</span>
+                      <span class="text-en">{{ s.sec_tech_data.en }}</span>
+                    </span>
+                  </a>
+                  {% if s.sec_tech_is_distinctive %}
+                    <span class="distinctive-badge" title="Only appears in this kata">⭐</span>
+                  {% endif %}
+                {% else %}
+                  {{ s.secondary_technique }}
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
         </td>
         <td style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
           {% if s.target and TARGET_MAP.get(s.target) %}
