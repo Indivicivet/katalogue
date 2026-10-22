@@ -26,6 +26,14 @@ STANCES_BUILD_DIR = BUILD_DIR / "stances"
 DIST_DIR = ROOT_DIR / "dist"
 EQUIV_FILE = ROOT_DIR / "equivalents.yaml"
 
+CATEGORY_EMOJI = {
+    "block": "✋",
+    "punch": "👊",
+    "strike": "✊",
+    "kick": "🦵",
+    "other": "➕",
+}
+
 COMPASS_ANGLES = {
     "N": 0,
     "NE": 45,
@@ -848,6 +856,8 @@ def main():
                 f"static/icons/cat_{cat}.png" if cat != "placeholder" else None
             )
 
+            tech_emoji = CATEGORY_EMOJI.get(cat)
+
             rendered_steps.append(
                 {
                     **step,
@@ -861,6 +871,7 @@ def main():
                     "rotation_warning": rot_warn,
                     "stance_img": stance_img_rel,
                     "tech_icon": tech_icon_rel,
+                    "tech_emoji": tech_emoji,
                 }
             )
 
@@ -1313,30 +1324,35 @@ def main():
                     "ja_en": "受け (Block)",
                     "ro": "Block (受け)",
                     "en": "Block",
+                    "emoji": "✋",
                 },
                 "punch": {
                     "ja": "突き",
                     "ja_en": "突き (Punch)",
                     "ro": "Punch (突き)",
                     "en": "Punch",
+                    "emoji": "👊",
                 },
                 "strike": {
                     "ja": "打ち",
                     "ja_en": "打ち (Strike)",
                     "ro": "Strike (打ち)",
                     "en": "Strike",
+                    "emoji": "✊",
                 },
                 "kick": {
                     "ja": "蹴り",
                     "ja_en": "蹴り (Kick)",
                     "ro": "Kick (蹴り)",
                     "en": "Kick",
+                    "emoji": "🦵",
                 },
                 "other": {
                     "ja": "その他",
                     "ja_en": "その他 (Other)",
                     "ro": "Other (その他)",
                     "en": "Other",
+                    "emoji": "➕",
                 },
             },
             "BELT_CONFIG": BELT_CONFIG,

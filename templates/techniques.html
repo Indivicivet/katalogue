@@ -69,7 +69,11 @@
           <a id="{{ tech.id | replace('_', '-') }}" style="position: relative; top: -80px; display: block; visibility: hidden;"></a>
           <div class="catalog-item-header">
             <div class="catalog-item-title" style="display: flex; align-items: center; gap: 0.5rem;">
-              <img src="{{ rel_root }}static/icons/cat_{{ tech.category }}.png" alt="{{ tech.category }}" class="tech-cat-icon">
+              {% if cat_info and cat_info.emoji %}
+                <span class="tech-cat-emoji cat-{{ tech.category }}" title="{{ tech.category | capitalize }}">{{ cat_info.emoji }}</span>
+              {% else %}
+                <img src="{{ rel_root }}static/icons/cat_{{ tech.category }}.png" alt="{{ tech.category }}" class="tech-cat-icon">
+              {% endif %}
               <span class="term"
                     data-kanji="{{ tech.data.kanji }}"
                     data-furigana="{{ tech.data.furigana }}"

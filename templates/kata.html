@@ -343,31 +343,31 @@
     <span class="text-ro">Categories:</span>
     <span class="text-en">Categories:</span>
   </span>
-  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_block.png" alt="block" class="tech-cat-icon"><span class="legend-dot block"></span>
+  <div class="legend-item"><span class="tech-cat-emoji cat-block" title="Block">✋</span><span class="legend-dot block"></span>
     <span class="text-ja">受け</span>
     <span class="text-ja-en">受け (Block)</span>
     <span class="text-ro">Block (受け)</span>
     <span class="text-en">Block</span>
   </div>
-  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_punch.png" alt="punch" class="tech-cat-icon"><span class="legend-dot punch"></span>
+  <div class="legend-item"><span class="tech-cat-emoji cat-punch" title="Punch">👊</span><span class="legend-dot punch"></span>
     <span class="text-ja">突き</span>
     <span class="text-ja-en">突き (Punch)</span>
     <span class="text-ro">Punch (突き)</span>
     <span class="text-en">Punch</span>
   </div>
-  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_strike.png" alt="strike" class="tech-cat-icon"><span class="legend-dot strike"></span>
+  <div class="legend-item"><span class="tech-cat-emoji cat-strike" title="Strike">✊</span><span class="legend-dot strike"></span>
     <span class="text-ja">打ち</span>
     <span class="text-ja-en">打ち (Strike)</span>
     <span class="text-ro">Strike (打ち)</span>
     <span class="text-en">Strike</span>
   </div>
-  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_kick.png" alt="kick" class="tech-cat-icon"><span class="legend-dot kick"></span>
+  <div class="legend-item"><span class="tech-cat-emoji cat-kick" title="Kick">🦵</span><span class="legend-dot kick"></span>
     <span class="text-ja">蹴り</span>
     <span class="text-ja-en">蹴り (Kick)</span>
     <span class="text-ro">Kick (蹴り)</span>
     <span class="text-en">Kick</span>
   </div>
-  <div class="legend-item"><img src="{{ rel_root }}static/icons/cat_other.png" alt="other" class="tech-cat-icon"><span class="legend-dot other"></span>
+  <div class="legend-item"><span class="tech-cat-emoji cat-other" title="Other">➕</span><span class="legend-dot other"></span>
     <span class="text-ja">その他</span>
     <span class="text-ja-en">その他 (Other)</span>
     <span class="text-ro">Other (構え・その他)</span>
@@ -479,7 +479,9 @@
         </td>
         <td style="vertical-align: middle;">
           <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-            {% if s.tech_icon %}
+            {% if s.tech_emoji %}
+              <span class="tech-cat-emoji cat-{{ s.category }}" title="{{ s.category | capitalize }}">{{ s.tech_emoji }}</span>
+            {% elif s.tech_icon %}
               <img src="{{ rel_root }}{{ s.tech_icon }}" alt="{{ s.category }}" class="tech-cat-icon" title="{{ s.category | capitalize }}">
             {% endif %}
             <div>
