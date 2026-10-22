@@ -352,9 +352,8 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
         colored.putalpha(a)
         return colored
 
-    # Default blue full foot primitive saved to icons
+    # In-memory full foot primitive template
     img_full = colorize_foot(foot_primitive_base, (37, 99, 235))
-    img_full.save(icons_dir / "foot_left_full.png")
 
     # 2. Foot primitive 2: ball of foot (left)
     img_ball = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
