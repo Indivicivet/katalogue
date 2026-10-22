@@ -249,6 +249,50 @@ STANCE_COLORS = {
     "kake_dachi": "#e11d48",
 }
 
+# Kinematic Foot Primitive Metadata
+# Defines the contact mechanics, coordinate bounding box, and rotation anchors
+# for foot primitives within their source images and on the kata floor plane.
+# Future-proofed for the full embusen simulation & physics model.
+FOOT_PRIMITIVE_METADATA = {
+    "foot_left_full": {
+        "description": "Entire left foot grounded with full plantar contact.",
+        "dimensions": [32, 32],
+        # Coordinates (px) within the 32x32 primitive canvas
+        "heel_anchor": [16, 24],  # Primary pivot center for heel rotations
+        "ball_anchor": [15, 12],  # Ball/metatarsal pressure center
+        "vector_heading": 0,  # 0 deg = pointing North
+        "ground_contact": "full",
+        "default_pivot": "heel",  # Standard Shotokan/JKA turn pivot
+    },
+    "foot_left_ball": {
+        "description": "Left ball of foot grounded (kosho / chusoku); heel raised.",
+        "dimensions": [32, 32],
+        "heel_anchor": None,  # Heel is elevated off the ground
+        "ball_anchor": [15, 12],  # Primary pivot center for neko-ashi / kosa-dachi
+        "vector_heading": 0,
+        "ground_contact": "ball",
+        "default_pivot": "ball",
+    },
+    "foot_right_full": {
+        "description": "Entire right foot grounded (horizontally mirrored from left).",
+        "dimensions": [32, 32],
+        "heel_anchor": [16, 24],
+        "ball_anchor": [17, 12],
+        "vector_heading": 0,
+        "ground_contact": "full",
+        "default_pivot": "heel",
+    },
+    "foot_right_ball": {
+        "description": "Right ball of foot grounded; heel raised.",
+        "dimensions": [32, 32],
+        "heel_anchor": None,
+        "ball_anchor": [17, 12],
+        "vector_heading": 0,
+        "ground_contact": "ball",
+        "default_pivot": "ball",
+    },
+}
+
 
 def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
     """

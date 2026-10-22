@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>Embusen & Movement Deduction Study • Scratch Report</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0b1329; color: #e2e8f0; padding: 2rem; margin: 0; }
+.container { max-width: 1300px; margin: 0 auto; }
+.header { margin-bottom: 2.5rem; border-bottom: 1px solid #1e293b; padding-bottom: 1.5rem; }
+h1 { font-size: 2rem; margin: 0 0 0.5rem 0; color: #f8fafc; font-weight: 800; }
+.section { background: #111e38; border: 1px solid #1e293b; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; }
+h2 { font-size: 1.4rem; margin-top: 0; color: #38bdf8; display: flex; align-items: baseline; justify-content: space-between; }
+.flex-view { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+.diagram-col { flex: 1; min-width: 380px; }
+.table-col { flex: 1.4; min-width: 500px; max-height: 600px; overflow-y: auto; background: #0f172a; border-radius: 8px; border: 1px solid #1e293b; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th, td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #1e293b; text-align: left; }
+th { background: #1e293b; color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; position: sticky; top: 0; }
+tr:hover { background: #1e293b; }
+.badge-clean { background: #064e3b; color: #6ee7b7; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem; }
+.badge-ambiguous { background: #7f1d1d; color: #fca5a5; padding: 0.2rem 0.55rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem; }
+.pill { display: inline-block; padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.75rem; font-weight: 700; }
+.pill-left { background: #1e3a8a; color: #bfdbfe; }
+.pill-right { background: #78350f; color: #fde68a; }
+.pill-heel { background: #581c87; color: #e9d5ff; }
+.legend { display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 0.8rem; color: #94a3b8; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 0.35rem; }
+</style>
+</head>
+<body>
+<div class='container'>
+<div class='header'>
+<h1>🥋 Embusen & Movement Deduction Study</h1>
+<p style='color: #94a3b8; margin: 0.25rem 0 0 0;'>Independent Internal Prototype • Tracking left/right foot coordinates, heel-pivot rotations, and mathematical ambiguity boundaries across JKA kata.</p>
+</div>
+<div class='section'>
+<h2><span>Heian Shodan (平安初段) &bull; 21 Counts</span><span class='badge-clean'>81.0% Deduced Cleanly</span></h2>
+<div class='flex-view'>
+<div class='diagram-col'>
+<svg viewBox="0 0 466 578" xmlns="http://www.w3.org/2000/svg" style="background:#0f172a; border-radius:8px; width:100%; max-width:850px; height:auto; box-shadow:0 4px 6px -1px rgba(0,0,0,0.3); font-family:sans-serif;">
+<defs>
+<filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<line x1="0" y1="0" x2="0" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="50" y1="0" x2="50" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="100" y1="0" x2="100" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="150" y1="0" x2="150" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="200" y1="0" x2="200" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="250" y1="0" x2="250" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="300" y1="0" x2="300" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="350" y1="0" x2="350" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="400" y1="0" x2="400" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="450" y1="0" x2="450" y2="578" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="0" x2="466" y2="0" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="50" x2="466" y2="50" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="100" x2="466" y2="100" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="150" x2="466" y2="150" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="200" x2="466" y2="200" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="250" x2="466" y2="250" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="300" x2="466" y2="300" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="350" x2="466" y2="350" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="400" x2="466" y2="400" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="450" x2="466" y2="450" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="500" x2="466" y2="500" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="550" x2="466" y2="550" stroke="#1e293b" stroke-width="1" />
+<line x1="186.0" y1="348.0" x2="102.0" y2="348.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="102.0" y1="348.0" x2="186.0" y2="380.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="186.0" y1="380.0" x2="246.0" y2="380.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="246.0" y1="380.0" x2="330.0" y2="380.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="330.0" y1="380.0" x2="272.0" y2="354.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="272.0" y1="354.0" x2="272.0" y2="270.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="272.0" y1="270.0" x2="272.0" y2="186.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="272.0" y1="186.0" x2="272.0" y2="102.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="272.0" y1="102.0" x2="329.0" y2="78.4" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="329.0" y1="78.4" x2="388.4" y2="137.8" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="388.4" y1="137.8" x2="329.0" y2="115.2" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="329.0" y1="115.2" x2="269.6" y2="174.6" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="269.6" y1="174.6" x2="235.2" y2="173.6" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="235.2" y1="173.6" x2="235.2" y2="257.6" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="235.2" y1="257.6" x2="235.2" y2="341.6" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="235.2" y1="341.6" x2="235.2" y2="425.6" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="235.2" y1="425.6" x2="193.8" y2="442.1" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="193.8" y1="442.1" x2="193.8" y2="391.2" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="193.8" y1="391.2" x2="142.9" y2="442.1" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="142.9" y1="442.1" x2="142.9" y2="493.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<g transform="translate(144.0, 364.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(228.0, 332.0) rotate(300.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="186.0" cy="348.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="186.0" y="351.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<g transform="translate(144.0, 364.0) rotate(240.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(60.0, 332.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="102.0" cy="348.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="102.0" y="351.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<g transform="translate(144.0, 364.0) rotate(60.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(228.0, 396.0) rotate(90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="186.0" cy="380.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="186.0" y="383.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<g transform="translate(204.0, 364.0) rotate(60.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 396.0) rotate(90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="246.0" cy="380.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="246.0" y="383.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<g transform="translate(372.0, 364.0) rotate(90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 396.0) rotate(120.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="330.0" cy="380.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="330.0" y="383.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<g transform="translate(256.0, 312.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 396.0) rotate(30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="272.0" cy="354.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="272.0" y="357.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<g transform="translate(256.0, 312.0) rotate(-30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 228.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="272.0" cy="270.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="272.0" y="273.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">7</text>
+<g transform="translate(256.0, 144.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 228.0) rotate(30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="272.0" cy="186.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="272.0" y="189.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">8</text>
+<g transform="translate(256.0, 144.0) rotate(-30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 60.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="272.0" cy="102.0" r="9" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
+<text x="272.0" y="105.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">9</text>
+<g transform="translate(370.0, 96.8) rotate(135.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 60.0) rotate(165.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="329.0" cy="78.4" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="329.0" y="81.4" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">10</text>
+<g transform="translate(370.0, 96.8) rotate(105.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(406.8, 178.8) rotate(135.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="388.4" cy="137.8" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="388.4" y="140.8" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">11</text>
+<g transform="translate(370.0, 96.8) rotate(195.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 133.5) rotate(225.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="329.0" cy="115.2" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="329.0" y="118.2" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">12</text>
+<g transform="translate(251.2, 215.6) rotate(225.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(288.0, 133.5) rotate(255.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="269.6" cy="174.6" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="269.6" y="177.6" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">13</text>
+<g transform="translate(251.2, 215.6) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(219.2, 131.6) rotate(210.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="235.2" cy="173.6" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="235.2" y="176.6" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">14</text>
+<g transform="translate(251.2, 215.6) rotate(150.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(219.2, 299.6) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="235.2" cy="257.6" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="235.2" y="260.6" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">15</text>
+<g transform="translate(251.2, 383.6) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(219.2, 299.6) rotate(210.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="235.2" cy="341.6" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="235.2" y="344.6" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">16</text>
+<g transform="translate(251.2, 383.6) rotate(150.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(219.2, 467.6) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="235.2" cy="425.6" r="9" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
+<text x="235.2" y="428.6" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">17</text>
+<g transform="translate(168.3, 416.7) rotate(315.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(219.2, 467.6) rotate(405.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="193.8" cy="442.1" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="193.8" y="445.1" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">18</text>
+<g transform="translate(168.3, 416.7) rotate(-45.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(219.2, 365.7) rotate(45.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="193.8" cy="391.2" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="193.8" y="394.2" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">19</text>
+<g transform="translate(168.3, 416.7) rotate(135.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(117.4, 467.6) rotate(225.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="142.9" cy="442.1" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="142.9" y="445.1" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">20</text>
+<g transform="translate(168.3, 518.5) rotate(135.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(117.4, 467.6) rotate(225.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="142.9" cy="493.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="142.9" y="496.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">21</text>
+</svg>
+<div class='legend'>
+<span><span class='legend-dot' style='background:#3b82f6;'></span>Left Foot</span>
+<span><span class='legend-dot' style='background:#f59e0b;'></span>Right Foot</span>
+<span><span class='legend-dot' style='background:#ffffff;'></span>Heel Anchor Dot</span>
+<span><span class='legend-dot' style='background:#ef4444;'></span>Ambiguity Flag</span>
+</div></div>
+<div class='table-col'>
+<table>
+<thead><tr><th>#</th><th>Stance / Lead</th><th>Turn & Facing</th><th>Moving</th><th>Anchor Foot</th><th>Deduction Status / Ambiguity Flag</th></tr></thead><tbody>
+<tr><td><strong>1</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_90<br>&rarr; W</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Move 1: Opening leftward turn steps out with the left foot</span></td></tr>
+<tr><td><strong>2</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; W</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>3</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>right_180<br>&rarr; E</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>180° turn: front foot sweeps across the line; rear foot heel anchors and pivots</span></td></tr>
+<tr><td><strong>4</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; E</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>5</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; E</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>6</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_90<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>90° turn preserving lead: front foot steps to line, rear pivots on heel</span></td></tr>
+<tr><td><strong>7</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>8</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>9</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>10</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_225<br>&rarr; SE</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Angle geometry depends on whether stepping foot moves to center line or corner line.</span></td></tr>
+<tr><td><strong>11</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; SE</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>12</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>right_90<br>&rarr; SW</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>90° turn preserving lead: front foot steps to line, rear pivots on heel</span></td></tr>
+<tr><td><strong>13</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; SW</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>14</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_45<br>&rarr; S</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Angle geometry depends on whether stepping foot moves to center line or corner line.</span></td></tr>
+<tr><td><strong>15</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; S</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>16</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; S</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>17</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; S</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>18</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_225<br>&rarr; NW</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Angle geometry depends on whether stepping foot moves to center line or corner line.</span></td></tr>
+<tr><td><strong>19</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>right_90<br>&rarr; NE</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>90° turn with lead change: rear foot swings around anchor front heel</span></td></tr>
+<tr><td><strong>20</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>right_180<br>&rarr; SW</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>180° turn: front foot sweeps across the line; rear foot heel anchors and pivots</span></td></tr>
+<tr><td><strong>21</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_90<br>&rarr; SE</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>90° turn with lead change: rear foot swings around anchor front heel</span></td></tr>
+</tbody></table></div>
+</div></div>
+<div class='section'>
+<h2><span>Heian Yondan (平安四段) &bull; 27 Counts</span><span class='badge-clean'>63.0% Deduced Cleanly</span></h2>
+<div class='flex-view'>
+<div class='diagram-col'>
+<svg viewBox="0 0 428 884" xmlns="http://www.w3.org/2000/svg" style="background:#0f172a; border-radius:8px; width:100%; max-width:850px; height:auto; box-shadow:0 4px 6px -1px rgba(0,0,0,0.3); font-family:sans-serif;">
+<defs>
+<filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<line x1="0" y1="0" x2="0" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="50" y1="0" x2="50" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="100" y1="0" x2="100" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="150" y1="0" x2="150" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="200" y1="0" x2="200" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="250" y1="0" x2="250" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="300" y1="0" x2="300" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="350" y1="0" x2="350" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="400" y1="0" x2="400" y2="884" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="0" x2="428" y2="0" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="50" x2="428" y2="50" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="100" x2="428" y2="100" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="150" x2="428" y2="150" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="200" x2="428" y2="200" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="250" x2="428" y2="250" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="300" x2="428" y2="300" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="350" x2="428" y2="350" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="400" x2="428" y2="400" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="450" x2="428" y2="450" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="500" x2="428" y2="500" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="550" x2="428" y2="550" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="600" x2="428" y2="600" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="650" x2="428" y2="650" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="700" x2="428" y2="700" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="750" x2="428" y2="750" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="800" x2="428" y2="800" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="850" x2="428" y2="850" stroke="#1e293b" stroke-width="1" />
+<line x1="332.0" y1="824.0" x2="332.0" y2="824.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="332.0" y1="824.0" x2="352.0" y2="782.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="352.0" y1="782.0" x2="336.0" y2="704.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="336.0" y1="704.0" x2="336.0" y2="676.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="336.0" y1="676.0" x2="336.0" y2="616.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="336.0" y1="616.0" x2="352.0" y2="582.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="352.0" y1="582.0" x2="352.0" y2="522.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="352.0" y1="522.0" x2="352.0" y2="462.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="352.0" y1="462.0" x2="352.0" y2="378.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="352.0" y1="378.0" x2="352.0" y2="318.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="352.0" y1="318.0" x2="352.0" y2="234.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="352.0" y1="234.0" x2="352.0" y2="174.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="352.0" y1="174.0" x2="336.0" y2="180.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="336.0" y1="180.0" x2="336.0" y2="240.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="336.0" y1="240.0" x2="320.0" y2="318.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="320.0" y1="318.0" x2="320.0" y2="378.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="320.0" y1="378.0" x2="336.0" y2="300.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="336.0" y1="300.0" x2="336.0" y2="240.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="336.0" y1="240.0" x2="320.0" y2="162.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="320.0" y1="162.0" x2="320.0" y2="102.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="320.0" y1="102.0" x2="300.0" y2="144.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="300.0" y1="144.0" x2="228.0" y2="144.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="228.0" y1="144.0" x2="156.0" y2="144.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="156.0" y1="144.0" x2="96.0" y2="144.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="96.0" y1="144.0" x2="168.0" y2="144.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="168.0" y1="144.0" x2="240.0" y2="144.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<g transform="translate(296.0, 824.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 824.0) rotate(360.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="332.0" cy="824.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="332.0" y="827.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<g transform="translate(296.0, 824.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 824.0) rotate(90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="332.0" cy="824.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="332.0" y="827.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<g transform="translate(336.0, 740.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 824.0) rotate(30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="782.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="785.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<g transform="translate(336.0, 740.0) rotate(-90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 668.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="336.0" cy="704.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="336.0" y="707.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<g transform="translate(336.0, 684.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 668.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.4" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="336.0" cy="676.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="336.0" y="679.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<g transform="translate(336.0, 624.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 608.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.4" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="336.0" cy="616.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="336.0" y="619.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<g transform="translate(336.0, 624.0) rotate(-30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 540.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="582.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="585.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">7</text>
+<g transform="translate(336.0, 564.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.4" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 480.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="522.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="525.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">8</text>
+<g transform="translate(336.0, 504.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.4" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="462.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="465.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">9</text>
+<g transform="translate(336.0, 336.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 420.0) rotate(30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="378.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="381.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">10</text>
+<g transform="translate(336.0, 276.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 360.0) rotate(30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="318.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="321.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">11</text>
+<g transform="translate(336.0, 276.0) rotate(-30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(368.0, 192.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="234.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="237.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">12</text>
+<g transform="translate(336.0, 216.0) rotate(-20.0)">
+<ellipse cx="0" cy="-5.5" rx="5.0" ry="5.5" fill="#3b82f6" fill-opacity="0.9" stroke="#93c5fd" stroke-width="1.5" />
+<ellipse cx="0" cy="7.333333333333333" rx="3.3333333333333335" ry="4.4" fill="none" stroke="#93c5fd" stroke-width="1" stroke-dasharray="2,2" opacity="0.5" />
+</g>
+<g transform="translate(368.0, 132.0) rotate(-15.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="352.0" cy="174.0" r="9" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
+<text x="352.0" y="177.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">13</text>
+<g transform="translate(336.0, 216.0) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 144.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="336.0" cy="180.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="336.0" y="183.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">14</text>
+<g transform="translate(336.0, 276.0) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 204.0) rotate(210.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="336.0" cy="240.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="336.0" y="243.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">15</text>
+<g transform="translate(336.0, 276.0) rotate(150.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(304.0, 360.0) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="320.0" cy="318.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="320.0" y="321.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">16</text>
+<g transform="translate(336.0, 336.0) rotate(150.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(304.0, 420.0) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="320.0" cy="378.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="320.0" y="381.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">17</text>
+<g transform="translate(336.0, 336.0) rotate(-90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 264.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="336.0" cy="300.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="336.0" y="303.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">18</text>
+<g transform="translate(336.0, 276.0) rotate(-30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 204.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="336.0" cy="240.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="336.0" y="243.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">19</text>
+<g transform="translate(304.0, 120.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 204.0) rotate(30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="320.0" cy="162.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="320.0" y="165.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">20</text>
+<g transform="translate(304.0, 60.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 144.0) rotate(30.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="320.0" cy="102.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="320.0" y="105.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">21</text>
+<g transform="translate(264.0, 144.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(336.0, 144.0) rotate(360.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="300.0" cy="144.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="300.0" y="147.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">22</text>
+<g transform="translate(264.0, 144.0) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(192.0, 144.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="228.0" cy="144.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="228.0" y="147.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">23</text>
+<g transform="translate(120.0, 144.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(192.0, 144.0) rotate(360.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="156.0" cy="144.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="156.0" y="147.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">24</text>
+<g transform="translate(60.0, 144.0) rotate(270.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 144.0) rotate(300.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="144.0" r="9" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="147.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">25</text>
+<g transform="translate(204.0, 144.0) rotate(90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 144.0) rotate(180.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="168.0" cy="144.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="168.0" y="147.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">26</text>
+<g transform="translate(204.0, 144.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(276.0, 144.0) rotate(90.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="240.0" cy="144.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="240.0" y="147.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">27</text>
+</svg>
+<div class='legend'>
+<span><span class='legend-dot' style='background:#3b82f6;'></span>Left Foot</span>
+<span><span class='legend-dot' style='background:#f59e0b;'></span>Right Foot</span>
+<span><span class='legend-dot' style='background:#ffffff;'></span>Heel Anchor Dot</span>
+<span><span class='legend-dot' style='background:#ef4444;'></span>Ambiguity Flag</span>
+</div></div>
+<div class='table-col'>
+<table>
+<thead><tr><th>#</th><th>Stance / Lead</th><th>Turn & Facing</th><th>Moving</th><th>Anchor Foot</th><th>Deduction Status / Ambiguity Flag</th></tr></thead><tbody>
+<tr><td><strong>1</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_90<br>&rarr; W</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Move 1: Opening leftward turn steps out with the left foot</span></td></tr>
+<tr><td><strong>2</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>right_180<br>&rarr; E</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>180° turn: front foot sweeps across the line; rear foot heel anchors and pivots</span></td></tr>
+<tr><td><strong>3</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_90<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>90° turn with lead change: rear foot swings around anchor front heel</span></td></tr>
+<tr><td><strong>4</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>5</strong></td><td>tsuru_ashi_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>6</strong></td><td>tsuru_ashi_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>7</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>8</strong></td><td>tsuru_ashi_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>9</strong></td><td>tsuru_ashi_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>10</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>11</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>12</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>13</strong></td><td>kosa_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>14</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_180<br>&rarr; S</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>180° turn: front foot sweeps across the line; rear foot heel anchors and pivots</span></td></tr>
+<tr><td><strong>15</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; S</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>16</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; S</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>17</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; S</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>18</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>right_180<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>180° turn: front foot sweeps across the line; rear foot heel anchors and pivots</span></td></tr>
+<tr><td><strong>19</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>20</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>21</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>22</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_90<br>&rarr; W</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>90° turn preserving lead: front foot steps to line, rear pivots on heel</span></td></tr>
+<tr><td><strong>23</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; W</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>24</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; W</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>25</strong></td><td>zenkutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; W</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>26</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>left</small></td><td>left_180<br>&rarr; E</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>180° turn: front foot sweeps across the line; rear foot heel anchors and pivots</span></td></tr>
+<tr><td><strong>27</strong></td><td>kokutsu_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; E</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+</tbody></table></div>
+</div></div>
+<div class='section'>
+<h2><span>Tekki Shodan (鉄騎初段) &bull; 29 Counts</span><span class='badge-clean'>86.2% Deduced Cleanly</span></h2>
+<div class='flex-view'>
+<div class='diagram-col'>
+<svg viewBox="0 0 400 868" xmlns="http://www.w3.org/2000/svg" style="background:#0f172a; border-radius:8px; width:100%; max-width:850px; height:auto; box-shadow:0 4px 6px -1px rgba(0,0,0,0.3); font-family:sans-serif;">
+<defs>
+<filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<line x1="0" y1="0" x2="0" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="50" y1="0" x2="50" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="100" y1="0" x2="100" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="150" y1="0" x2="150" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="200" y1="0" x2="200" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="250" y1="0" x2="250" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="300" y1="0" x2="300" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="350" y1="0" x2="350" y2="868" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="0" x2="400" y2="0" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="50" x2="400" y2="50" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="100" x2="400" y2="100" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="150" x2="400" y2="150" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="200" x2="400" y2="200" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="250" x2="400" y2="250" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="300" x2="400" y2="300" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="350" x2="400" y2="350" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="400" x2="400" y2="400" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="450" x2="400" y2="450" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="500" x2="400" y2="500" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="550" x2="400" y2="550" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="600" x2="400" y2="600" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="650" x2="400" y2="650" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="700" x2="400" y2="700" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="750" x2="400" y2="750" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="800" x2="400" y2="800" stroke="#1e293b" stroke-width="1" />
+<line x1="0" y1="850" x2="400" y2="850" stroke="#1e293b" stroke-width="1" />
+<line x1="68.0" y1="794.0" x2="96.0" y2="780.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="780.0" x2="96.0" y2="780.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="780.0" x2="96.0" y2="780.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="780.0" x2="96.0" y2="720.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="720.0" x2="96.0" y2="720.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="720.0" x2="96.0" y2="660.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="96.0" y1="660.0" x2="96.0" y2="660.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="660.0" x2="96.0" y2="600.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="96.0" y1="600.0" x2="96.0" y2="600.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="600.0" x2="96.0" y2="540.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="540.0" x2="96.0" y2="540.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="540.0" x2="96.0" y2="480.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="480.0" x2="96.0" y2="480.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="480.0" x2="96.0" y2="420.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="420.0" x2="96.0" y2="420.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="420.0" x2="96.0" y2="420.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="420.0" x2="96.0" y2="420.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="420.0" x2="96.0" y2="360.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="360.0" x2="96.0" y2="360.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="360.0" x2="96.0" y2="300.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="96.0" y1="300.0" x2="96.0" y2="300.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="300.0" x2="96.0" y2="240.0" stroke="#ef4444" stroke-width="2" opacity="0.6" stroke-dasharray='4,4'/>
+<line x1="96.0" y1="240.0" x2="96.0" y2="240.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="240.0" x2="96.0" y2="180.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="180.0" x2="96.0" y2="180.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="180.0" x2="96.0" y2="120.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="120.0" x2="96.0" y2="120.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<line x1="96.0" y1="120.0" x2="96.0" y2="60.0" stroke="#38bdf8" stroke-width="2" opacity="0.6" />
+<g transform="translate(60.0, 780.0) rotate(15.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(76.0, 808.0) rotate(20.0)">
+<ellipse cx="0" cy="-5.5" rx="5.0" ry="5.5" fill="#f59e0b" fill-opacity="0.9" stroke="#fde68a" stroke-width="1.5" />
+<ellipse cx="0" cy="7.333333333333333" rx="3.3333333333333335" ry="4.4" fill="none" stroke="#fde68a" stroke-width="1" stroke-dasharray="2,2" opacity="0.5" />
+</g>
+<circle cx="68.0" cy="794.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="68.0" y="797.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<g transform="translate(60.0, 780.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 780.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="780.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="783.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<g transform="translate(60.0, 780.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 780.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="780.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="783.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<g transform="translate(60.0, 780.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 780.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="780.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="783.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<g transform="translate(60.0, 720.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 720.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="720.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="723.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<g transform="translate(60.0, 720.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 720.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="720.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="723.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<g transform="translate(60.0, 660.0) rotate(-20.0)">
+<ellipse cx="0" cy="-5.5" rx="5.0" ry="5.5" fill="#3b82f6" fill-opacity="0.9" stroke="#93c5fd" stroke-width="1.5" />
+<ellipse cx="0" cy="7.333333333333333" rx="3.3333333333333335" ry="4.4" fill="none" stroke="#93c5fd" stroke-width="1" stroke-dasharray="2,2" opacity="0.5" />
+</g>
+<g transform="translate(132.0, 660.0) rotate(-15.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="660.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="663.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">7</text>
+<g transform="translate(60.0, 660.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 660.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="660.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="663.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">8</text>
+<g transform="translate(60.0, 600.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 600.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="600.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="603.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">9</text>
+<g transform="translate(60.0, 600.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 600.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="600.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="603.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">10</text>
+<g transform="translate(60.0, 540.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 540.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="540.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="543.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">11</text>
+<g transform="translate(60.0, 540.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 540.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="540.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="543.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">12</text>
+<g transform="translate(60.0, 480.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 480.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="480.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="483.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">13</text>
+<g transform="translate(60.0, 480.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 480.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="480.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="483.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">14</text>
+<g transform="translate(60.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="420.0" r="9" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="423.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">15</text>
+<g transform="translate(60.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="420.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="423.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">16</text>
+<g transform="translate(60.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="420.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="423.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">17</text>
+<g transform="translate(60.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 420.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="420.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="423.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">18</text>
+<g transform="translate(60.0, 360.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 360.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="360.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="363.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">19</text>
+<g transform="translate(60.0, 360.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 360.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="360.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="363.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">20</text>
+<g transform="translate(60.0, 300.0) rotate(15.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 300.0) rotate(20.0)">
+<ellipse cx="0" cy="-5.5" rx="5.0" ry="5.5" fill="#f59e0b" fill-opacity="0.9" stroke="#fde68a" stroke-width="1.5" />
+<ellipse cx="0" cy="7.333333333333333" rx="3.3333333333333335" ry="4.4" fill="none" stroke="#fde68a" stroke-width="1" stroke-dasharray="2,2" opacity="0.5" />
+</g>
+<circle cx="96.0" cy="300.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="303.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">21</text>
+<g transform="translate(60.0, 300.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 300.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="300.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="303.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">22</text>
+<g transform="translate(60.0, 240.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 240.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="240.0" r="9" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="243.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">23</text>
+<g transform="translate(60.0, 240.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 240.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="240.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="243.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">24</text>
+<g transform="translate(60.0, 180.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 180.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="180.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="183.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">25</text>
+<g transform="translate(60.0, 180.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 180.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="180.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="183.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">26</text>
+<g transform="translate(60.0, 120.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 120.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="120.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="123.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">27</text>
+<g transform="translate(60.0, 120.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 120.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="120.0" r="9" fill="#1e293b" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="123.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">28</text>
+<g transform="translate(60.0, 60.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#3b82f6" fill-opacity="0.85" stroke="#93c5fd" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<g transform="translate(132.0, 60.0) rotate(0.0)">
+<rect x="-5.0" y="-11.0" width="10" height="22" rx="5.0" fill="#f59e0b" fill-opacity="0.85" stroke="#fde68a" stroke-width="1.5" />
+<circle cx="0" cy="7.333333333333333" r="2" fill="#ffffff" />
+</g>
+<circle cx="96.0" cy="60.0" r="9" fill="#dc2626" stroke="#ffffff" stroke-width="1.5" />
+<text x="96.0" y="63.0" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">29</text>
+</svg>
+<div class='legend'>
+<span><span class='legend-dot' style='background:#3b82f6;'></span>Left Foot</span>
+<span><span class='legend-dot' style='background:#f59e0b;'></span>Right Foot</span>
+<span><span class='legend-dot' style='background:#ffffff;'></span>Heel Anchor Dot</span>
+<span><span class='legend-dot' style='background:#ef4444;'></span>Ambiguity Flag</span>
+</div></div>
+<div class='table-col'>
+<table>
+<thead><tr><th>#</th><th>Stance / Lead</th><th>Turn & Facing</th><th>Moving</th><th>Anchor Foot</th><th>Deduction Status / Ambiguity Flag</th></tr></thead><tbody>
+<tr><td><strong>1</strong></td><td>kosa_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Move 1: Advance forward steps out with lead foot</span></td></tr>
+<tr><td><strong>2</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>3</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>4</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>both</small></td><td>0<br>&rarr; N</td><td><span>both</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>5</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span>both</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>6</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>7</strong></td><td>kosa_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>8</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>9</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>10</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>none</small></td><td>0<br>&rarr; N</td><td><span>none</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>11</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span>none</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>12</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>none</small></td><td>0<br>&rarr; N</td><td><span>none</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>13</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span>none</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>14</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>both</small></td><td>0<br>&rarr; N</td><td><span>both</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>15</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span>both</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>16</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>17</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>18</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>both</small></td><td>0<br>&rarr; N</td><td><span>both</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>19</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span>both</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>20</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>21</strong></td><td>kosa_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>22</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>23</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span>both_sliding</span></td><td><span>none</span></td><td><span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>Requires distinction between yori-ashi (both slide) and tsugi-ashi (rear gathers then front steps).</span></td></tr>
+<tr><td><strong>24</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>none</small></td><td>0<br>&rarr; N</td><td><span>none</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>25</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span>none</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>26</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>none</small></td><td>0<br>&rarr; N</td><td><span>none</span></td><td><span class='pill pill-left'>left</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>27</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>right</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-right'>right</span></td><td><span>none</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>28</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>both</small></td><td>0<br>&rarr; N</td><td><span>both</span></td><td><span class='pill pill-right'>right</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+<tr><td><strong>29</strong></td><td>kiba_dachi<br><small style='color:#64748b;'>left</small></td><td>0<br>&rarr; N</td><td><span class='pill pill-left'>left</span></td><td><span>both</span></td><td><span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>Straight step-through: rear foot passes forward to become new lead</span></td></tr>
+</tbody></table></div>
+</div></div>
+</div></body></html>
