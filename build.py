@@ -659,6 +659,16 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
             w, h = rotated.size
             img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
 
+        # Crop tight around the content bounding box with minimal padding
+        bbox = img.getbbox()
+        if bbox:
+            pad = 2
+            x0 = max(0, bbox[0] - pad)
+            y0 = max(0, bbox[1] - pad)
+            x1 = min(img.width, bbox[2] + pad)
+            y1 = min(img.height, bbox[3] + pad)
+            img = img.crop((x0, y0, x1, y1))
+
         img.save(stances_out_dir / f"{st_id}_{lead}.png")
 
 
