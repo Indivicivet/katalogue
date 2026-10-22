@@ -431,10 +431,10 @@
           {{ s.id }}
         </td>
         <td style="vertical-align: middle;">
-          <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
             {% if s.stance_img %}
-              <div class="stance-thumb-wrap" title="{{ s.stance_data.romaji or s.stance }}">
-                <img src="{{ rel_root }}{{ s.stance_img }}" alt="{{ s.stance }}" class="stance-thumb-img">
+              <div class="stance-thumb-wrap" title="{{ s.stance_data.romaji or s.stance }}{% if s.facing %} (facing {{ s.facing }}){% endif %}">
+                <img src="{{ rel_root }}{{ s.stance_img }}" alt="{{ s.stance }}" class="stance-thumb-img" style="transform: rotate({{ s.facing_angle or 0 }}deg);">
               </div>
             {% endif %}
             <div>

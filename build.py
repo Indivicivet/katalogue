@@ -908,6 +908,8 @@ def main():
             )
 
             tech_emoji = CATEGORY_EMOJI.get(cat)
+            facing_str = step.get("facing")
+            facing_angle = COMPASS_ANGLES.get(facing_str, 0)
 
             rendered_steps.append(
                 {
@@ -921,6 +923,7 @@ def main():
                     "category": cat,
                     "rotation_warning": rot_warn,
                     "stance_img": stance_img_rel,
+                    "facing_angle": facing_angle,
                     "tech_icon": tech_icon_rel,
                     "tech_emoji": tech_emoji,
                 }
