@@ -286,6 +286,7 @@ FOOT_PRIMITIVE_METADATA = {
         "dimensions": [32, 32],
         "heel_anchor": None,  # Heel is elevated off the ground
         "ball_anchor": [15, 12],  # Primary pivot center for neko-ashi / kosa-dachi
+        "big_toe_anchor": [19, 4],
         "vector_heading": 0,
         "ground_contact": "ball",
         "default_pivot": "ball",
@@ -305,6 +306,7 @@ FOOT_PRIMITIVE_METADATA = {
         "dimensions": [32, 32],
         "heel_anchor": None,
         "ball_anchor": [17, 12],
+        "big_toe_anchor": [13, 4],
         "vector_heading": 0,
         "ground_contact": "ball",
         "default_pivot": "ball",
@@ -352,16 +354,26 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
         colored.putalpha(a)
         return colored
 
-    # In-memory full foot primitive template
+    # In-memory full foot primitive template (standard blue)
     img_full = colorize_foot(foot_primitive_base, (37, 99, 235))
 
-    # 2. Foot primitive 2: ball of foot (left)
-    img_ball = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
-    d_ball = ImageDraw.Draw(img_ball)
-    d_ball.ellipse([7, 4, 23, 19], fill=(234, 88, 12, 240), outline=(194, 65, 12, 255))
-    d_ball.ellipse([8, 2, 14, 9], fill=(194, 65, 12, 255))
-    d_ball.ellipse([11, 20, 21, 28], outline=(148, 163, 184, 160), width=1)
-    img_ball.save(icons_dir / "foot_left_ball.png")
+    # 2. Foot primitive 2: ball of foot (left, in-memory template, orange)
+    foot01_ball_path = icons_dir / "foot01_ball.png"
+    if foot01_ball_path.exists():
+        foot_ball_raw = Image.open(foot01_ball_path)
+        r_b, g_b, b_b, a_b = foot_ball_raw.split()
+        # Clean any stray pixels below the ball of the foot (y > 70)
+        ImageDraw.Draw(a_b).rectangle([0, 70, 128, 128], fill=0)
+        foot_ball_clean = Image.merge("RGBA", (r_b, g_b, b_b, a_b))
+        foot_ball_aligned = foot_ball_clean.rotate(align_angle, resample=Image.BICUBIC)
+        foot_ball_base = foot_ball_aligned.resize((32, 32), Image.Resampling.LANCZOS)
+    else:
+        foot_ball_base = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+        d_ball = ImageDraw.Draw(foot_ball_base)
+        d_ball.ellipse([7, 4, 23, 19], fill=(0, 0, 0, 255))
+        d_ball.ellipse([8, 2, 14, 9], fill=(0, 0, 0, 255))
+
+    img_ball = colorize_foot(foot_ball_base, (234, 88, 12))
 
     # Category icons
     # Block
@@ -636,22 +648,13 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
 
     for st_id, lead, l_spec, r_spec in stance_specs:
         img = Image.new("RGBA", (100, 160), (0, 0, 0, 0))
-        st_color_hex = STANCE_COLORS.get(st_id, "#2563eb")
-        st_rgb = hex_to_rgb(st_color_hex)
-        curr_left_full = colorize_foot(foot_primitive_base, st_rgb)
-        curr_right_full = curr_left_full.transpose(Image.FLIP_LEFT_RIGHT)
-
         if l_spec:
             f_img, x, y, rot = l_spec
-            if f_img is img_full:
-                f_img = curr_left_full
             rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
             w, h = rotated.size
             img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
         if r_spec:
             f_img, x, y, rot = r_spec
-            if f_img is foot_right_full:
-                f_img = curr_right_full
             rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
             w, h = rotated.size
             img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
