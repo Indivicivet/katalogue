@@ -6,6 +6,7 @@ computes global and per-kata analytics, and renders a zero-dependency static sit
 """
 
 import html
+import math
 import os
 import re
 import shutil
@@ -257,6 +258,12 @@ STANCE_COLORS = {
     "kake_dachi": "#e11d48",
 }
 
+
+def hex_to_rgb(hex_str: str) -> tuple[int, int, int]:
+    clean = hex_str.lstrip("#")
+    return tuple(int(clean[i : i + 2], 16) for i in (0, 2, 4))
+
+
 # Kinematic Foot Primitive Metadata
 # Defines the contact mechanics, coordinate bounding box, and rotation anchors
 # for foot primitives within their source images and on the kata floor plane.
@@ -266,8 +273,10 @@ FOOT_PRIMITIVE_METADATA = {
         "description": "Entire left foot grounded with full plantar contact.",
         "dimensions": [32, 32],
         # Coordinates (px) within the 32x32 primitive canvas
-        "heel_anchor": [16, 24],  # Primary pivot center for heel rotations
+        # Master icon (foot01.png, 128x128): heel at (64, 114), big toe at (75, 18)
+        "heel_anchor": [16, 28],  # Primary pivot center for heel rotations
         "ball_anchor": [15, 12],  # Ball/metatarsal pressure center
+        "big_toe_anchor": [19, 4],  # Big toe center
         "vector_heading": 0,  # 0 deg = pointing North
         "ground_contact": "full",
         "default_pivot": "heel",  # Standard Shotokan/JKA turn pivot
@@ -284,8 +293,9 @@ FOOT_PRIMITIVE_METADATA = {
     "foot_right_full": {
         "description": "Entire right foot grounded (horizontally mirrored from left).",
         "dimensions": [32, 32],
-        "heel_anchor": [16, 24],
+        "heel_anchor": [16, 28],
         "ball_anchor": [17, 12],
+        "big_toe_anchor": [13, 4],
         "vector_heading": 0,
         "ground_contact": "full",
         "default_pivot": "heel",
@@ -317,13 +327,33 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
     stances_out_dir.mkdir(parents=True, exist_ok=True)
 
     # 1. Foot primitive 1: entire foot (left)
-    img_full = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
-    d_full = ImageDraw.Draw(img_full)
-    d_full.ellipse(
-        [10, 18, 22, 29], fill=(59, 130, 246, 230), outline=(29, 78, 216, 255)
-    )
-    d_full.ellipse([7, 4, 23, 20], fill=(59, 130, 246, 230), outline=(29, 78, 216, 255))
-    d_full.ellipse([8, 2, 14, 9], fill=(37, 99, 235, 255))
+    foot01_path = icons_dir / "foot01.png"
+    if foot01_path.exists():
+        foot_raw = Image.open(foot01_path)
+        # Note from source: heel is at (64, 114), big toe is at (75, 18)
+        # Align inner edge (heel to big toe) parallel to vertical axis (North)
+        dx = 75 - 64
+        dy = 114 - 18
+        align_angle = math.degrees(math.atan2(dx, dy))
+        foot_aligned = foot_raw.rotate(align_angle, resample=Image.BICUBIC)
+        foot_primitive_base = foot_aligned.resize((32, 32), Image.Resampling.LANCZOS)
+    else:
+        foot_primitive_base = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
+        d_full = ImageDraw.Draw(foot_primitive_base)
+        d_full.ellipse([10, 18, 22, 29], fill=(0, 0, 0, 255), outline=(0, 0, 0, 255))
+        d_full.ellipse([7, 4, 23, 20], fill=(0, 0, 0, 255), outline=(0, 0, 0, 255))
+        d_full.ellipse([8, 2, 14, 9], fill=(0, 0, 0, 255))
+
+    def colorize_foot(
+        base_foot: Image.Image, color_rgb: tuple[int, int, int]
+    ) -> Image.Image:
+        _, _, _, a = base_foot.split()
+        colored = Image.new("RGBA", base_foot.size, (*color_rgb, 255))
+        colored.putalpha(a)
+        return colored
+
+    # Default blue full foot primitive saved to icons
+    img_full = colorize_foot(foot_primitive_base, (37, 99, 235))
     img_full.save(icons_dir / "foot_left_full.png")
 
     # 2. Foot primitive 2: ball of foot (left)
@@ -607,13 +637,22 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
 
     for st_id, lead, l_spec, r_spec in stance_specs:
         img = Image.new("RGBA", (100, 160), (0, 0, 0, 0))
+        st_color_hex = STANCE_COLORS.get(st_id, "#2563eb")
+        st_rgb = hex_to_rgb(st_color_hex)
+        curr_left_full = colorize_foot(foot_primitive_base, st_rgb)
+        curr_right_full = curr_left_full.transpose(Image.FLIP_LEFT_RIGHT)
+
         if l_spec:
             f_img, x, y, rot = l_spec
+            if f_img is img_full:
+                f_img = curr_left_full
             rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
             w, h = rotated.size
             img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
         if r_spec:
             f_img, x, y, rot = r_spec
+            if f_img is foot_right_full:
+                f_img = curr_right_full
             rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
             w, h = rotated.size
             img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
