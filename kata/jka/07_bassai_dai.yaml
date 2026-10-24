@@ -223,7 +223,7 @@ steps:
   count: 23
   stance: zenkutsu_dachi
   lead: right
-  technique: ryo_kentsui_hasami_uchi
+  technique: hasami_uchi
   target: chudan
   turn: '0'
   facing: S

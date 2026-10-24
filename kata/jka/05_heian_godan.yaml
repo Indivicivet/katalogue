@@ -188,10 +188,11 @@ steps:
   subcount: a
   stance: zenkutsu_dachi
   lead: left
-  technique: teisho_awase_uke
+  technique: null
   target: chudan
   turn: '0'
   facing: N
+  notes: "TODO: verify correct technique name for 21a"
 - id: 21b
   count: 21
   subcount: b

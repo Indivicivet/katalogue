@@ -128,13 +128,6 @@ teisho_oshiage_uke:
   en: "palm-heel pushing-rising block"
   category: "block"
 
-teisho_awase_uke:
-  kanji: "手掌合わせ受け"
-  furigana: "ていしょうあわせうけ"
-  romaji: "teisho-awase-uke"
-  en: "combined palm-heel block"
-  category: "block"
-
 nagashi_uke:
   kanji: "流し受け"
   furigana: "ながしうけ"
@@ -517,13 +510,6 @@ keiko_zuki:
   en: "chicken-beak punch"
   category: "punch"
 
-yoko_tsuki:
-  kanji: "横突き"
-  furigana: "よこづき"
-  romaji: "yoko-tsuki"
-  en: "side punch"
-  category: "punch"
-
 # Strikes (Uchi)
 uraken_uchi:
   kanji: "裏拳打ち"
@@ -547,11 +533,11 @@ tettsui_uchi:
   en: "hammer-fist strike"
   category: "strike"
 
-tettsui_hasami_uchi:
-  kanji: "鉄槌挟み打ち"
-  furigana: "てっついはさみうち"
-  romaji: "tettsui-hasami-uchi"
-  en: "scissor hammer-fist strike"
+hasami_uchi:
+  kanji: "挟み打ち"
+  furigana: "はさみうち"
+  romaji: "hasami-uchi"
+  en: "scissor strike"
   category: "strike"
 
 ryo_kentsui_koho_hasami_uchi:
@@ -1036,13 +1022,6 @@ hari_empi_koshi_kamae:
   en: "tension elbow hip posture"
   category: "other"
 
-ken_kata_ue_kamae:
-  kanji: "拳肩上構え"
-  furigana: "けんかたうえかまえ"
-  romaji: "ken-kata-ue-kamae"
-  en: "fist above shoulder posture"
-  category: "other"
-
 ryo_hiji_suihei_kamae:
   kanji: "両肘水平構え"
   furigana: "りょうひじすいへいかまえ"
@@ -1214,6 +1193,7 @@ zenwan_uchi_harai:
   en: "forearm inside sweeping strike"
   category: "strike"
 
+# TODO: consider consolidating bo_tsukami_uke vs ryosho_bo_tsukami_uke naming while preserving distinct mechanics
 bo_tsukami_uke:
   kanji: "棒掴み受け"
   furigana: "ぼうつかみうけ"
@@ -1320,13 +1300,6 @@ morote_age_uke:
   romaji: "morote-age-uke"
   en: "double-hand rising block"
   category: "block"
-
-ryo_kentsui_hasami_uchi:
-  kanji: "両拳槌挟み打ち"
-  furigana: "りょうけんついはさみうち"
-  romaji: "ryo-kentsui-hasami-uchi"
-  en: "both hammer-fists scissors strike"
-  category: "strike"
 
 soto_nagashi_uke:
   kanji: "外流し受け"

@@ -316,7 +316,7 @@ steps:
   count: 30
   stance: kiba_dachi
   lead: right
-  technique: yoko_tsuki
+  technique: sokumen_zuki
   secondary_technique: soto_nagashi_uke
   target: chudan
   turn: '0'

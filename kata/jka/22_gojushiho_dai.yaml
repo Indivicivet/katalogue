@@ -398,7 +398,7 @@ steps:
   stance: tsuru_ashi_dachi
   lead: left
   technique: choku_zuki
-  secondary_technique: ken_kata_ue_kamae
+  secondary_technique: ken_kata_ue
   target: chudan
   turn: '0'
   facing: N

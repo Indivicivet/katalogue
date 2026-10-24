@@ -80,7 +80,7 @@ steps:
   stance: kosa_dachi
   lead: left
   technique: gedan_zuki
-  secondary_technique: ken_kata_ue_kamae
+  secondary_technique: ken_kata_ue
   target: gedan
   turn: '0'
   facing: N
@@ -120,7 +120,7 @@ steps:
   stance: kosa_dachi
   lead: left
   technique: gedan_zuki
-  secondary_technique: ken_kata_ue_kamae
+  secondary_technique: ken_kata_ue
   target: gedan
   turn: '0'
   facing: N
@@ -283,7 +283,7 @@ steps:
   stance: kosa_dachi
   lead: left
   technique: gedan_zuki
-  secondary_technique: ken_kata_ue_kamae
+  secondary_technique: ken_kata_ue
   target: gedan
   turn: '0'
   facing: S
