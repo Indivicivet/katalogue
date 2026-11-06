@@ -481,8 +481,6 @@
           <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
             {% if s.tech_emoji %}
               <span class="tech-cat-emoji cat-{{ s.category }}" title="{{ s.category | capitalize }}">{{ s.tech_emoji }}</span>
-            {% elif s.tech_icon %}
-              <img src="{{ rel_root }}{{ s.tech_icon }}" alt="{{ s.category }}" class="tech-cat-icon" title="{{ s.category | capitalize }}">
             {% endif %}
             <div>
               {% if s.tech_data %}

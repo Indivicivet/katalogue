@@ -1017,14 +1017,6 @@ tr.row-placeholder {
 }
 
 /* Technique Category Icons & Stance Thumbnails */
-.tech-cat-icon {
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
 .tech-cat-emoji {
   display: inline-flex;
   align-items: center;

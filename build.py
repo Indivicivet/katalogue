@@ -375,64 +375,6 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
 
     img_ball = colorize_foot(foot_ball_base, (234, 88, 12))
 
-    # Category icons
-    # Block
-    img_block = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
-    d_block = ImageDraw.Draw(img_block)
-    d_block.polygon(
-        [(16, 3), (27, 7), (24, 22), (16, 29), (8, 22), (5, 7)],
-        fill=(56, 189, 248, 220),
-        outline=(3, 105, 161, 255),
-    )
-    d_block.line([(16, 6), (16, 26)], fill=(255, 255, 255, 200), width=2)
-    img_block.save(icons_dir / "cat_block.png")
-
-    # Punch
-    img_punch = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
-    d_punch = ImageDraw.Draw(img_punch)
-    d_punch.rounded_rectangle(
-        [6, 8, 26, 24],
-        radius=4,
-        fill=(248, 113, 113, 220),
-        outline=(185, 28, 28, 255),
-    )
-    d_punch.line([(11, 8), (11, 19)], fill=(185, 28, 28, 255), width=2)
-    d_punch.line([(16, 8), (16, 19)], fill=(185, 28, 28, 255), width=2)
-    d_punch.line([(21, 8), (21, 19)], fill=(185, 28, 28, 255), width=2)
-    d_punch.arc([6, 14, 18, 25], 0, 180, fill=(185, 28, 28, 255), width=2)
-    img_punch.save(icons_dir / "cat_punch.png")
-
-    # Strike
-    img_strike = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
-    d_strike = ImageDraw.Draw(img_strike)
-    d_strike.polygon(
-        [(7, 16), (14, 5), (25, 12), (18, 27)],
-        fill=(251, 146, 60, 220),
-        outline=(194, 65, 12, 255),
-    )
-    d_strike.line([(4, 28), (28, 4)], fill=(234, 88, 12, 255), width=2)
-    img_strike.save(icons_dir / "cat_strike.png")
-
-    # Kick
-    img_kick = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
-    d_kick = ImageDraw.Draw(img_kick)
-    d_kick.polygon(
-        [(10, 4), (16, 4), (20, 18), (27, 21), (27, 27), (14, 27), (14, 17)],
-        fill=(251, 191, 36, 220),
-        outline=(180, 83, 9, 255),
-    )
-    img_kick.save(icons_dir / "cat_kick.png")
-
-    # Other
-    img_other = Image.new("RGBA", (32, 32), (0, 0, 0, 0))
-    d_other = ImageDraw.Draw(img_other)
-    d_other.ellipse(
-        [6, 6, 26, 26], fill=(226, 232, 240, 220), outline=(100, 116, 139, 255)
-    )
-    d_other.line([(16, 10), (16, 22)], fill=(100, 116, 139, 255), width=2)
-    d_other.line([(10, 16), (22, 16)], fill=(100, 116, 139, 255), width=2)
-    img_other.save(icons_dir / "cat_other.png")
-
     # Right primitives via flipping
     foot_right_full = img_full.transpose(Image.FLIP_LEFT_RIGHT)
     foot_right_ball = img_ball.transpose(Image.FLIP_LEFT_RIGHT)
@@ -903,10 +845,6 @@ def main():
             else:
                 stance_img_rel = None
 
-            tech_icon_rel = (
-                f"static/icons/cat_{cat}.png" if cat != "placeholder" else None
-            )
-
             tech_emoji = CATEGORY_EMOJI.get(cat)
             facing_str = step.get("facing")
             facing_angle = COMPASS_ANGLES.get(facing_str, 0)
@@ -924,7 +862,6 @@ def main():
                     "rotation_warning": rot_warn,
                     "stance_img": stance_img_rel,
                     "facing_angle": facing_angle,
-                    "tech_icon": tech_icon_rel,
                     "tech_emoji": tech_emoji,
                 }
             )
