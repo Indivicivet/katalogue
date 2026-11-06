@@ -12,9 +12,11 @@ import re
 import shutil
 import time
 from pathlib import Path
-from markupsafe import Markup
+
 import yaml
 from jinja2 import Environment, FileSystemLoader
+from markupsafe import Markup
+from PIL import Image, ImageDraw
 from tqdm import tqdm
 
 ROOT_DIR = Path(__file__).parent.resolve()
@@ -259,72 +261,11 @@ STANCE_COLORS = {
 }
 
 
-def hex_to_rgb(hex_str: str) -> tuple[int, int, int]:
-    clean = hex_str.lstrip("#")
-    return tuple(int(clean[i : i + 2], 16) for i in (0, 2, 4))
-
-
-# Kinematic Foot Primitive Metadata
-# Defines the contact mechanics, coordinate bounding box, and rotation anchors
-# for foot primitives within their source images and on the kata floor plane.
-# Future-proofed for the full embusen simulation & physics model.
-FOOT_PRIMITIVE_METADATA = {
-    "foot_left_full": {
-        "description": "Entire left foot grounded with full plantar contact.",
-        "dimensions": [32, 32],
-        # Coordinates (px) within the 32x32 primitive canvas
-        # Master icon (foot01.png, 128x128): heel at (64, 114), big toe at (75, 18)
-        "heel_anchor": [16, 28],  # Primary pivot center for heel rotations
-        "ball_anchor": [15, 12],  # Ball/metatarsal pressure center
-        "big_toe_anchor": [19, 4],  # Big toe center
-        "vector_heading": 0,  # 0 deg = pointing North
-        "ground_contact": "full",
-        "default_pivot": "heel",  # Standard Shotokan/JKA turn pivot
-    },
-    "foot_left_ball": {
-        "description": "Left ball of foot grounded (kosho / chusoku); heel raised.",
-        "dimensions": [32, 32],
-        "heel_anchor": None,  # Heel is elevated off the ground
-        "ball_anchor": [15, 12],  # Primary pivot center for neko-ashi / kosa-dachi
-        "big_toe_anchor": [19, 4],
-        "vector_heading": 0,
-        "ground_contact": "ball",
-        "default_pivot": "ball",
-    },
-    "foot_right_full": {
-        "description": "Entire right foot grounded (horizontally mirrored from left).",
-        "dimensions": [32, 32],
-        "heel_anchor": [16, 28],
-        "ball_anchor": [17, 12],
-        "big_toe_anchor": [13, 4],
-        "vector_heading": 0,
-        "ground_contact": "full",
-        "default_pivot": "heel",
-    },
-    "foot_right_ball": {
-        "description": "Right ball of foot grounded; heel raised.",
-        "dimensions": [32, 32],
-        "heel_anchor": None,
-        "ball_anchor": [17, 12],
-        "big_toe_anchor": [13, 4],
-        "vector_heading": 0,
-        "ground_contact": "ball",
-        "default_pivot": "ball",
-    },
-}
-
-
 def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
     """
     Generates foot primitives, category icons, and stance footprint diagrams
     on the fly during build.
     """
-    try:
-        from PIL import Image, ImageDraw
-    except ImportError:
-        print("Pillow not installed; skipping dynamic icon/stance asset generation.")
-        return
-
     icons_dir.mkdir(parents=True, exist_ok=True)
     stances_out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -636,9 +577,9 @@ def compute_analytics(kata_list: list, stances: dict, techniques: dict) -> dict:
             st = s.get("stance")
             if st:
                 stance_counts[st] = stance_counts.get(st, 0) + 1
-            tc = s.get("technique")
-            if tc:
-                tech_counts[tc] = tech_counts.get(tc, 0) + 1
+            for tc in (s.get("technique"), s.get("secondary_technique")):
+                if tc:
+                    tech_counts[tc] = tech_counts.get(tc, 0) + 1
             cat = s.get("category", "other")
             if cat in category_counts:
                 category_counts[cat] += 1
@@ -656,9 +597,7 @@ def compute_analytics(kata_list: list, stances: dict, techniques: dict) -> dict:
                 "data": stances.get(st_id, {}),
                 "count": cnt,
                 "percent": (
-                    round((cnt / total_defined_moves) * 100, 1)
-                    if total_defined_moves > 0
-                    else 0
+                    round((cnt / total_moves) * 100, 1) if total_moves > 0 else 0
                 ),
                 "color": STANCE_COLORS.get(st_id, "#94a3b8"),
             }
@@ -731,21 +670,14 @@ def main():
                     stance_usage[st_key]["kata"].get(k_full_key, 0) + 1
                 )
 
-            if tech_key:
-                if tech_key not in tech_usage:
-                    tech_usage[tech_key] = {"total": 0, "kata": {}}
-                tech_usage[tech_key]["total"] += 1
-                tech_usage[tech_key]["kata"][k_full_key] = (
-                    tech_usage[tech_key]["kata"].get(k_full_key, 0) + 1
-                )
-
-            if sec_tech_key:
-                if sec_tech_key not in tech_usage:
-                    tech_usage[sec_tech_key] = {"total": 0, "kata": {}}
-                tech_usage[sec_tech_key]["total"] += 1
-                tech_usage[sec_tech_key]["kata"][k_full_key] = (
-                    tech_usage[sec_tech_key]["kata"].get(k_full_key, 0) + 1
-                )
+            for tech_key in (tech_key, sec_tech_key):
+                if tech_key:
+                    if tech_key not in tech_usage:
+                        tech_usage[tech_key] = {"total": 0, "kata": {}}
+                    tech_usage[tech_key]["total"] += 1
+                    tech_usage[tech_key]["kata"][k_full_key] = (
+                        tech_usage[tech_key]["kata"].get(k_full_key, 0) + 1
+                    )
 
     distinctive_techniques = {t for t, u in tech_usage.items() if len(u["kata"]) == 1}
     distinctive_stances = {s for s, u in stance_usage.items() if len(u["kata"]) == 1}
@@ -938,7 +870,6 @@ def main():
 
         # Category metrics
         data["category_counts"] = cat_counts
-        data["category_percentages"] = cat_percents
         data["category_percents"] = cat_percents
 
         # Base count calculation
