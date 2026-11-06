@@ -366,24 +366,57 @@ table.step-table tr:hover {
 
 /* Row Category Accents */
 tr.row-block {
+  --target-accent: var(--border-block);
   border-left: 4px solid var(--border-block);
   background-color: rgba(56, 189, 248, 0.2);
 }
 tr.row-punch {
+  --target-accent: var(--border-punch);
   border-left: 4px solid var(--border-punch);
   background-color: rgba(248, 113, 113, 0.2);
 }
 tr.row-strike {
+  --target-accent: var(--border-strike);
   border-left: 4px solid var(--border-strike);
   background-color: rgba(251, 146, 60, 0.2);
 }
 tr.row-kick {
+  --target-accent: var(--border-kick);
   border-left: 4px solid var(--border-kick);
   background-color: rgba(251, 191, 36, 0.2);
 }
 tr.row-other {
+  --target-accent: var(--border-other);
   border-left: 4px solid var(--border-other);
   background-color: rgba(148, 163, 184, 0.2);
+}
+
+.target-label {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  color: var(--text-secondary);
+}
+.target-indicator {
+  position: absolute;
+  z-index: -1;
+  left: -0.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2em;
+  height: 2em;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+}
+.target-indicator i {
+  background: rgba(148, 163, 184, 0.15);
+}
+.target-jodan .target-indicator i:nth-child(1),
+.target-chudan .target-indicator i:nth-child(2),
+.target-gedan .target-indicator i:nth-child(3) {
+  background: var(--target-accent);
+  opacity: 0.55;
 }
 
 /* Kiai Row Highlights: highlighted with increased tint intensity and an inside stroke */

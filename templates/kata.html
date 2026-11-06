@@ -538,10 +538,13 @@
         </td>
         <td style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">
           {% if s.target and TARGET_MAP.get(s.target) %}
+          <span class="target-label target-{{ s.target }}">
+            <span class="target-indicator" aria-hidden="true"><i></i><i></i><i></i></span>
             <span class="text-ja">{{ TARGET_MAP[s.target].ja }}</span>
             <span class="text-ja-en">{{ TARGET_MAP[s.target].ja_en }}</span>
             <span class="text-ro" style="text-transform: uppercase;">{{ TARGET_MAP[s.target].ro }}</span>
             <span class="text-en" style="text-transform: uppercase;">{{ TARGET_MAP[s.target].en }}</span>
+          </span>
           {% else %}
             —
           {% endif %}
