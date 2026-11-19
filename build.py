@@ -261,23 +261,225 @@ STANCE_COLORS = {
 }
 
 
-def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
-    """
-    Generates foot primitives, category icons, and stance footprint diagrams
-    on the fly during build.
-    """
-    icons_dir.mkdir(parents=True, exist_ok=True)
-    stances_out_dir.mkdir(parents=True, exist_ok=True)
+# (stance, lead, left foot, right foot); each foot is (contact, x, y, clockwise angle).
+STANCE_FOOT_SPECS = [
+    (
+        "zenkutsu_dachi",
+        "left",
+        ("full", 25, 20, 0),
+        ("full", 75, 110, 35),
+    ),
+    (
+        "zenkutsu_dachi",
+        "right",
+        ("full", 25, 110, -35),
+        ("full", 75, 20, 0),
+    ),
+    (
+        "kokutsu_dachi",
+        "left",
+        ("full", 50, 25, 0),
+        ("full", 50, 115, 90),
+    ),
+    (
+        "kokutsu_dachi",
+        "right",
+        ("full", 50, 115, -90),
+        ("full", 50, 25, 0),
+    ),
+    ("kiba_dachi", "left", ("full", 18, 65, 0), ("full", 82, 65, 0)),
+    ("kiba_dachi", "right", ("full", 18, 65, 0), ("full", 82, 65, 0)),
+    ("kiba_dachi", "both", ("full", 18, 65, 0), ("full", 82, 65, 0)),
+    ("kiba_dachi", "none", ("full", 18, 65, 0), ("full", 82, 65, 0)),
+    (
+        "shiko_dachi",
+        "left",
+        ("full", 18, 65, -45),
+        ("full", 82, 65, 45),
+    ),
+    (
+        "shiko_dachi",
+        "right",
+        ("full", 18, 65, -45),
+        ("full", 82, 65, 45),
+    ),
+    (
+        "shiko_dachi",
+        "both",
+        ("full", 18, 65, -45),
+        ("full", 82, 65, 45),
+    ),
+    ("fudo_dachi", "left", ("full", 25, 30, 15), ("full", 75, 105, 45)),
+    (
+        "fudo_dachi",
+        "right",
+        ("full", 25, 105, -45),
+        ("full", 75, 30, -15),
+    ),
+    (
+        "sochin_dachi",
+        "left",
+        ("full", 25, 30, 15),
+        ("full", 75, 105, 45),
+    ),
+    (
+        "sochin_dachi",
+        "right",
+        ("full", 25, 105, -45),
+        ("full", 75, 30, -15),
+    ),
+    (
+        "neko_ashi_dachi",
+        "left",
+        ("ball", 45, 35, 0),
+        ("full", 55, 95, 45),
+    ),
+    (
+        "neko_ashi_dachi",
+        "right",
+        ("full", 45, 95, -45),
+        ("ball", 55, 35, 0),
+    ),
+    (
+        "sanchin_dachi",
+        "left",
+        ("full", 30, 40, 15),
+        ("full", 70, 90, 15),
+    ),
+    (
+        "sanchin_dachi",
+        "right",
+        ("full", 30, 90, -15),
+        ("full", 70, 40, -15),
+    ),
+    (
+        "hangetsu_dachi",
+        "left",
+        ("full", 28, 35, 15),
+        ("full", 72, 95, 20),
+    ),
+    (
+        "hangetsu_dachi",
+        "right",
+        ("full", 28, 95, -20),
+        ("full", 72, 35, -15),
+    ),
+    (
+        "kosa_dachi",
+        "left",
+        ("full", 42, 55, 15),
+        ("ball", 58, 75, 20),
+    ),
+    (
+        "kosa_dachi",
+        "right",
+        ("ball", 42, 75, -20),
+        ("full", 58, 55, -15),
+    ),
+    ("tsuru_ashi_dachi", "left", ("full", 50, 65, 0), None),
+    ("tsuru_ashi_dachi", "right", None, ("full", 50, 65, 0)),
+    ("gankaku_dachi", "left", ("full", 50, 65, 0), None),
+    ("gankaku_dachi", "right", None, ("full", 50, 65, 0)),
+    ("heisoku_dachi", "both", ("full", 35, 65, 0), ("full", 65, 65, 0)),
+    ("heisoku_dachi", "left", ("full", 35, 65, 0), ("full", 65, 65, 0)),
+    (
+        "heisoku_dachi",
+        "right",
+        ("full", 35, 65, 0),
+        ("full", 65, 65, 0),
+    ),
+    ("heisoku_dachi", "none", ("full", 35, 65, 0), ("full", 65, 65, 0)),
+    (
+        "musubi_dachi",
+        "both",
+        ("full", 38, 65, -25),
+        ("full", 62, 65, 25),
+    ),
+    (
+        "musubi_dachi",
+        "left",
+        ("full", 38, 65, -25),
+        ("full", 62, 65, 25),
+    ),
+    (
+        "musubi_dachi",
+        "right",
+        ("full", 38, 65, -25),
+        ("full", 62, 65, 25),
+    ),
+    (
+        "musubi_dachi",
+        "none",
+        ("full", 38, 65, -25),
+        ("full", 62, 65, 25),
+    ),
+    (
+        "hachiji_dachi",
+        "both",
+        ("full", 28, 65, -15),
+        ("full", 72, 65, 15),
+    ),
+    (
+        "hachiji_dachi",
+        "left",
+        ("full", 28, 65, -15),
+        ("full", 72, 65, 15),
+    ),
+    (
+        "hachiji_dachi",
+        "right",
+        ("full", 28, 65, -15),
+        ("full", 72, 65, 15),
+    ),
+    (
+        "hachiji_dachi",
+        "none",
+        ("full", 28, 65, -15),
+        ("full", 72, 65, 15),
+    ),
+    ("heiko_dachi", "both", ("full", 28, 65, 0), ("full", 72, 65, 0)),
+    ("heiko_dachi", "left", ("full", 28, 65, 0), ("full", 72, 65, 0)),
+    ("heiko_dachi", "right", ("full", 28, 65, 0), ("full", 72, 65, 0)),
+    ("heiko_dachi", "none", ("full", 28, 65, 0), ("full", 72, 65, 0)),
+    ("moto_dachi", "left", ("full", 35, 40, 0), ("full", 65, 90, 25)),
+    ("moto_dachi", "right", ("full", 35, 90, -25), ("full", 65, 40, 0)),
+    ("renoji_dachi", "left", ("full", 45, 45, 0), ("full", 55, 95, 90)),
+    (
+        "renoji_dachi",
+        "right",
+        ("full", 45, 95, -90),
+        ("full", 55, 45, 0),
+    ),
+    ("teiji_dachi", "left", ("full", 40, 45, 0), ("full", 60, 95, 90)),
+    ("teiji_dachi", "right", ("full", 40, 95, -90), ("full", 60, 45, 0)),
+    (
+        "ashi_orishiki",
+        "left",
+        ("full", 35, 40, 0),
+        ("ball", 65, 100, 0),
+    ),
+    (
+        "ashi_orishiki",
+        "right",
+        ("ball", 35, 100, 0),
+        ("full", 65, 40, 0),
+    ),
+    ("orishiki", "left", ("full", 35, 40, 0), ("ball", 65, 100, 0)),
+    ("orishiki", "right", ("ball", 35, 100, 0), ("full", 65, 40, 0)),
+    ("hizakutsu", "left", ("full", 35, 40, 0), ("ball", 65, 100, 0)),
+    ("hizakutsu", "right", ("ball", 35, 100, 0), ("full", 65, 40, 0)),
+]
+
+
+def load_foot_primitives(icons_dir: Path):
+    """Return the north-aligned left footprint templates used by the catalog."""
+    # Source image heel and big toe define the common alignment angle.
+    align_angle = math.degrees(math.atan2(75 - 64, 114 - 18))
 
     # 1. Foot primitive 1: entire foot (left)
     foot01_path = icons_dir / "foot01.png"
     if foot01_path.exists():
         foot_raw = Image.open(foot01_path)
-        # Note from source: heel is at (64, 114), big toe is at (75, 18)
-        # Align inner edge (heel to big toe) parallel to vertical axis (North)
-        dx = 75 - 64
-        dy = 114 - 18
-        align_angle = math.degrees(math.atan2(dx, dy))
         foot_aligned = foot_raw.rotate(align_angle, resample=Image.BICUBIC)
         foot_primitive_base = foot_aligned.resize((32, 32), Image.Resampling.LANCZOS)
     else:
@@ -286,17 +488,6 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
         d_full.ellipse([10, 18, 22, 29], fill=(0, 0, 0, 255), outline=(0, 0, 0, 255))
         d_full.ellipse([7, 4, 23, 20], fill=(0, 0, 0, 255), outline=(0, 0, 0, 255))
         d_full.ellipse([8, 2, 14, 9], fill=(0, 0, 0, 255))
-
-    def colorize_foot(
-        base_foot: Image.Image, color_rgb: tuple[int, int, int]
-    ) -> Image.Image:
-        _, _, _, a = base_foot.split()
-        colored = Image.new("RGBA", base_foot.size, (*color_rgb, 255))
-        colored.putalpha(a)
-        return colored
-
-    # In-memory full foot primitive template (standard blue)
-    img_full = colorize_foot(foot_primitive_base, (37, 99, 235))
 
     # 2. Foot primitive 2: ball of foot (left, in-memory template, orange)
     foot01_ball_path = icons_dir / "foot01_ball.png"
@@ -314,231 +505,49 @@ def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
         d_ball.ellipse([7, 4, 23, 19], fill=(0, 0, 0, 255))
         d_ball.ellipse([8, 2, 14, 9], fill=(0, 0, 0, 255))
 
-    img_ball = colorize_foot(foot_ball_base, (234, 88, 12))
+    return {"full": foot_primitive_base, "ball": foot_ball_base}
 
-    # Right primitives via flipping
-    foot_right_full = img_full.transpose(Image.FLIP_LEFT_RIGHT)
-    foot_right_ball = img_ball.transpose(Image.FLIP_LEFT_RIGHT)
 
-    # 3. Generate Stance Footprint Diagrams (100x160 canvas)
-    stance_specs = [
-        (
-            "zenkutsu_dachi",
-            "left",
-            (img_full, 25, 20, 0),
-            (foot_right_full, 75, 110, 35),
-        ),
-        (
-            "zenkutsu_dachi",
-            "right",
-            (img_full, 25, 110, -35),
-            (foot_right_full, 75, 20, 0),
-        ),
-        (
-            "kokutsu_dachi",
-            "left",
-            (img_full, 50, 25, 0),
-            (foot_right_full, 50, 115, 90),
-        ),
-        (
-            "kokutsu_dachi",
-            "right",
-            (img_full, 50, 115, -90),
-            (foot_right_full, 50, 25, 0),
-        ),
-        ("kiba_dachi", "left", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
-        ("kiba_dachi", "right", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
-        ("kiba_dachi", "both", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
-        ("kiba_dachi", "none", (img_full, 18, 65, 0), (foot_right_full, 82, 65, 0)),
-        (
-            "shiko_dachi",
-            "left",
-            (img_full, 18, 65, -45),
-            (foot_right_full, 82, 65, 45),
-        ),
-        (
-            "shiko_dachi",
-            "right",
-            (img_full, 18, 65, -45),
-            (foot_right_full, 82, 65, 45),
-        ),
-        (
-            "shiko_dachi",
-            "both",
-            (img_full, 18, 65, -45),
-            (foot_right_full, 82, 65, 45),
-        ),
-        ("fudo_dachi", "left", (img_full, 25, 30, 15), (foot_right_full, 75, 105, 45)),
-        (
-            "fudo_dachi",
-            "right",
-            (img_full, 25, 105, -45),
-            (foot_right_full, 75, 30, -15),
-        ),
-        (
-            "sochin_dachi",
-            "left",
-            (img_full, 25, 30, 15),
-            (foot_right_full, 75, 105, 45),
-        ),
-        (
-            "sochin_dachi",
-            "right",
-            (img_full, 25, 105, -45),
-            (foot_right_full, 75, 30, -15),
-        ),
-        (
-            "neko_ashi_dachi",
-            "left",
-            (img_ball, 45, 35, 0),
-            (foot_right_full, 55, 95, 45),
-        ),
-        (
-            "neko_ashi_dachi",
-            "right",
-            (img_full, 45, 95, -45),
-            (foot_right_ball, 55, 35, 0),
-        ),
-        (
-            "sanchin_dachi",
-            "left",
-            (img_full, 30, 40, 15),
-            (foot_right_full, 70, 90, 15),
-        ),
-        (
-            "sanchin_dachi",
-            "right",
-            (img_full, 30, 90, -15),
-            (foot_right_full, 70, 40, -15),
-        ),
-        (
-            "hangetsu_dachi",
-            "left",
-            (img_full, 28, 35, 15),
-            (foot_right_full, 72, 95, 20),
-        ),
-        (
-            "hangetsu_dachi",
-            "right",
-            (img_full, 28, 95, -20),
-            (foot_right_full, 72, 35, -15),
-        ),
-        (
-            "kosa_dachi",
-            "left",
-            (img_full, 42, 55, 15),
-            (foot_right_ball, 58, 75, 20),
-        ),
-        (
-            "kosa_dachi",
-            "right",
-            (img_ball, 42, 75, -20),
-            (foot_right_full, 58, 55, -15),
-        ),
-        ("tsuru_ashi_dachi", "left", (img_full, 50, 65, 0), None),
-        ("tsuru_ashi_dachi", "right", None, (foot_right_full, 50, 65, 0)),
-        ("gankaku_dachi", "left", (img_full, 50, 65, 0), None),
-        ("gankaku_dachi", "right", None, (foot_right_full, 50, 65, 0)),
-        ("heisoku_dachi", "both", (img_full, 35, 65, 0), (foot_right_full, 65, 65, 0)),
-        ("heisoku_dachi", "left", (img_full, 35, 65, 0), (foot_right_full, 65, 65, 0)),
-        (
-            "heisoku_dachi",
-            "right",
-            (img_full, 35, 65, 0),
-            (foot_right_full, 65, 65, 0),
-        ),
-        ("heisoku_dachi", "none", (img_full, 35, 65, 0), (foot_right_full, 65, 65, 0)),
-        (
-            "musubi_dachi",
-            "both",
-            (img_full, 38, 65, -25),
-            (foot_right_full, 62, 65, 25),
-        ),
-        (
-            "musubi_dachi",
-            "left",
-            (img_full, 38, 65, -25),
-            (foot_right_full, 62, 65, 25),
-        ),
-        (
-            "musubi_dachi",
-            "right",
-            (img_full, 38, 65, -25),
-            (foot_right_full, 62, 65, 25),
-        ),
-        (
-            "musubi_dachi",
-            "none",
-            (img_full, 38, 65, -25),
-            (foot_right_full, 62, 65, 25),
-        ),
-        (
-            "hachiji_dachi",
-            "both",
-            (img_full, 28, 65, -15),
-            (foot_right_full, 72, 65, 15),
-        ),
-        (
-            "hachiji_dachi",
-            "left",
-            (img_full, 28, 65, -15),
-            (foot_right_full, 72, 65, 15),
-        ),
-        (
-            "hachiji_dachi",
-            "right",
-            (img_full, 28, 65, -15),
-            (foot_right_full, 72, 65, 15),
-        ),
-        (
-            "hachiji_dachi",
-            "none",
-            (img_full, 28, 65, -15),
-            (foot_right_full, 72, 65, 15),
-        ),
-        ("heiko_dachi", "both", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
-        ("heiko_dachi", "left", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
-        ("heiko_dachi", "right", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
-        ("heiko_dachi", "none", (img_full, 28, 65, 0), (foot_right_full, 72, 65, 0)),
-        ("moto_dachi", "left", (img_full, 35, 40, 0), (foot_right_full, 65, 90, 25)),
-        ("moto_dachi", "right", (img_full, 35, 90, -25), (foot_right_full, 65, 40, 0)),
-        ("renoji_dachi", "left", (img_full, 45, 45, 0), (foot_right_full, 55, 95, 90)),
-        (
-            "renoji_dachi",
-            "right",
-            (img_full, 45, 95, -90),
-            (foot_right_full, 55, 45, 0),
-        ),
-        ("teiji_dachi", "left", (img_full, 40, 45, 0), (foot_right_full, 60, 95, 90)),
-        ("teiji_dachi", "right", (img_full, 40, 95, -90), (foot_right_full, 60, 45, 0)),
-        (
-            "ashi_orishiki",
-            "left",
-            (img_full, 35, 40, 0),
-            (foot_right_ball, 65, 100, 0),
-        ),
-        (
-            "ashi_orishiki",
-            "right",
-            (img_ball, 35, 100, 0),
-            (foot_right_full, 65, 40, 0),
-        ),
-        ("orishiki", "left", (img_full, 35, 40, 0), (foot_right_ball, 65, 100, 0)),
-        ("orishiki", "right", (img_ball, 35, 100, 0), (foot_right_full, 65, 40, 0)),
-        ("hizakutsu", "left", (img_full, 35, 40, 0), (foot_right_ball, 65, 100, 0)),
-        ("hizakutsu", "right", (img_ball, 35, 100, 0), (foot_right_full, 65, 40, 0)),
-    ]
+def colorize_foot(
+    base_foot: Image.Image, color_rgb: tuple[int, int, int]
+) -> Image.Image:
+    colored = Image.new("RGBA", base_foot.size, (*color_rgb, 255))
+    colored.putalpha(base_foot.getchannel("A"))
+    return colored
 
-    for st_id, lead, l_spec, r_spec in stance_specs:
+
+def generate_stance_and_icon_assets(icons_dir: Path, stances_out_dir: Path):
+    """
+    Generates foot primitives, category icons, and stance footprint diagrams
+    on the fly during build.
+    """
+    icons_dir.mkdir(parents=True, exist_ok=True)
+    stances_out_dir.mkdir(parents=True, exist_ok=True)
+
+    primitives = load_foot_primitives(icons_dir)
+    left_feet = {
+        "full": colorize_foot(primitives["full"], (37, 99, 235)),
+        "ball": colorize_foot(primitives["ball"], (234, 88, 12)),
+    }
+    right_feet = {
+        contact: foot.transpose(Image.FLIP_LEFT_RIGHT)
+        for contact, foot in left_feet.items()
+    }
+
+    for st_id, lead, l_spec, r_spec in STANCE_FOOT_SPECS:
         img = Image.new("RGBA", (100, 160), (0, 0, 0, 0))
         if l_spec:
-            f_img, x, y, rot = l_spec
-            rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
+            contact, x, y, rot = l_spec
+            rotated = left_feet[contact].rotate(
+                -rot, expand=True, resample=Image.BICUBIC
+            )
             w, h = rotated.size
             img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
         if r_spec:
-            f_img, x, y, rot = r_spec
-            rotated = f_img.rotate(-rot, expand=True, resample=Image.BICUBIC)
+            contact, x, y, rot = r_spec
+            rotated = right_feet[contact].rotate(
+                -rot, expand=True, resample=Image.BICUBIC
+            )
             w, h = rotated.size
             img.paste(rotated, (int(x - w / 2), int(y - h / 2)), rotated)
 
