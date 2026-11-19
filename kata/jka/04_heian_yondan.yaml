@@ -56,8 +56,8 @@ steps:
   lead: left
   technique: koshi_kamae
   target: null
-  turn: '0'
-  facing: N
+  turn: left_90
+  facing: W
 - id: '6'
   count: 6
   stance: tsuru_ashi_dachi
@@ -67,22 +67,23 @@ steps:
   target: chudan
   turn: '0'
   facing: N
+  facing: W
 - id: '7'
   count: 7
   stance: zenkutsu_dachi
-  lead: right
+  lead: left
   technique: mae_empi_uchi
   target: chudan
   turn: '0'
-  facing: N
+  facing: W
 - id: '8'
   count: 8
   stance: tsuru_ashi_dachi
   lead: right
   technique: koshi_kamae
   target: null
-  turn: '0'
-  facing: N
+  turn: right_180
+  facing: E
 - id: '9'
   count: 9
   stance: tsuru_ashi_dachi
@@ -91,23 +92,23 @@ steps:
   secondary_technique: uraken_uchi
   target: chudan
   turn: '0'
-  facing: N
+  facing: E
 - id: '10'
   count: 10
   stance: zenkutsu_dachi
-  lead: left
+  lead: right
   technique: mae_empi_uchi
   target: chudan
   turn: '0'
-  facing: N
+  facing: E
 - id: '11'
   count: 11
-  stance: zenkutsu_dachi
+  stance: hizakutsu
   lead: left
   technique: shuto_uchi
   secondary_technique: shuto_uke
   target: jodan
-  turn: '0'
+  turn: left_90
   facing: N
 - id: '12'
   count: 12
@@ -132,17 +133,17 @@ steps:
   lead: left
   technique: kakiwake_uke
   target: chudan
-  turn: left_180
-  facing: S
+  turn: left_225
+  facing: SE
   slow: true
 - id: '15'
   count: 15
-  stance: zenkutsu_dachi
+  stance: tsuru_ashi_dachi
   lead: left
   technique: mae_geri
   target: jodan
   turn: '0'
-  facing: S
+  facing: SE
 - id: '16'
   count: 16
   stance: zenkutsu_dachi
@@ -150,7 +151,7 @@ steps:
   technique: oi_zuki
   target: chudan
   turn: '0'
-  facing: S
+  facing: SE
 - id: '17'
   count: 17
   stance: zenkutsu_dachi
@@ -158,24 +159,24 @@ steps:
   technique: gyaku_zuki
   target: chudan
   turn: '0'
-  facing: S
+  facing: SE
 - id: '18'
   count: 18
   stance: kokutsu_dachi
   lead: right
   technique: kakiwake_uke
   target: chudan
-  turn: right_180
-  facing: N
+  turn: right_90
+  facing: SW
   slow: true
 - id: '19'
   count: 19
-  stance: zenkutsu_dachi
+  stance: tsuru_ashi_dachi
   lead: right
   technique: mae_geri
   target: jodan
   turn: '0'
-  facing: N
+  facing: SW
 - id: '20'
   count: 20
   stance: zenkutsu_dachi
@@ -183,7 +184,7 @@ steps:
   technique: oi_zuki
   target: chudan
   turn: '0'
-  facing: N
+  facing: SW
 - id: '21'
   count: 21
   stance: zenkutsu_dachi
@@ -191,15 +192,15 @@ steps:
   technique: gyaku_zuki
   target: chudan
   turn: '0'
-  facing: N
+  facing: SW
 - id: '22'
   count: 22
   stance: kokutsu_dachi
   lead: left
   technique: morote_uke
   target: chudan
-  turn: left_90
-  facing: W
+  turn: left_45
+  facing: S
 - id: '23'
   count: 23
   stance: kokutsu_dachi
@@ -207,7 +208,7 @@ steps:
   technique: morote_uke
   target: chudan
   turn: '0'
-  facing: W
+  facing: S
 - id: '24'
   count: 24
   stance: kokutsu_dachi
@@ -215,7 +216,7 @@ steps:
   technique: morote_uke
   target: chudan
   turn: '0'
-  facing: W
+  facing: S
 - id: '25'
   count: 25
   stance: zenkutsu_dachi
@@ -224,7 +225,7 @@ steps:
   secondary_technique: morote_tsukami
   target: chudan
   turn: '0'
-  facing: W
+  facing: S
   kiai: true
 - id: '26'
   count: 26
@@ -233,7 +234,7 @@ steps:
   technique: shuto_uke
   target: chudan
   turn: left_180
-  facing: E
+  facing: N
 - id: '27'
   count: 27
   stance: kokutsu_dachi
@@ -241,4 +242,4 @@ steps:
   technique: shuto_uke
   target: chudan
   turn: '0'
-  facing: E
+  facing: N
