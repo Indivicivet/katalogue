@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 
 import yaml
+from PIL import ImageChops, ImageFilter
 
 ROOT_DIR = Path(__file__).parent.parent.resolve()
 # Running the script directly puts scratch/, not the project root, on sys.path.
@@ -428,6 +429,21 @@ def compute_foot_positions(steps):
     return history
 
 
+def outline_foot(primitive, color):
+    footprint = build.colorize_foot(primitive, color)
+    alpha = footprint.getchannel("A")
+    # Keep the original silhouette, but limit the ink to its inner edge so
+    # overlapping footprints don't obscure each other's interiors.
+    edge = ImageChops.subtract(alpha, alpha.filter(ImageFilter.MinFilter(3)))
+    footprint.putalpha(
+        ImageChops.add(
+            alpha.point(lambda pixel: round(pixel * 0.08)),
+            edge.point(lambda pixel: round(pixel * 0.67)),
+        )
+    )
+    return footprint
+
+
 def generate_embusen_svg_diagram(history, kata_name):
     """
     Render the catalog's footprint icons, colored by stance.
@@ -463,7 +479,7 @@ def generate_embusen_svg_diagram(history, kata_name):
         color = tuple(bytes.fromhex(build.STANCE_COLORS.get(stance, "#94a3b8")[1:]))
         for contact, primitive in primitives.items():
             buffer = io.BytesIO()
-            build.colorize_foot(primitive, color).save(buffer, format="PNG")
+            outline_foot(primitive, color).save(buffer, format="PNG")
             encoded = base64.b64encode(buffer.getvalue()).decode("ascii")
             svg.append(
                 f'<image id="{icon_prefix}-{stance}-{contact}" x="-16" y="-16" width="32" height="32" href="data:image/png;base64,{encoded}" />'
