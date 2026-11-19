@@ -93,8 +93,8 @@ steps:
   lead: left
   technique: tettsui_uchi
   target: chudan
-  turn: left_180
-  facing: S
+  turn: left_360
+  facing: N
 - id: '10'
   count: 10
   stance: zenkutsu_dachi
@@ -102,16 +102,16 @@ steps:
   technique: oi_zuki
   target: chudan
   turn: '0'
-  facing: S
+  facing: N
   kiai: true
 - id: '11'
   count: 11
   stance: heisoku_dachi
   lead: both
-  technique: kamae
+  technique: ryoken_ryokoshi_kamae
   target: null
   turn: left_180
-  facing: N
+  facing: S
   slow: true
 - id: '12'
   count: 12
