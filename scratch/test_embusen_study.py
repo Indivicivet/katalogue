@@ -59,3 +59,47 @@ class KibaDachiTests(unittest.TestCase):
         self.assertEqual(left[1], right[1])
         self.assertEqual(left[2], right[2])
         self.assertTrue(math.isclose(right[0] - left[0], 72))
+
+
+class StanceOrientationTests(unittest.TestCase):
+    def test_kokutsu_angles_follow_catalog_in_world_coordinates(self):
+        for lead, expected_angles in [("left", (90, 180)), ("right", (0, 90))]:
+            with self.subTest(lead=lead):
+                [step] = compute_foot_positions(
+                    [
+                        dict(
+                            stance="kokutsu_dachi",
+                            lead=lead,
+                            facing="E",
+                            turn="right_90",
+                        )
+                    ]
+                )
+                self.assertEqual(
+                    (step["l_pos"][2] % 360, step["r_pos"][2] % 360), expected_angles
+                )
+
+    def test_template_geometry_is_applied_even_to_ambiguous_slides(self):
+        history = compute_foot_positions(
+            [
+                dict(stance="zenkutsu_dachi", lead="left", facing="W", turn="left_90"),
+                dict(stance="kokutsu_dachi", lead="left", facing="W", turn="0"),
+            ]
+        )
+        left, right = history[1]["l_pos"], history[1]["r_pos"]
+        self.assertAlmostEqual(right[1], left[1])
+        self.assertAlmostEqual(right[0] - left[0], 72)
+
+    def test_catalog_only_stance_has_correct_contact_and_angle(self):
+        [step] = compute_foot_positions(
+            [dict(stance="hizakutsu", lead="left", facing="N", turn="0")]
+        )
+        self.assertEqual(step["l_pos"][2:], [0, "full"])
+        self.assertEqual(step["r_pos"][2:], [0, "ball"])
+
+    def test_unspecified_crossover_lead_is_flagged(self):
+        [step] = compute_foot_positions(
+            [dict(stance="kosa_dachi", lead="both", facing="N", turn="0")]
+        )
+        self.assertIn("No catalog footprint", step["ambiguity"])
+        self.assertEqual(step["r_pos"][3], "ball")

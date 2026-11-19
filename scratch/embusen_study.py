@@ -11,12 +11,21 @@ Internal analysis script exploring:
    saved exclusively in scratch/embusen_study.html without touching any main catalog files.
 """
 
+import base64
+import io
 import math
 import sys
 from pathlib import Path
+
 import yaml
 
 ROOT_DIR = Path(__file__).parent.parent.resolve()
+# Running the script directly puts scratch/, not the project root, on sys.path.
+if not __package__:
+    sys.path.insert(0, str(ROOT_DIR))
+
+import build  # isort: skip
+
 KATA_DIR = ROOT_DIR / "kata"
 TECH_DIR = ROOT_DIR / "techniques"
 
@@ -50,38 +59,77 @@ TURN_DELTA_DEG = {
     "left_360": 0,
 }
 
-# Stance geometric footprints (relative to body center):
-# Format: (dx, dy, foot_rot_relative_to_facing, contact)
-STANCE_OFFSETS = {
+# Estimated floor offsets, relative to body center. Rotation and contact come
+# from the catalog's stance templates, not from a separate set of angles.
+STANCE_POSITIONS = {
     "zenkutsu_dachi": {
-        "left": {"left": (-16, 42, 0, "full"), "right": (16, -42, 30, "full")},
-        "right": {"left": (-16, -42, -30, "full"), "right": (16, 42, 0, "full")},
+        "left": ((-16, 42), (16, -42)),
+        "right": ((-16, -42), (16, 42)),
     },
     "kokutsu_dachi": {
-        "left": {"left": (0, 36, 0, "full"), "right": (0, -36, 90, "full")},
-        "right": {"left": (0, -36, -90, "full"), "right": (0, 36, 0, "full")},
+        "left": ((0, 36), (0, -36)),
+        "right": ((0, -36), (0, 36)),
     },
     "kiba_dachi": {
-        "both": {"left": (-36, 0, 0, "full"), "right": (36, 0, 0, "full")},
+        "both": ((-36, 0), (36, 0)),
     },
     "kosa_dachi": {
-        "left": {"left": (-8, 14, 15, "full"), "right": (8, -14, 20, "ball")},
-        "right": {"left": (-8, -14, -20, "ball"), "right": (8, 14, -15, "full")},
+        "left": ((-8, 14), (8, -14)),
+        "right": ((-8, -14), (8, 14)),
     },
     "neko_ashi_dachi": {
-        "left": {"left": (0, 20, 0, "ball"), "right": (0, -20, 45, "full")},
-        "right": {"left": (0, -20, -45, "full"), "right": (0, 20, 0, "ball")},
+        "left": ((0, 20), (0, -20)),
+        "right": ((0, -20), (0, 20)),
     },
     "tsuru_ashi_dachi": {
-        "left": {"left": (0, 0, 0, "full"), "right": (0, 16, 0, "airborne")},
-        "right": {"left": (0, 16, 0, "airborne"), "right": (0, 0, 0, "full")},
+        "left": ((0, 0), (0, 16)),
+        "right": ((0, 16), (0, 0)),
     },
     "heisoku_dachi": {
-        "left": {"left": (-5, 0, 0, "full"), "right": (5, 0, 0, "full")},
-        "right": {"left": (-5, 0, 0, "full"), "right": (5, 0, 0, "full")},
-        "both": {"left": (-5, 0, 0, "full"), "right": (5, 0, 0, "full")},
+        "left": ((-5, 0), (5, 0)),
+        "right": ((-5, 0), (5, 0)),
+        "both": ((-5, 0), (5, 0)),
+        "none": ((-5, 0), (5, 0)),
     },
 }
+
+CATALOG_STANCE_SPECS = {
+    (stance, lead): (left, right)
+    for stance, lead, left, right in build.STANCE_FOOT_SPECS
+}
+
+
+def stance_template(stance, lead):
+    key = (stance, "both" if stance == "kiba_dachi" else lead)
+    ambiguity = None
+    if key not in CATALOG_STANCE_SPECS:
+        original_key = key
+        key = next(
+            (candidate for candidate in CATALOG_STANCE_SPECS if candidate[0] == stance),
+            ("zenkutsu_dachi", "left"),
+        )
+        ambiguity = (
+            f"No catalog footprint for {original_key}; using {key} provisionally."
+        )
+
+    specs = CATALOG_STANCE_SPECS[key]
+    positions = STANCE_POSITIONS.get(key[0], {}).get(key[1])
+    if positions is None:
+        # Catalog thumbnails use screen coordinates (south is positive y).
+        contact_specs = [spec for spec in specs if spec is not None]
+        cx = sum(spec[1] for spec in contact_specs) / len(contact_specs)
+        cy = sum(spec[2] for spec in contact_specs) / len(contact_specs)
+        positions = tuple(
+            (spec[1] - cx, cy - spec[2]) if spec else (0, 0) for spec in specs
+        )
+
+    return (
+        tuple(
+            (*position, spec[3], spec[0]) if spec else (*position, 0, "airborne")
+            for position, spec in zip(positions, specs)
+        ),
+        ambiguity,
+    )
 
 
 def stance_heading(step):
@@ -279,10 +327,16 @@ def compute_foot_positions(steps):
                 "ambiguity": "Kiba-dachi entry/exit: moving foot, anchor and displacement are provisional.",
             }
 
-        # Stance local template
-        st_tmpl = STANCE_OFFSETS.get(stance, STANCE_OFFSETS["zenkutsu_dachi"]).get(
-            "both" if is_kiba else lead, STANCE_OFFSETS["zenkutsu_dachi"]["left"]
+        (left_template, right_template), template_ambiguity = stance_template(
+            stance, lead
         )
+        if template_ambiguity:
+            ded = {
+                **ded,
+                "ambiguity": " ".join(
+                    filter(None, (ded["ambiguity"], template_ambiguity))
+                ),
+            }
 
         # In a JKA pivot, the pivot foot heel stays on its floor coordinate
         # and rotates to its new stance angle. The moving foot steps to the new stance position.
@@ -302,8 +356,8 @@ def compute_foot_positions(steps):
             return wx, wy
 
         # Calculate offset from body center to feet in current stance
-        l_bx, l_by, l_rot, l_cnt = st_tmpl["left"]
-        r_bx, r_by, r_rot, r_cnt = st_tmpl["right"]
+        l_bx, l_by, l_rot, l_cnt = left_template
+        r_bx, r_by, r_rot, r_cnt = right_template
 
         l_wx, l_wy = body_to_world(l_bx, l_by)
         r_wx, r_wy = body_to_world(r_bx, r_by)
@@ -346,10 +400,10 @@ def compute_foot_positions(steps):
             step_dist = 60.0
             dx = math.sin(facing_rad) * step_dist
             dy = math.cos(facing_rad) * step_dist
-            new_lx = l_pos[0] + dx
-            new_ly = l_pos[1] + dy
-            new_rx = r_pos[0] + dx
-            new_ry = r_pos[1] + dy
+            center_x = (l_pos[0] + r_pos[0]) / 2 + dx
+            center_y = (l_pos[1] + r_pos[1]) / 2 + dy
+            new_lx, new_ly = center_x + l_wx, center_y + l_wy
+            new_rx, new_ry = center_x + r_wx, center_y + r_wy
 
         l_pos = [new_lx, new_ly, heading + l_rot, l_cnt]
         r_pos = [new_rx, new_ry, heading + r_rot, r_cnt]
@@ -376,9 +430,8 @@ def compute_foot_positions(steps):
 
 def generate_embusen_svg_diagram(history, kata_name):
     """
-    Renders an interactive 2D SVG showing every footprint on the floor.
-    Blue = Left Foot, Amber = Right Foot.
-    Pivots shown with arc markers; Ambiguities highlighted in red dashed strokes.
+    Render the catalog's footprint icons, colored by stance.
+    Ambiguous transitions are highlighted with red dashed strokes.
     """
     # Collect coordinates to determine bounding box
     all_x = []
@@ -404,9 +457,17 @@ def generate_embusen_svg_diagram(history, kata_name):
         f'<svg viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" style="background:#0f172a; border-radius:8px; width:100%; max-width:850px; height:auto; box-shadow:0 4px 6px -1px rgba(0,0,0,0.3); font-family:sans-serif;">'
     )
     svg.append("<defs>")
-    svg.append(
-        '<filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
-    )
+    icon_prefix = kata_name.lower().replace(" ", "-")
+    primitives = build.load_foot_primitives(ROOT_DIR / "static" / "icons")
+    for stance in sorted({item["stance"] for item in history}):
+        color = tuple(bytes.fromhex(build.STANCE_COLORS.get(stance, "#94a3b8")[1:]))
+        for contact, primitive in primitives.items():
+            buffer = io.BytesIO()
+            build.colorize_foot(primitive, color).save(buffer, format="PNG")
+            encoded = base64.b64encode(buffer.getvalue()).decode("ascii")
+            svg.append(
+                f'<image id="{icon_prefix}-{stance}-{contact}" x="-16" y="-16" width="32" height="32" href="data:image/png;base64,{encoded}" />'
+            )
     svg.append("</defs>")
 
     # Background grid
@@ -436,39 +497,24 @@ def generate_embusen_svg_diagram(history, kata_name):
 
     # Draw footprints first so later stationary rows cannot cover earlier labels.
     center_labels = {}
+    seen_footprints = set()
     for item in history:
-        for side, pos, color, outline in [
-            ("L", item["l_pos"], "#3b82f6", "#93c5fd"),
-            ("R", item["r_pos"], "#f59e0b", "#fde68a"),
-        ]:
+        for side, pos in [("left", item["l_pos"]), ("right", item["r_pos"])]:
             wx, wy, rot, contact = pos
+            if contact == "airborne":
+                continue
+            key = (item["stance"], side, tuple(round(v, 6) for v in pos[:3]), contact)
+            if key in seen_footprints:
+                continue
+            seen_footprints.add(key)
             sx, sy = world_to_screen(wx, wy)
-
-            # Draw individual footprint primitive
-            # Foot size: 10 wide, 24 long
-            fw, fl = 10, 22
-            fill_op = "0.85" if contact == "full" else "0.4"
+            mirror = " scale(-1 1)" if side == "right" else ""
             svg.append(
-                f'<g transform="translate({sx:.1f}, {sy:.1f}) rotate({rot:.1f})">'
+                f'<g transform="translate({sx:.1f} {sy:.1f}) rotate({rot:.1f}){mirror}">'
+                f'<title>{item["stance"]}, {side} foot ({contact})</title>'
+                f'<use href="#{icon_prefix}-{item["stance"]}-{contact}" />'
+                "</g>"
             )
-
-            if contact == "ball":
-                # Ball of foot: highlight anterior pad
-                svg.append(
-                    f'<ellipse cx="0" cy="{-fl/4}" rx="{fw/2}" ry="{fl/4}" fill="{color}" fill-opacity="0.9" stroke="{outline}" stroke-width="1.5" />'
-                )
-                svg.append(
-                    f'<ellipse cx="0" cy="{fl/3}" rx="{fw/3}" ry="{fl/5}" fill="none" stroke="{outline}" stroke-width="1" stroke-dasharray="2,2" opacity="0.5" />'
-                )
-            else:
-                # Full plantar sole: heel + ball
-                svg.append(
-                    f'<rect x="{-fw/2}" y="{-fl/2}" width="{fw}" height="{fl}" rx="{fw/2}" fill="{color}" fill-opacity="{fill_op}" stroke="{outline}" stroke-width="1.5" />'
-                )
-                # Heel anchor dot
-                svg.append(f'<circle cx="0" cy="{fl/3}" r="2" fill="#ffffff" />')
-
-            svg.append("</g>")
 
         cx, cy = (item["l_pos"][0] + item["r_pos"][0]) / 2.0, (
             item["l_pos"][1] + item["r_pos"][1]
@@ -544,7 +590,7 @@ def generate_scratch_report():
         ".pill-left { background: #1e3a8a; color: #bfdbfe; }",
         ".pill-right { background: #78350f; color: #fde68a; }",
         ".pill-heel { background: #581c87; color: #e9d5ff; }",
-        ".legend { display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 0.8rem; color: #94a3b8; }",
+        ".legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 1rem; font-size: 0.8rem; color: #94a3b8; }",
         ".legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 0.35rem; }",
         "</style>",
         "</head>",
@@ -552,7 +598,7 @@ def generate_scratch_report():
         "<div class='container'>",
         "<div class='header'>",
         "<h1>🥋 Embusen & Movement Deduction Study</h1>",
-        "<p style='color: #94a3b8; margin: 0.25rem 0 0 0;'>Estimated footprint geometry, not measured trajectories. Red marks indicate unresolved deductions. A label such as 2+4 denotes five counts at the same center; hover for the full list. Body heading is in degrees clockwise from north.</p>",
+        "<p style='color: #94a3b8; margin: 0.25rem 0 0 0;'>Footprint colors identify stances; red dashed paths indicate unresolved deductions. Positions are estimates. A label such as 2+4 denotes five counts at the same center; hover for the full list. Body heading is in degrees clockwise from north.</p>",
         "</div>",
     ]
 
@@ -571,18 +617,12 @@ def generate_scratch_report():
         html.append("<div class='diagram-col'>")
         html.append(svg)
         html.append("<div class='legend'>")
-        html.append(
-            "<span><span class='legend-dot' style='background:#3b82f6;'></span>Left Foot</span>"
-        )
-        html.append(
-            "<span><span class='legend-dot' style='background:#f59e0b;'></span>Right Foot</span>"
-        )
-        html.append(
-            "<span><span class='legend-dot' style='background:#ffffff;'></span>Heel Marker</span>"
-        )
-        html.append(
-            "<span><span class='legend-dot' style='background:#ef4444;'></span>Ambiguity Flag</span>"
-        )
+        for stance in dict.fromkeys(item["stance"] for item in history):
+            color = build.STANCE_COLORS.get(stance, "#94a3b8")
+            html.append(
+                f"<span><span class='legend-dot' style='background:{color};'></span>{stance.replace('_', ' ')}</span>"
+            )
+        html.append("<span style='color:#f87171;'>┄ Ambiguous transition</span>")
         html.append("</div></div>")
 
         # Table column
@@ -611,7 +651,7 @@ def generate_scratch_report():
                 status_td = f"<span class='badge-clean'>{status}</span> <span style='font-size:0.75rem; color:#94a3b8;'>{h['rule']}</span>"
 
             html.append(
-                f"<tr><td><strong>{h['step_id']}</strong></td><td>{h['stance']}<br><small style='color:#64748b;'>{h['lead']}</small></td><td>{h['turn']}<br>&rarr; {h['facing']}<br>Body: {h['stance_heading']}°</td><td>{m_pill}</td><td>{p_pill}</td><td>{status_td}</td></tr>"
+                f"<tr><td><strong>{h['step_id']}</strong></td><td><span class='legend-dot' style='background:{build.STANCE_COLORS.get(h['stance'], '#94a3b8')};'></span>{h['stance']}<br><small style='color:#64748b;'>{h['lead']}</small></td><td>{h['turn']}<br>&rarr; {h['facing']}<br>Body: {h['stance_heading']}°</td><td>{m_pill}</td><td>{p_pill}</td><td>{status_td}</td></tr>"
             )
 
         html.append("</tbody></table></div>")
