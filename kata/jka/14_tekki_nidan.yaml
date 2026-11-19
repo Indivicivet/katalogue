@@ -4,11 +4,12 @@ kanji: 鉄騎二段
 furigana: てっきにだん
 style: jka
 order: 14
-status: full_draft
-last_updated: '2026-09-12'
+status: early_draft
+last_updated: '2026-11-19'
 reviewer: null
 sources:
 - 'Shotokan Karate CSL, Tekki Nidan (https://shotokankaratecsl.com/Kata%2007%20-%20Tekki%20Nidan.html)'
+- 'JKA Karate East Lothian, Tekki Nidan chart (facing reference: https://www.jkakarate.co.uk/shared/images/content/bus_57720/pdf/14-Tekki-Nidan.pdf)'
 tags:
 - black_belt
 steps:
@@ -18,19 +19,19 @@ steps:
   lead: both
   technique: ryo_zenwan_suihei_kamae
   target: null
-  turn: '0'
-  facing: N
+  turn: right_90
+  facing: E
   slow: true
   notes: Cross left foot in front of right into crossed stance
 - id: '2'
   count: 2
   stance: kiba_dachi
-  lead: both
+  lead: right
   technique: zenwan_sokumen_uke
   secondary_technique: zenwan_suihei_mune_kamae
   target: chudan
   turn: '0'
-  facing: N
+  facing: E
   notes: Stomp right foot into horse stance with right forearm block to side and left horizontal forearm posture
 - id: '3'
   count: 3
@@ -39,7 +40,7 @@ steps:
   technique: zenwan_shomen_gedan_kensei
   target: gedan
   turn: '0'
-  facing: N
+  facing: E
   notes: Cross right foot in front of left with forearm frontal low feint
 - id: '4'
   count: 4
@@ -49,7 +50,7 @@ steps:
   secondary_technique: oshi_uke
   target: gedan
   turn: '0'
-  facing: N
+  facing: E
   notes: Step left foot out into horse stance with low forearm block to side (pushing block)
 - id: '5'
   count: 5
@@ -57,19 +58,19 @@ steps:
   lead: both
   technique: ryo_zenwan_suihei_kamae
   target: null
-  turn: '0'
-  facing: N
+  turn: left_180
+  facing: W
   slow: true
   notes: Draw left foot to right into closed feet stance
 - id: '6'
   count: 6
   stance: kiba_dachi
-  lead: both
+  lead: left
   technique: zenwan_sokumen_uke
   secondary_technique: zenwan_suihei_mune_kamae
   target: chudan
   turn: '0'
-  facing: N
+  facing: W
   notes: Step left foot out into horse stance with left forearm block to side and right horizontal forearm posture
 - id: '7'
   count: 7
@@ -78,7 +79,7 @@ steps:
   technique: zenwan_shomen_gedan_kensei
   target: gedan
   turn: '0'
-  facing: N
+  facing: W
   notes: Cross left foot in front of right with forearm frontal low feint
 - id: '8'
   count: 8
@@ -88,35 +89,35 @@ steps:
   secondary_technique: oshi_uke
   target: gedan
   turn: '0'
-  facing: N
+  facing: W
   notes: Step right foot out into horse stance with low forearm block to side (pushing block)
 - id: '9'
   count: 9
   stance: kiba_dachi
-  lead: both
+  lead: right
   technique: kao_muki
   secondary_technique: koshi_kamae
   target: null
-  turn: '0'
-  facing: N
-  notes: Turn head left, draw fists to right hip
+  turn: right_180
+  facing: E
+  notes: null
 - id: '10'
   count: 10
   stance: kiba_dachi
-  lead: left
+  lead: right
   technique: soete_uchi_uke
   target: chudan
   turn: '0'
-  facing: N
+  facing: E
   notes: Left inside block with right open hand supporting left forearm
 - id: '11'
   count: 11
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: fumikomi
   secondary_technique: mae_empi_uchi
   target: chudan
-  turn: '0'
+  turn: left_90
   facing: N
   notes: Raise right knee with koshi-kamae, stomp into horse stance with right front elbow strike into left palm
 - id: '12'
@@ -126,18 +127,18 @@ steps:
   technique: tsukami_uke
   secondary_technique: koko_uke
   target: chudan
-  turn: '0'
-  facing: N
+  turn: right_90
+  facing: E
   slow: true
   notes: Right grasping block with tiger-mouth hand
 - id: '13'
   count: 13
   stance: kiba_dachi
-  lead: left
+  lead: right
   technique: kagi_zuki
   target: chudan
   turn: '0'
-  facing: N
+  facing: E
   notes: Left hook punch
 - id: '14'
   count: 14
@@ -146,17 +147,17 @@ steps:
   technique: jotai_sonomama
   target: null
   turn: '0'
-  facing: N
+  facing: E
   slow: true
   notes: null
 - id: '15'
   count: 15
   stance: kiba_dachi
-  lead: left
+  lead: both
   technique: fumikomi
   secondary_technique: uchi_uke
   target: chudan
-  turn: '0'
+  turn: left_90
   facing: N
   notes: Stomp left foot into horse stance with left inside block
 - id: '16'
@@ -173,30 +174,30 @@ steps:
 - id: '17'
   count: 17
   stance: kiba_dachi
-  lead: both
+  lead: left
   technique: kao_muki
   secondary_technique: koshi_kamae
   target: null
-  turn: '0'
-  facing: N
-  notes: Turn head right, draw fists to left hip
+  turn: left_90
+  facing: W
+  notes: null
 - id: '18'
   count: 18
   stance: kiba_dachi
-  lead: right
+  lead: left
   technique: soete_uchi_uke
   target: chudan
   turn: '0'
-  facing: N
+  facing: W
   notes: Right inside block with left open hand supporting right forearm
 - id: '19'
   count: 19
   stance: kiba_dachi
-  lead: left
+  lead: both
   technique: fumikomi
   secondary_technique: mae_empi_uchi
   target: chudan
-  turn: '0'
+  turn: right_90
   facing: N
   notes: Raise left knee with koshi-kamae, stomp into horse stance with left front elbow strike into right palm
 - id: '20'
@@ -206,18 +207,18 @@ steps:
   technique: tsukami_uke
   secondary_technique: koko_uke
   target: chudan
-  turn: '0'
-  facing: N
+  turn: left_90
+  facing: W
   slow: true
   notes: Left grasping block with tiger-mouth hand
 - id: '21'
   count: 21
   stance: kiba_dachi
-  lead: right
+  lead: left
   technique: kagi_zuki
   target: chudan
   turn: '0'
-  facing: N
+  facing: W
   notes: Right hook punch
 - id: '22'
   count: 22
@@ -226,17 +227,17 @@ steps:
   technique: jotai_sonomama
   target: null
   turn: '0'
-  facing: N
+  facing: W
   slow: true
   notes: null
 - id: '23'
   count: 23
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: fumikomi
   secondary_technique: uchi_uke
   target: chudan
-  turn: '0'
+  turn: right_90
   facing: N
   notes: Stomp right foot into horse stance with right inside block
 - id: '24'

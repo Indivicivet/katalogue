@@ -4,18 +4,19 @@ kanji: 鉄騎三段
 furigana: てっきさんだん
 style: jka
 order: 15
-status: full_draft
-last_updated: '2026-09-12'
+status: early_draft
+last_updated: '2026-11-19'
 reviewer: null
 sources:
 - 'Shotokan Karate CSL, Tekki Sandan (https://shotokankaratecsl.com/Kata%2008%20-%20Tekki%20Sandan.html)'
+- 'JKA Karate East Lothian, Tekki Sandan chart (facing reference: https://www.jkakarate.co.uk/shared/images/content/bus_57720/pdf/15-Tekki-Sandan.pdf)'
 tags:
 - black_belt
 steps:
 - id: '1'
   count: 1
   stance: kiba_dachi
-  lead: left
+  lead: both
   technique: uchi_uke
   target: chudan
   turn: '0'
@@ -41,7 +42,7 @@ steps:
 - id: '4'
   count: 4
   stance: kiba_dachi
-  lead: left
+  lead: both
   technique: haiwan_uchi_nagashi_uke
   target: jodan
   turn: '0'
@@ -49,7 +50,7 @@ steps:
 - id: '5'
   count: 5
   stance: kiba_dachi
-  lead: left
+  lead: both
   technique: tate_uraken_uchi
   target: jodan
   turn: '0'
@@ -65,7 +66,7 @@ steps:
 - id: '7'
   count: 7
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: choku_zuki
   target: chudan
   turn: '0'
@@ -76,8 +77,8 @@ steps:
   lead: right
   technique: zenwan_hineri
   target: chudan
-  turn: '0'
-  facing: N
+  turn: right_90
+  facing: E
 - id: '9'
   count: 9
   stance: kosa_dachi
@@ -85,7 +86,7 @@ steps:
   technique: jotai_sonomama
   target: null
   turn: '0'
-  facing: N
+  facing: E
   slow: true
 - id: '10'
   count: 10
@@ -94,7 +95,7 @@ steps:
   technique: zenwan_sokumen_gedan_uke
   target: gedan
   turn: '0'
-  facing: N
+  facing: E
 - id: '11'
   count: 11
   stance: kiba_dachi
@@ -102,19 +103,19 @@ steps:
   technique: zenwan_gedan_furisute
   target: gedan
   turn: '0'
-  facing: N
+  facing: E
 - id: '12'
   count: 12
   stance: kiba_dachi
   lead: both
   technique: koshi_kamae
   target: null
-  turn: '0'
+  turn: left_90
   facing: N
 - id: '13'
   count: 13
   stance: kiba_dachi
-  lead: left
+  lead: both
   technique: choku_zuki
   target: chudan
   turn: '0'
@@ -150,11 +151,11 @@ steps:
 - id: '17'
   count: 17
   stance: kiba_dachi
-  lead: none
+  lead: left
   technique: kao_muki
   target: null
-  turn: '0'
-  facing: N
+  turn: left_90
+  facing: W
 - id: '18'
   count: 18
   stance: kosa_dachi
@@ -162,20 +163,20 @@ steps:
   technique: jotai_sonomama
   target: null
   turn: '0'
-  facing: N
+  facing: W
   slow: true
 - id: '19'
   count: 19
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: fumikomi
   target: gedan
-  turn: '0'
+  turn: right_90
   facing: N
 - id: '20'
   count: 20
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: zenwan_uchiotoshi
   target: chudan
   turn: '0'
@@ -183,7 +184,7 @@ steps:
 - id: '21'
   count: 21
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: haiwan_uchi_nagashi_uke
   target: jodan
   turn: '0'
@@ -191,7 +192,7 @@ steps:
 - id: '22'
   count: 22
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: tate_uraken_uchi
   target: jodan
   turn: '0'
@@ -207,7 +208,7 @@ steps:
 - id: '24'
   count: 24
   stance: kiba_dachi
-  lead: left
+  lead: both
   technique: choku_zuki
   target: chudan
   turn: '0'
@@ -218,8 +219,8 @@ steps:
   lead: left
   technique: zenwan_hineri
   target: chudan
-  turn: '0'
-  facing: N
+  turn: left_90
+  facing: W
 - id: '26'
   count: 26
   stance: kosa_dachi
@@ -227,7 +228,7 @@ steps:
   technique: jotai_sonomama
   target: null
   turn: '0'
-  facing: N
+  facing: W
   slow: true
 - id: '27'
   count: 27
@@ -236,7 +237,7 @@ steps:
   technique: zenwan_sokumen_gedan_uke
   target: gedan
   turn: '0'
-  facing: N
+  facing: W
 - id: '28'
   count: 28
   stance: kiba_dachi
@@ -244,19 +245,19 @@ steps:
   technique: zenwan_gedan_furisute
   target: gedan
   turn: '0'
-  facing: N
+  facing: W
 - id: '29'
   count: 29
   stance: kiba_dachi
   lead: both
   technique: koshi_kamae
   target: null
-  turn: '0'
+  turn: right_90
   facing: N
 - id: '30'
   count: 30
   stance: kiba_dachi
-  lead: right
+  lead: both
   technique: choku_zuki
   target: chudan
   turn: '0'
@@ -264,11 +265,11 @@ steps:
 - id: '31'
   count: 31
   stance: kiba_dachi
-  lead: left
+  lead: right
   technique: tsukami_uke
   target: chudan
-  turn: '0'
-  facing: N
+  turn: right_90
+  facing: E
   slow: true
 - id: '32'
   count: 32
@@ -277,7 +278,7 @@ steps:
   technique: kagi_zuki
   target: chudan
   turn: '0'
-  facing: N
+  facing: E
 - id: '33'
   count: 33
   stance: kosa_dachi
@@ -285,7 +286,7 @@ steps:
   technique: jotai_sonomama
   target: null
   turn: '0'
-  facing: N
+  facing: E
   slow: true
 - id: '34'
   count: 34
@@ -294,7 +295,7 @@ steps:
   technique: fumikomi
   secondary_technique: uchi_uke
   target: chudan
-  turn: '0'
+  turn: left_90
   facing: N
 - id: '35'
   count: 35
