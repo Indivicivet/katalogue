@@ -45,7 +45,7 @@ steps:
   count: 4
   stance: zenkutsu_dachi
   lead: right
-  technique: tettsui_uchi
+  technique: kentsui_tate_mawashi_uchi
   target: null
   turn: '0'
   facing: E
