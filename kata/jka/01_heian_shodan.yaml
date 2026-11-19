@@ -102,8 +102,8 @@ steps:
   lead: left
   technique: gedan_barai
   target: gedan
-  turn: left_225
-  facing: SE
+  turn: left_270
+  facing: E
   notes: null
 - id: '11'
   count: 11
@@ -112,7 +112,7 @@ steps:
   technique: oi_zuki
   target: chudan
   turn: '0'
-  facing: SE
+  facing: E
   notes: null
 - id: '12'
   count: 12
@@ -120,8 +120,8 @@ steps:
   lead: right
   technique: gedan_barai
   target: gedan
-  turn: right_90
-  facing: SW
+  turn: right_180
+  facing: W
   notes: null
 - id: '13'
   count: 13
@@ -130,7 +130,7 @@ steps:
   technique: oi_zuki
   target: chudan
   turn: '0'
-  facing: SW
+  facing: W
   notes: null
 - id: '14'
   count: 14
@@ -138,7 +138,7 @@ steps:
   lead: left
   technique: gedan_barai
   target: gedan
-  turn: left_45
+  turn: left_90
   facing: S
   notes: null
 - id: '15'
@@ -175,8 +175,8 @@ steps:
   lead: left
   technique: shuto_uke
   target: chudan
-  turn: left_225
-  facing: NW
+  turn: left_270
+  facing: W
   notes: null
 - id: '19'
   count: 19
@@ -184,8 +184,8 @@ steps:
   lead: right
   technique: shuto_uke
   target: chudan
-  turn: right_90
-  facing: NE
+  turn: right_45
+  facing: NW
   notes: null
 - id: '20'
   count: 20
@@ -193,8 +193,8 @@ steps:
   lead: right
   technique: shuto_uke
   target: chudan
-  turn: right_180
-  facing: SW
+  turn: right_135
+  facing: E
   notes: null
 - id: '21'
   count: 21
@@ -202,6 +202,6 @@ steps:
   lead: left
   technique: shuto_uke
   target: chudan
-  turn: left_90
-  facing: SE
+  turn: left_45
+  facing: NE
   notes: null
