@@ -84,7 +84,7 @@ steps:
   count: 9
   stance: zenkutsu_dachi
   lead: left
-  technique: juji_uke_jodan
+  technique: kaisho_kosa_uke
   target: jodan
   turn: '0'
   facing: N
@@ -92,13 +92,20 @@ steps:
   count: 10
   stance: zenkutsu_dachi
   lead: left
-  technique: ura_zuki
-  secondary_technique: osae_uke
+  technique: ryosho_juji_osae_uke
   target: chudan
   turn: '0'
   facing: N
 - id: '11'
   count: 11
+  stance: zenkutsu_dachi
+  lead: left
+  technique: tettsui_uchi
+  target: chudan
+  turn: '0'
+  facing: N
+- id: '12'
+  count: 12
   stance: zenkutsu_dachi
   lead: right
   technique: oi_zuki
@@ -106,16 +113,16 @@ steps:
   turn: '0'
   facing: N
   kiai: true
-- id: '12'
-  count: 12
+- id: '13'
+  count: 13
   stance: kiba_dachi
   lead: right
   technique: gedan_barai
   target: gedan
   turn: left_180
   facing: S
-- id: '13'
-  count: 13
+- id: '14'
+  count: 14
   stance: kiba_dachi
   lead: right
   technique: kake_uke
@@ -123,33 +130,33 @@ steps:
   turn: '0'
   facing: S
   slow: true
-- id: '14'
-  count: 14
   stance: kiba_dachi
   lead: both
+- id: '15'
+  count: 15
   technique: mikazuki_geri
   secondary_technique: haishu_uke
   target: chudan
   turn: '0'
   facing: S
-- id: '15'
-  count: 15
+- id: '16'
+  count: 16
   stance: kiba_dachi
   lead: both
   technique: mae_empi_uchi
   target: chudan
   turn: '0'
   facing: S
-- id: '16'
-  count: 16
+- id: '17'
+  count: 17
   stance: kosa_dachi
   lead: right
   technique: morote_uke
   target: chudan
   turn: '0'
   facing: S
-- id: '17'
-  count: 17
+- id: '18'
+  count: 18
   stance: renoji_dachi
   lead: right
   technique: jodan_zuki
@@ -157,8 +164,8 @@ steps:
   target: jodan
   turn: '0'
   facing: S
-- id: '18'
-  count: 18
+- id: '19'
+  count: 19
   stance: kosa_dachi
   lead: right
   technique: juji_uke_gedan
@@ -166,33 +173,23 @@ steps:
   turn: '0'
   facing: S
   kiai: true
-- id: '19'
-  count: 19
+- id: '20'
+  count: 20
   stance: zenkutsu_dachi
   lead: right
   technique: morote_uke
   target: chudan
   turn: '0'
   facing: S
-- id: '20'
-  count: 20
-  stance: zenkutsu_dachi
-  lead: left
-  technique: nagashi_uke
-  secondary_technique: gedan_barai
-  target: gedan
-  turn: left_180
-  facing: N
 - id: 21a
   count: 21
   subcount: a
   stance: zenkutsu_dachi
   lead: left
-  technique: null
   target: chudan
-  turn: '0'
+  technique: nagashi_uke
+  turn: left_180
   facing: N
-  notes: "TODO: verify correct technique name for 21a"
 - id: 21b
   count: 21
   subcount: b
@@ -216,8 +213,8 @@ steps:
   subcount: a
   stance: zenkutsu_dachi
   lead: right
-  technique: oi_zuki
   target: chudan
+  technique: nagashi_uke
   turn: '0'
   facing: N
 - id: 23b
