@@ -47,7 +47,7 @@ steps:
   count: 4
   stance: zenkutsu_dachi
   lead: right
-  technique: gyaku_uchi_uke
+  technique: gyaku_soto_uke
   target: chudan
   turn: right_180
   facing: N
