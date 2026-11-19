@@ -124,8 +124,8 @@ steps:
   lead: left
   technique: shuto_uke
   target: chudan
-  turn: left_225
-  facing: SE
+  turn: left_270
+  facing: E
   notes: null
 - id: '13'
   count: 13
@@ -133,8 +133,8 @@ steps:
   lead: right
   technique: shuto_uke
   target: chudan
-  turn: right_90
-  facing: SW
+  turn: right_45
+  facing: SE
   notes: null
 - id: '14'
   count: 14
@@ -142,8 +142,8 @@ steps:
   lead: right
   technique: shuto_uke
   target: chudan
-  turn: right_180
-  facing: NW
+  turn: right_135
+  facing: W
   notes: null
 - id: '15'
   count: 15
@@ -151,8 +151,8 @@ steps:
   lead: left
   technique: shuto_uke
   target: chudan
-  turn: left_90
-  facing: NE
+  turn: left_45
+  facing: SW
   notes: null
 - id: '16'
   count: 16
@@ -160,13 +160,12 @@ steps:
   lead: left
   technique: uchi_uke
   target: chudan
-  turn: right_135
+  turn: left_45
   facing: S
   notes: gyaku-hanmi
 - id: '17'
   count: 17
   stance: tsuru_ashi_dachi
-  lead: right
   technique: mae_geri
   target: chudan
   turn: '0'
@@ -223,8 +222,8 @@ steps:
   lead: left
   technique: gedan_barai
   target: gedan
-  turn: left_225
-  facing: NW
+  turn: left_270
+  facing: W
   notes: null
 - id: '24'
   count: 24
@@ -232,8 +231,8 @@ steps:
   lead: right
   technique: age_uke
   target: jodan
-  turn: right_90
-  facing: NE
+  turn: right_45
+  facing: NW
   notes: null
 - id: '25'
   count: 25
@@ -241,8 +240,8 @@ steps:
   lead: right
   technique: gedan_barai
   target: gedan
-  turn: right_180
-  facing: SW
+  turn: right_135
+  facing: E
   notes: null
 - id: '26'
   count: 26
@@ -250,7 +249,7 @@ steps:
   lead: left
   technique: age_uke
   target: jodan
-  turn: left_90
-  facing: SE
+  turn: left_45
+  facing: NE
   kiai: true
   notes: null
