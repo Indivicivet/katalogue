@@ -62,10 +62,7 @@ STANCE_OFFSETS = {
         "right": {"left": (0, -36, -90, "full"), "right": (0, 36, 0, "full")},
     },
     "kiba_dachi": {
-        "left": {"left": (-36, 0, 0, "full"), "right": (36, 0, 0, "full")},
-        "right": {"left": (-36, 0, 0, "full"), "right": (36, 0, 0, "full")},
         "both": {"left": (-36, 0, 0, "full"), "right": (36, 0, 0, "full")},
-        "none": {"left": (-36, 0, 0, "full"), "right": (36, 0, 0, "full")},
     },
     "kosa_dachi": {
         "left": {"left": (-8, 14, 15, "full"), "right": (8, -14, 20, "ball")},
@@ -83,11 +80,60 @@ STANCE_OFFSETS = {
         "left": {"left": (-5, 0, 0, "full"), "right": (5, 0, 0, "full")},
         "right": {"left": (-5, 0, 0, "full"), "right": (5, 0, 0, "full")},
         "both": {"left": (-5, 0, 0, "full"), "right": (5, 0, 0, "full")},
-    }
+    },
 }
 
 
+def stance_heading(step):
+    facing = COMPASS_DEG.get(step.get("facing"), 0)
+    if step.get("stance") == "kiba_dachi":
+        # The lead identifies which side of the stance the head faces. It
+        # neither changes the foot geometry nor indicates which foot moved.
+        facing += {"left": 90, "right": -90, "both": 0, "none": 0}[
+            step.get("lead") or "both"
+        ]
+    return facing % 360
+
+
 def deduce_moving_foot(prev_step, curr_step, step_index):
+    if (
+        prev_step
+        and prev_step.get("stance") == "kiba_dachi"
+        and curr_step.get("stance") == "kiba_dachi"
+    ):
+        if stance_heading(prev_step) != stance_heading(curr_step):
+            return {
+                "moving_foot": "unknown",
+                "pivot_foot": "unknown",
+                "pivot_type": "unresolved",
+                "rule": "The stance heading changes, but the foot anchor is unspecified.",
+                "ambiguity": "Body reorientation plotted around the previous center; actual foot movement is unknown.",
+            }
+        if curr_step.get("turn") == "advance":
+            return {
+                "moving_foot": "both_sliding",
+                "pivot_foot": "none",
+                "pivot_type": "slide",
+                "rule": "Explicit translation with unchanged stance heading.",
+                "ambiguity": "Translation distance is estimated.",
+            }
+        return {
+            "moving_foot": "none",
+            "pivot_foot": "both",
+            "pivot_type": "stationary",
+            "rule": "Same kiba-dachi geometry; keep both footprints fixed unless an advance is specified.",
+            "ambiguity": None,
+        }
+
+    if prev_step is None and curr_step.get("stance") == "kiba_dachi":
+        return {
+            "moving_foot": "unknown",
+            "pivot_foot": "unknown",
+            "pivot_type": "unresolved",
+            "rule": "Opening kiba-dachi at the initial center.",
+            "ambiguity": "The opening foot displacement is unspecified.",
+        }
+
     if step_index == 1:
         turn = curr_step.get("turn")
         lead = curr_step.get("lead")
@@ -212,18 +258,35 @@ def compute_foot_positions(steps):
         prev = steps[i - 2] if i > 1 else None
         ded = deduce_moving_foot(prev, s, i)
         facing = s.get("facing") or "N"
-        facing_rad = math.radians(COMPASS_DEG.get(facing, 0))
-
         stance = s.get("stance", "zenkutsu_dachi")
         lead = s.get("lead", "left")
+        heading = stance_heading(s)
+        facing_rad = math.radians(heading)
+        was_kiba = prev is not None and prev.get("stance") == "kiba_dachi"
+        is_kiba = stance == "kiba_dachi"
+
+        # The old transition heuristic may guess a foot anchor from lead,
+        # which is not valid for kiba-dachi. Keep these estimates visible but
+        # explicitly provisional until stance-entry/crossover rules are defined.
+        if (prev is not None and was_kiba != is_kiba) or (
+            i == 1
+            and stance == "kosa_dachi"
+            and len(steps) > 1
+            and steps[1].get("stance") == "kiba_dachi"
+        ):
+            ded = {
+                **ded,
+                "ambiguity": "Kiba-dachi entry/exit: moving foot, anchor and displacement are provisional.",
+            }
 
         # Stance local template
-        st_tmpl = STANCE_OFFSETS.get(stance, STANCE_OFFSETS["zenkutsu_dachi"]).get(lead, STANCE_OFFSETS["zenkutsu_dachi"]["left"])
-        
+        st_tmpl = STANCE_OFFSETS.get(stance, STANCE_OFFSETS["zenkutsu_dachi"]).get(
+            "both" if is_kiba else lead, STANCE_OFFSETS["zenkutsu_dachi"]["left"]
+        )
+
         # In a JKA pivot, the pivot foot heel stays on its floor coordinate
         # and rotates to its new stance angle. The moving foot steps to the new stance position.
         pivot = ded["pivot_foot"]
-        moving = ded["moving_foot"]
 
         # Center of hips can be estimated from the pivot foot
         # Rotation matrix from body frame (facing) to world frame
@@ -245,7 +308,10 @@ def compute_foot_positions(steps):
         l_wx, l_wy = body_to_world(l_bx, l_by)
         r_wx, r_wy = body_to_world(r_bx, r_by)
 
-        if pivot == "right":
+        if ded["pivot_type"] == "stationary":
+            new_lx, new_ly = l_pos[:2]
+            new_rx, new_ry = r_pos[:2]
+        elif pivot == "right":
             # Right foot anchor remains at its current position (or turns on heel)
             # Body center is positioned such that right foot matches
             center_x = r_pos[0] - r_wx
@@ -263,6 +329,18 @@ def compute_foot_positions(steps):
             new_ly = l_pos[1]
             new_rx = center_x + r_wx
             new_ry = center_y + r_wy
+        elif is_kiba or was_kiba:
+            # No reliable anchor: render the new template at the previous
+            # center instead of inventing a step. Only an explicit advance
+            # translates an otherwise unchanged kiba-dachi.
+            center_x = (l_pos[0] + r_pos[0]) / 2
+            center_y = (l_pos[1] + r_pos[1]) / 2
+            if is_kiba and was_kiba and s.get("turn") == "advance":
+                travel_rad = math.radians(COMPASS_DEG[facing])
+                center_x += 60.0 * math.sin(travel_rad)
+                center_y += 60.0 * math.cos(travel_rad)
+            new_lx, new_ly = center_x + l_wx, center_y + l_wy
+            new_rx, new_ry = center_x + r_wx, center_y + r_wy
         else:
             # Linear translation or sliding
             step_dist = 60.0
@@ -273,22 +351,25 @@ def compute_foot_positions(steps):
             new_rx = r_pos[0] + dx
             new_ry = r_pos[1] + dy
 
-        l_pos = [new_lx, new_ly, COMPASS_DEG.get(facing, 0) + l_rot, l_cnt]
-        r_pos = [new_rx, new_ry, COMPASS_DEG.get(facing, 0) + r_rot, r_cnt]
+        l_pos = [new_lx, new_ly, heading + l_rot, l_cnt]
+        r_pos = [new_rx, new_ry, heading + r_rot, r_cnt]
 
-        history.append({
-            "step_id": s.get("id"),
-            "count": s.get("count"),
-            "stance": stance,
-            "lead": lead,
-            "technique": s.get("technique"),
-            "turn": s.get("turn"),
-            "facing": facing,
-            "kiai": s.get("kiai", False),
-            "l_pos": list(l_pos),
-            "r_pos": list(r_pos),
-            **ded
-        })
+        history.append(
+            {
+                "step_id": s.get("id"),
+                "count": s.get("count"),
+                "stance": stance,
+                "lead": lead,
+                "technique": s.get("technique"),
+                "turn": s.get("turn"),
+                "facing": facing,
+                "stance_heading": heading,
+                "kiai": s.get("kiai", False),
+                "l_pos": list(l_pos),
+                "r_pos": list(r_pos),
+                **ded,
+            }
+        )
 
     return history
 
@@ -314,21 +395,29 @@ def generate_embusen_svg_diagram(history, kata_name):
 
     # In screen coords, North (Y+) is upward (-ScreenY)
     def world_to_screen(wx, wy):
-        sx = wx - min_x + pad
-        sy = (max_y - wy) + pad
+        sx = wx - min_x + (w - (max_x - min_x)) / 2
+        sy = max_y - wy + (h - (max_y - min_y)) / 2
         return sx, sy
 
     svg = []
-    svg.append(f'<svg viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" style="background:#0f172a; border-radius:8px; width:100%; max-width:850px; height:auto; box-shadow:0 4px 6px -1px rgba(0,0,0,0.3); font-family:sans-serif;">')
-    svg.append('<defs>')
-    svg.append('<filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>')
-    svg.append('</defs>')
+    svg.append(
+        f'<svg viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg" style="background:#0f172a; border-radius:8px; width:100%; max-width:850px; height:auto; box-shadow:0 4px 6px -1px rgba(0,0,0,0.3); font-family:sans-serif;">'
+    )
+    svg.append("<defs>")
+    svg.append(
+        '<filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
+    )
+    svg.append("</defs>")
 
     # Background grid
     for gx in range(0, w, 50):
-        svg.append(f'<line x1="{gx}" y1="0" x2="{gx}" y2="{h}" stroke="#1e293b" stroke-width="1" />')
+        svg.append(
+            f'<line x1="{gx}" y1="0" x2="{gx}" y2="{h}" stroke="#1e293b" stroke-width="1" />'
+        )
     for gy in range(0, h, 50):
-        svg.append(f'<line x1="0" y1="{gy}" x2="{w}" y2="{gy}" stroke="#1e293b" stroke-width="1" />')
+        svg.append(
+            f'<line x1="0" y1="{gy}" x2="{w}" y2="{gy}" stroke="#1e293b" stroke-width="1" />'
+        )
 
     # Draw movement paths between successive center of gravity
     prev_cx, prev_cy = None, None
@@ -340,54 +429,81 @@ def generate_embusen_svg_diagram(history, kata_name):
         if prev_cx is not None:
             stroke_color = "#ef4444" if item["ambiguity"] else "#38bdf8"
             dash = "stroke-dasharray='4,4'" if item["ambiguity"] else ""
-            svg.append(f'<line x1="{prev_cx:.1f}" y1="{prev_cy:.1f}" x2="{scx:.1f}" y2="{scy:.1f}" stroke="{stroke_color}" stroke-width="2" opacity="0.6" {dash}/>')
+            svg.append(
+                f'<line x1="{prev_cx:.1f}" y1="{prev_cy:.1f}" x2="{scx:.1f}" y2="{scy:.1f}" stroke="{stroke_color}" stroke-width="2" opacity="0.6" {dash}/>'
+            )
         prev_cx, prev_cy = scx, scy
 
-    # Draw footprints
+    # Draw footprints first so later stationary rows cannot cover earlier labels.
+    center_labels = {}
     for item in history:
-        sid = item["step_id"]
-        is_kiai = item["kiai"]
-        has_ambig = bool(item["ambiguity"])
-
         for side, pos, color, outline in [
             ("L", item["l_pos"], "#3b82f6", "#93c5fd"),
             ("R", item["r_pos"], "#f59e0b", "#fde68a"),
         ]:
             wx, wy, rot, contact = pos
             sx, sy = world_to_screen(wx, wy)
-            
+
             # Draw individual footprint primitive
             # Foot size: 10 wide, 24 long
             fw, fl = 10, 22
             fill_op = "0.85" if contact == "full" else "0.4"
-            svg.append(f'<g transform="translate({sx:.1f}, {sy:.1f}) rotate({rot:.1f})">')
-            
+            svg.append(
+                f'<g transform="translate({sx:.1f}, {sy:.1f}) rotate({rot:.1f})">'
+            )
+
             if contact == "ball":
                 # Ball of foot: highlight anterior pad
-                svg.append(f'<ellipse cx="0" cy="{-fl/4}" rx="{fw/2}" ry="{fl/4}" fill="{color}" fill-opacity="0.9" stroke="{outline}" stroke-width="1.5" />')
-                svg.append(f'<ellipse cx="0" cy="{fl/3}" rx="{fw/3}" ry="{fl/5}" fill="none" stroke="{outline}" stroke-width="1" stroke-dasharray="2,2" opacity="0.5" />')
+                svg.append(
+                    f'<ellipse cx="0" cy="{-fl/4}" rx="{fw/2}" ry="{fl/4}" fill="{color}" fill-opacity="0.9" stroke="{outline}" stroke-width="1.5" />'
+                )
+                svg.append(
+                    f'<ellipse cx="0" cy="{fl/3}" rx="{fw/3}" ry="{fl/5}" fill="none" stroke="{outline}" stroke-width="1" stroke-dasharray="2,2" opacity="0.5" />'
+                )
             else:
                 # Full plantar sole: heel + ball
-                svg.append(f'<rect x="{-fw/2}" y="{-fl/2}" width="{fw}" height="{fl}" rx="{fw/2}" fill="{color}" fill-opacity="{fill_op}" stroke="{outline}" stroke-width="1.5" />')
+                svg.append(
+                    f'<rect x="{-fw/2}" y="{-fl/2}" width="{fw}" height="{fl}" rx="{fw/2}" fill="{color}" fill-opacity="{fill_op}" stroke="{outline}" stroke-width="1.5" />'
+                )
                 # Heel anchor dot
                 svg.append(f'<circle cx="0" cy="{fl/3}" r="2" fill="#ffffff" />')
 
-            svg.append('</g>')
+            svg.append("</g>")
 
-        # Center label of step ID
-        cx, cy = (item["l_pos"][0] + item["r_pos"][0]) / 2.0, (item["l_pos"][1] + item["r_pos"][1]) / 2.0
+        cx, cy = (item["l_pos"][0] + item["r_pos"][0]) / 2.0, (
+            item["l_pos"][1] + item["r_pos"][1]
+        ) / 2.0
         scx, scy = world_to_screen(cx, cy)
-        
-        lbl_bg = "#dc2626" if is_kiai else ("#b91c1c" if has_ambig else "#1e293b")
-        svg.append(f'<circle cx="{scx:.1f}" cy="{scy:.1f}" r="9" fill="{lbl_bg}" stroke="#ffffff" stroke-width="1.5" />')
-        svg.append(f'<text x="{scx:.1f}" y="{scy+3:.1f}" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">{sid}</text>')
+        center_labels.setdefault((round(scx, 1), round(scy, 1)), []).append(item)
 
-    svg.append('</svg>')
+    for (scx, scy), items in center_labels.items():
+        ids = [str(item["step_id"]) for item in items]
+        label = ids[0] if len(ids) == 1 else f"{ids[0]}+{len(ids) - 1}"
+        lbl_bg = (
+            "#dc2626"
+            if any(item["kiai"] for item in items)
+            else "#b91c1c" if any(item["ambiguity"] for item in items) else "#1e293b"
+        )
+        label_width = max(18, 6 * len(label) + 8)
+        svg.append(f'<g><title>Counts: {", ".join(ids)}</title>')
+        svg.append(
+            f'<rect x="{scx-label_width/2:.1f}" y="{scy-9:.1f}" width="{label_width}" height="18" rx="9" fill="{lbl_bg}" stroke="#ffffff" stroke-width="1.5" />'
+        )
+        svg.append(
+            f'<text x="{scx:.1f}" y="{scy+3:.1f}" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">{label}</text></g>'
+        )
+
+    svg.append("</svg>")
     return "\n".join(svg)
 
 
 def generate_scratch_report():
-    test_kata = ["01_heian_shodan.yaml", "04_heian_yondan.yaml", "06_tekki_shodan.yaml"]
+    test_kata = [
+        "06_tekki_shodan.yaml",
+        "14_tekki_nidan.yaml",
+        "01_heian_shodan.yaml",
+        "07_bassai_dai.yaml",
+    ]
     analyzed = []
 
     for name in test_kata:
@@ -401,7 +517,7 @@ def generate_scratch_report():
             analyzed.append((kdata, history, svg_diag))
 
     out_html = ROOT_DIR / "scratch" / "embusen_study.html"
-    
+
     html = [
         "<!DOCTYPE html>",
         "<html lang='en'>",
@@ -436,7 +552,7 @@ def generate_scratch_report():
         "<div class='container'>",
         "<div class='header'>",
         "<h1>🥋 Embusen & Movement Deduction Study</h1>",
-        "<p style='color: #94a3b8; margin: 0.25rem 0 0 0;'>Independent Internal Prototype • Tracking left/right foot coordinates, heel-pivot rotations, and mathematical ambiguity boundaries across JKA kata.</p>",
+        "<p style='color: #94a3b8; margin: 0.25rem 0 0 0;'>Estimated footprint geometry, not measured trajectories. Red marks indicate unresolved deductions. A label such as 2+4 denotes five counts at the same center; hover for the full list. Body heading is in degrees clockwise from north.</p>",
         "</div>",
     ]
 
@@ -446,34 +562,57 @@ def generate_scratch_report():
         clean_pct = round((clean_cnt / len(history)) * 100, 1)
 
         html.append("<div class='section'>")
-        html.append(f"<h2><span>{kdata.get('name')} ({kdata.get('kanji')}) &bull; {len(history)} Counts</span><span class='badge-clean'>{clean_pct}% Deduced Cleanly</span></h2>")
+        html.append(
+            f"<h2><span>{kdata.get('name')} ({kdata.get('kanji')}) &bull; {len(history)} Rows</span><span class='badge-clean'>{clean_pct}% Unflagged</span></h2>"
+        )
         html.append("<div class='flex-view'>")
-        
+
         # Diagram column
         html.append("<div class='diagram-col'>")
         html.append(svg)
         html.append("<div class='legend'>")
-        html.append("<span><span class='legend-dot' style='background:#3b82f6;'></span>Left Foot</span>")
-        html.append("<span><span class='legend-dot' style='background:#f59e0b;'></span>Right Foot</span>")
-        html.append("<span><span class='legend-dot' style='background:#ffffff;'></span>Heel Anchor Dot</span>")
-        html.append("<span><span class='legend-dot' style='background:#ef4444;'></span>Ambiguity Flag</span>")
+        html.append(
+            "<span><span class='legend-dot' style='background:#3b82f6;'></span>Left Foot</span>"
+        )
+        html.append(
+            "<span><span class='legend-dot' style='background:#f59e0b;'></span>Right Foot</span>"
+        )
+        html.append(
+            "<span><span class='legend-dot' style='background:#ffffff;'></span>Heel Marker</span>"
+        )
+        html.append(
+            "<span><span class='legend-dot' style='background:#ef4444;'></span>Ambiguity Flag</span>"
+        )
         html.append("</div></div>")
 
         # Table column
         html.append("<div class='table-col'>")
         html.append("<table>")
-        html.append("<thead><tr><th>#</th><th>Stance / Lead</th><th>Turn & Facing</th><th>Moving</th><th>Anchor Foot</th><th>Deduction Status / Ambiguity Flag</th></tr></thead><tbody>")
+        html.append(
+            "<thead><tr><th>#</th><th>Stance / Lead</th><th>Turn & Facing / Body</th><th>Moving</th><th>Anchor Foot</th><th>Deduction Status / Ambiguity Flag</th></tr></thead><tbody>"
+        )
 
         for h in history:
-            m_pill = f"<span class='pill pill-{h['moving_foot']}'>{h['moving_foot']}</span>" if h['moving_foot'] in ['left', 'right'] else f"<span>{h['moving_foot']}</span>"
-            p_pill = f"<span class='pill pill-{h['pivot_foot']}'>{h['pivot_foot']}</span>" if h['pivot_foot'] in ['left', 'right'] else f"<span>{h['pivot_foot']}</span>"
-            
+            m_pill = (
+                f"<span class='pill pill-{h['moving_foot']}'>{h['moving_foot']}</span>"
+                if h["moving_foot"] in ["left", "right"]
+                else f"<span>{h['moving_foot']}</span>"
+            )
+            p_pill = (
+                f"<span class='pill pill-{h['pivot_foot']}'>{h['pivot_foot']}</span>"
+                if h["pivot_foot"] in ["left", "right"]
+                else f"<span>{h['pivot_foot']}</span>"
+            )
+
             if h["ambiguity"]:
                 status_td = f"<span class='badge-ambiguous'>AMBIGUITY</span> <span style='font-size:0.75rem; color:#f87171;'>{h['ambiguity']}</span>"
             else:
-                status_td = f"<span class='badge-clean'>DEDUCED</span> <span style='font-size:0.75rem; color:#94a3b8;'>{h['rule']}</span>"
+                status = "STATIONARY" if h["pivot_type"] == "stationary" else "DEDUCED"
+                status_td = f"<span class='badge-clean'>{status}</span> <span style='font-size:0.75rem; color:#94a3b8;'>{h['rule']}</span>"
 
-            html.append(f"<tr><td><strong>{h['step_id']}</strong></td><td>{h['stance']}<br><small style='color:#64748b;'>{h['lead']}</small></td><td>{h['turn']}<br>&rarr; {h['facing']}</td><td>{m_pill}</td><td>{p_pill}</td><td>{status_td}</td></tr>")
+            html.append(
+                f"<tr><td><strong>{h['step_id']}</strong></td><td>{h['stance']}<br><small style='color:#64748b;'>{h['lead']}</small></td><td>{h['turn']}<br>&rarr; {h['facing']}<br>Body: {h['stance_heading']}°</td><td>{m_pill}</td><td>{p_pill}</td><td>{status_td}</td></tr>"
+            )
 
         html.append("</tbody></table></div>")
         html.append("</div></div>")
