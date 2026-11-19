@@ -86,8 +86,8 @@ steps:
   lead: both
   technique: ryoken_koshi_kamae
   target: null
-  turn: '0'
-  facing: E
+  turn: left_90
+  facing: N
   notes: null
 - id: '9'
   count: 9
@@ -96,7 +96,7 @@ steps:
   technique: tate_shuto_uke
   target: chudan
   turn: '0'
-  facing: E
+  facing: N
   slow: true
   notes: null
 - id: '10'
@@ -106,16 +106,16 @@ steps:
   technique: choku_zuki
   target: chudan
   turn: '0'
-  facing: E
+  facing: N
   notes: null
 - id: '11'
   count: 11
   stance: hizakutsu
-  lead: right
+  lead: left
   technique: uchi_uke
   target: chudan
   turn: '0'
-  facing: E
+  facing: N
   notes: null
 - id: '12'
   count: 12
@@ -124,16 +124,16 @@ steps:
   technique: choku_zuki
   target: chudan
   turn: '0'
-  facing: E
+  facing: N
   notes: null
 - id: '13'
   count: 13
   stance: hizakutsu
-  lead: left
+  lead: right
   technique: uchi_uke
   target: chudan
   turn: '0'
-  facing: E
+  facing: N
   notes: null
 - id: '14'
   count: 14
@@ -141,7 +141,7 @@ steps:
   lead: right
   technique: shuto_uke
   target: chudan
-  turn: left_90
+  turn: '0'
   facing: N
   notes: null
 - id: '15'
@@ -170,7 +170,7 @@ steps:
   target: chudan
   turn: '0'
   facing: N
-  notes: null
+  notes: Step backward
 - id: '18'
   count: 18
   stance: zenkutsu_dachi
@@ -253,6 +253,7 @@ steps:
   subcount: b
   stance: heisoku_dachi
   lead: both
+  lead: left
   technique: manji_uke
   target: jodan
   turn: '0'
@@ -275,67 +276,78 @@ steps:
   lead: left
   technique: kake_uke
   target: chudan
-  turn: '0'
-  facing: N
+  turn: left_180
+  facing: S
   slow: true
   notes: null
-- id: '28'
+- id: 28a
   count: 28
-  stance: kiba_dachi
-  lead: right
+  subcount: a
+  stance: tsuru_ashi_dachi
+  lead: left
   technique: mikazuki_geri
   secondary_technique: mae_empi_uchi
   target: chudan
   turn: '0'
-  facing: N
+  facing: S
+  notes: null
+- id: 28b
+  count: 28
+  subcount: b
+  stance: kiba_dachi
+  lead: none
+  technique: mae_empi_uchi
+  target: chudan
+  turn: left_90
+  facing: E
   notes: null
 - id: '29'
   count: 29
   stance: kiba_dachi
-  lead: right
+  lead: none
   technique: gedan_barai
   secondary_technique: zenwan_mune_kamae
   target: gedan
   turn: '0'
-  facing: N
+  facing: E
   notes: null
 - id: '30'
   count: 30
   stance: kiba_dachi
-  lead: left
+  lead: none
   technique: gedan_barai
   secondary_technique: zenwan_mune_kamae
   target: gedan
   turn: '0'
-  facing: N
+  facing: E
   notes: null
 - id: '31'
   count: 31
   stance: kiba_dachi
-  lead: right
+  lead: none
   technique: gedan_barai
   secondary_technique: zenwan_mune_kamae
   target: gedan
   turn: '0'
-  facing: N
+  facing: E
   notes: null
 - id: '32'
   count: 32
   stance: zenkutsu_dachi
-  lead: left
+  lead: right
   technique: ryoken_koshi_kamae
   target: null
-  turn: left_90
-  facing: W
+  turn: right_90
+  facing: S
   notes: null
 - id: '33'
   count: 33
   stance: zenkutsu_dachi
-  lead: left
+  lead: right
   technique: yama_zuki
   target: jodan
   turn: '0'
-  facing: W
+  facing: S
   notes: null
 - id: '34'
   count: 34
@@ -344,17 +356,17 @@ steps:
   technique: ryoken_koshi_kamae
   target: null
   turn: '0'
-  facing: W
+  facing: S
   slow: true
   notes: null
 - id: '35'
   count: 35
   stance: zenkutsu_dachi
-  lead: right
+  lead: left
   technique: yama_zuki
   target: jodan
-  turn: right_180
-  facing: E
+  turn: none
+  facing: S
   notes: null
 - id: '36'
   count: 36
@@ -363,7 +375,7 @@ steps:
   technique: ryoken_koshi_kamae
   target: null
   turn: '0'
-  facing: E
+  facing: S
   slow: true
   notes: null
 - id: '37'
@@ -373,24 +385,24 @@ steps:
   technique: yama_zuki
   target: jodan
   turn: '0'
-  facing: E
+  facing: S
   notes: null
 - id: '38'
   count: 38
   stance: hizakutsu
-  lead: right
+  lead: left
   technique: sukui_uke
   target: gedan
-  turn: right_90
-  facing: S
+  turn: left_360
+  facing: N
   notes: null
 - id: '39'
   count: 39
   stance: hizakutsu
-  lead: left
+  lead: right
   technique: sukui_uke
   target: gedan
-  turn: right_180
+  turn: '0'
   facing: N
   notes: null
 - id: '40'
@@ -408,17 +420,17 @@ steps:
   lead: left
   technique: jotai_sonomama
   target: chudan
-  turn: '0'
-  facing: NE
+  turn: left_90
+  facing: NW
   slow: true
-  notes: null
+  notes: the stance itself turns 90 degrees in the OPPOSITE direction
 - id: '42'
   count: 42
   stance: kokutsu_dachi
   lead: left
   technique: shuto_uke
   target: chudan
-  turn: left_90
+  turn: '0'
   facing: NW
   kiai: true
-  notes: null
+  notes: step into normal `kokutsu_dachi`
